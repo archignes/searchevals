@@ -42,7 +42,7 @@ const EvalExtractCard: React.FC<EvalExtractCardProps> = ({ evalCardItem }) => {
 
                     <figure className="max-w-screen-md">
                         <blockquote className="my-2">
-                            <p className="text-xl font-semibold text-gray-900 dark:text-white">{contentWithNewlines.map((line, index) => (<span key={index}>{line}<br></br></span>
+                            <p className="text-l text-gray-900 dark:text-white before:text-2xl before:text-gray-400 before:content-['“']">{contentWithNewlines.map((line, index) => (<span key={index}>{line}<br></br></span>
                             ))}</p>
                         </blockquote>
                     </figure>
