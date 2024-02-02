@@ -97,11 +97,11 @@ const SearchEvalCard: React.FC = () => {
           {evalPersonDetails && (
             <figcaption className="mt-1 mb-2">
               <div className="flex items-center divide-x rtl:divide-x-reverse divide-gray-300 dark:divide-gray-700">
-                <cite className="pe-3 ml-3 font-medium text-gray-900 dark:text-white">{evalPersonDetails.name}</cite>
+                <cite id="person-name" className="pe-3 ml-3 font-medium text-gray-900 dark:text-white">{evalPersonDetails.name}</cite>
                 <cite className="ps-3 text-sm text-gray-500 dark:text-gray-400">
-                  <span className="inline-flex"><a href={evalPersonDetails.URL} target="_blank" rel="noopener noreferrer"><InfoCircledIcon /></a></span>
-                  <span className="ml-1">{evalPersonDetails.role}</span>
-                  {conflicts && (
+                  <span id="person-info-link" className="inline-flex"><a href={evalPersonDetails.URL} target="_blank" rel="noopener noreferrer"><InfoCircledIcon /></a></span>
+                  <span id="person-role" className="ml-1">{evalPersonDetails.role}</span>
+                  {conflicts && conflicts.length > 0 && (
                     <><br></br>
                       <TooltipProvider>
                         <Tooltip>

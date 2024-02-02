@@ -5,6 +5,11 @@
     "search_link": "https://www.google.com/search?q=%s"
   },
   {
+    "name": "Exa",
+    "id": "exa",
+    "search_link": "https://exa.ai/search?&q=%s"
+  },
+  {
     "name": "Brave",
     "id": "brave",
     "search_link": "https://search.brave.com/search?q=%s"
