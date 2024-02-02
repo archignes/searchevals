@@ -1,14 +1,12 @@
 [
     {
-        "id": "1",
+        "id": "thyroid-nodule-treatments-socher",
         "date": "2024-01-10",
         "query": "Thyroid nodule treatments",
         "url": "https://twitter.com/RichardSocher/status/1745197797358686261",
         "content": "Some chat answers are amazing and have legit citations, some perplexing and messy and some are clean but incomplete and lack citations.\\nYou decide which you prefer in the new year.",
         "systems": ["YouChat - Research mode", "Perplexity AI", "ChatGPT - 3.5"],
-        "person":
-            {"name": "Richard Socher",
-             "role": "CEO at You.com"},
+        "person_id": "RichardSocher",
         "images": ["https://pbs.twimg.com/media/GDgvFIpbcAAYWo5?format=jpg&name=4096x4096", "https://pbs.twimg.com/media/GDgvFutasAAwxrj?format=jpg&name=4096x4096", "https://pbs.twimg.com/media/GDgvRp3aEAAC3w2?format=jpg&name=4096x4096"]
     },
     { 
@@ -84,9 +82,7 @@
                 }
             ],
         "systems": ["Google", "Bing"],
-        "person":
-            {"name": "Edwin Chen",
-             "role": "Founder at Surge AI"},
+        "person_id": "echen",
         "images": [
             "https://assets-global.website-files.com/610770ea9c21ff57ccb6a6a9/61db9f16d3c191410c0f9119_UAdNbgV9x5ZeGHNU-nNCwkowItYPy9hb_xwsUIxJxuaZJN5tAyE81wBezSh1JWB6Exx5h8JtAuvZ1PrW2TwgaKZhDjo2tRbk0wqhOPWtgQsv6exkutKVd7E6YhA37BB5qd8oUBDA.png" 
         ]
@@ -98,9 +94,7 @@
         "url": "https://www.theguardian.com/commentisfree/2016/dec/11/google-frames-shapes-and-distorts-how-we-see-world", 
         "content": "Type this into your Google search bar: “did the hol”. And Google suggests you search for this: “Did the Holocaust happen?”\\n\\nAnd this is the answer: no. The top result is a link to stormfront.org, a neo-Nazi site and an article entitled: “Top 10 reasons why the Holocaust didn’t happen”. The third result is the article “The Holocaust Hoax; IT NEVER HAPPENED”. The fifth is “50 reasons why the Holocaust didn’t happen.” The seventh is a YouTube video “Did the Holocaust really happen?” The ninth is “Holocaust Against Jews is a Total Lie – Proof.”",
         "systems": ["Google"],
-        "person":
-            {"name": "Carole Cadwalladr",
-             "role": "investigative journalist"},
+        "person_id": "carolecadwalla",            
         "images": [
             "https://i.guim.co.uk/img/media/1e2cbacb5aa12eabee8aa681ff95fbea2fa14665/8_0_937_562/master/937.jpg?width=620&dpr=2&s=none" 
         ]
@@ -112,10 +106,7 @@
         "url": "https://twitter.com/vijayshekhar/status/1750765073814176164", 
         "content": "Page 1 vs scroll to Page 5 for a may-be-answer.\\nIMO,  @perplexity_ai is beating search by becoming the answer engine.\\n@wadhwa I told you so :)",
         "systems": ["Perplexity AI", "Google"],
-        "person": {
-            "name": "Vijay Shekhar Sharma",
-            "role": "Founder at Paytm"
-        },
+        "person_id": "vijayshekhar",
         "images": [
             "https://pbs.twimg.com/media/GEv3iycXYAAoZGI?format=jpg&name=medium",
             "https://pbs.twimg.com/media/GEv3iyaWwAAm0ph?format=jpg&name=medium"]
@@ -126,9 +117,7 @@
         "query": "why is pfix going down today?", 
         "url": "https://twitter.com/vivek7ue/status/1739719566123729095", 
         "context": "Another example of how search is so hard\\n\\nPFIX is down from ~$74 to ~$40 today.\\n\\nQuery: [why is pfix going down today?]\\n\\nAll the search engines, including the LLM-powered ones fail.\\n\\nRead on for the answer at the end of the 🧵...",
-        "person":
-            {"name": "Vivek Raghunathan",
-             "role": "AI + search at Snowflake; Co-founder Neeva (acquired by Snowflake)"},
+        "person_id": "vivek7ue",
         "eval_parts":
             [
                 {

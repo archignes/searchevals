@@ -17,8 +17,13 @@
   },
   {
     "name": "Perplexity AI",
-    "id": "perplexity-ai-default",
+    "id": "perplexity-ai",
     "search_link": "https://www.perplexity.ai/search/?q=%s"
+  },
+  {
+    "name": "You.com",
+    "id": "you-com",
+    "search_link": "https://you.com/search?q=%s&tbm=youchat"
   },
   {
     "name": "ChatGPT - 3.5",

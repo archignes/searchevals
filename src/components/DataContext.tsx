@@ -10,7 +10,8 @@ interface evalPerson {
     id: string; // twitter handle
     name: string;
     role: string;
-    URL?: string;
+    conflict?: string[];
+    URL: string;
 }
 
 export interface evalPart {
@@ -29,7 +30,7 @@ export interface EvalItem {
     eval_parts?: evalPart[];
     content?: string; // Make content optional
     images?: string[]
-    person_id?: string;
+    person_id: string;
 }
 
 export type evalCardItem = EvalItem | evalPart

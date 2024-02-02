@@ -2,11 +2,39 @@
   {
     "id": "AravSrinivas",
     "name": "Aravind Srinivas",
-    "role": "CEO at Perplexity AI"},
+    "role": "CEO at Perplexity AI",
+    "conflict": ["perplexity-ai"],
+    "URL": "https://twitter.com/AravSrinivas"
+  },
   {
     "id": "vivek7ue",
     "name": "Vivek Raghunathan",
     "role": "AI + search at Snowflake; Co-founder Neeva (acquired by Snowflake)",
     "URL": "https://twitter.com/vivek7ue"
+  },
+  {
+    "id": "RichardSocher",
+    "name": "Richard Socher",
+    "role": "CEO at You.com",
+    "conflict": ["you-com"],
+    "URL": "https://twitter.com/RichardSocher"
+  },
+  {
+    "id": "vijayshekhar",
+    "name": "Vijay Shekhar Sharma",
+    "role": "Founder at Paytm",
+    "URL": "https://twitter.com/vijayshekhar"
+  },
+  {
+    "id": "carolecadwalla",
+    "name": "Carole Cadwalladr",
+    "role": "investigative journalist",
+    "URL": "https://en.wikipedia.org/wiki/Carole_Cadwalladr"
+  },
+  {
+    "id": "echen",
+    "name": "Edwin Chen",
+    "role": "Founder at Surge AI",
+    "URL": "https://twitter.com/echen"
   }
 ]

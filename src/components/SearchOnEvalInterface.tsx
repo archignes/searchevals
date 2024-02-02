@@ -51,7 +51,7 @@ const SearchOnEvalInterface: React.FC<SearchOnEvalInterfaceProps> = ({ evalItem 
 
   
 
-  const encodedQuery = encodeURIComponent(evalItem.query);
+  const encodedQuery = encodeURIComponent(evalItem.query).replace(/%20/g, '+');
 
   
   const FormSchema = z.object({
