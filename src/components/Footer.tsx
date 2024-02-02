@@ -22,7 +22,7 @@ const Footer: React.FC = () => {
         <p className="text-center px-2 overflow-hidden break-words">Made with considered curiosity<br></br>by <a className="underline" href="https://danielsgriffin.com">Daniel Griffin, Ph.D.</a></p>
         <div className="w-12"></div>
       </div>
-      <div className="flex justify-center items-center space-x-4 md:w-1/3 w-full">
+      <div className="flex mx-auto justify-center items-center space-x-4 md:w-1/3 w-full">
         <form
         action="https://buttondown.email/api/emails/embed-subscribe/danielsgriffin"
         method="post"
