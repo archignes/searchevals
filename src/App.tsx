@@ -4,6 +4,7 @@ import { Route, Routes, useSearchParams, useNavigate } from 'react-router-dom';
 import SearchBar from './components/SearchBar';
 import SearchResultsPage from './components/SearchResultsPage';
 import SearchEvalCard from './components/SearchEvalCard';
+import Footer from './components/Footer';
 import DataContext from './components/DataContext'; // Import DataContext
 import { Button } from './components/ui/button';
 
@@ -23,11 +24,13 @@ const App: React.FC = () => {
           <p>Search from over <span className='font-bold'>{data.length - 1}</span> public evals!</p>
       </div>
       <SearchBar />
+
       <Routes>
         <Route path="/" element={<div></div>} />
         <Route path="/card/:id" element={<SearchEvalCard />} />
         <Route path="/search" element={<SearchResultsPage />} />
       </Routes>
+      <Footer />
     </div>
   );
 }

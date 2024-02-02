@@ -30,11 +30,10 @@ export default function SearchBar(): JSX.Element {
 
 
   const goToRandomCard = () => {
-    // Assuming card IDs are numeric and you have a maximum ID of 100
-    // Adjust the max ID based on your actual data
-    const cardIds = data.map(card => card.id);
-    const randomIndex = Math.floor(Math.random() * cardIds.length);
-    const randomId = cardIds[randomIndex];
+    const currentCardId = window.location.pathname.split('/').pop();
+    const filteredCardIds = data.map(card => card.id).filter(id => id !== currentCardId);
+    const randomIndex = Math.floor(Math.random() * filteredCardIds.length);
+    const randomId = filteredCardIds[randomIndex];
     navigate(`/card/${randomId}`);
   };
 
@@ -59,7 +58,9 @@ export default function SearchBar(): JSX.Element {
             </svg>
           </Button>
         </form>
-        <Button onClick={goToRandomCard} className="btn mx-auto btn-outline-secondary m-1 w-full md:w-auto">Go to a random Eval</Button>
+        <Button onClick={goToRandomCard} className="btn mx-auto btn-outline-secondary m-1 w-full md:w-auto">
+          {window.location.pathname.includes('/card/') ? 'Go to a different random Eval' : 'Go to a random Eval'}
+        </Button>
       </div>
     </div><div className="mt-0 w-full md:w-1/3 ml-0 md:ml-[calc(50%-20rem)] absolute md:mt-0 mt-[-2.6rem]">
     {query && showResults && results.length > 0 && query !== new URLSearchParams(window.location.search).get('q') && (

@@ -1,3 +1,13 @@
+# Searchevals
+
+This is a resource for collecting and exploring a range of open (publicly-available) search evaluations.
+
+Searching for an evaluation shows evaluations cards that provide details about the systems evaluation, the person who openly shared the evaluation, and excerpts and images from the evaluations. Each evaluation card includes a SearchOnEval interface that allows you to search the evaluated query on multiple platforms (links open in bulk or individually in new tabs).
+
+This website is currently a speculative and exploratory prototype and probe. Please share any concerns or feedback.
+
+---
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

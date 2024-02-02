@@ -20,6 +20,16 @@
         "images": ["https://pbs.twimg.com/media/F_9TPq3aQAAw-9C?format=jpg&name=medium"]
     },
     { 
+        "id": "had-a-seizure-now-what-soft", 
+        "date": "2023-11-27",
+        "query": "Had a seizure Now what?", 
+        "url": "https://twitter.com/soft/status/1449406390976409600", 
+        "content": "The Google search summary vs the actual page",
+        "systems": ["Google"],
+        "person_id": "soft",
+        "images": ["https://pbs.twimg.com/media/FB1TS0kVIAAVWFZ?format=jpg&name=900x900", "https://pbs.twimg.com/media/FB1TTYBUUAQwAoD?format=jpg&name=900x900"]
+    },
+    { 
         "id": "how-much--should-i-pay-for-home-insurance-in-moss-beach-ca-vivek7ue", 
         "date": "2023-12-23",
         "query": "how much should i pay for home insurance in moss beach ca", 
