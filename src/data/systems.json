@@ -1,0 +1,112 @@
+[
+  {
+    "name": "Google",
+    "id": "google",
+    "search_link": "https://www.google.com/search?q=%s"
+  },
+  {
+    "name": "Brave",
+    "id": "brave",
+    "search_link": "https://search.brave.com/search?q=%s"
+  },
+  {
+    "name": "YouChat - Research mode",
+    "id": "youchat-research-mode",
+    "nondistinct_url": true,
+    "search_link": "https://you.com/search?q=%s&tbm=youchat"
+  },
+  {
+    "name": "Perplexity AI",
+    "id": "perplexity-ai-default",
+    "search_link": "https://www.perplexity.ai/search/?q=%s"
+  },
+  {
+    "name": "ChatGPT - 3.5",
+    "id": "chatgpt-3-5",
+    "search_link": "https://chat.openai.com/?model=text-davinci-002-render-sha"
+  },
+  {
+    "name": "Bing",
+    "id": "bing",
+    "search_link": "https://www.bing.com/search?q=%s"
+  },
+  {
+    "name": "DuckDuckGo",
+    "id": "duckduckgo",
+    "search_link": "https://duckduckgo.com/?q=%s"
+  },
+  {
+    "name": "Ecosia",
+    "id": "ecosia",
+    "search_link": "https://www.ecosia.org/search?q=%s"
+  },
+  {
+    "name": "Andi Search",
+    "id": "andi-search",
+    "search_link": "https://andisearch.com/"
+  },
+  {
+    "name": "Marginalia Search",
+    "id": "marginalia-search",
+    "search_link": "https://search.marginalia.nu/search?query=%s"
+  },
+  {
+    "name": "Perplexity AI - Copilot",
+    "id": "perplexity-ai-copilot",
+    "search_link": "https://www.perplexity.ai/search?q=%s&copilot=true"
+  },
+  {
+    "name": "Qwant",
+    "id": "qwant",
+    "search_link": "https://www.qwant.com/?q=%s"
+  },
+  {
+    "name": "YouChat",
+    "id": "youchat",
+    "base_url_for": ["YouChat - Research mode"],
+    "search_link": "https://you.com/search?q=%s&tbm=youchat&cfr=chat"
+  },
+    {
+    "name": "Phind Search",
+    "id": "phind-search",
+    "search_link": "https://www.phind.com/search?q=%s"
+  },
+  {
+    "name": "Kagi",
+    "id": "kagi",
+    "search_link": "https://kagi.com/search?q=%s"
+  },
+  {
+    "name": "Komo",
+    "id": "komo",
+    "search_link": "https://komo.ai/"
+  },
+  {
+    "name": "SciPhi",
+    "id": "sciphi",
+    "search_link": "https://search.sciphi.ai/search?q=test"
+  },
+    {
+    "name": "Cohere Coral",
+    "id": "cohere-coral",
+    "account_required": true,
+    "search_link": "https://coral.cohere.com/"
+  },
+  {
+    "name": "Tavily",
+    "id": "tavily",
+    "account_required": true,
+    "search_link": "https://app.tavily.com/playground"
+  },
+    {
+    "name": "HuggingChat",
+    "id": "huggingchat",
+    "search_link": "https://huggingface.co/chat/"
+  },
+    {
+    "name": "Lepton Search",
+    "id": "lepton-search",
+    "search_link": "https://search.lepton.run/"
+  }
+
+]
