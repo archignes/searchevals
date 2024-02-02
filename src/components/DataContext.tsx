@@ -4,14 +4,14 @@ import FlexSearch from 'flexsearch';
 import { ReactNode } from 'react';
 import evals from "src/data/evals.json";
 import systems from "src/data/systems.json";
-
+import persons from "src/data/persons.json";
 
 interface evalPerson {
+    id: string; // twitter handle
     name: string;
     role: string;
+    URL?: string;
 }
-
-
 
 export interface evalPart {
     id: string;
@@ -29,7 +29,7 @@ export interface EvalItem {
     eval_parts?: evalPart[];
     content?: string; // Make content optional
     images?: string[]
-    person?: evalPerson;
+    person_id?: string;
 }
 
 export type evalCardItem = EvalItem | evalPart
@@ -49,6 +49,7 @@ interface DataContextType {
     query: string;
     setQuery: (query: string) => void;
     systems: System[];
+    persons: evalPerson[];
 }
 
 
@@ -57,8 +58,8 @@ const defaultContextValue: DataContextType = {
     results: [],
     query: '',
     setQuery: () => { }, // Dummy function, will be replaced in provider
-    systems: systems
-    ,
+    systems: systems,
+    persons: persons,
 };
 
 
@@ -87,8 +88,11 @@ export const DataProvider: React.FC<DataProviderProps> = ({ children }) => {
                     return (part.content);
                 });
             }
-            if (evalItem.person) {
-                evalString = evalString + " " + evalItem.person.name + " " + evalItem.person.role;
+            if (evalItem.person_id) {
+                const personDetails = persons.find(person => person.id === evalItem.person_id);
+                if (personDetails) {
+                    evalString = evalString + " " + personDetails.name + " " + personDetails.role;
+                }
             }
             return evalString
         }
@@ -117,7 +121,7 @@ export const DataProvider: React.FC<DataProviderProps> = ({ children }) => {
 
 
     return (
-        <DataContext.Provider value={{ data, results, query, setQuery, systems: sortedSystems }}>
+        <DataContext.Provider value={{ data, results, query, setQuery, systems: sortedSystems, persons: persons }}>
             {children} {/* Now TypeScript knows about children */}
         </DataContext.Provider>
     );

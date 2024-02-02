@@ -18,9 +18,7 @@
         "url": "https://twitter.com/AravSrinivas/status/1729192313635901913", 
         "content": "Q: “What is Google doing”\\nA: Selling ads.",
         "systems": ["Google"],
-        "person":
-            {"name": "Aravind Srinivas",
-             "role": "CEO at Perplexity AI"},
+        "person_id": "AravSrinivas",
         "images": ["https://pbs.twimg.com/media/F_9TPq3aQAAw-9C?format=jpg&name=medium"]
     },
     { 
@@ -29,9 +27,7 @@
         "query": "how much should i pay for home insurance in moss beach ca", 
         "url": "https://twitter.com/vivek7ue/status/1738729244560388590", 
         "context": "With all the amazing improvements in LLMs for search, there's still so much work to do. \\nQuery: [how much should i pay for home insurance in moss beach ca]\\nContext: I am trying to find it if I am getting stiffed.\\nTo find out how the various search engines did, see 🧵",
-        "person":
-            {"name": "Vivek Raghunathan",
-             "role": "AI + search at Snowflake; Co-founder Neeva (acquired by Snowflake)"},
+        "person_id": "vivek7ue",
         "eval_parts":
             [
                 {

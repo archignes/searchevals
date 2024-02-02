@@ -2,6 +2,7 @@
 import React, { useContext } from 'react';
 import { useParams } from 'react-router-dom';
 import DataContext, { evalPart } from './DataContext';
+import { InfoCircledIcon } from '@radix-ui/react-icons';
 import SearchOnEvalInterface from './SearchOnEvalInterface';
 import '../styles/globals.css';
 import {
@@ -16,10 +17,12 @@ import EvalExtractCard from './EvalExtractCard'
   
 const SearchEvalCard: React.FC = () => {
   const { id } = useParams<{ id: string }>();
-  const { data, systems } = useContext(DataContext); // Destructure data from DataContext
+  const { data, systems, persons } = useContext(DataContext); // Destructure data from DataContext
 
   const evalItem = data ? data.find(evalItem => evalItem.id === id) : null;
   
+  const evalPersonDetails = persons.find(person => person.id === evalItem?.person_id);
+
   if (!evalItem) {
     return <div>No data found for this ID</div>; // Return a valid JSX element
   }
@@ -60,11 +63,17 @@ const SearchEvalCard: React.FC = () => {
           <p className="font-normal text-sm my-0 py-0">Date: {evalItem.date}</p>
         </CardHeader>
         <CardContent>
-          {evalItem.person && (
+          {evalPersonDetails && (
             <figcaption className="mt-1 mb-2">
               <div className="flex items-center divide-x-2 rtl:divide-x-reverse divide-gray-300 dark:divide-gray-700">
-                <cite className="pe-3 ml-3 font-medium text-gray-900 dark:text-white">{evalItem.person.name}</cite>
-                <cite className="ps-3 text-sm text-gray-500 dark:text-gray-400">{evalItem.person.role}</cite>
+                <cite className="pe-3 ml-3 font-medium text-gray-900 dark:text-white">{evalPersonDetails.name}</cite>
+                <cite className="ps-3 text-sm text-gray-500 dark:text-gray-400">
+                  {evalPersonDetails.role}
+                  <a href={evalPersonDetails.URL} target="_blank" rel="noopener noreferrer">
+                    <InfoCircledIcon />
+                    </a>
+                </cite>
+
                 </div>
                 </figcaption>)}
           {evalItem.eval_parts ? (
