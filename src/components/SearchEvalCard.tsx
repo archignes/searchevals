@@ -21,8 +21,13 @@ import {
   TooltipTrigger,
 } from "./ui/tooltip"
   
-const SearchEvalCard: React.FC = () => {
-  const { id } = useParams<{ id: string }>();
+interface SearchEvalCardProps {
+  idFromProp?: string;
+}
+
+const SearchEvalCard: React.FC<SearchEvalCardProps> = ({ idFromProp }) => {
+  const { id: paramId } = useParams<{ id: string }>();
+  const id = idFromProp || paramId;
   const { data, systems, persons } = useContext(DataContext); // Destructure data from DataContext
 
   const evalItem = data ? data.find(evalItem => evalItem.id === id) : null;
@@ -76,16 +81,21 @@ const SearchEvalCard: React.FC = () => {
     systemsEvaluatedSearchLinks = "";
   }
 
-  
+  const marqueeOrigin:boolean = (window.location.pathname === "/")
+
   let cardTitle = <div><SearchBracket><span className="text-xl">{evalItem.query}</span></SearchBracket></div>
 
   return (
-    <div className="w-11/12 md:w-2/3 mx-auto mt-4">
+    <div className={`w-11/12 ${marqueeOrigin ? 'md:w-11/12' : 'md:w-2/3'} mx-auto mt-4`}>
       <Card>
         <CardHeader className="pb-2">
           <CardTitle>
             <SearchOnEvalInterface evalItem={evalItem} />
-            {cardTitle}
+            {marqueeOrigin ? (
+              <a href={`/card/${evalItem.id}`}>{cardTitle}</a>
+            ) : (
+              cardTitle
+            )}
             </CardTitle>
           <CardDescription>
             <a href={evalItem.url} target="_blank" className="w-7/8 truncate block">{evalItem.url}</a>

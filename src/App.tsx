@@ -7,6 +7,7 @@ import SearchEvalCard from './components/SearchEvalCard';
 import Footer from './components/Footer';
 import DataContext from './components/DataContext'; // Import DataContext
 import { Button } from './components/ui/button';
+import Marquee from './components/Marquee';
 
 const App: React.FC = () => {
   const [searchParams] = useSearchParams();
@@ -19,14 +20,14 @@ const App: React.FC = () => {
 
   return (
     <div className="App">
-|      <a href="/" className="text-4xl font-bold text-center mb-3 mt-2 block">Search<span className="text-gray-500">evals</span></a>
+      <a href="/" className="text-4xl font-bold text-center mb-3 mt-2 block">Search<span className="text-gray-500">evals</span></a>
       <div className="flex justify-center">
           <p>Search from over <span className='font-bold'>{data.length - 1}</span> public evals!</p>
       </div>
       <SearchBar />
 
       <Routes>
-        <Route path="/" element={<div></div>} />
+        <Route path="/" element={<Marquee />} />
         <Route path="/card/:id" element={<SearchEvalCard />} />
         <Route path="/search" element={<SearchResultsPage />} />
       </Routes>

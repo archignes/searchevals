@@ -12,13 +12,13 @@ const ImageDisplay: React.FC<ImageDisplayProps> = ({ images }) => {
     };
 
     return (
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+        <div className={`grid ${window.location.pathname === "/" || images.length > 1 ? 'grid-cols-1' : 'grid-cols-1'} gap-4 justify-items-center`}>
             {images.map((image, index) => (
                 <img
                     key={index}
                     src={image}
                     alt=""
-                    className="w-full h-auto cursor-pointer border shadow"
+                    className={`${window.location.pathname !== "/" && images.length === 1 ? 'w-full md:w-3/4' : 'w-full'} h-auto cursor-pointer border shadow`}
                     onClick={() => handleImageClick(image)}
                 />
             ))}
