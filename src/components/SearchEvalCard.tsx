@@ -80,7 +80,7 @@ const SearchEvalCard: React.FC = () => {
   let cardTitle = <div><SearchBracket><span className="text-xl">{evalItem.query}</span></SearchBracket></div>
 
   return (
-    <div className="w-2/3 mx-auto mt-4">
+    <div className="w-11/12 md:w-2/3 mx-auto mt-4">
       <Card>
         <CardHeader className="pb-2">
           <CardTitle>
@@ -88,7 +88,7 @@ const SearchEvalCard: React.FC = () => {
             {cardTitle}
             </CardTitle>
           <CardDescription>
-            <a href={evalItem.url} target="_blank">{evalItem.url}</a>
+            <a href={evalItem.url} target="_blank" className="w-7/8 truncate block">{evalItem.url}</a>
             <p className="text-sm">systems: {systemsEvaluatedSearchLinks}</p>
             <p className="text-sm">date: {evalItem.date}</p>
           </CardDescription>
