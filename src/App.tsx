@@ -6,8 +6,8 @@ import SearchResultsPage from './components/SearchResultsPage';
 import SearchEvalCard from './components/SearchEvalCard';
 import Footer from './components/Footer';
 import DataContext from './components/DataContext'; // Import DataContext
-import { Button } from './components/ui/button';
 import Marquee from './components/Marquee';
+import {EvalForm} from './components/DataInput'
 
 const App: React.FC = () => {
   const [searchParams] = useSearchParams();
@@ -30,6 +30,7 @@ const App: React.FC = () => {
         <Route path="/" element={<Marquee />} />
         <Route path="/card/:id" element={<SearchEvalCard />} />
         <Route path="/search" element={<SearchResultsPage />} />
+        <Route path="/input_test" element={<EvalForm />} />
       </Routes>
       <Footer />
     </div>

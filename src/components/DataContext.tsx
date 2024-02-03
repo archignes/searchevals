@@ -6,7 +6,7 @@ import evals from "src/data/evals.json";
 import systems from "src/data/systems.json";
 import persons from "src/data/persons.json";
 
-interface evalPerson {
+export interface evalPerson {
     id: string; // twitter handle
     name: string;
     role: string;
@@ -33,9 +33,11 @@ export interface EvalItem {
     person_id: string;
 }
 
+
+
 export type evalCardItem = EvalItem | evalPart
 
-interface System {
+export interface System {
     id: string;
     name: string;
     nondistinct_url?: boolean;

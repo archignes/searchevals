@@ -31,7 +31,7 @@ const Footer: React.FC = () => {
           e.preventDefault();
           window.open('https://buttondown.email/danielsgriffin', 'popupwindow');
         }}
-        className="embeddable-buttondown-form w-full"
+        className="embeddable-buttondown-form"
       >
         <label className="text-center" htmlFor="bd-email">Sign up to receive updates.</label>
         <div className="flex w-full max-w-sm items-center space-x-2">
