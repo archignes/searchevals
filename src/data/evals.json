@@ -164,6 +164,17 @@
                 }
             ],
         "systems": ["Google", "Brave", "YouChat", "Twitter", "Perplexity AI", "Bing"]
+    },
+    {
+        "id": "what's-the-history-behind-lunar-new-year-yousearchengine",
+        "date": "2024-02-11",
+        "query": "What's the history behind Lunar New Year?",
+        "url": "https://twitter.com/YouSearchEngine/status/1756824752470303085",
+        "systems": ["YouChat"],
+        "content": "With You.com, you no longer have to search through several sites for thorough historical context.\\n\\nTry one of the follow up questions to continue this research report on the history of Lunar New Year 👇\\n\\n#youdotcom #LunarNewYear #aimodes",
+        "images": [
+            "https://pbs.twimg.com/media/GGF-LTrawAAHH_3?format=jpg&name=large"],
+        "person_id":"yousearchengine"
     }
 ]
 

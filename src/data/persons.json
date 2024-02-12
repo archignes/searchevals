@@ -29,7 +29,7 @@
     "id": "carolecadwalla",
     "name": "Carole Cadwalladr",
     "role": "investigative journalist",
-    "URL": "https://en.wikipedia.org/wiki/Carole_Cadwalladr"
+    "URL": "https://twitter.com/carolecadwalla"
   },
   {
     "id": "echen",
@@ -42,5 +42,14 @@
     "name": "@soft",
     "role": "Information Security director at Linden Lab",
     "URL": "https://twitter.com/soft"
+  },
+  {
+    "id": "yousearchengine",
+    "name": "You.com",
+    "role": "Search engine",
+    "URL": "https://twitter.com/YouSearchEngine",
+    "conflict": [
+      "you-com"
+    ]
   }
 ]
