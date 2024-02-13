@@ -15,22 +15,26 @@ import { Checkbox } from "./ui/checkbox"
 import {
   Form,
   FormControl,
-  FormDescription,
   FormField,
   FormItem,
   FormLabel,
   FormMessage,
 } from "./ui/form"
-import { toast } from "./ui/use-toast"
 
+import {
+  CardDescription,
+  CardContent,
+  CardHeader,
+  CardTitle,
+} from './ui/card';
 
 import '../styles/globals.css';
 import DataContext, { EvalItem } from './DataContext'; 
 import {
-  HoverCard,
-  HoverCardContent,
-  HoverCardTrigger,
-} from "./ui/hover-card"
+  Popover,
+  PopoverContent,
+  PopoverTrigger,
+} from "./ui/popover"
 
 // Define a type for your component's props
 type SearchOnEvalInterfaceProps = {
@@ -107,20 +111,28 @@ const SearchOnEvalInterface: React.FC<SearchOnEvalInterfaceProps> = ({ evalItem 
 
 
   return (
-    <>
-    
-    <HoverCard>
-        <div className="float-right">
-          <HoverCardTrigger><Button className="btn btn-outline-secondary" aria-label="Search on the eval">
-          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-search" viewBox="0 0 16 16">
-            <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />
-          </svg>
-        </Button></HoverCardTrigger></div >
-        <HoverCardContent className="w-85 mr-3">
-          <ScrollArea className="h-[400px] w-100 rounded-md">
+      <div className="float-right">
+      <Popover>
+        <PopoverTrigger>
+          <Button className="btn btn-outline-secondary" aria-label="Search on the eval">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-search" viewBox="0 0 16 16">
+              <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />
+            </svg>
+          </Button>
+        </PopoverTrigger>
+        <PopoverContent className="mr-2 w-[350px] md:w-4/5 rounded-md">
+            <CardHeader>
+              <CardTitle>SearchOnEval</CardTitle>
+              <CardDescription>
+                Click individual search system links to search the eval query, or select multiple systems and click the search button.
+              </CardDescription>
+            </CardHeader>
+            <CardContent>
+            <CardTitle className="font-normal">Search Systems</CardTitle>
+            <hr></hr>
+            <ScrollArea className="mt-1 h-[300px] md:h-[400px] w-[300px] md:w-full rounded-md">
           <div className="flex justify-between space-x-4">
             <div className="space-y-1">
-              <h4 className="font-semibold">SearchOnEval</h4>
               <Form {...form}>
                 <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
                   <FormField
@@ -128,10 +140,7 @@ const SearchOnEvalInterface: React.FC<SearchOnEvalInterfaceProps> = ({ evalItem 
                     name="systems"
                     render={() => (
                       <FormItem>
-                        <FormDescription>
-                          Click individual search system links to search the eval query or select multiple and click the search button.
-                        </FormDescription>
-                        <FormItem className="flex flex-row items-start space-x-3 space-y-0 justify-end">
+                        <FormItem className="flex flex-row items-start justify-end space-x-3 space-y-0">
                           <FormControl>
                             <Checkbox
                               checked={selectAll}
@@ -144,9 +153,8 @@ const SearchOnEvalInterface: React.FC<SearchOnEvalInterfaceProps> = ({ evalItem 
                           </FormControl>
                           <FormLabel className="text-sm font-normal">Select All</FormLabel>
                         </FormItem>
-                        <hr></hr>
                         {/* Grid container for systems */}
-                        <div className="grid grid-cols-3 gap-2">
+                        <div className="grid grid-cols-2 md:grid-cols-3 gap-2">
                           {systems.filter(system => !system.nondistinct_url).map((system) => (
                             <FormField
                               key={system.id} // Ensure this is a unique and stable identifier
@@ -215,9 +223,10 @@ const SearchOnEvalInterface: React.FC<SearchOnEvalInterfaceProps> = ({ evalItem 
             </div>
           </div>
           </ScrollArea>
-        </HoverCardContent>
-      </HoverCard>
-    </>
+          </CardContent>
+        </PopoverContent>
+      </Popover>
+    </div>
   );
 }
 
