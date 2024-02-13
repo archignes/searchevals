@@ -5,7 +5,7 @@ const footerPath = path.join(__dirname, '../src/components/Footer.tsx');
 const fileContents = fs.readFileSync(footerPath, 'utf8');
 
 const updatedContents = fileContents.replace(
-    /const lastUpdated = ".*?Z";>/,
+    /const lastUpdated = ".*?";/,
     `const lastUpdated = "${new Date().toISOString()}";`
 );
 
