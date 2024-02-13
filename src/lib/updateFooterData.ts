@@ -1,6 +1,7 @@
 const fs = require('fs');
 const path = require('path');
 
+
 const footerPath = path.join(__dirname, 'src/components/Footer.tsx');
 const fileContents = fs.readFileSync(footerPath, 'utf8');
 
