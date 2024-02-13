@@ -51,7 +51,7 @@ export default function EvalInputForm() {
     query: z.string(),
     url: z.string().url(),
     context: z.string().optional(),
-    systems: z.array(z.string()).optional(),
+    systems: z.array(z.string()),
     eval_parts: z.array(evalPartSchema).optional(),
     content: z.string().optional(),
     images: z.array(z.string()).optional(),
@@ -85,6 +85,14 @@ export default function EvalInputForm() {
 
 
   function onSubmit(values: z.infer<typeof evalsystemschema>) {
+    values.content = values.content?.replace(/\n\n/g, "//n//n");
+    values.context = values.context?.replace(/\n\n/g, "//n//n");
+    if (values.eval_parts) {
+      values.eval_parts = values.eval_parts.map(part => ({
+        ...part,
+        content: part.content.replace(/\n\n/g, "//n//n"),
+      }));
+    }
     copy(JSON.stringify(values, null, 2));
     alert("Data copied to clipboard!");
     console.log(values)
