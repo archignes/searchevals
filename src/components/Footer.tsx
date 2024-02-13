@@ -43,6 +43,9 @@ const Footer: React.FC = () => {
         </p>
       </form>
       </div>
+    <div className="text-center mt-4 text-xs">
+      <p>Last Updated: <span id="last-updated-placeholder">2023-01-01 00:00 UTC</span></p>
+    </div>
     </footer>
   );
 };
