@@ -1,7 +1,7 @@
-import fs from 'fs';
-import path from 'path';
+const fs = require('fs');
+const path = require('path');
 
-const footerPath = path.join(__dirname, '../components/Footer.tsx');
+const footerPath = path.join(__dirname, '../src/components/Footer.tsx');
 const fileContents = fs.readFileSync(footerPath, 'utf8');
 
 const updatedContents = fileContents.replace(
@@ -10,5 +10,3 @@ const updatedContents = fileContents.replace(
 );
 
 fs.writeFileSync(footerPath, updatedContents);
-
-export {};
