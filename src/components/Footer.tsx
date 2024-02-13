@@ -4,7 +4,7 @@ import { Input } from "./ui/input";
 import '../styles/globals.css';
 import logo from '../logo.png'; // Add this line at the top of your file
 
-const lastUpdated = "2024-02-13T22:07:16.121Z";
+const lastUpdated = "2024-02-13T22:07:36.478Z";
 
 const Footer: React.FC = () => {
   return (

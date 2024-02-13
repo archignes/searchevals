@@ -1,7 +1,9 @@
 import React, { useContext, useState, useEffect } from 'react'; 
-import { ExclamationTriangleIcon, PersonIcon } from "@radix-ui/react-icons"
+import { isMobile } from 'react-device-detect';
+import { ExclamationTriangleIcon, PersonIcon, MobileIcon, ComponentNoneIcon } from "@radix-ui/react-icons"
 import { ScrollArea } from "./ui/scroll-area"
 import { zodResolver } from "@hookform/resolvers/zod"
+import SearchBracket from "./SearchBracket"
 import { useForm } from "react-hook-form"
 import { z } from "zod"
 import {
@@ -124,7 +126,21 @@ const SearchOnEvalInterface: React.FC<SearchOnEvalInterfaceProps> = ({ evalItem 
             <CardHeader>
               <CardTitle>SearchOnEval</CardTitle>
               <CardDescription>
-                Click individual search system links to search the eval query, or select multiple systems and click the search button.
+              <span className="font-bold">(a)</span> Click individual search system links to search the eval query—<SearchBracket className="inline-block text-sm">{evalItem.query}</SearchBracket>—or <span className="font-bold">(b)</span> select multiple systems and click the search button (you may have to click to allow popups).
+              <ul className="mt-2 border-l-2 pl-1">
+                <li className="text-xs grid grid-cols-10"><span className="font-bold">bold</span><span className="col-span-8 ml-2">in the eval</span></li>
+                <li className="text-xs grid grid-cols-10">
+                  <ExclamationTriangleIcon className="h-3 w-3 ml-2 inline-block align-start" /><span className="col-span-8 ml-2">does not support <a target="_blank" className="underline" href="https://developer.mozilla.org/en-US/docs/Web/API/URL/search">URL-search</a></span>
+                  </li>
+                <li className="text-xs grid grid-cols-10">
+                  <PersonIcon className="h-3 w-3 ml-2 inline-block align-start" /><span className="col-span-8 ml-2">requires an account</span>
+                </li>
+                {isMobile && (
+                  <li className="text-xs grid grid-cols-10">                  
+                    <MobileIcon className="h-3 w-3 ml-2 inline-block align-start" /><span className="col-span-8 ml-2">mobile app breaks links, long press (iOS) to open in browser</span>
+                  </li>
+                )}
+                </ul>
               </CardDescription>
             </CardHeader>
             <CardContent>
@@ -180,7 +196,7 @@ const SearchOnEvalInterface: React.FC<SearchOnEvalInterfaceProps> = ({ evalItem 
                                   </FormControl>
                                   <div>
                                   {evalItem.systems!.includes(system.name) || (system.base_url_for && evalItem.systems!.some(evalSystem => system.base_url_for?.includes(evalSystem))) ? (
-                                    <a className="underline font-semi-bold" target="_blank" rel="noopener noreferrer" href={system.search_link.replace('%s', encodedQuery)}>{system.name}</a>
+                                    <a className="underline font-bold" target="_blank" rel="noopener noreferrer" href={system.search_link.replace('%s', encodedQuery)}>{system.name}</a>
                                   ) : (
                                     <FormLabel className="text-sm font-normal">
                                       <a className="underline" target="_blank" rel="noopener noreferrer" href={system.search_link.replace('%s', encodedQuery)}>{system.name}</a>
@@ -206,6 +222,9 @@ const SearchOnEvalInterface: React.FC<SearchOnEvalInterfaceProps> = ({ evalItem 
                                       </Tooltip>
                                     </TooltipProvider>
                                   )}
+                                    {isMobile && system.mobile_app_breaks_links_warning && (
+                                    <MobileIcon className="h-3 w-3 ml-1 inline-block align-middle" />
+                                    )}
                                   </div>
                                 </FormItem>
                               )

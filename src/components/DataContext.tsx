@@ -44,6 +44,7 @@ export interface System {
     base_url_for?: string[];
     account_required?: boolean;
     search_link: string;
+    mobile_app_breaks_links_warning?: boolean;
 }
 
 interface DataContextType {

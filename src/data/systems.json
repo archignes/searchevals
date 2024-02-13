@@ -23,7 +23,8 @@
   {
     "name": "Perplexity AI",
     "id": "perplexity-ai",
-    "search_link": "https://www.perplexity.ai/search/?q=%s"
+    "search_link": "https://www.perplexity.ai/search/?q=%s",
+    "mobile_app_breaks_links_warning": true
   },
   {
     "name": "You.com",
@@ -63,7 +64,8 @@
   {
     "name": "Perplexity AI - Copilot",
     "id": "perplexity-ai-copilot",
-    "search_link": "https://www.perplexity.ai/search?q=%s&copilot=true"
+    "search_link": "https://www.perplexity.ai/search?q=%s&copilot=true",
+    "mobile_app_breaks_links_warning": true
   },
   {
     "name": "Qwant",
