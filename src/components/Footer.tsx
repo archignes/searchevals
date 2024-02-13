@@ -4,6 +4,8 @@ import { Input } from "./ui/input";
 import '../styles/globals.css';
 import logo from '../logo.png'; // Add this line at the top of your file
 
+const lastUpdated = "2024-02-13T21:49:59.253Z";
+
 const Footer: React.FC = () => {
   return (
     <footer className="p-4 mt-5 w-full border-t">
@@ -44,7 +46,7 @@ const Footer: React.FC = () => {
       </form>
       </div>
     <div className="text-center mt-4 text-xs">
-      <p>Last Updated: <span id="last-updated-placeholder">2023-01-01 00:00 UTC</span></p>
+      <p>Last Updated: <span id="last-updated-placeholder" title={new Date(lastUpdated).toLocaleString()}>{lastUpdated} UTC</span></p>
     </div>
     </footer>
   );
