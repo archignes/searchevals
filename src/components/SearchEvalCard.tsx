@@ -28,11 +28,11 @@ interface SearchEvalCardProps {
 const SearchEvalCard: React.FC<SearchEvalCardProps> = ({ idFromProp }) => {
   const { id: paramId } = useParams<{ id: string }>();
   const id = idFromProp || paramId;
-  const { data, systems, persons } = useContext(DataContext); // Destructure data from DataContext
+  const { data, systems, evaluators } = useContext(DataContext); // Destructure data from DataContext
 
   const evalItem = data ? data.find(evalItem => evalItem.id === id) : null;
   
-  const evalPersonDetails = persons.find(person => person.id === evalItem?.person_id);
+  const evalEvaluatorDetails = evaluators.find(evaluator => evaluator.id === evalItem?.evaluator_id);
   
 
   if (!evalItem) {
@@ -47,10 +47,10 @@ const SearchEvalCard: React.FC<SearchEvalCardProps> = ({ idFromProp }) => {
   };
 
   let conflicts: conflictType[] = [];
-  if (evalPersonDetails && evalPersonDetails.conflict) {
-    conflicts = evalPersonDetails.conflict.map(conflictId => {
+  if (evalEvaluatorDetails && evalEvaluatorDetails.conflict) {
+    conflicts = evalEvaluatorDetails.conflict.map(conflictId => {
       const system = systems.find(system => system.id === conflictId);
-      let query= `How is ${evalPersonDetails.name} connected to ${system?.name}?`
+      let query= `How is ${evalEvaluatorDetails.name} connected to ${system?.name}?`
       return {
         name: system!.name,
         searchLink: system!.search_link,
@@ -104,13 +104,13 @@ const SearchEvalCard: React.FC<SearchEvalCardProps> = ({ idFromProp }) => {
           </CardDescription>
         </CardHeader>
         <CardContent>
-          {evalPersonDetails && (
+          {evalEvaluatorDetails && (
             <figcaption className="mt-1 mb-2">
               <div className="flex items-center divide-x rtl:divide-x-reverse divide-gray-300 dark:divide-gray-700">
-                <cite id="person-name" className="pe-3 ml-3 font-medium text-gray-900 dark:text-white">{evalPersonDetails.name}</cite>
+                <cite id="person-name" className="pe-3 ml-3 font-medium text-gray-900 dark:text-white">{evalEvaluatorDetails.name}</cite>
                 <cite className="ps-3 text-sm text-gray-500 dark:text-gray-400">
-                  <span id="person-info-link" className="inline-flex"><a href={evalPersonDetails.URL} target="_blank" rel="noopener noreferrer"><InfoCircledIcon /></a></span>
-                  <span id="person-role" className="ml-1">{evalPersonDetails.role}</span>
+                  <span id="person-info-link" className="inline-flex"><a href={evalEvaluatorDetails.URL} target="_blank" rel="noopener noreferrer"><InfoCircledIcon /></a></span>
+                  <span id="person-role" className="ml-1">{evalEvaluatorDetails.role}</span>
                   {conflicts && conflicts.length > 0 && (
                     <><br></br>
                       <TooltipProvider>

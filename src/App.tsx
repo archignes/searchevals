@@ -7,16 +7,13 @@ import SearchEvalCard from './components/SearchEvalCard';
 import Footer from './components/Footer';
 import DataContext from './components/DataContext'; // Import DataContext
 import Marquee from './components/Marquee';
-import {EvalForm} from './components/DataInput'
+import {NewInputForm} from './components/DataInput'
 
 const App: React.FC = () => {
   const [searchParams] = useSearchParams();
   const navigate = useNavigate();
   const { data, systems } = useContext(DataContext); // Destructure data from DataContext
   const query = searchParams.get('q');
-
-  
-
 
   return (
     <div className="App">
@@ -30,7 +27,7 @@ const App: React.FC = () => {
         <Route path="/" element={<Marquee />} />
         <Route path="/card/:id" element={<SearchEvalCard />} />
         <Route path="/search" element={<SearchResultsPage />} />
-        <Route path="/input_test" element={<EvalForm />} />
+        <Route path="/input" element={<NewInputForm />} />
       </Routes>
       <Footer />
     </div>

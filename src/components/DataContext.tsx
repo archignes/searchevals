@@ -4,9 +4,9 @@ import FlexSearch from 'flexsearch';
 import { ReactNode } from 'react';
 import evals from "src/data/evals.json";
 import systems from "src/data/systems.json";
-import persons from "src/data/persons.json";
+import evaluators from "src/data/evaluators.json";
 
-export interface evalPerson {
+export interface evalEvaluator {
     id: string; // twitter handle
     name: string;
     role: string;
@@ -30,7 +30,7 @@ export interface EvalItem {
     eval_parts?: evalPart[];
     content?: string; // Make content optional
     images?: string[]
-    person_id: string;
+    evaluator_id: string;
 }
 
 
@@ -52,7 +52,7 @@ interface DataContextType {
     query: string;
     setQuery: (query: string) => void;
     systems: System[];
-    persons: evalPerson[];
+    evaluators: evalEvaluator[];
 }
 
 
@@ -62,7 +62,7 @@ const defaultContextValue: DataContextType = {
     query: '',
     setQuery: () => { }, // Dummy function, will be replaced in provider
     systems: systems,
-    persons: persons,
+    evaluators: evaluators,
 };
 
 
@@ -91,10 +91,10 @@ export const DataProvider: React.FC<DataProviderProps> = ({ children }) => {
                     return (part.content);
                 });
             }
-            if (evalItem.person_id) {
-                const personDetails = persons.find(person => person.id === evalItem.person_id);
-                if (personDetails) {
-                    evalString = evalString + " " + personDetails.name + " " + personDetails.role;
+            if (evalItem.evaluator_id) {
+                const evaluatorDetails = evaluators.find(evaluator => evaluator.id === evalItem.evaluator_id);
+                if (evaluatorDetails) {
+                    evalString = evalString + " " + evaluatorDetails.name + " " + evaluatorDetails.role;
                 }
             }
             return evalString
@@ -124,7 +124,7 @@ export const DataProvider: React.FC<DataProviderProps> = ({ children }) => {
 
 
     return (
-        <DataContext.Provider value={{ data, results, query, setQuery, systems: sortedSystems, persons: persons }}>
+        <DataContext.Provider value={{ data, results, query, setQuery, systems: sortedSystems, evaluators: evaluators }}>
             {children} {/* Now TypeScript knows about children */}
         </DataContext.Provider>
     );

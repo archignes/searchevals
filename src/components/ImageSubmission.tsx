@@ -25,7 +25,7 @@ const ImageUploadField = () => {
   
   return (
     <div> {/* Use a div here for simplification */}
-      <label>Images</label>
+      <FormLabel>Images</FormLabel>
       {fields.map((field, index) => (
         <div key={field.id} className="flex items-center"> {/* Use div instead of FormControl */}
             <Input className="border" {...register(`images.${index}` as const)} />

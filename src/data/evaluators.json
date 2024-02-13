@@ -51,5 +51,14 @@
     "conflict": [
       "you-com"
     ]
-  }
+  },
+  {
+  "id": "chrisalbon",
+  "name": "Chris Albon",
+  "role": "Director of Machine Learning at the Wikimedia Foundation",
+  "URL": "https://twitter.com/chrisalbon",
+  "conflict": [
+    "wikipedia"
+  ]
+}
 ]
