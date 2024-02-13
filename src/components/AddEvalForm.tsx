@@ -1,8 +1,9 @@
 import React, { useContext, useEffect } from 'react';
-import { useForm, useFieldArray } from 'react-hook-form';
+import { useForm } from 'react-hook-form';
 import { FormProvider } from 'react-hook-form';
-import DataContext, { evalPart, System } from './DataContext';
-import ImageUploadField from './ImageSubmission'
+import DataContext from './DataContext';
+import { Textarea } from './ui/textarea';
+import ImageUploadField from './ImageSubmission';
 import {
   Card,
   CardContent,
@@ -34,7 +35,7 @@ import { Input } from "./ui/input"
 import { Checkbox } from "./ui/checkbox"
 
 export default function EvalInputForm() {
-  const { data, systems, evaluators } = useContext(DataContext); // Destructure data from DataContext
+  const { systems, evaluators } = useContext(DataContext);
 
   const evalPartSchema = z.object({
     id: z.string(),
@@ -224,10 +225,10 @@ export default function EvalInputForm() {
                     <FormItem>
                       <FormLabel>Content</FormLabel>
                       <FormControl>
-                        <Input {...field} />
+                        <Textarea {...field} className="form-textarea mt-1 block w-full" rows={5}></Textarea>
                       </FormControl>
                       <FormDescription>
-                        Raw text of the evaluation.
+                        Raw text of the evaluation. Supports multiple lines.
                       </FormDescription>
                       <FormMessage />
                     </FormItem>

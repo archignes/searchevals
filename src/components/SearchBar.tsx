@@ -1,16 +1,16 @@
 //SearchBar.tsx
 "use client"
 
-import React, { useContext, useState, useEffect } from 'react';
+import React, { useContext, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import '../styles/globals.css';
 import { Input } from "./ui/input";
 import { Button } from "./ui/button";
-import DataContext from './DataContext'; // Import DataContext
+import DataContext from './DataContext';
 
 export default function SearchBar(): JSX.Element {
   const navigate = useNavigate();
-  const { data, results, query, setQuery } = useContext(DataContext); // Destructure data from DataContext
+  const { data, results, query, setQuery } = useContext(DataContext);
   const [showResults, setShowResults] = useState(true);
 
   const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {

@@ -1,7 +1,7 @@
 // SearchEvalCard.tsx
 import React, { useContext } from 'react';
 import { useParams } from 'react-router-dom';
-import DataContext, { evalPart } from './DataContext';
+import DataContext from './DataContext';
 import { Link2Icon, InfoCircledIcon, DrawingPinIcon } from '@radix-ui/react-icons';
 import SearchOnEvalInterface from './SearchOnEvalInterface';
 import SearchBracket from './SearchBracket'
@@ -28,7 +28,7 @@ interface SearchEvalCardProps {
 const SearchEvalCard: React.FC<SearchEvalCardProps> = ({ idFromProp }) => {
   const { id: paramId } = useParams<{ id: string }>();
   const id = idFromProp || paramId;
-  const { data, systems, evaluators } = useContext(DataContext); // Destructure data from DataContext
+  const { data, systems, evaluators } = useContext(DataContext);
 
   const evalItem = data ? data.find(evalItem => evalItem.id === id) : null;
   
@@ -98,9 +98,9 @@ const SearchEvalCard: React.FC<SearchEvalCardProps> = ({ idFromProp }) => {
             )}
             </CardTitle>
           <CardDescription>
-            <a href={evalItem.url} target="_blank" className="w-7/8 truncate block">{evalItem.url}</a>
-            <p className="text-sm">systems: {systemsEvaluatedSearchLinks}</p>
-            <p className="text-sm">date: {evalItem.date}</p>
+            <a href={evalItem.url} target="_blank" rel="noopener noreferrer" className="w-7/8 truncate block">{evalItem.url}</a>
+            <span className="text-sm">systems: {systemsEvaluatedSearchLinks}</span>
+            <span className="text-sm">date: {evalItem.date}</span>
           </CardDescription>
         </CardHeader>
         <CardContent>

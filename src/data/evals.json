@@ -189,7 +189,21 @@
         "https://pbs.twimg.com/media/GGGuGmRaMAAt5Oz?format=png&name=900x900"
       ],
       "evaluator_id": "chrisalbon"
-    }
+    },
+    {
+  "id": "how-do-i-add-tailwind-to-an-existing-next.js-project-rauchg",
+  "date": "2023-04-12",
+  "query": "how do i add tailwind to an existing next.js project",
+  "url": "https://twitter.com/rauchg/status/1646271916305698816",
+  "content": "Ok, this is really impressive\\n\\nPhind, an AI / GPT search engine for developers, outputs up to date Next.js (App Router) instructions 🤯\\n\\nhttps://www.phind.com/search?cache=cd846420-2be3-48e6-8e47-0f2e2d05e66e",
+  "images": [
+    "https://pbs.twimg.com/media/Fti6z_jaQAA71Vf?format=jpg&name=medium"
+  ],
+  "evaluator_id": "rauchg",
+  "systems": [
+        "phind-search"
+      ]
+}
 ]
 
 

@@ -3,20 +3,11 @@
 import * as React from "react"
 import {
     Card,
-    CardContent,
-    CardDescription,
-    CardFooter,
-    CardHeader,
-    CardTitle,
+    CardContent
 } from './ui/card';
 import ImageDisplay from './ImageDisplay';
 import '../styles/globals.css';
-import DataContext, { evalCardItem } from './DataContext';
-import {
-    HoverCard,
-    HoverCardContent,
-    HoverCardTrigger,
-} from "./ui/hover-card"
+import { evalCardItem } from './DataContext';
 
 // Define a type for your component's props
 type EvalExtractCardProps = {

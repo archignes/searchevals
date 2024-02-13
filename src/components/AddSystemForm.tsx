@@ -1,13 +1,9 @@
 import React, { useContext, useEffect } from 'react';
-import { useForm, useFieldArray } from 'react-hook-form';
-import { FormProvider } from 'react-hook-form';
-import DataContext, { evalPart, System } from './DataContext';
-import ImageUploadField from './ImageSubmission'
+import { useForm } from 'react-hook-form';
+import DataContext from './DataContext';
 import {
   Card,
   CardContent,
-  CardDescription,
-  CardFooter,
   CardHeader,
   CardTitle,
 } from './ui/card';
@@ -29,7 +25,7 @@ import { Checkbox } from "./ui/checkbox"
 
 
 export default function SystemInputForm() {
-  const { data, systems, evaluators } = useContext(DataContext); // Destructure data from DataContext
+  const { systems } = useContext(DataContext);
 
   const evalSystemSchema = z.object({
     id: z.string().refine((id) => !systems.some(system => system.id === id), {
@@ -58,9 +54,9 @@ export default function SystemInputForm() {
 
 
   useEffect(() => {
-    const baseSystemSelected = !!form.watch("base_url_for")?.length; // Convert to boolean directly
-    form.setValue("nondistinct_url", baseSystemSelected);
-  }, [form.watch("base_url_for")]);
+    const baseSystemSelected = !!watch("base_url_for")?.length; // Convert to boolean directly
+    setValue("nondistinct_url", baseSystemSelected);
+  }, [watch, setValue]);
 
 
   function onSubmit(values: z.infer<typeof evalSystemSchema>) {

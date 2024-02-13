@@ -26,7 +26,7 @@ export interface EvalItem {
     query: string;
     url: string;
     context?: string;
-    systems?: string[];
+    systems: string[];
     eval_parts?: evalPart[];
     content?: string; // Make content optional
     images?: string[]
@@ -105,7 +105,7 @@ export const DataProvider: React.FC<DataProviderProps> = ({ children }) => {
             
         });
         setData(data);
-    }, []);
+    }, [data]);
 
     useEffect(() => {
         if (query) {
@@ -116,7 +116,7 @@ export const DataProvider: React.FC<DataProviderProps> = ({ children }) => {
         } else {
             setResults([]);
         }
-    }, [query, index]);
+    }, [query, data]);
 
 
     // Assuming systems is an array of objects where each object has a 'name' property

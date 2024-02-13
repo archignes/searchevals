@@ -1,19 +1,16 @@
 // App.tsx
 import React, { useContext } from 'react';
-import { Route, Routes, useSearchParams, useNavigate } from 'react-router-dom';
+import { Route, Routes } from 'react-router-dom';
 import SearchBar from './components/SearchBar';
 import SearchResultsPage from './components/SearchResultsPage';
 import SearchEvalCard from './components/SearchEvalCard';
 import Footer from './components/Footer';
-import DataContext from './components/DataContext'; // Import DataContext
+import DataContext from './components/DataContext';
 import Marquee from './components/Marquee';
 import {NewInputForm} from './components/DataInput'
 
 const App: React.FC = () => {
-  const [searchParams] = useSearchParams();
-  const navigate = useNavigate();
-  const { data, systems } = useContext(DataContext); // Destructure data from DataContext
-  const query = searchParams.get('q');
+  const { data } = useContext(DataContext);
 
   return (
     <div className="App">

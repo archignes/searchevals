@@ -1,13 +1,9 @@
 import React, { useContext, useEffect } from 'react';
-import { useForm, useFieldArray } from 'react-hook-form';
-import { FormProvider } from 'react-hook-form';
-import DataContext, { evalPart, System } from './DataContext';
-import ImageUploadField from './ImageSubmission'
+import { useForm } from 'react-hook-form';
+import DataContext from './DataContext';
 import {
   Card,
   CardContent,
-  CardDescription,
-  CardFooter,
   CardHeader,
   CardTitle,
 } from './ui/card';
@@ -27,11 +23,8 @@ import {
 import { Input } from "./ui/input"
 import { Checkbox } from "./ui/checkbox"
 
-
-
-
 export default function EvaluatorInputForm() {
-  const { data, systems, evaluators } = useContext(DataContext); // Destructure data from DataContext
+  const { systems, evaluators } = useContext(DataContext);
 
   const evaluatorSchema = z.object({
     id: z.string().refine((id) => !evaluators.some(system => system.id === id), {
@@ -62,7 +55,7 @@ export default function EvaluatorInputForm() {
       }
     }
     if (evaluatorIdentifier) {
-      form.setValue("id", evaluatorIdentifier);
+      setValue("id", evaluatorIdentifier);
     }
     trigger("id")
   }, [evaluatorUrl, setValue, trigger]);

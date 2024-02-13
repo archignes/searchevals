@@ -60,5 +60,11 @@
   "conflict": [
     "wikipedia"
   ]
-}
+  },
+  {
+    "id": "rauchg",
+    "name": "Guillermo Rauch",
+    "role": "CEO at Vercel",
+    "URL": "https://twitter.com/rauchg"
+  }
 ]
