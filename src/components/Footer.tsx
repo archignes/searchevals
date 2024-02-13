@@ -3,7 +3,7 @@ import { Button } from "./ui/button";
 import { Input } from "./ui/input";
 import '../styles/globals.css';
 import logo from '../logo.png'; // Add this line at the top of your file
-
+// 2024-02-13T21:49:59.253Z
 const lastUpdated = "2024-02-13T21:49:59.253Z";
 
 const Footer: React.FC = () => {
