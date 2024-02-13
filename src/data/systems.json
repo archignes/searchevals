@@ -94,7 +94,7 @@
   {
     "name": "SciPhi",
     "id": "sciphi",
-    "search_link": "https://search.sciphi.ai/search?q=test"
+    "search_link": "https://search.sciphi.ai/search?q=%s"
   },
     {
     "name": "Cohere Coral",
@@ -116,7 +116,7 @@
     {
     "name": "Lepton Search",
     "id": "lepton-search",
-    "search_link": "https://search.lepton.run/"
+    "search_link": "https://search.lepton.run/search?q=%s"
   }
 
 ]
