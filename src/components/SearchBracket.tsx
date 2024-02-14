@@ -2,7 +2,7 @@
 "use client"
 
 import React from 'react';
-import '../styles/globals.css';
+
 
 type SearchBracketProps = {
   children: React.ReactNode;

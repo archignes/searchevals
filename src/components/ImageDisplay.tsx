@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useRouter } from 'next/router';
 
 type ImageDisplayProps = {
     images: string[];
@@ -11,14 +12,16 @@ const ImageDisplay: React.FC<ImageDisplayProps> = ({ images }) => {
         setSelectedImage(imageUrl);
     };
 
+    const { pathname } = useRouter();
+
     return (
-        <div className={`grid ${window.location.pathname === "/" || images.length > 1 ? 'grid-cols-1' : 'grid-cols-1'} gap-4 justify-items-center`}>
+        <div className={`grid ${pathname === "/" || images.length > 1 ? 'grid-cols-1' : 'grid-cols-1'} gap-4 justify-items-center`}>
             {images.map((image, index) => (
                 <img
                     key={index}
                     src={image}
                     alt=""
-                    className={`${window.location.pathname !== "/" && images.length === 1 ? 'w-full md:w-3/4' : 'w-full'} h-auto cursor-pointer border shadow`}
+                    className={`${pathname !== "/" && images.length === 1 ? 'w-full md:w-3/4' : 'w-full'} h-auto cursor-pointer border shadow`}
                     onClick={() => handleImageClick(image)}
                 />
             ))}

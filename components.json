@@ -1,15 +1,15 @@
 {
-  "style": "default",
+  "style": "new-york",
+  "rsc": false,
+  "tsx": true,
   "tailwind": {
     "config": "tailwind.config.js",
     "css": "src/app/globals.css",
-    "baseColor": "zinc",
+    "baseColor": "slate",
     "cssVariables": true
   },
-  "rsc": false,
-  "tsx": true,
   "aliases": {
-    "utils": "~/lib/utils",
-    "components": "~/components"
+    "components": "~/components",
+    "utils": "~/lib/utils"
   }
 }

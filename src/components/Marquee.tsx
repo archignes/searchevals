@@ -1,5 +1,4 @@
 import React, { useContext, useRef, useState } from 'react';
-import '../styles/globals.css';
 import DataContext from './DataContext';
 import SearchEvalCard from './SearchEvalCard';
 
@@ -46,7 +45,7 @@ const Marquee: React.FC = () => {
       <div className="py-12 flex animate-marquee whitespace-nowrap hover:pause-animation">
         {data.map((evalItem, index) => (
           <div key={index} className="whitespace-normal">
-            <SearchEvalCard idFromProp={evalItem.id} />
+            <SearchEvalCard id={evalItem.id} />
           </div>
         ))}
       </div>

@@ -1,9 +1,10 @@
+"use client"
+
 import React, { useContext, useState, useEffect } from 'react'; 
 import { isMobile } from 'react-device-detect';
-import { ExclamationTriangleIcon, PersonIcon, MobileIcon, ComponentNoneIcon } from "@radix-ui/react-icons"
+import { ExclamationTriangleIcon, PersonIcon, MobileIcon } from "@radix-ui/react-icons"
 import { ScrollArea } from "./ui/scroll-area"
 import { zodResolver } from "@hookform/resolvers/zod"
-import SearchBracket from "./SearchBracket"
 import { useForm } from "react-hook-form"
 import { z } from "zod"
 import {
@@ -30,7 +31,7 @@ import {
   CardTitle,
 } from './ui/card';
 
-import '../styles/globals.css';
+
 import DataContext, { EvalItem } from './DataContext'; 
 import {
   Popover,
@@ -54,12 +55,8 @@ function openLink(url: URL) {
 const SearchOnEvalInterface: React.FC<SearchOnEvalInterfaceProps> = ({ evalItem }) => {
   const { systems } = useContext(DataContext);
 
-
-  
-
   const encodedQuery = encodeURIComponent(evalItem.query).replace(/%20/g, '+');
 
-  
   const FormSchema = z.object({
     systems: z.array(z.string()).refine((value) => value.some((item) => item), {
       message: "You have to select at least one item.",
@@ -115,7 +112,7 @@ const SearchOnEvalInterface: React.FC<SearchOnEvalInterfaceProps> = ({ evalItem 
   return (
       <div className="float-right">
       <Popover>
-        <PopoverTrigger>
+        <PopoverTrigger asChild={true}>
           <Button className="btn btn-outline-secondary" aria-label="Search on the eval">
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-search" viewBox="0 0 16 16">
               <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />
@@ -132,20 +129,20 @@ const SearchOnEvalInterface: React.FC<SearchOnEvalInterfaceProps> = ({ evalItem 
                 <span className="font-bold">(b)</span> select
                   multiple systems and click the Search button at the bottom 
                   (you may have to click to change settings in your browser to allow popups)
-              <ul className="mt-2 border-l-2 pl-1">
-                <li className="text-xs grid grid-cols-10"><span className="font-bold">bold</span><span className="col-span-8 ml-2">This system is a subject of the eval</span></li>
-                <li className="text-xs grid grid-cols-10">
-                  <ExclamationTriangleIcon className="h-3 w-3 ml-2 inline-block align-start" /><span className="col-span-8 ml-2">does not support <a target="_blank" className="underline" href="https://developer.mozilla.org/en-US/docs/Web/API/URL/search">URL-search</a> so you will have to copy and paste the query manually.</span>
-                  </li>
-                <li className="text-xs grid grid-cols-10">
+              
+                <span className="text-xs grid grid-cols-10"><span className="font-bold">bold</span><span className="col-span-8 ml-2">This system is a subject of the eval</span></span>
+                <span className="text-xs grid grid-cols-10">
+                <ExclamationTriangleIcon className="h-3 w-3 ml-2 inline-block align-start" /><span className="col-span-8 ml-2">does not support <a target="_blank" rel="noreferrer" className="underline" href="https://developer.mozilla.org/en-US/docs/Web/API/URL/search">URL-search</a> so you will have to copy and paste the query manually.</span>
+                  </span>
+                <span className="text-xs grid grid-cols-10">
                   <PersonIcon className="h-3 w-3 ml-2 inline-block align-start" /><span className="col-span-8 ml-2">requires an account</span>
-                </li>
+                </span>
                 {isMobile && (
-                  <li className="text-xs grid grid-cols-10">                  
+                  <span className="text-xs grid grid-cols-10">                  
                     <MobileIcon className="h-3 w-3 ml-2 inline-block align-start" /><span className="col-span-8 ml-2">The mobile app is prioritized to open the link and has a bug. You can long press (iOS) and choose to open directly in your browser</span>
-                  </li>
+                  </span>
                 )}
-                </ul>
+              
               </CardDescription>
             </CardHeader>
             <CardContent>
@@ -212,7 +209,7 @@ const SearchOnEvalInterface: React.FC<SearchOnEvalInterfaceProps> = ({ evalItem 
                                       <Tooltip>
                                         <TooltipTrigger><ExclamationTriangleIcon className="h-3 w-3 ml-1 inline-block align-middle" /></TooltipTrigger>
                                         <TooltipContent>
-                                          <p>This system does not support searching via <a target="_blank" className="underline" href="https://developer.mozilla.org/en-US/docs/Web/API/URL/search">URL search property</a>.</p>
+                                            <p>This system does not support searching via <a target="_blank" rel="noopener noreferrer" className="underline" href="https://developer.mozilla.org/en-US/docs/Web/API/URL/search">URL search property</a>.</p>
                                         </TooltipContent>
                                       </Tooltip>
                                     </TooltipProvider>

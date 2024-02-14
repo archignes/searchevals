@@ -1,4 +1,5 @@
 // DataContext.tsx
+"use client"
 import React, { createContext, useState, useEffect } from 'react';
 import FlexSearch from 'flexsearch';
 import { ReactNode } from 'react';

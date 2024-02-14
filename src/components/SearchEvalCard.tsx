@@ -1,12 +1,13 @@
 // SearchEvalCard.tsx
-import React, { useContext, useEffect } from 'react';
-import { useParams } from 'react-router-dom';
-import DataContext from './DataContext';
+import React, { useContext } from 'react';
+import { useRouter } from 'next/router';
+
 import { Link2Icon, InfoCircledIcon, DrawingPinIcon } from '@radix-ui/react-icons';
-import HelmetComponent from './HelmetComponent';
+
+import DataContext from './DataContext';
 import SearchOnEvalInterface from './SearchOnEvalInterface';
 import SearchBracket from './SearchBracket'
-import '../styles/globals.css';
+
 import {
   Card,
   CardContent,
@@ -23,13 +24,15 @@ import {
 } from "./ui/tooltip"
   
 interface SearchEvalCardProps {
-  idFromProp?: string;
+  id: string;
 }
 
-const SearchEvalCard: React.FC<SearchEvalCardProps> = ({ idFromProp }) => {
-  const { id: paramId } = useParams<{ id: string }>();
-  const id = idFromProp || paramId;
+const SearchEvalCard: React.FC<SearchEvalCardProps> = ({ id }) => {
   const { data, systems, evaluators } = useContext(DataContext);
+  
+  const router = useRouter();
+  const { pathname } = router;
+  const marqueeOrigin: boolean = (pathname === "/")
 
   const evalItem = data ? data.find(evalItem => evalItem.id === id) : null;
   
@@ -81,16 +84,13 @@ const SearchEvalCard: React.FC<SearchEvalCardProps> = ({ idFromProp }) => {
   } else {
     systemsEvaluatedSearchLinks = "";
   }
-
-  const marqueeOrigin:boolean = (window.location.pathname === "/")
-
+  
   let cardTitle = <div><SearchBracket><span className="text-xl">{evalItem.query}</span></SearchBracket></div>
 
 
 
   return (
     <>
-    <HelmetComponent evalItem={evalItem} />
     <div id="search-eval-card-div" className={`w-11/12 ${marqueeOrigin ? 'md:w-11/12' : 'md:w-2/3'} mx-auto mt-4`}>
       <Card>
         <CardHeader className="pb-2">

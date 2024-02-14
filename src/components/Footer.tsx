@@ -1,26 +1,24 @@
 import { GitHubLogoIcon, TwitterLogoIcon, LinkedInLogoIcon } from '@radix-ui/react-icons';
 import { Button } from "./ui/button";
 import { Input } from "./ui/input";
-import '../styles/globals.css';
-import logo from '../logo.png'; // Add this line at the top of your file
 
-const lastUpdated = "2024-02-14T18:53:31.774Z";
+const lastUpdated = "2024-02-14T19:16:01.375Z";
 
 const Footer: React.FC = () => {
   return (
     <footer className="p-4 mt-5 w-full border-t">
-      <div className="flex justify-center items-center space-x-4"><a href="https://github.com/danielsgriffin/searchevals" target="_blank">
+      <div className="flex justify-center items-center space-x-4"><a href="https://github.com/danielsgriffin/searchevals" target="_blank" rel="noopener noreferrer">
         <GitHubLogoIcon className="text-gray-600 hover:text-gray-900" />
       </a>
-      <a href="https://twitter.com/danielsgriffin" target="_blank">
+        <a href="https://twitter.com/danielsgriffin" target="_blank" rel="noopener noreferrer">
         <TwitterLogoIcon className="text-blue-400 hover:text-blue-600" />
       </a>
-      <a href="https://www.linkedin.com/in/danielsgriffin/" target="_blank">
+        <a href="https://www.linkedin.com/in/danielsgriffin/" target="_blank" rel="noopener noreferrer">
         <LinkedInLogoIcon className="text-blue-600 hover:text-blue-800" />
       </a>
       </div>
       <div className="flex justify-center mb-4">
-        <img src={logo} alt="Logo" className="h-12" />
+        <img src="/logo.png" alt="Logo" className="h-12" />
         <p className="text-center px-2 overflow-hidden break-words">Made with considered curiosity<br></br>by <a className="underline" href="https://danielsgriffin.com">Daniel Griffin, Ph.D.</a></p>
         <div className="w-12"></div>
       </div>
@@ -41,7 +39,7 @@ const Footer: React.FC = () => {
           <Button type="submit" value="Subscribe">Subscribe</Button>
         </div>
         <p className="text-xs">
-          <a href="https://buttondown.email/refer/danielsgriffin" target="_blank">Powered by Buttondown.</a>
+            <a href="https://buttondown.email/refer/danielsgriffin" target="_blank" rel="noopener noreferrer">Powered by Buttondown.</a>
         </p>
       </form>
       </div>

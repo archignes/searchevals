@@ -6,7 +6,7 @@ import {
     CardContent
 } from './ui/card';
 import ImageDisplay from './ImageDisplay';
-import '../styles/globals.css';
+
 import { evalCardItem } from './DataContext';
 
 // Define a type for your component's props

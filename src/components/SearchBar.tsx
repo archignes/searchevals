@@ -2,25 +2,35 @@
 "use client"
 
 import React, { useContext, useState } from 'react';
-import { useNavigate } from 'react-router-dom';
-import '../styles/globals.css';
+import { useRouter } from 'next/router';
+import DataContext from "./DataContext";
 import { Input } from "./ui/input";
 import { Button } from "./ui/button";
-import DataContext from './DataContext';
 
 export default function SearchBar(): JSX.Element {
-  const navigate = useNavigate();
   const { data, results, query, setQuery } = useContext(DataContext);
   const [showResults, setShowResults] = useState(true);
 
+  // const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+  //   setQuery(event.target.value);
+  //   setShowResults(true);
+  // };
+
+  const router = useRouter();
+
+  const [localQuery, setLocalQuery] = useState('');
+
   const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    setQuery(event.target.value);
-    setShowResults(true);
+    setLocalQuery(event.target.value); // Temporarily use local state
+    setQuery(event.target.value); // Temporarily use local state
+    console.log(localQuery)
+    // setQuery(event.target.value); // Comment this out temporarily
   };
+
 
   const handleSubmit = (event: React.FormEvent) => {
     event.preventDefault();
-    navigate(`/search?q=${query}`);
+    router.push(`/search?q=${query}`);
   };
 
 
@@ -30,11 +40,15 @@ export default function SearchBar(): JSX.Element {
 
 
   const goToRandomCard = () => {
-    const currentCardId = window.location.pathname.split('/').pop();
-    const filteredCardIds = data.map(card => card.id).filter(id => id !== currentCardId);
+    let currentCardId: string | undefined;
+    let filteredCardIds: string[] = [];
+    if (typeof window !== "undefined") {
+      currentCardId = window.location.pathname.split('/').pop();
+      filteredCardIds = data.map((card: { id: string }) => card.id).filter((id: string) => id !== currentCardId);
+    }
     const randomIndex = Math.floor(Math.random() * filteredCardIds.length);
     const randomId = filteredCardIds[randomIndex];
-    navigate(`/card/${randomId}`);
+    router.push(`/card/${randomId}`);
   };
 
   
@@ -50,7 +64,7 @@ export default function SearchBar(): JSX.Element {
           <Input type="text" className="form-input search-box w-full" id="search-bar"
             placeholder="Search..."
             name="q"
-            value={query}
+            value={localQuery}
             onChange={handleInputChange} />
           <Button className="btn btn-outline-secondary" type="submit" aria-label="Submit Search">
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-search" viewBox="0 0 16 16">
@@ -59,8 +73,8 @@ export default function SearchBar(): JSX.Element {
           </Button>
         </form>
         <Button onClick={goToRandomCard} className="btn mx-auto btn-outline-secondary m-1 w-full md:w-auto">
-          {window.location.pathname.includes('/card/') ? 'Go to a different random Eval' : 'Go to a random Eval'}
-        </Button>
+          {useRouter().pathname.includes('/card/') ? 'Go to a different random Eval' : 'Go to a random Eval'}
+          </Button>
       </div>
     </div><div className="mt-0 w-full md:w-1/3 ml-0 md:ml-[calc(50%-20rem)] absolute md:mt-0 mt-[-2.6rem]">
     {query && showResults && results.length > 0 && query !== new URLSearchParams(window.location.search).get('q') && (
