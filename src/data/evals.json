@@ -34,8 +34,9 @@
         "date": "2023-12-23",
         "query": "how much should i pay for home insurance in moss beach ca", 
         "url": "https://twitter.com/vivek7ue/status/1738729244560388590", 
-        "context": "With all the amazing improvements in LLMs for search, there's still so much work to do. \\nQuery: [how much should i pay for home insurance in moss beach ca]\\nContext: I am trying to find it if I am getting stiffed.\\nTo find out how the various search engines did, see 🧵",
+        "context": "With all the amazing improvements in LLMs for search, there's still so much work to do.\\n\\nQuery: [how much should i pay for home insurance in moss beach ca]\\n\\nContext: I am trying to find it if I am getting stiffed.\\n\\nTo find out how the various search engines did, see 🧵",
         "evaluator_id": "vivek7ue",
+        "key_phrases": ["meta-answer"],
         "eval_parts":
             [
                 {
@@ -54,7 +55,7 @@
                 },
                                 {
                     "id": "3",
-                    "content": "Here's http://you.com with a meta-answer. The LLM-search engine equivalent of content farm search results ...",
+                    "content": "Here's you.com with a meta-answer. The LLM-search engine equivalent of content farm search results ...",
                     "images": [
                         "https://pbs.twimg.com/media/GCEzIkmaMAAgOeo?format=jpg&name=medium"
                     ]
@@ -139,7 +140,7 @@
                 },
                                 {
                     "id": "2",
-                    "content": "http://you.com -- meta-answer -- sounds plausible, but not the real reason",
+                    "content": "you.com -- meta-answer -- sounds plausible, but not the real reason",
                     "images": [
                         "https://pbs.twimg.com/media/GCS5J9TaYAAd8HR?format=jpg&name=medium"
                     ]

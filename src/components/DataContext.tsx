@@ -25,6 +25,7 @@ export interface EvalItem {
     date: string;
     query: string;
     url: string;
+    key_phrases?: string[];
     context?: string;
     systems: string[];
     eval_parts?: evalPart[];

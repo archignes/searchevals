@@ -104,8 +104,17 @@ const SearchEvalCard: React.FC<SearchEvalCardProps> = ({ idFromProp }) => {
             </CardTitle>
           <CardDescription>
             <a href={evalItem.url} target="_blank" rel="noopener noreferrer" className="w-7/8 truncate block">{evalItem.url}</a>
-            <span className="text-sm">systems: {systemsEvaluatedSearchLinks}</span>
-            <span className="text-sm">date: {evalItem.date}</span>
+              <span className="text-sm">date: {evalItem.date}</span><br></br>
+              <span className="text-sm">systems: {systemsEvaluatedSearchLinks}</span>
+              <span className="text-sm">date: {evalItem.date}</span>
+                {evalItem.key_phrases && (
+                  <>
+                    <br></br>
+                      <span className="text-sm">
+                        key phrases: {evalItem.key_phrases.map(phrase => `“${phrase}”`).join(', ')}
+                      </span>
+                    </>
+                )}
           </CardDescription>
         </CardHeader>
         <CardContent>
@@ -122,7 +131,7 @@ const SearchEvalCard: React.FC<SearchEvalCardProps> = ({ idFromProp }) => {
                         <Tooltip>
                           <TooltipTrigger><span className="inline-flex"><DrawingPinIcon /></span></TooltipTrigger>
                           <TooltipContent>
-                            <p>This evaluator person has a potential conflict-of-interest due to their relationship with the entities pinned to the right.</p>
+                            <p>This evaluator has a potential conflict-of-interest due to their relationship with the entities pinned to the right.</p>
                           </TooltipContent>
                         </Tooltip>
                       </TooltipProvider>
@@ -145,6 +154,9 @@ const SearchEvalCard: React.FC<SearchEvalCardProps> = ({ idFromProp }) => {
                   </cite>
                 </div>
                 </figcaption>)}
+            {evalItem.context && (
+              <EvalExtractCard evalCardItem={{id: "context", content: evalItem.context}} />
+            )}
           {evalItem.eval_parts ? (
             evalItem.eval_parts.map((part, index) => (
               <EvalExtractCard key={index} evalCardItem={part}/>

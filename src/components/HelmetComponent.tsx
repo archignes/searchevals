@@ -16,9 +16,10 @@ const HelmetComponent: React.FC<MetaProps> = ({ evalItem }: MetaProps) => {
     const evaluator = evaluators.find(evaluator => evaluator.id === evaluatorId);
     return evaluator ? evaluator.name : 'Unknown Evaluator';
   };
-  const description = `Search evaluation of ${evalItem.systems} from ${getEvaluatorName(evalItem.evaluator_id)} for query: ${evalItem.query}`
-  const url = `${process.env.PUBLIC_URL}/card/${evalItem.id}`
-  const image = `${process.env.PUBLIC_URL}/screenshots/card-${evalItem.id}_crop.png` 
+  const systems_readable = evalItem.systems.length === 2 ? evalItem.systems.join(' and ') : evalItem.systems.length > 2 ? evalItem.systems.slice(0, -1).join(', ') + ', and ' + evalItem.systems.slice(-1) : evalItem.systems[0];
+  const description = `Search evaluation of ${systems_readable} from ${getEvaluatorName(evalItem.evaluator_id)} for query: ${evalItem.query}`
+  const url = `https://${window.location.hostname}${process.env.PUBLIC_URL}/card/${evalItem.id}`;
+  const image = `https://${window.location.hostname}${process.env.PUBLIC_URL}/screenshots/card-${evalItem.id}_crop.png`;
 
   return (    
     <>
