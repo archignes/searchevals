@@ -122,22 +122,27 @@ const SearchOnEvalInterface: React.FC<SearchOnEvalInterfaceProps> = ({ evalItem 
             </svg>
           </Button>
         </PopoverTrigger>
-        <PopoverContent className="mr-2 w-[350px] md:w-4/5 rounded-md">
+        <PopoverContent className="mr-2 w-[350px] md:w-[600px] md:mx-auto rounded-md">
             <CardHeader>
               <CardTitle>SearchOnEval</CardTitle>
-              <CardDescription>
-              <span className="font-bold">(a)</span> Click individual search system links to search the eval query—<SearchBracket className="inline-block text-sm">{evalItem.query}</SearchBracket>—or <span className="font-bold">(b)</span> select multiple systems and click the search button (you may have to click to allow popups).
+            <CardDescription>Here you can search on the original eval query.<br></br>
+                  <span className="font-bold">(a)</span> Click the individual search system
+                  links below to search the eval query
+                <br></br><span className="ml-10">or</span><br></br>
+                <span className="font-bold">(b)</span> select
+                  multiple systems and click the Search button at the bottom 
+                  (you may have to click to change settings in your browser to allow popups)
               <ul className="mt-2 border-l-2 pl-1">
-                <li className="text-xs grid grid-cols-10"><span className="font-bold">bold</span><span className="col-span-8 ml-2">in the eval</span></li>
+                <li className="text-xs grid grid-cols-10"><span className="font-bold">bold</span><span className="col-span-8 ml-2">This system is a subject of the eval</span></li>
                 <li className="text-xs grid grid-cols-10">
-                  <ExclamationTriangleIcon className="h-3 w-3 ml-2 inline-block align-start" /><span className="col-span-8 ml-2">does not support <a target="_blank" className="underline" href="https://developer.mozilla.org/en-US/docs/Web/API/URL/search">URL-search</a></span>
+                  <ExclamationTriangleIcon className="h-3 w-3 ml-2 inline-block align-start" /><span className="col-span-8 ml-2">does not support <a target="_blank" className="underline" href="https://developer.mozilla.org/en-US/docs/Web/API/URL/search">URL-search</a> so you will have to copy and paste the query manually.</span>
                   </li>
                 <li className="text-xs grid grid-cols-10">
                   <PersonIcon className="h-3 w-3 ml-2 inline-block align-start" /><span className="col-span-8 ml-2">requires an account</span>
                 </li>
                 {isMobile && (
                   <li className="text-xs grid grid-cols-10">                  
-                    <MobileIcon className="h-3 w-3 ml-2 inline-block align-start" /><span className="col-span-8 ml-2">mobile app breaks links, long press (iOS) to open in browser</span>
+                    <MobileIcon className="h-3 w-3 ml-2 inline-block align-start" /><span className="col-span-8 ml-2">The mobile app is prioritized to open the link and has a bug. You can long press (iOS) and choose to open directly in your browser</span>
                   </li>
                 )}
                 </ul>
