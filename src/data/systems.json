@@ -34,7 +34,14 @@
   {
     "name": "ChatGPT - 3.5",
     "id": "chatgpt-3-5",
+    "account_required": true,
     "search_link": "https://chat.openai.com/?model=text-davinci-002-render-sha"
+  },
+  {
+    "name": "ChatGPT - 4",
+    "id": "chatgpt-4",
+    "account_required": true,
+    "search_link": "https://chat.openai.com/?model=gpt-4"
   },
   {
     "name": "Bing",
@@ -65,6 +72,7 @@
     "name": "Perplexity AI - Copilot",
     "id": "perplexity-ai-copilot",
     "search_link": "https://www.perplexity.ai/search?q=%s&copilot=true",
+    "account_required": true,
     "mobile_app_breaks_links_warning": true
   },
   {
@@ -76,6 +84,7 @@
     "name": "YouChat",
     "id": "youchat",
     "base_url_for": ["YouChat - Research mode"],
+    "account_required": true,
     "search_link": "https://you.com/search?q=%s&tbm=youchat&cfr=chat"
   },
     {
@@ -86,6 +95,7 @@
   {
     "name": "Kagi",
     "id": "kagi",
+    "account_required": true,
     "search_link": "https://kagi.com/search?q=%s"
   },
   {
