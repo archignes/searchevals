@@ -1,5 +1,5 @@
 // SearchEvalCard.tsx
-import React, { useContext } from 'react';
+import React, { useContext, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import DataContext from './DataContext';
 import { Link2Icon, InfoCircledIcon, DrawingPinIcon } from '@radix-ui/react-icons';
@@ -34,6 +34,10 @@ const SearchEvalCard: React.FC<SearchEvalCardProps> = ({ idFromProp }) => {
   
   const evalEvaluatorDetails = evaluators.find(evaluator => evaluator.id === evalItem?.evaluator_id);
   
+  useEffect(() => {
+    document.title = `Searchevals [${evalItem!.query}]`.slice(0, 60);
+  }, []);
+
 
   if (!evalItem) {
     return <div>No data found for this ID</div>; // Return a valid JSX element
@@ -85,8 +89,10 @@ const SearchEvalCard: React.FC<SearchEvalCardProps> = ({ idFromProp }) => {
 
   let cardTitle = <div><SearchBracket><span className="text-xl">{evalItem.query}</span></SearchBracket></div>
 
+
+
   return (
-    <div className={`w-11/12 ${marqueeOrigin ? 'md:w-11/12' : 'md:w-2/3'} mx-auto mt-4`}>
+    <div id="search-eval-card-div" className={`w-11/12 ${marqueeOrigin ? 'md:w-11/12' : 'md:w-2/3'} mx-auto mt-4`}>
       <Card>
         <CardHeader className="pb-2">
           <CardTitle>

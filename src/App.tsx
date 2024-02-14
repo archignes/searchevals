@@ -12,6 +12,10 @@ import {NewInputForm} from './components/DataInput'
 const App: React.FC = () => {
   const { data } = useContext(DataContext);
 
+  
+  
+  
+
   return (
     <div className="App">
       <a href="/" className="text-4xl font-bold text-center mb-3 mt-2 block">Search<span className="text-gray-500">evals</span></a>

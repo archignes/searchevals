@@ -10,9 +10,13 @@ This website is currently a speculative and exploratory prototype and probe. Ple
 
 # Changelog
 
+- 2024-02-13 15:40:01 `npm run build` now takes screenshots of the pages.
 - 2024-02-12 11:08:44 Working on building out the input validation
     - issue: [implement an input helper to validate new evals #1
 ](https://github.com/danielsgriffin/searchevals/issues/1)
+
+
+
 
 # Getting Started with Create React App
 
