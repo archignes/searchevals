@@ -23,7 +23,6 @@ const App: React.FC = () => {
           <p>Search from over <span className='font-bold'>{data.length - 1}</span> public evals!</p>
       </div>
       <SearchBar />
-
       <Routes>
         <Route path="/" element={<Marquee />} />
         <Route path="/card/:id" element={<SearchEvalCard />} />
