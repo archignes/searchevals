@@ -126,6 +126,21 @@ export const DataProvider: React.FC<DataProviderProps> = ({ children }) => {
     const sortedSystems = systems.sort((a, b) => a.name.localeCompare(b.name));
 
 
+    useEffect(() => {
+        const invalidSystems = data.flatMap(evalItem => 
+            evalItem.systems.filter(systemId => 
+                !systems.some(system => system.id === systemId)
+            ).map(invalidId => ({ evalItemId: evalItem.id, invalidSystemId: invalidId }))
+        );
+
+        if (invalidSystems.length > 0) {
+            throw new Error(`Validation failed: Some systems in the data do not match the available systems. Invalid systems found in evalItems: ${invalidSystems.map(is => `EvalItem ID: ${is.evalItemId}, Invalid System ID: ${is.invalidSystemId}`).join(', ')}`);
+        }
+
+        setData(data); // No changes needed if validation passes
+    }, [data, systems]);
+
+
     return (
         <DataContext.Provider value={{ data, results, query, setQuery, systems: sortedSystems, evaluators: evaluators }}>
             {children} {/* Now TypeScript knows about children */}

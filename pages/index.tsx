@@ -1,6 +1,7 @@
 import React from 'react'; 
 import { GetStaticProps } from 'next';
 import Head from 'next/head'; 
+import Script from 'next/script'
 import Header from '../src/components/Header';
 import SearchBar from '../src/components/SearchBar';
 import Marquee from '../src/components/Marquee';
@@ -42,8 +43,8 @@ const HomePage = () => {
         <meta name="twitter:title" content={title} />
         <meta name="twitter:description" content={description} />
         <meta name="twitter:image" content={image} />
-        <script defer data-domain="searchevals.com" src="https://plausible.io/js/script.js"></script>
       </Head>
+      <Script defer data-domain="searchevals.com" src="https://plausible.io/js/script.js" />
       <Header />
       <SearchBar />
       <Marquee />

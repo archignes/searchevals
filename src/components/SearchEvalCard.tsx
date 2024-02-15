@@ -69,7 +69,7 @@ const SearchEvalCard: React.FC<SearchEvalCardProps> = ({ id }) => {
   if (systems && systems.length > 0 && evalItem.systems) {
     const encodedQuery = encodeURIComponent(evalItem.query);
     systemsEvaluatedSearchLinks = systems
-      .filter(system => evalItem.systems!.includes(system.name)) // Filter systems based on evalItem.systems
+      .filter(system => evalItem.systems!.includes(system.id)) // Filter systems based on evalItem.systems
       .map((system, index, filteredSystems) => { // Use filteredSystems for accurate indexing
         const systemLink = system.search_link; // Directly access the searchLink property of the system object
         return (
