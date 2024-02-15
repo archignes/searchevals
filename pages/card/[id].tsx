@@ -29,10 +29,9 @@ const CardPage = () => {
   const systems_readable = evalItem.systems.length === 2 ? evalItem.systems.join(' and ') : evalItem.systems.length > 2 ? evalItem.systems.slice(0, -1).join(', ') + ', and ' + evalItem.systems.slice(-1) : evalItem.systems[0];
   const description = `Search evaluation of ${systems_readable} from ${getEvaluatorName(evalItem.evaluator_id)} for query: ${evalItem.query}`
   const { asPath } = router;
-  const hostname = typeof window !== 'undefined' ? window.location.hostname : '';
-  const url = `https://${hostname}${process.env.PUBLIC_URL}${asPath}`;
-  const image = `https://${hostname}${process.env.PUBLIC_URL}/screenshots/card-${evalItem.id}_crop.png`;
-
+  const domain = process.env.NEXT_PUBLIC_DOMAIN;
+  const url = `${domain}${asPath}`;
+  const image = `https://${domain}/screenshots/card-${evalItem.id}_crop.png`;
 
 
   return (
