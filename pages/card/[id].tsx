@@ -62,8 +62,9 @@ const CardPage = ({ evalItem, evaluators }: { evalItem: EvalItem; evaluators: ev
   return (
     <>
       <Head>
-        {/* <!-- HTML Meta Tags --> */}
         <title>{title}</title>
+
+        {/* <!-- HTML Meta Tags --> */}
         <meta name="description" content={description} />
 
         {/* <!-- Facebook Meta Tags --> */}
@@ -80,6 +81,9 @@ const CardPage = ({ evalItem, evaluators }: { evalItem: EvalItem; evaluators: ev
         <meta name="twitter:title" content={title} />
         <meta name="twitter:description" content={description} />
         <meta name="twitter:image" content={image} />
+
+        <script defer data-domain="searchevals.com" src="https://plausible.io/js/script.js"></script>
+
       </Head>
       <Header/>
       <SearchBar />
