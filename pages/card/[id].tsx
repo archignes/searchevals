@@ -1,25 +1,50 @@
 // card/[id].tsx
 import React, { useContext } from 'react';
-import { useRouter } from 'next/router';
-import DataContext from '@/src/components/DataContext';
 import Head from 'next/head';
 import Header from '../../src/components/Header';
 import SearchBar from '../../src/components/SearchBar';
 import SearchEvalCard from '../../src/components/SearchEvalCard';
 import Footer from '../../src/components/Footer';
+import { GetStaticProps, GetStaticPaths } from 'next';
+import { EvalItem, evalEvaluator } from '@/src/components/DataContext';
+
+// Import your JSON data at the top of your file
+import evals from "src/data/evals.json";
+import evaluators from "src/data/evaluators.json";
 
 
-const CardPage = () => {
-  const router = useRouter();
-  const { id } = router.query as { id: string }; 
+export const getStaticProps: GetStaticProps = async (context) => {
+  // Ensure `params` is not undefined
+  const id = context.params?.id;
+  const evalItem = evals.find(item => item.id === id);
 
-  const { data, evaluators } = useContext(DataContext);
-  const evalItem = data.find(item => item.id === id);
-  
+  // Handle the case where no item is found
   if (!evalItem) {
-    return null;
+    return { notFound: true };
   }
 
+  return {
+    props: {
+      evalItem,
+      evaluators
+    },
+  };
+};
+
+
+
+export async function getStaticPaths() {
+  // Generate paths based on evals' IDs
+  const paths = evals.map(evalItem => ({
+    params: { id: evalItem.id.toString() },
+  }));
+
+  return { paths, fallback: 'blocking' };
+}
+
+
+const CardPage = ({ evalItem, evaluators }: { evalItem: EvalItem; evaluators: evalEvaluator[] }) => {
+  
   const title = `Searcheval: [${evalItem.query.slice(0, 60)}]`;
 
   const getEvaluatorName = (evaluatorId: string): string => {
@@ -28,10 +53,12 @@ const CardPage = () => {
   };
   const systems_readable = evalItem.systems.length === 2 ? evalItem.systems.join(' and ') : evalItem.systems.length > 2 ? evalItem.systems.slice(0, -1).join(', ') + ', and ' + evalItem.systems.slice(-1) : evalItem.systems[0];
   const description = `Search evaluation of ${systems_readable} from ${getEvaluatorName(evalItem.evaluator_id)} for query: ${evalItem.query}`
-  const { asPath } = router;
+  const path = `/card-${evalItem.id}`
   const domain = process.env.NEXT_PUBLIC_DOMAIN;
-  const url = `${domain}${asPath}`;
-  const image = `${domain}/screenshots/card-${evalItem.id}_crop.png`;
+  const url = `${domain}${path}`;
+  const image = `${domain}/screenshots${path}_crop.png`;
+
+
 
 
   return (
@@ -58,7 +85,7 @@ const CardPage = () => {
       </Head>
       <Header/>
       <SearchBar />
-      <SearchEvalCard id={id} />
+      <SearchEvalCard id={evalItem.id} />
       <Footer />
     </>
   );
