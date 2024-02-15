@@ -31,7 +31,7 @@ const CardPage = () => {
   const { asPath } = router;
   const domain = process.env.NEXT_PUBLIC_DOMAIN;
   const url = `${domain}${asPath}`;
-  const image = `https://${domain}/screenshots/card-${evalItem.id}_crop.png`;
+  const image = `${domain}/screenshots/card-${evalItem.id}_crop.png`;
 
 
   return (
