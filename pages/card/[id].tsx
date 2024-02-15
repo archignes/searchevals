@@ -1,5 +1,5 @@
 // card/[id].tsx
-import React, { useContext } from 'react';
+import React from 'react';
 import Head from 'next/head';
 import Header from '../../src/components/Header';
 import SearchBar from '../../src/components/SearchBar';
@@ -32,8 +32,7 @@ export const getStaticProps: GetStaticProps = async (context) => {
 };
 
 
-
-export async function getStaticPaths() {
+export const getStaticPaths: GetStaticPaths = async () => {
   // Generate paths based on evals' IDs
   const paths = evals.map(evalItem => ({
     params: { id: evalItem.id.toString() },
