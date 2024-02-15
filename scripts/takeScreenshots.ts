@@ -6,7 +6,7 @@ const Jimp = require('jimp');
 
 const screenshotDir = "src/screenshots/"
 const publicScreenshotDir = "public/screenshots/"
-const searchevals_logo = "public/og_logo.png";
+const searchevals_logo = "public/og_logo_wide.png";
 
 
 function getScreenshotOutputPath(url) {
@@ -40,17 +40,23 @@ async function captureScreenshots(urls) {
         if (element) {
             await element.screenshot({ path: outputPath });
 
-            // Resize and add whitespace to maintain aspect ratio
             await sharp(outputPath)
-                .resize(1200, 630, {
-                    fit: 'cover',
-                    position: 'top',
+                .metadata()
+                .then(({ width, height }) => {
+                    // Ensure the image is large enough to be cropped and resized as desired
+                    return sharp(outputPath)
+                        .extract({ left: 1, top: 1, width: width - 2, height: height -2 }) // Adjust based on the actual border size
+                        .resize(1200, 630, {
+                            fit: 'cover',
+                            position: 'top',
+                        })
+                        .toFile(outputPathCropped); 
                 })
-                .toFile(outputPathCropped)
                 .then(() => {
-                    console.log(`Resized screenshot:\n  - url: ${url}\n  - file: ${outputPathCropped}`);
+                    console.log(`Cropped and resized screenshot:\n  - url: ${url}\n  - file: ${outputPathCropped}`);
                 })
-                .catch(err => console.error("Error resizing image:", err));
+                .catch(err => console.error("Error in cropping and resizing image:", err));
+
             addLogoToImage(outputPathCropped, searchevals_logo)
         } else {
             console.error(`Could not find the element '#search-eval-card-div' on the page: ${url}`);
