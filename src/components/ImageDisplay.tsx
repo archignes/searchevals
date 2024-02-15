@@ -15,7 +15,7 @@ const ImageDisplay: React.FC<ImageDisplayProps> = ({ images }) => {
     const { pathname } = useRouter();
 
     return (
-        <div className={`grid ${pathname === "/" || images.length > 1 ? 'grid-cols-1' : 'grid-cols-1'} gap-4 justify-items-center`}>
+        <div className={`grid ${pathname === "/" || images.length > 1 ? 'grid-cols-2' : 'grid-cols-1'} gap-4 justify-items-center`}>
             {images.map((image, index) => (
                 <img
                     key={index}
