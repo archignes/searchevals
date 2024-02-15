@@ -52,10 +52,9 @@ const CardPage = ({ evalItem, evaluators }: { evalItem: EvalItem; evaluators: ev
   };
   const systems_readable = evalItem.systems.length === 2 ? evalItem.systems.join(' and ') : evalItem.systems.length > 2 ? evalItem.systems.slice(0, -1).join(', ') + ', and ' + evalItem.systems.slice(-1) : evalItem.systems[0];
   const description = `Search evaluation of ${systems_readable} from ${getEvaluatorName(evalItem.evaluator_id)} for query: ${evalItem.query}`
-  const path = `/card-${evalItem.id}`
   const domain = process.env.NEXT_PUBLIC_DOMAIN;
-  const url = `${domain}${path}`;
-  const image = `${domain}/screenshots${path}_crop.png`;
+  const url = `${domain}/card/${evalItem.id}`;
+  const image = `${domain}/screenshots/card-${evalItem.id}_crop.png`;
 
 
 
