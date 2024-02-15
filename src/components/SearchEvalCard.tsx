@@ -106,7 +106,6 @@ const SearchEvalCard: React.FC<SearchEvalCardProps> = ({ id }) => {
             <a href={evalItem.url} target="_blank" rel="noopener noreferrer" className="w-7/8 truncate block">{evalItem.url}</a>
               <span className="text-sm">date: {evalItem.date}</span><br></br>
               <span className="text-sm">systems: {systemsEvaluatedSearchLinks}</span>
-              <span className="text-sm">date: {evalItem.date}</span>
                 {evalItem.key_phrases && (
                   <>
                     <br></br>
