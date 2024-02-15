@@ -17,7 +17,7 @@ const CardPage = () => {
   const evalItem = data.find(item => item.id === id);
   
   if (!evalItem) {
-    return ("No evalItem found...")
+    return null;
   }
 
   const title = `Searcheval: [${evalItem.query.slice(0, 60)}]`;
