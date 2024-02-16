@@ -23,7 +23,7 @@ const Intro = ({ evals, evaluators }: { evals: EvalItem[]; evaluators: evalEvalu
       <section id="why" className="p-1 mt-2 w-4/5 md:w-2/5 mx-auto">
         <h2 className="text-xl font-semibold">Why <SearchEvalTitle />?</h2>
         We use search systems to wonder and doubt, to learn and find, and to put our knowledge to use.
-        But evaluating search is very difficult. We need to expand our ability to talk about and learn about search.
+        But evaluating search is very difficult. We need to expand our ability to talk about and learn about different search tools and practices.
         <ol className="ml-2 space-y-2 list-decimal">
           <li className="font-medium">Search is often "invisible" and is not discussed as often as its importance ought require:</li>
           <ul className="list-inside ml-4 space-y-1">

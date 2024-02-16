@@ -119,7 +119,7 @@ const SearchOnEvalInterface: React.FC<SearchOnEvalInterfaceProps> = ({ evalItem 
             </svg>
           </Button>
         </PopoverTrigger>
-        <PopoverContent className="mr-2 w-[350px] md:w-[600px] md:mx-auto rounded-md">
+        <PopoverContent className="mr-2 float-center w-[350px] md:w-[900px] md:mr-5 rounded-md">
             <CardHeader>
               <CardTitle>SearchOnEval</CardTitle>
             <CardDescription>Here you can search on the original eval query.<br></br>
@@ -148,7 +148,7 @@ const SearchOnEvalInterface: React.FC<SearchOnEvalInterfaceProps> = ({ evalItem 
             <CardContent>
             <CardTitle className="font-normal">Search Systems</CardTitle>
             <hr></hr>
-            <ScrollArea className="mt-1 h-[300px] md:h-[400px] w-[300px] md:w-full rounded-md">
+            <ScrollArea className="mt-1 h-[250px] md:h-[400px] w-[300px] md:w-full rounded-md">
           <div className="flex justify-between space-x-4">
             <div className="space-y-1">
               <Form {...form}>
@@ -172,7 +172,7 @@ const SearchOnEvalInterface: React.FC<SearchOnEvalInterfaceProps> = ({ evalItem 
                           <FormLabel className="text-sm font-normal">Select All</FormLabel>
                         </FormItem>
                         {/* Grid container for systems */}
-                        <div className="grid grid-cols-2 md:grid-cols-3 gap-2">
+                        <div className="grid grid-cols-2 md:grid-cols-4 gap-2">
                           {systems.filter(system => !system.nondistinct_url).map((system) => (
                             <FormField
                               key={system.id} // Ensure this is a unique and stable identifier
@@ -197,7 +197,7 @@ const SearchOnEvalInterface: React.FC<SearchOnEvalInterfaceProps> = ({ evalItem 
                                     />
                                   </FormControl>
                                   <div>
-                                  {evalItem.systems!.includes(system.name) || (system.base_url_for && evalItem.systems!.some(evalSystem => system.base_url_for?.includes(evalSystem))) ? (
+                                  {evalItem.systems!.includes(system.id) || (system.base_url_for && evalItem.systems!.some(evalSystem => system.base_url_for?.includes(evalSystem))) ? (
                                     <a className="underline font-bold" target="_blank" rel="noopener noreferrer" href={system.search_link.replace('%s', encodedQuery)}>{system.name}</a>
                                   ) : (
                                     <FormLabel className="text-sm font-normal">
