@@ -31,18 +31,13 @@ const HomePage = () => {
 
         {/* <!-- Facebook Meta Tags --> */}
         <meta property="og:url" content={url} />
-        <meta property="og:type" content="website" />
+        <meta property="og:type" content="search.eval" />
         <meta property="og:title" content={title} />
         <meta property="og:description" content={description} />
         <meta property="og:image" content={image} />
 
         {/* <!-- Twitter Meta Tags --> */}
         <meta name="twitter:card" content="summary_large_image" />
-        <meta property="twitter:domain" content="Searchevals.com" />
-        <meta property="twitter:url" content={url} />
-        <meta name="twitter:title" content={title} />
-        <meta name="twitter:description" content={description} />
-        <meta name="twitter:image" content={image} />
       </Head>
       <Script defer data-domain="searchevals.com" src="https://plausible.io/js/script.js" />
       <Header />
