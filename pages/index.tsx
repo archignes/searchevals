@@ -4,21 +4,32 @@ import Head from 'next/head';
 import Script from 'next/script'
 import Header from '../src/components/Header';
 import SearchBar from '../src/components/SearchBar';
+import Intro from '../src/components/Intro';
 import Marquee from '../src/components/Marquee';
 import Footer from '../src/components/Footer';
 
-
-export const getStaticProps: GetStaticProps = async (context) => {
-  // Fetch data here if necessary
-  return {
-    props: {}, // Pass data to the page via props
-  };
-};
 
 const title = "Searchevals"
 const description = "A resource for collecting and exploring a range of open (publicly-available) search evaluations."
 const url = process.env.NEXT_PUBLIC_DOMAIN;
 const image = `${url}/screenshots/home.png`;
+
+// Import your JSON data at the top of your file
+import evals from "../src/data/evals.json";
+import evaluators from "../src/data/evaluators.json";
+import systems from "../src/data/systems.json";
+
+
+export const getStaticProps: GetStaticProps = async () => {
+  return {
+    props: {
+      evals,
+      evaluators,
+      systems
+    },
+  };
+};
+
 
 const HomePage = () => {
   return (
@@ -42,6 +53,7 @@ const HomePage = () => {
       <Script defer data-domain="searchevals.com" src="https://plausible.io/js/script.js" />
       <Header />
       <SearchBar />
+      <Intro evals={evals} evaluators={evaluators}/>
       <Marquee />
       <Footer />
     </>

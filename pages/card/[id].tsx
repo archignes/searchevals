@@ -12,9 +12,10 @@ import { EvalItem, evalEvaluator } from '@/src/components/DataContext';
 // Import your JSON data at the top of your file
 import evals from "src/data/evals.json";
 import evaluators from "src/data/evaluators.json";
+import systems from "src/data/systems.json";
 
 
-export const getStaticProps: GetStaticProps = async (context) => {
+export const getStaticCardProps: GetStaticProps = async (context) => {
   // Ensure `params` is not undefined
   const id = context.params?.id;
   const evalItem = evals.find(item => item.id === id);
@@ -27,7 +28,9 @@ export const getStaticProps: GetStaticProps = async (context) => {
   return {
     props: {
       evalItem,
-      evaluators
+      evals,
+      evaluators,
+      systems
     },
   };
 };

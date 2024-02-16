@@ -1,14 +1,16 @@
-import React, { useContext } from 'react';
-import DataContext from './DataContext';
+import React from 'react';
+
+
+export const SearchEvalTitle: React.FC = () => {
+  return (
+    <span className="font-bold">Search<span className="text-gray-500">evals</span></span>
+  )
+}
 
 const Header: React.FC = () => {
-  const { data } = useContext(DataContext)
   return (
     <header>
-      <a href="/" className="text-4xl font-bold text-center mb-3 mt-2 block">Search<span className="text-gray-500">evals</span></a>
-      <div className="flex justify-center">
-        <p>Search from over <span className='font-bold'>{data.length - 1}</span> public evals!</p>
-      </div>
+      <a href="/" className="text-4xl text-center mb-3 mt-2 block"><SearchEvalTitle/></a>
     </header>
   );
 };
