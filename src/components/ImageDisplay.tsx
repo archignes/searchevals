@@ -3,9 +3,11 @@ import { useRouter } from 'next/router';
 
 type ImageDisplayProps = {
     images: string[];
+    type?: 'solo';
+    className?: string;
 };
 
-const ImageDisplay: React.FC<ImageDisplayProps> = ({ images }) => {
+const ImageDisplay: React.FC<ImageDisplayProps> = ({ images, type, className }) => {
     const [selectedImage, setSelectedImage] = useState<string | null>(null);
 
     const handleImageClick = (imageUrl: string) => {
@@ -15,7 +17,7 @@ const ImageDisplay: React.FC<ImageDisplayProps> = ({ images }) => {
     const { pathname } = useRouter();
 
     return (
-        <div className={`grid ${pathname === "/" || images.length > 1 ? 'grid-cols-2' : 'grid-cols-1'} gap-4 justify-items-center`}>
+        <div className={`grid ${type === 'solo' ? 'grid-cols-1' : (pathname === "/" || images.length > 1) ? 'grid-cols-2' : 'grid-cols-1'} gap-4 justify-items-center ${className}`}>
             {images.map((image, index) => (
                 <img
                     key={index}

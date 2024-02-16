@@ -1,23 +1,34 @@
 import { ExclamationTriangleIcon } from "@radix-ui/react-icons";
-import { EvalItem, evalEvaluator } from '@/src/components/DataContext';
+import { EvalItem, evalEvaluator, System } from '@/src/components/DataContext';
 import { SearchEvalTitle } from "./Header";
+import ImageDisplay from "./ImageDisplay";
 
-const Intro = ({ evals, evaluators }: { evals: EvalItem[]; evaluators: evalEvaluator[] }) => { 
-    console.log(evals, evaluators); // Add this line to log the props
+const Intro = ({ evals, evaluators, systems }: { evals: EvalItem[]; evaluators: evalEvaluator[]; systems: System[]}) => { 
   return (
     <>
       <section id="about" className="p-1 mt-5 w-4/5 md:w-2/5 mx-auto">
         <h2 className="text-xl font-semibold">What is <SearchEvalTitle/>?</h2>
-      A platform for sharing and searching for evaluations of search systems.
+      A platform for sharing, sharing about, and searching for evaluations of search systems.
       <ul className="ml-2 space-y-2">
         <li className="font-medium">Search for search evaluations:</li>
-        <ul className="list-disc list-inside ml-4 space-y-1">
+          <ul className="list-disc list-outside ml-4 space-y-1 pl-5">
             <li>Discover over <span className='font-bold'>{evals.length - 1}</span> public evaluations by <span className='font-bold'>{evaluators.length}</span> unique evaluators</li>
+            <ImageDisplay className="mx-5" type="solo" images={["/screenshots/home.png"]} />
+            <li>In an open eval card, click <span className='font-bold'>SearchOnEval</span> to conduct the subject search across <span className='font-bold'>{systems.length}</span> search systems.</li>
+            <ImageDisplay className="mx-5" type="solo" images={["/screenshots/SearchOnEval.png"]} />
             <li>Explore search evaluations across the web ( <ExclamationTriangleIcon className="inline-block" /> currently unsupported)</li>
             <li>Filter and facet by system, type of search, and type of evaluations  ( <ExclamationTriangleIcon className="inline-block" /> currently unsupported)</li>
         </ul>
           <li className="font-medium">Submit found & original search evaluations  ( <ExclamationTriangleIcon className="inline-block" /> currently unsupported)</li>
           <li className="font-medium">Share search evaluations elsewhere  ( <ExclamationTriangleIcon className="inline-block" /> currently minimally supported)</li>
+          <ul className="list-disc list-outside ml-4 space-y-1 pl-5">
+            <li>Each eval card displays nicely in social media posts through OpenGraph meta tags</li>
+            <a href="https://twitter.com/danielsgriffin/status/1758597255748255859" target="_blank" rel="noopener noreferrer" style={{ display: 'flex', justifyContent: 'center' }} className="underline text-blue-600 hover:text-blue-800 hover:visited:text-purple-600">Twitter (X)</a>
+            <ImageDisplay className="mx-5" type="solo" images={["/screenshots/sharecard_twitter.png"]} />
+            <a href="https://www.linkedin.com/feed/update/urn:li:activity:7164373294673018881/" target="_blank" rel="noopener noreferrer" style={{ display: 'flex', justifyContent: 'center' }} className="underline text-blue-600 hover:text-blue-800 hover:visited:text-purple-600">LinkedIn</a>
+            <ImageDisplay className="mx-5" type="solo" images={["/screenshots/sharecard_linkedin.png"]} />
+          </ul>
+          <li className="font-medium">Share feedback and contribute to the <SearchEvalTitle /> system itself on <a href="https://github.com/danielsgriffin/searchevals" className="underline text-blue-600 hover:text-blue-800 hover:visited:text-purple-600">GitHub</a></li>
       </ul>
     </section>
       <section id="why" className="p-1 mt-2 w-4/5 md:w-2/5 mx-auto">

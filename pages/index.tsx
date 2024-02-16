@@ -51,7 +51,7 @@ const HomePage = () => {
       <Script defer data-domain="searchevals.com" src="https://plausible.io/js/script.js" />
       <Header />
       <SearchBar />
-      <Intro evals={evals} evaluators={evaluators}/>
+      <Intro evals={evals} evaluators={evaluators} systems={systems} />
       <Marquee />
       <Footer />
     </>
