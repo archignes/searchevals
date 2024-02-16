@@ -77,11 +77,11 @@ const CardPage = ({ evalItem, evaluators }: { evalItem: EvalItem; evaluators: ev
 
         {/* <!-- Twitter Meta Tags --> */}
         <meta name="twitter:card" content="summary_large_image" />
-        {/* <meta name="twitter:title" content={title} /> */}
-        {/* <meta name="twitter:description" content={description} /> */}
-        {/* <meta name="twitter:image" content={image} /> */}
-        {/* <meta name="twitter:domain" content="Searchevals.com" /> */}
-        {/* <meta name="twitter:url" content={url} /> */}
+        <meta name="twitter:title" content={title} />
+        <meta name="twitter:description" content={description} />
+        <meta name="twitter:image" content={image} />
+        <meta name="twitter:domain" content="Searchevals.com" />
+        <meta name="twitter:url" content={url} />
 
       </Head>
       <Script defer data-domain="searchevals.com" src="https://plausible.io/js/script.js" />
