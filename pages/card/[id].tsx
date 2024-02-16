@@ -15,7 +15,7 @@ import evaluators from "src/data/evaluators.json";
 import systems from "src/data/systems.json";
 
 
-export const getStaticCardProps: GetStaticProps = async (context) => {
+export const getStaticProps: GetStaticProps = async (context) => {
   // Ensure `params` is not undefined
   const id = context.params?.id;
   const evalItem = evals.find(item => item.id === id);

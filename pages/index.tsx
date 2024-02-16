@@ -7,17 +7,15 @@ import SearchBar from '../src/components/SearchBar';
 import Intro from '../src/components/Intro';
 import Marquee from '../src/components/Marquee';
 import Footer from '../src/components/Footer';
-
+import evals from "../src/data/evals.json";
+import evaluators from "../src/data/evaluators.json";
+import systems from "../src/data/systems.json";
 
 const title = "Searchevals"
 const description = "A resource for collecting and exploring a range of open (publicly-available) search evaluations."
 const url = process.env.NEXT_PUBLIC_DOMAIN;
 const image = `${url}/screenshots/home.png`;
 
-// Import your JSON data at the top of your file
-import evals from "../src/data/evals.json";
-import evaluators from "../src/data/evaluators.json";
-import systems from "../src/data/systems.json";
 
 
 export const getStaticProps: GetStaticProps = async () => {
