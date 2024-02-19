@@ -50,17 +50,6 @@ function openLink(url: URL) {
   console.log(newWindow)
 }
 
-
-export const SearchOnEvalButton: React.FC = () => {
-  return (
-    <Button id="search-on-eval-button" className="btn btn-outline-secondary" aria-label="Search on the eval"><span className="mr-2">SearchOnEval</span>
-      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-search" viewBox="0 0 16 16">
-        <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />
-      </svg>
-    </Button>
-  )
-}
-
 const SearchOnEvalInterface: React.FC<SearchOnEvalInterfaceProps> = ({ evalItem }) => {
   const { systems } = useContext(DataContext);
 
@@ -122,7 +111,11 @@ const SearchOnEvalInterface: React.FC<SearchOnEvalInterfaceProps> = ({ evalItem 
       <div className="float-right">
       <Popover>
         <PopoverTrigger asChild={true}>
-          <SearchOnEvalButton/>
+          <Button id="search-on-eval-button" className="btn btn-outline-secondary" aria-label="Search on the eval"><span className="mr-2">SearchOnEval</span>
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-search" viewBox="0 0 16 16">
+              <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />
+            </svg>
+          </Button>
         </PopoverTrigger>
         <PopoverContent className="mr-2 float-center w-[350px] md:w-[900px] md:mr-5 rounded-md">
             <CardHeader>
