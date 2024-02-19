@@ -93,9 +93,9 @@ const SearchEvalCard: React.FC<SearchEvalCardProps> = ({ id }) => {
     <>
     <div id="search-eval-card-div" className={`w-11/12 ${marqueeOrigin ? 'md:w-11/12' : 'md:w-2/3'} mx-auto mt-4`}>
       <Card>
+          <SearchOnEvalInterface evalItem={evalItem} />
         <CardHeader className="pb-2">
           <CardTitle>
-            <SearchOnEvalInterface evalItem={evalItem} />
             {marqueeOrigin ? (
               <a href={`/card/${evalItem.id}`}>{cardTitle}</a>
             ) : (
