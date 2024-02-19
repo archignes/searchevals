@@ -7,7 +7,10 @@
         "content": "Some chat answers are amazing and have legit citations, some perplexing and messy and some are clean but incomplete and lack citations.\\nYou decide which you prefer in the new year.",
         "systems": ["youchat-research-mode", "perplexity-ai", "chatgpt-3-5"],
         "evaluator_id": "RichardSocher",
-        "images": ["https://pbs.twimg.com/media/GDgvFIpbcAAYWo5?format=jpg&name=4096x4096", "https://pbs.twimg.com/media/GDgvFutasAAwxrj?format=jpg&name=4096x4096", "https://pbs.twimg.com/media/GDgvRp3aEAAC3w2?format=jpg&name=4096x4096"]
+        "images": [
+    {"url": "https://pbs.twimg.com/media/GDgvFIpbcAAYWo5?format=jpg&name=4096x4096"},
+{"url": "https://pbs.twimg.com/media/GDgvFutasAAwxrj?format=jpg&name=4096x4096"},
+{"url": "https://pbs.twimg.com/media/GDgvRp3aEAAC3w2?format=jpg&name=4096x4096"}]
     },
     { 
         "id": "hulu-free-trial-aravsrinivas", 
@@ -17,7 +20,8 @@
         "content": "Q: “What is Google doing”\\nA: Selling ads.",
         "systems": ["google"],
         "evaluator_id": "AravSrinivas",
-        "images": ["https://pbs.twimg.com/media/F_9TPq3aQAAw-9C?format=jpg&name=medium"]
+        "images": [
+    {"url": "https://pbs.twimg.com/media/F_9TPq3aQAAw-9C?format=jpg&name=medium"}]
     },
     { 
         "id": "had-a-seizure-now-what-soft", 
@@ -27,7 +31,9 @@
         "content": "The Google search summary vs the actual page",
         "systems": ["google"],
         "evaluator_id": "soft",
-        "images": ["https://pbs.twimg.com/media/FB1TS0kVIAAVWFZ?format=jpg&name=900x900", "https://pbs.twimg.com/media/FB1TTYBUUAQwAoD?format=jpg&name=900x900"]
+        "images": [
+    {"url": "https://pbs.twimg.com/media/FB1TS0kVIAAVWFZ?format=jpg&name=900x900"},
+{"url": "https://pbs.twimg.com/media/FB1TTYBUUAQwAoD?format=jpg&name=900x900"}]
     },
     { 
         "id": "how-much-should-i-pay-for-home-insurance-in-moss-beach-ca-vivek7ue", 
@@ -43,35 +49,35 @@
                     "id": "1",
                     "content": "First off, Google.\\n\\nUnusable set of ads and useless featured snippets",
                     "images": [
-                        "https://pbs.twimg.com/media/GCEyBvnaEAA48I0?format=jpg&name=medium"
+                        {"url": "https://pbs.twimg.com/media/GCEyBvnaEAA48I0?format=jpg&name=medium"}
                     ]
                 },
                                 {
                     "id": "2",
                     "content": "Next up, Brave.\\n\\nRelevant links, but not really useful.",
                     "images": [
-                        "https://pbs.twimg.com/media/GCEyoHPa0AAxwXc?format=jpg&name=medium"
+                        {"url": "https://pbs.twimg.com/media/GCEyoHPa0AAxwXc?format=jpg&name=medium"}
                     ]
                 },
                                 {
                     "id": "3",
                     "content": "Here's you.com with a meta-answer. The LLM-search engine equivalent of content farm search results ...",
                     "images": [
-                        "https://pbs.twimg.com/media/GCEzIkmaMAAgOeo?format=jpg&name=medium"
+                        {"url": "https://pbs.twimg.com/media/GCEzIkmaMAAgOeo?format=jpg&name=medium"}
                     ]
                 },
                                 {
                     "id": "4",
                     "content": "Here's perplexity with a beautiful UX and a useless meta-answer.\\n\\nMeta-answers are coherent and vacuous answers that are not specific enough to answer the question at hand.",
                     "images": [
-                        "https://pbs.twimg.com/media/GCEzTDKakAAqrAy?format=jpg&name=medium"
+                        {"url": "https://pbs.twimg.com/media/GCEzTDKakAAqrAy?format=jpg&name=medium"}
                     ]
                 },
                                 {
                     "id": "5",
                     "content": "And here's Bing to the rescue.\\n\\nRealizes that there's no good answers on the Internets, and instead shows a local listing onebox.\\n\\nBravo!",
                     "images": [
-                        "https://pbs.twimg.com/media/GCE0A-0agAAVp7T?format=jpg&name=medium"
+                        {"url": "https://pbs.twimg.com/media/GCE0A-0agAAVp7T?format=jpg&name=medium"}
                     ]
                 }
             ],
@@ -88,14 +94,14 @@
                     "id": "1",
                     "content": "...a friend and I were chatting about Databricks last week, and we searched \"databricks series b valuation\" in order to figure out what their Series B valuation was. Unfortunately, Google doesn't understand what \"series b\" means (it seems to confuse \"b\" and \"billions\"), so the first search result is irrelevant. I don't even get any information about their Series B until below the fold!",
                     "images": [
-                        "https://assets-global.website-files.com/610770ea9c21ff57ccb6a6a9/61db9f16d3c191410c0f9119_UAdNbgV9x5ZeGHNU-nNCwkowItYPy9hb_xwsUIxJxuaZJN5tAyE81wBezSh1JWB6Exx5h8JtAuvZ1PrW2TwgaKZhDjo2tRbk0wqhOPWtgQsv6exkutKVd7E6YhA37BB5qd8oUBDA.png"
+                        {"url": "https://assets-global.website-files.com/610770ea9c21ff57ccb6a6a9/61db9f16d3c191410c0f9119_UAdNbgV9x5ZeGHNU-nNCwkowItYPy9hb_xwsUIxJxuaZJN5tAyE81wBezSh1JWB6Exx5h8JtAuvZ1PrW2TwgaKZhDjo2tRbk0wqhOPWtgQsv6exkutKVd7E6YhA37BB5qd8oUBDA.png"}
                     ]
                 }
             ],
         "systems": ["google", "bing"],
         "evaluator_id": "echen",
         "images": [
-            "https://assets-global.website-files.com/610770ea9c21ff57ccb6a6a9/61db9f16d3c191410c0f9119_UAdNbgV9x5ZeGHNU-nNCwkowItYPy9hb_xwsUIxJxuaZJN5tAyE81wBezSh1JWB6Exx5h8JtAuvZ1PrW2TwgaKZhDjo2tRbk0wqhOPWtgQsv6exkutKVd7E6YhA37BB5qd8oUBDA.png" 
+            {"url": "https://assets-global.website-files.com/610770ea9c21ff57ccb6a6a9/61db9f16d3c191410c0f9119_UAdNbgV9x5ZeGHNU-nNCwkowItYPy9hb_xwsUIxJxuaZJN5tAyE81wBezSh1JWB6Exx5h8JtAuvZ1PrW2TwgaKZhDjo2tRbk0wqhOPWtgQsv6exkutKVd7E6YhA37BB5qd8oUBDA.png"} 
         ]
     },
     { 
@@ -107,7 +113,7 @@
         "systems": ["google"],
         "evaluator_id": "carolecadwalla",            
         "images": [
-            "https://i.guim.co.uk/img/media/1e2cbacb5aa12eabee8aa681ff95fbea2fa14665/8_0_937_562/master/937.jpg?width=620&dpr=2&s=none" 
+            {"url": "https://i.guim.co.uk/img/media/1e2cbacb5aa12eabee8aa681ff95fbea2fa14665/8_0_937_562/master/937.jpg?width=620&dpr=2&s=none"} 
         ]
     },
         { 
@@ -119,8 +125,8 @@
         "systems": ["perplexity-ai", "google"],
         "evaluator_id": "vijayshekhar",
         "images": [
-            "https://pbs.twimg.com/media/GEv3iycXYAAoZGI?format=jpg&name=medium",
-            "https://pbs.twimg.com/media/GEv3iyaWwAAm0ph?format=jpg&name=medium"]
+            {"url": "https://pbs.twimg.com/media/GEv3iycXYAAoZGI?format=jpg&name=medium"},
+            {"url": "https://pbs.twimg.com/media/GEv3iyaWwAAm0ph?format=jpg&name=medium"}]
     },
     { 
         "id": "why-is-pfix-going-down-today-vivek7ue", 
@@ -135,21 +141,21 @@
                     "id": "1",
                     "content": "Google...",
                     "images": [
-                        "https://pbs.twimg.com/media/GCS5Aelb0AAsjRs?format=jpg&name=medium"
+                        {"url": "https://pbs.twimg.com/media/GCS5Aelb0AAsjRs?format=jpg&name=medium"}
                     ]
                 },
                                 {
                     "id": "2",
                     "content": "you.com -- meta-answer -- sounds plausible, but not the real reason",
                     "images": [
-                        "https://pbs.twimg.com/media/GCS5J9TaYAAd8HR?format=jpg&name=medium"
+                        {"url": "https://pbs.twimg.com/media/GCS5J9TaYAAd8HR?format=jpg&name=medium"}
                     ]
                 },
                                 {
                     "id": "3",
                     "content": "Ditto perplexity --",
                     "images": [
-                        "https://pbs.twimg.com/media/GCS5SspbEAAa3t1?format=jpg&name=medium"
+                        {"url": "https://pbs.twimg.com/media/GCS5SspbEAAa3t1?format=jpg&name=medium"}
                     ]
                 },
                                 {
@@ -160,7 +166,7 @@
                     "id": "5",
                     "content": "Finally, tried Twitter.\\n\\nTwitter search -- total fail.",
                     "images": [
-                        "https://pbs.twimg.com/media/GCS5ctDawAAQq1a?format=jpg&name=medium"
+                        {"url": "https://pbs.twimg.com/media/GCS5ctDawAAQq1a?format=jpg&name=medium"}
                     ]
                 }
             ],
@@ -174,7 +180,7 @@
         "systems": ["youchat"],
         "content": "With You.com, you no longer have to search through several sites for thorough historical context.\\n\\nTry one of the follow up questions to continue this research report on the history of Lunar New Year 👇\\n\\n#youdotcom #LunarNewYear #aimodes",
         "images": [
-            "https://pbs.twimg.com/media/GGF-LTrawAAHH_3?format=jpg&name=large"],
+            {"url": "https://pbs.twimg.com/media/GGF-LTrawAAHH_3?format=jpg&name=large"}],
         "evaluator_id":"yousearchengine"
     },
     {
@@ -187,7 +193,7 @@
       ],
       "content": "Perplexity continues to impress",
       "images": [
-        "https://pbs.twimg.com/media/GGGuGmRaMAAt5Oz?format=png&name=900x900"
+        {"url": "https://pbs.twimg.com/media/GGGuGmRaMAAt5Oz?format=png&name=900x900"}
       ],
       "evaluator_id": "chrisalbon"
     },
@@ -198,12 +204,62 @@
   "url": "https://twitter.com/rauchg/status/1646271916305698816",
   "content": "Ok, this is really impressive\\n\\nPhind, an AI / GPT search engine for developers, outputs up to date Next.js (App Router) instructions 🤯\\n\\nhttps://www.phind.com/search?cache=cd846420-2be3-48e6-8e47-0f2e2d05e66e",
   "images": [
-    "https://pbs.twimg.com/media/Fti6z_jaQAA71Vf?format=jpg&name=medium"
+    {"url": "https://pbs.twimg.com/media/Fti6z_jaQAA71Vf?format=jpg&name=medium"}
   ],
   "evaluator_id": "rauchg",
   "systems": [
         "phind-search"
       ]
+},
+{
+  "id": "wayback-machine-kevinroose",
+  "date": "2024-02-01",
+  "query": "Wayback Machine",
+  "url": "https://www.nytimes.com/2024/02/01/technology/perplexity-search-ai-google.html",
+  "systems": [
+    "perplexity-ai", "google"
+  ],
+  "content": "But I did sneak back to Google for a few types of searches — usually, when I was looking up specific people or trying to go to websites I already knew existed. For example: When I typed “Wayback Machine” into my browser’s search bar, I was redirected to Perplexity, which spit out a paragraph-long essay about the history of the Internet Archive, the organization that maintains the Wayback Machine. I had to hunt for a small citation link to get to the Wayback Machine’s website, which is what I wanted in the first place.",
+  "evaluator_id": "kevinroose"
+},
+{
+  "id": "how-did-nikki-haley-do-in-the-new-hampshire-primary-kevinroose",
+  "date": "2024-02-01",
+  "query": "How did Nikki Haley do in the New Hampshire primary?",
+  "url": "https://www.nytimes.com/2024/02/01/technology/perplexity-search-ai-google.html",
+  "systems": [
+    "perplexity-ai"
+  ],
+  "content": "Where it shines\\n\\n[ ... ]\\n\\nI tested Perplexity on hundreds of queries, including questions about current events (“How did Nikki Haley do in the New Hampshire primary?”)...",
+  "images": [
+    {"url": "/eval_images/videoframe_27019.png", "annotated": true}
+  ],
+  "evaluator_id": "kevinroose"
+},
+{
+  "id": "please-tell-me-about-the-fictional-star-wars-character-ahsoka-and-also-explain-if-she-is-one-of-the-most-martinibuster",
+  "date": "2023-11-15",
+  "query": "Please tell me about the fictional star wars character Ahsoka and also explain if she is one of the most skilled Jedi of all time.",
+  "url": "https://www.searchenginejournal.com/ai-search-engines/497061/",
+  "systems": [
+    "andi-search"
+  ],
+  "content": "The answer was in the form of a short summary and a link to the source of the information, with an option to show the full search results or to summarize an answer to the question.\\n\\nThe summary provided correctly answered my complex question, even the part about whether the fictional character Ahsoka Tano is the most skilled Jedi of all time.",
+  "evaluator_id": "martinibuster"
+},
+{
+  "id": "how-long-did-the-friends-tv-show-run-martinibuster",
+  "date": "2023-11-15",
+  "query": "how long did the Friends TV show run?",
+  "url": "https://www.searchenginejournal.com/ai-search-engines/497061/",
+  "systems": [
+    "brave"
+  ],
+  "content": "Brave uses its own LLMs to assess the ranked webpages and offer a summarization. This function is called the Summarizer, which users can opt out of if they wish.\\n\\nThe Summarizer isn’t invoked for every search, only about 17% of searches will spawn the feature.\\n\\nWhat’s great about the Summarizer is that it links to sources.\\n\\nThe screenshot below has the links circled in red.",
+  "images": [
+    {"url": "https://www.searchenginejournal.com/wp-content/uploads/2023/09/brave-summarizer-65127faea66ed-sej.png", "annotated": true}
+  ],
+  "evaluator_id": "martinibuster"
 }
 ]
 

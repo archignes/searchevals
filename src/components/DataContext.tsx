@@ -18,7 +18,13 @@ export interface evalEvaluator {
 export interface evalPart {
     id: string;
     content: string;
-    images?: string[]
+    images?: imageItem[]
+}
+
+export interface imageItem{
+    url: string;
+    caption?: string;
+    annotated?: boolean;
 }
 
 export interface EvalItem {
@@ -31,7 +37,7 @@ export interface EvalItem {
     systems: string[];
     eval_parts?: evalPart[];
     content?: string; // Make content optional
-    images?: string[]
+    images?: imageItem[];
     evaluator_id: string;
 }
 

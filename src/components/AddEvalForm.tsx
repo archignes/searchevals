@@ -85,13 +85,16 @@ export default function EvalInputForm() {
 
 
   function onSubmit(values: z.infer<typeof evalsystemschema>) {
-    values.content = values.content?.replace(/\n\n/g, "//n//n");
-    values.context = values.context?.replace(/\n\n/g, "//n//n");
+    values.content = values.content?.replace(/\n\n/g, "\\n\\n");
+    values.context = values.context?.replace(/\n\n/g, "\\n\\n");
     if (values.eval_parts) {
       values.eval_parts = values.eval_parts.map(part => ({
         ...part,
-        content: part.content.replace(/\n\n/g, "//n//n"),
+        content: part.content.replace(/\n\n/g, "\\n\\n"),
       }));
+    }
+    if (!values.images || values.images.length === 0 || (values.images.length === 1 && values.images[0] === "")) {
+      delete values.images;
     }
     copy(JSON.stringify(values, null, 2));
     alert("Data copied to clipboard!");

@@ -66,5 +66,17 @@
     "name": "Guillermo Rauch",
     "role": "CEO at Vercel",
     "URL": "https://twitter.com/rauchg"
-  }
+  },
+  {
+    "id": "kevinroose",
+    "name": "Kevin Roose",
+    "role": "tech columnist",
+    "URL": "https://twitter.com/kevinroose"
+},
+{
+  "id": "martinibuster",
+  "name": "Roger Montti",
+  "role": "staff writer at Search Engine Journal",
+  "URL": "https://twitter.com/martinibuster"
+}
 ]
