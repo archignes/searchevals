@@ -278,6 +278,24 @@
     }
   ],
   "evaluator_id": "google"
+},
+{
+  "id": "find-top-restaurants-in-bangalore-with-live-music-aravsrinivas",
+  "date": "2024-02-19",
+  "query": "find top restaurants in bangalore with live music",
+  "url": "https://twitter.com/AravSrinivas/status/1759605851143454996",
+  "systems": [
+    "perplexity-ai-copilot"
+  ],
+  "content": "Silently shipping improvements for the user.",
+  "images": [
+    {
+      "url": "https://pbs.twimg.com/media/GGtgJm8aEAAJlB7?format=jpg&name=medium",
+      "caption": "",
+      "annotation": false
+    }
+  ],
+  "evaluator_id": "AravSrinivas"
 }
 ]
 
