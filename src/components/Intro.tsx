@@ -13,9 +13,9 @@ const Intro = ({ evals, evaluators, systems }: { evals: EvalItem[]; evaluators: 
         <li className="font-medium">Search for search evaluations:</li>
           <ul className="list-disc list-outside ml-4 space-y-1 pl-5">
             <li>Discover over <span className='font-bold'>{evals.length - 1}</span> public evaluations by <span className='font-bold'>{evaluators.length}</span> unique evaluators</li>
-            <ImageDisplay className="mx-5" type="solo" images={["/screenshots/home.png"]} />
+            <ImageDisplay className="mx-5" type="solo" images={[{ "url": "/screenshots/home.png"}]} />
             <li>In an open eval card, click <span className='font-bold'>SearchOnEval</span> to conduct the subject search across <span className='font-bold'>{systems.length}</span> search systems.</li>
-            <ImageDisplay className="mx-5" type="solo" images={["/screenshots/SearchOnEval.png"]} />
+            <ImageDisplay className="mx-5" type="solo" images={[{ "url": "/screenshots/SearchOnEval.png" }]} />
             <li>Explore search evaluations across the web ( <ExclamationTriangleIcon className="inline-block" /> currently unsupported)</li>
             <li>Filter and facet by system, type of search, and type of evaluations  ( <ExclamationTriangleIcon className="inline-block" /> currently unsupported)</li>
         </ul>
@@ -24,9 +24,9 @@ const Intro = ({ evals, evaluators, systems }: { evals: EvalItem[]; evaluators: 
           <ul className="list-disc list-outside ml-4 space-y-1 pl-5">
             <li>Each eval card displays nicely in social media posts through OpenGraph meta tags</li>
             <a href="https://twitter.com/danielsgriffin/status/1758597255748255859" target="_blank" rel="noopener noreferrer" style={{ display: 'flex', justifyContent: 'center' }} className="underline text-blue-600 hover:text-blue-800 hover:visited:text-purple-600">Twitter (X)</a>
-            <ImageDisplay className="mx-5" type="solo" images={["/screenshots/sharecard_twitter.png"]} />
+            <ImageDisplay className="mx-5" type="solo" images={[{ "url": "/screenshots/sharecard_twitter.png" }]} />
             <a href="https://www.linkedin.com/feed/update/urn:li:activity:7164373294673018881/" target="_blank" rel="noopener noreferrer" style={{ display: 'flex', justifyContent: 'center' }} className="underline text-blue-600 hover:text-blue-800 hover:visited:text-purple-600">LinkedIn</a>
-            <ImageDisplay className="mx-5" type="solo" images={["/screenshots/sharecard_linkedin.png"]} />
+            <ImageDisplay className="mx-5" type="solo" images={[{ "url": "/screenshots/sharecard_linkedin.png" }]} />
           </ul>
           <li className="font-medium">Share feedback and contribute to the <SearchEvalTitle /> system itself on <a href="https://github.com/danielsgriffin/searchevals" className="underline text-blue-600 hover:text-blue-800 hover:visited:text-purple-600">GitHub</a></li>
       </ul>
