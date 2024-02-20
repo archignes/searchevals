@@ -165,7 +165,7 @@ const SearchEvalCard: React.FC<SearchEvalCardProps> = ({ id }) => {
           )}
         </CardContent>
         <CardFooter>
-          <Link2Icon className="text-gray-500 dark:text-gray-400" /><small className="text-gray-500 dark:text-gray-500">Permalink id: <a className="underline" href={`/${evalItem!.id}`}>{evalItem!.id}</a></small>
+          <Link2Icon className="text-gray-500 dark:text-gray-400" /><small className="text-gray-500 dark:text-gray-500">Permalink id: <a className="underline" href={`/card/${evalItem!.id}`}>{evalItem!.id}</a></small>
         </CardFooter>
       </Card>
     </div>

@@ -3,7 +3,7 @@ import { useForm } from 'react-hook-form';
 import { FormProvider } from 'react-hook-form';
 import DataContext from './DataContext';
 import { Textarea } from './ui/textarea';
-import ImageUploadField from './ImageSubmission';
+import { ImageUploadField } from './ImageSubmission';
 import {
   Card,
   CardContent,
@@ -33,28 +33,44 @@ import {
 } from "./ui/form"
 import { Input } from "./ui/input"
 import { Checkbox } from "./ui/checkbox"
+import evaluators from "../../src/data/evaluators.json";
+import systems from "../../src/data/systems.json";
+
+
 
 export default function EvalInputForm() {
-  const { systems, evaluators } = useContext(DataContext);
+  
+
+  const imageSchema = z.object({
+    url: z.string(),
+    caption: z.string().optional(),
+    annotation: z.boolean().optional(),
+  });
 
   const evalPartSchema = z.object({
     id: z.string(),
     content: z.string(),
-    images: z.array(z.string()).optional(),
+    images: z.array(imageSchema).optional(),
   });
 
   const evalsystemschema = z.object({
     id: z.string().transform((val) => val.toLowerCase()),
-    date: z.string().refine((val) => /^\d{4}-\d{2}-\d{2}$/.test(val), {
-      message: "Date must be in YYYY-MM-DD format",
+    date: z.string().refine((val) => /^(?:\d{4}|\d{4}-\d{2}|\d{4}-\d{2}-\d{2})$/.test(val), {
+      message: "Date must be in YYYY, YYYY-MM, or YYYY-MM-DD format",
     }),
-    query: z.string(),
+    query: z.string().refine((val) => val.length > 0, {
+      message: "Query must be longer than 0 characters",
+    }),
     url: z.string().url(),
     context: z.string().optional(),
-    systems: z.array(z.string()),
+    systems: z.array(z.string()).nonempty(),
     eval_parts: z.array(evalPartSchema).optional(),
     content: z.string().optional(),
-    images: z.array(z.string()).optional(),
+    images: z.array(imageSchema)
+      .refine((val) => val.every((image) => image.url.startsWith('http') || image.url.startsWith('https') || image.url.startsWith('/')), {
+        message: "Image URL must be a string starting with 'http' or 'https' or '/'",
+      })
+      .optional(),
     evaluator_id: z.string().refine((id) => evaluators.some(evaluator => evaluator.id === id), {
       message: "Evaluator ID must match an existing evaluator's ID",
     }),
@@ -62,8 +78,38 @@ export default function EvalInputForm() {
 
   const form = useForm<z.infer<typeof evalsystemschema>>({
     resolver: zodResolver(evalsystemschema),
-    defaultValues: {},
+    defaultValues: {
+      id: '',
+      date: '',
+      query: '',
+      url: '',
+      context: '',
+      systems: [],
+      eval_parts: [],
+      content: '',
+      images: [],
+      evaluator_id: '',
+    },
   })
+
+  function onSubmit(values: z.infer<typeof evalsystemschema>) {
+    console.log("submit")
+    values.content = values.content?.replace(/\n\n/g, "\\n\\n");
+    values.context = values.context?.replace(/\n\n/g, "\\n\\n");
+    if (values.eval_parts) {
+      values.eval_parts = values.eval_parts.map(part => ({
+        ...part,
+        content: part.content.replace(/\n\n/g, "\\n\\n"),
+      }));
+    }
+    if (!values.images || values.images.length === 0 || (values.images.length === 1 && values.images[0]["url"] === "")) {
+      delete values.images;
+    }
+    copy(JSON.stringify(values, null, 2));
+    alert("Data copied to clipboard!");
+    console.log(values)
+  }
+
 
   // Watch values outside of the render function
   const query = form.watch("query");
@@ -84,22 +130,7 @@ export default function EvalInputForm() {
   }, [evalIdentifier, form]);
 
 
-  function onSubmit(values: z.infer<typeof evalsystemschema>) {
-    values.content = values.content?.replace(/\n\n/g, "\\n\\n");
-    values.context = values.context?.replace(/\n\n/g, "\\n\\n");
-    if (values.eval_parts) {
-      values.eval_parts = values.eval_parts.map(part => ({
-        ...part,
-        content: part.content.replace(/\n\n/g, "\\n\\n"),
-      }));
-    }
-    if (!values.images || values.images.length === 0 || (values.images.length === 1 && values.images[0] === "")) {
-      delete values.images;
-    }
-    copy(JSON.stringify(values, null, 2));
-    alert("Data copied to clipboard!");
-    console.log(values)
-  }
+
 
   return (
     <Card>
@@ -308,5 +339,5 @@ export default function EvalInputForm() {
         </FormProvider>
         </CardContent>
     </Card>
- )
+  );
 }

@@ -260,6 +260,24 @@
     {"url": "https://www.searchenginejournal.com/wp-content/uploads/2023/09/brave-summarizer-65127faea66ed-sej.png", "annotated": true}
   ],
   "evaluator_id": "martinibuster"
+},
+{
+  "id": "iq-test-google",
+  "date": "2022-07-28",
+  "query": "iq test",
+  "url": "https://web.archive.org/web/20220730014329/https://static.googleusercontent.com/media/guidelines.raterhub.com/en//searchqualityevaluatorguidelines.pdf",
+  "systems": [
+    "google"
+  ],
+  "content": "Query with Non-Visit-in-Person Intent\\n\\n[ ... ]\\n\\nSome queries clearly \"ask\" for nearby information or nearby results (e.g., businesses, organizations, other nearby places). Some queries are not asking for nearby information or nearby results. Here are some examples....",
+  "images": [
+    {
+      "url": "/eval_images/google2022sqeg_iq_test.png",
+      "caption": "",
+      "annotation": false
+    }
+  ],
+  "evaluator_id": "google"
 }
 ]
 
