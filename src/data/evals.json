@@ -94,15 +94,12 @@
                     "id": "1",
                     "content": "...a friend and I were chatting about Databricks last week, and we searched \"databricks series b valuation\" in order to figure out what their Series B valuation was. Unfortunately, Google doesn't understand what \"series b\" means (it seems to confuse \"b\" and \"billions\"), so the first search result is irrelevant. I don't even get any information about their Series B until below the fold!",
                     "images": [
-                        {"url": "https://assets-global.website-files.com/610770ea9c21ff57ccb6a6a9/61db9f16d3c191410c0f9119_UAdNbgV9x5ZeGHNU-nNCwkowItYPy9hb_xwsUIxJxuaZJN5tAyE81wBezSh1JWB6Exx5h8JtAuvZ1PrW2TwgaKZhDjo2tRbk0wqhOPWtgQsv6exkutKVd7E6YhA37BB5qd8oUBDA.png"}
+                        {"url": "https://assets-global.website-files.com/610770ea9c21ff57ccb6a6a9/61db9f16d3c191410c0f9119_UAdNbgV9x5ZeGHNU-nNCwkowItYPy9hb_xwsUIxJxuaZJN5tAyE81wBezSh1JWB6Exx5h8JtAuvZ1PrW2TwgaKZhDjo2tRbk0wqhOPWtgQsv6exkutKVd7E6YhA37BB5qd8oUBDA.png", "annotated": true}
                     ]
                 }
             ],
         "systems": ["google", "bing"],
-        "evaluator_id": "echen",
-        "images": [
-            {"url": "https://assets-global.website-files.com/610770ea9c21ff57ccb6a6a9/61db9f16d3c191410c0f9119_UAdNbgV9x5ZeGHNU-nNCwkowItYPy9hb_xwsUIxJxuaZJN5tAyE81wBezSh1JWB6Exx5h8JtAuvZ1PrW2TwgaKZhDjo2tRbk0wqhOPWtgQsv6exkutKVd7E6YhA37BB5qd8oUBDA.png"} 
-        ]
+        "evaluator_id": "echen"
     },
     { 
         "id": "did-the-holocaust-happen-carolecadwalla", 
