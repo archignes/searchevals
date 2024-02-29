@@ -91,9 +91,9 @@ const SearchEvalCard: React.FC<SearchEvalCardProps> = ({ id }) => {
 
   return (
     <>
-    <div id="search-eval-card-div" className={`w-11/12 ${marqueeOrigin ? 'md:w-11/12' : 'md:w-2/3'} mx-auto mt-4`}>
-      <Card>
-          <SearchOnEvalInterface evalItem={evalItem} />
+      <SearchOnEvalInterface evalItem={evalItem} />
+      <div id="search-eval-card-div" className={`w-11/12 ${marqueeOrigin ? 'md:w-11/12' : 'md:w-2/3'} mx-auto mt-0 zIndex: 9999`}>
+        <Card>  
         <CardHeader className="pb-2">
           <CardTitle>
             {marqueeOrigin ? (
@@ -105,6 +105,9 @@ const SearchEvalCard: React.FC<SearchEvalCardProps> = ({ id }) => {
           <CardDescription>
             <a href={evalItem.url} target="_blank" rel="noopener noreferrer" className="w-7/8 truncate block">{evalItem.url}</a>
               <span className="text-sm">date: {evalItem.date}</span><br></br>
+              {evalItem.methodology && (<>
+              <span className="text-sm">methodology: <a className="underline" href={evalItem.methodology.url}>{evalItem.methodology.in_text}</a></span><br></br>
+              </>)}
               <span className="text-sm">systems: {systemsEvaluatedSearchLinks}</span>
                 {evalItem.key_phrases && (
                   <>
@@ -117,6 +120,9 @@ const SearchEvalCard: React.FC<SearchEvalCardProps> = ({ id }) => {
           </CardDescription>
         </CardHeader>
         <CardContent>
+            {evalItem.tags && (
+              <div className="text-sm m-1">{evalItem.tags.map(tag => <span key={tag} className="bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">{tag}</span>)}</div>
+            )}
           {evalEvaluatorDetails && (
             <figcaption className="mt-1 mb-2">
               <div className="flex items-center divide-x rtl:divide-x-reverse divide-gray-300 dark:divide-gray-700">
@@ -149,7 +155,7 @@ const SearchEvalCard: React.FC<SearchEvalCardProps> = ({ id }) => {
                           </TooltipProvider>
                         </React.Fragment>
                       ))}
-                    </>)}
+                      </>)}
                   </cite>
                 </div>
                 </figcaption>)}
@@ -164,7 +170,11 @@ const SearchEvalCard: React.FC<SearchEvalCardProps> = ({ id }) => {
               <EvalExtractCard evalCardItem={evalItem}/>
           )}
         </CardContent>
-        <CardFooter>
+          {evalItem.methodology && (<div className="text-sm text-gray-700 mx-7">
+            <span>References:</span><br></br>
+            <div className="ml-3">{evalItem.methodology.full} <a className="underline" href={evalItem.methodology.url}>{evalItem.methodology.url}</a>
+            </div></div>)}
+        <CardFooter className="mt-1">
           <Link2Icon className="text-gray-500 dark:text-gray-400" /><small className="text-gray-500 dark:text-gray-500">Permalink id: <a className="underline" href={`/card/${evalItem!.id}`}>{evalItem!.id}</a></small>
         </CardFooter>
       </Card>

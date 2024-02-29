@@ -16,26 +16,33 @@ type EvalExtractCardProps = {
 
 
 const EvalExtractCard: React.FC<EvalExtractCardProps> = ({ evalCardItem }) => {
-    let contentWithNewlines;
+    let contentWithNewlines: string[] = []
+    let skipBlockQuote = false;
     if (evalCardItem && evalCardItem.content) {
         contentWithNewlines = evalCardItem.content.split(/\\n/);
     };
-    if (!evalCardItem || !contentWithNewlines ) {
+    if (!evalCardItem ) {
         return <p>Item not found</p>;
     }
-
+    if (evalCardItem.content === "" && evalCardItem.images) {
+        skipBlockQuote = true
+    } else if (!contentWithNewlines) {
+        return <p>Item not found</p>;
+    }
 
 
     return (
         <>
             <Card className="rounded-none mb-2">
                 <CardContent>
-
                     <figure className="max-w-screen-md">
+                        {skipBlockQuote && (<br></br>)}
+                        {!skipBlockQuote && (
                         <blockquote className="my-2">
                             <p className="text-l text-gray-900 dark:text-white before:text-2xl before:text-gray-400 before:content-['“']">{contentWithNewlines.map((line, index) => (<span key={index}>{line}<br></br></span>
                             ))}</p>
                         </blockquote>
+                        )}
                     </figure>
                     {evalCardItem.images && evalCardItem.images.length > 0 && (<ImageDisplay images={evalCardItem.images} />)}
                     

@@ -23,7 +23,7 @@ const ImageDisplay: React.FC<ImageDisplayProps> = ({ images, type, className }) 
             {images.map((image, index) => (
                 <div key={index} className="text-center">
                     {image.annotated && (
-                        <div className="flex items-center w-2/3 m-1 text-center text-sm text-red-500 mt-2">
+                        <div className="flex items-center mx-auto w-2/3 m-1 text-center text-sm text-red-500 mt-2">
                             <span className="inline-flex mr-2"><ExclamationTriangleIcon /></span>
                             <span>This image appears to contain annotation.</span>
                         </div>
@@ -31,7 +31,7 @@ const ImageDisplay: React.FC<ImageDisplayProps> = ({ images, type, className }) 
                     <img
                         src={image.url}
                         alt={image.caption} // Assuming you want to use the caption as alt text for accessibility
-                        className={`${pathname !== "/" && images.length === 1 ? 'w-full md:w-3/4' : 'w-full'} h-auto cursor-pointer border shadow`}
+                        className={`${pathname !== "/" && images.length === 1 ? 'w-full md:w-3/4 mx-auto' : 'w-full'} h-auto cursor-pointer border shadow`}
                         onClick={() => handleImageClick(image)}
                     />
                     {image.caption && (

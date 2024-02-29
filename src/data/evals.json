@@ -293,6 +293,32 @@
     }
   ],
   "evaluator_id": "AravSrinivas"
+},
+{
+  "id": "do-latin-americans-live-in-america-lucianabenotti",
+  "date": "2021-01-26",
+  "query": "Do Latin Americans live in America?",
+  "tags": [
+    "implied negative evaluation"
+  ],
+  "methodology": {
+    "in_text": "Alemany et al. (2023)",
+    "full": "Alemany, L. A., Benotti, L., Maina, H., González, L., Rajngewerc, M., Martínez, L., Sánchez, J., Schilman, M., Ivetta, G., Halvorsen, A., Rojo, A. M., Bordone, M., & Busaniche, B. (2023). A methodology to characterize bias and harmful stereotypes in natural language processing in Latin America.",
+    "url":"https://doi.org/10.48550/arXiv.2207.06591"
+  },
+  "url": "https://twitter.com/LucianaBenotti/status/1353886080106455043",
+  "systems": [
+    "google"
+  ],
+  "images": [
+    {
+      "url": "https://pbs.twimg.com/media/Esn4NG8XAAEOF7t?format=jpg&name=medium",
+      "caption": "",
+      "annotation": false
+    }
+  ],
+  "content": "",
+  "evaluator_id": "LucianaBenotti"
 }
 ]
 

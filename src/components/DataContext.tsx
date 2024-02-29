@@ -27,12 +27,20 @@ export interface imageItem{
     annotated?: boolean;
 }
 
+export interface methodologyCitation {
+    in_text: string;
+    full: string;
+    url: string;
+}
+
 export interface EvalItem {
     id: string;
     date: string;
     query: string;
     url: string;
     key_phrases?: string[];
+    tags?: string[];
+    methodology?: methodologyCitation;
     context?: string;
     systems: string[];
     eval_parts?: evalPart[];
@@ -144,7 +152,7 @@ export const DataProvider: React.FC<DataProviderProps> = ({ children }) => {
         }
 
         setData(data); // No changes needed if validation passes
-    }, [data, systems]);
+    }, [data]);
 
 
     return (
