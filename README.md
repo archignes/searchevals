@@ -17,6 +17,10 @@ This website is currently a speculative and exploratory prototype and probe. Ple
 
 
 
+# Contributing
+
+## OG images are created with `npm run screenshots`
+
 
 # Getting Started with Create React App
 

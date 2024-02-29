@@ -14,7 +14,7 @@ import systems from "../src/data/systems.json";
 const title = "Searchevals"
 const description = "A platform for sharing, sharing about, and searching for evaluations of search systems."
 const url = process.env.NEXT_PUBLIC_DOMAIN;
-const image = `${url}/screenshots/home.png`;
+const image = `${url}/screenshots/home_default.png`;
 
 
 
