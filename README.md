@@ -8,23 +8,9 @@ This website is currently a speculative and exploratory prototype and probe. Ple
 
 ---
 
-# Changelog
-
-- 2024-02-13 15:40:01 `npm run build` now takes screenshots of the pages.
-- 2024-02-12 11:08:44 Working on building out the input validation
-    - issue: [implement an input helper to validate new evals #1
-](https://github.com/danielsgriffin/searchevals/issues/1)
-
-
-
 # Contributing
 
-## OG images are created with `npm run screenshots`
-
-
-# Getting Started with Create React App
-
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project was originally bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
 
@@ -37,6 +23,12 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
 The page will reload if you make edits.\
 You will also see any lint errors in the console.
+
+### `npm run screenshot`
+
+This will run scripts/takeScreenshots.ts. This is used to update the OpenGraph image for the cards. Note: Current implementation makes screenshots on the live website, not on the dev website.
+
+
 
 ### `npm test`
 
