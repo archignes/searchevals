@@ -319,6 +319,24 @@
   ],
   "content": "",
   "evaluator_id": "LucianaBenotti"
+},
+{
+  "id": "what-are-the-new-features-in-python-3-12-aravsrinivas",
+  "date": "2024-03-04",
+  "query": "what are the new features in python 3.12",
+  "url": "https://twitter.com/AravSrinivas/status/1764711432929894782",
+  "systems": ["perplexity-ai",
+    "chatgpt-3-5"
+  ],
+  "content": "👀",
+  "images": [
+    {
+      "url": "https://pbs.twimg.com/media/GH2DnxXakAAmt_f?format=jpg&name=medium",
+      "caption": "",
+      "annotation": false
+    }
+  ],
+  "evaluator_id": "AravSrinivas"
 }
 ]
 
