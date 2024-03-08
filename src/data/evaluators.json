@@ -93,5 +93,47 @@
   "name": "Luciana Benotti",
   "role": "Adjoint Professor at the Universidad Nacional de Córdoba and a Researcher at CONICET",
   "URL": "https://twitter.com/LucianaBenotti"
+},
+{
+  "id": "ternome",
+  "name": "Sergei Terno",
+  "role": "CPO at Lóvi, founder of Pushkeen.ai.",
+  "URL": "https://twitter.com/ternome",
+  "conflict": []
+},
+{
+  "id": "mlejva",
+  "name": "Vasek Mlejnsky",
+  "role": "CEO at E2B",
+  "URL": "https://twitter.com/mlejva",
+  "conflict": []
+},
+{
+  "id": "karrisaarinen",
+  "name": "Karri Saarinen",
+  "role": "CEO at Linear",
+  "URL": "https://twitter.com/karrisaarinen",
+  "conflict": []
+},
+{
+  "id": "andrewingram",
+  "name": "Andy Ingram ",
+  "role": "Software Engineer at Watershed",
+  "URL": "https://twitter.com/andrewingram",
+  "conflict": []
+},
+{
+  "id": "katgleason",
+  "name": "Katelyn Gleason",
+  "role": "CEO at Eligible",
+  "URL": "https://twitter.com/katgleason",
+  "conflict": []
+},
+{
+  "id": "pbshgthm",
+  "name": "Adaptive",
+  "role": "Product + Design at Adaptive",
+  "URL": "https://twitter.com/pbshgthm",
+  "conflict": []
 }
 ]

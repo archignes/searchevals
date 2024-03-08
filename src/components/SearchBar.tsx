@@ -8,7 +8,7 @@ import { Input } from "./ui/input";
 import { Button } from "./ui/button";
 
 export default function SearchBar(): JSX.Element {
-  const { data, results, query, setQuery } = useContext(DataContext);
+  const { data, results, query, setQuery, miniEvalCard } = useContext(DataContext);
   const [showResults, setShowResults] = useState(true);
 
   // const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -23,6 +23,8 @@ export default function SearchBar(): JSX.Element {
   const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setLocalQuery(event.target.value); // Temporarily use local state
     setQuery(event.target.value); // Temporarily use local state
+    setShowResults(true);
+
     console.log(localQuery)
     // setQuery(event.target.value); // Comment this out temporarily
   };
@@ -76,18 +78,20 @@ export default function SearchBar(): JSX.Element {
           {useRouter().pathname.includes('/card/') ? 'Go to a different random Eval' : 'Go to a random Eval'}
           </Button>
       </div>
-    </div><div className="mt-0 w-full md:w-1/3 ml-0 md:ml-[calc(50%-20rem)] absolute md:mt-0 mt-[-2.6rem]">
+    </div><div className="w-full md:px-10 fixed mt-[-1.5rem] mx-auto left-0 right-0">
     {query && showResults && results.length > 0 && query !== new URLSearchParams(window.location.search).get('q') && (
-      <div id="dynamic-results" className="border mt-0 p-2 bg-white relative z-50 left-0">
-          <button onClick={handleCloseResults} className="absolute top-0 right-0 p-2">
+      <div id="dynamic-results" className="border mt-0 p-2 bg-white relative z-50 left-0 shadow-lg">
+          <button onClick={handleCloseResults} className="absolute top-0 right-0">
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" className="bi bi-x" viewBox="0 0 16 16">
               <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z" />
             </svg>
           </button>
-          <ul>
+          <ul className='mt-2'>
           {results.map((result: any) => (
-            <li key={result.id}>
-              <a href={`/card/${result.id}`}>[{result.query}]</a>
+            <li key={result.id} className='p-1'>
+              <a href={`/card/${result.id}`}>
+                {miniEvalCard && React.createElement(miniEvalCard, { evalItemId: result.id})}
+                </a>
             </li>
           ))}
         </ul>

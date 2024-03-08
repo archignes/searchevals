@@ -21,6 +21,12 @@
     "search_link": "https://you.com/search?q=%s&tbm=youchat"
   },
   {
+    "name": "YouChat - Smart mode",
+    "id": "youchat-smart-mode",
+    "nondistinct_url": true,
+    "search_link": "https://you.com/search?q=%s&tbm=youchat"
+  },
+  {
     "name": "Perplexity AI",
     "id": "perplexity-ai",
     "search_link": "https://www.perplexity.ai/search/?q=%s",
@@ -41,6 +47,12 @@
     "id": "chatgpt-3-5",
     "account_required": true,
     "search_link": "https://chat.openai.com/?model=text-davinci-002-render-sha"
+  },
+  {
+    "name": "Claude 3 - Opus",
+    "id": "claude-3-opus",
+    "account_required": true,
+    "search_link": "https://claude.ai/chats"
   },
   {
     "name": "ChatGPT - 4",

@@ -6,6 +6,7 @@ import { ReactNode } from 'react';
 import evals from "src/data/evals.json";
 import systems from "src/data/systems.json";
 import evaluators from "src/data/evaluators.json";
+import MiniEvalCard, { MiniEvalCardProps } from "./MiniEvalCard";
 
 export interface evalEvaluator {
     id: string; // twitter handle
@@ -27,6 +28,9 @@ export interface imageItem{
     annotated?: boolean;
 }
 
+
+
+
 export interface methodologyCitation {
     in_text: string;
     full: string;
@@ -38,6 +42,8 @@ export interface EvalItem {
     date: string;
     query: string;
     url: string;
+    connected?: string[];
+    following?: string[];
     key_phrases?: string[];
     tags?: string[];
     methodology?: methodologyCitation;
@@ -70,6 +76,8 @@ interface DataContextType {
     setQuery: (query: string) => void;
     systems: System[];
     evaluators: evalEvaluator[];
+    evalItemLabel: React.FC<{ evalItemId: string; currentEvaluation: string; currentEvaluator: boolean }>;
+    miniEvalCard: React.FC<MiniEvalCardProps>;
 }
 
 
@@ -78,12 +86,11 @@ const defaultContextValue: DataContextType = {
     results: [],
     query: '',
     setQuery: () => { }, // Dummy function, will be replaced in provider
-    systems: systems,
-    evaluators: evaluators,
-};
-
-
-
+    systems: [],
+    evaluators: [],
+    evalItemLabel: (props: { evalItemId: string; currentEvaluation: string; currentEvaluator: boolean }) => <div></div>,
+    miniEvalCard: (MiniEvalCardProps) => <div></div>
+}
 
 
 type DataProviderProps = {
@@ -98,6 +105,22 @@ export const DataProvider: React.FC<DataProviderProps> = ({ children }) => {
     const [data, setData] = useState<EvalItem[]>(evals);
     const [query, setQuery] = useState('');
     const [results, setResults] = useState<EvalItem[]>([]);
+
+
+    const EvalItemLabel: React.FC<{evalItemId: string, currentEvaluation: string, currentEvaluator: boolean}> = ({evalItemId, currentEvaluation, currentEvaluator}) => {
+        const connectedItem = data ? data.find(evalItem => evalItem.id === evalItemId) : null;
+        const evaluator = evaluators ? evaluators.find(evaluator => evaluator.id === connectedItem?.evaluator_id) : null;
+        const isCurrentEvaluation = currentEvaluation === evalItemId;
+        return (
+            <span>
+                {isCurrentEvaluation ? "current: " : ""}
+                <a href={`/card/${evalItemId}`}>
+                    {evaluator?.name}: {connectedItem?.systems?.join(', ')}[{connectedItem?.query}].{connectedItem?.date}
+                </a>
+            </span>
+        );
+    };
+
 
     useEffect(() => {
         // Initialize your data and add it to the index
@@ -156,7 +179,7 @@ export const DataProvider: React.FC<DataProviderProps> = ({ children }) => {
 
 
     return (
-        <DataContext.Provider value={{ data, results, query, setQuery, systems: sortedSystems, evaluators: evaluators }}>
+        <DataContext.Provider value={{ data, results, query, setQuery, systems: sortedSystems, evaluators: evaluators, miniEvalCard: MiniEvalCard, evalItemLabel: EvalItemLabel }}>
             {children} {/* Now TypeScript knows about children */}
         </DataContext.Provider>
     );

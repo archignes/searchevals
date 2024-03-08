@@ -337,7 +337,179 @@
     }
   ],
   "evaluator_id": "AravSrinivas"
+},
+{
+  "id": "find-the-list-of-startups-in-llm-security-richardsocher",
+  "date": "2024-03-06",
+  "query": "Find the list of startups in LLM Security",
+  "url": "https://twitter.com/RichardSocher/status/1765504886576500917",
+  "systems": [
+    "perplexity-ai", "youchat-smart-mode", "youchat-research-mode"
+  ],
+  "connected": ["list-of-startups-in-llm-security-ternome", "find-the-list-of-startups-in-llm-security-mlejva"],
+  "eval_parts": [
+    {
+      "id": "1",
+      "content": "you vs pplx\\n\\nsubstance vs hype",
+      "images": [
+        {
+          "url": "https://pbs.twimg.com/media/GIBVShNacAA_Hh2?format=jpg&name=medium",
+          "caption": "",
+          "annotation": false
+        },
+        {
+          "url": "https://pbs.twimg.com/media/GIBVS-2b0AAB3b9?format=jpg&name=medium",
+          "caption": "",
+          "annotation": false
+        }
+      ]
+    },
+    {
+      "id": "2",
+      "content": "I compared both of our free modes. We also win in the comparison of our research mode to their copilot:",
+      "images": [
+        {
+          "url": "https://pbs.twimg.com/media/GIDOc4QakAAaPJI?format=jpg&name=medium",
+          "caption": "",
+          "annotation": false
+        },
+        {
+          "url": "https://pbs.twimg.com/media/GIDOd11a8AAHjTk?format=jpg&name=medium",
+          "caption": "",
+          "annotation": false
+        }
+      ]
+    }
+  ],
+  "evaluator_id": "RichardSocher"
+},
+{
+  "id": "list-of-startups-in-llm-security-ternome",
+  "date": "2024-03-07",
+  "query": "List of startups in LLM security",
+  "url": "https://twitter.com/ternome/status/1765738731846176819",
+  "images": [{
+    "url": "https://pbs.twimg.com/media/GIEp_wzWIAArVrR?format=jpg&name=medium"
+  }],
+  "systems": [
+    "perplexity-ai"
+  ],
+  "following": ["find-the-list-of-startups-in-llm-security-richardsocher"],
+  "content": "\"Be honest\"\\n\\npplx (free mode):",
+  "evaluator_id": "ternome"
+},
+{
+  "id": "find-the-list-of-startups-in-llm-security-mlejva",
+  "date": "2024-03-07",
+  "query": "find the list of startups in LLM security",
+  "url": "https://twitter.com/mlejva/status/1765752994329407741",
+  "following": [
+    "find-the-list-of-startups-in-llm-security-richardsocher"
+  ],
+  "systems": [
+    "perplexity-ai"
+  ],
+  "content": "I just tried it and it worked?",
+  "images": [{"url": "https://pbs.twimg.com/media/GIE246IWYAASIN8?format=jpg&name=medium"}],
+  "evaluator_id": "mlejva"
+}
+,
+{
+  "id": "what-s-the-story-where-creative-director-always-wanted-to-karrisaarinen",
+  "date": "2024-03-07",
+  "query": "What's the story where creative director always wanted to make a change and the designer decided to add a duck",
+  "url": "https://twitter.com/karrisaarinen/status/1765795836477477084",
+
+  "systems": [
+    "google",
+    "perplexity-ai"
+  ],
+  "connected": [
+      "designer-duck-story-andrewingram",
+      "what-s-the-story-where-creative-director-always-wanted-to-katgleason"
+    ],
+  "eval_parts": [
+    {
+      "id": "1",
+      "content": "Was trying to find a story about a director who always wanted to change one thing. The designer added a duck to the game character so it'd be the most obvious thing to change.\\n\\nGoogle failed horribly. Tried lot of ways and keywords. @perplexity_ai found it in one single ask",
+      "images": [
+        {
+          "url": "https://pbs.twimg.com/media/GIFc55mbsAQHt7a?format=jpg&name=medium"
+        },
+        {
+          "url": "https://pbs.twimg.com/media/GIFdIF-bsAAgUW6?format=png&name=medium"
+        }]
+    },
+    {
+      "id": "2",
+      "content": "These are the keywords I used (I was remembered this was some corporate lore for the Ultima series and the Lich character in it)\\n\\nBut also now noticed the algo changed and now my tweet is the top result for the query in my screenshot",
+      "images": [
+        {
+          "url": "https://pbs.twimg.com/media/GIGJSxObEAAwSOE?format=jpg&name=medium"
+        },
+        {
+          "url": "https://pbs.twimg.com/media/GIGJeMmasAAlYKr?format=jpg&name=medium"
+        }
+      ]
+    }
+  ],
+  "evaluator_id": "karrisaarinen"
+},
+{
+  "id": "designer-duck-story-andrewingram",
+  "date": "2024-03-07",
+  "query": "designer duck story",
+  "url": "https://twitter.com/andrewingram/status/1765796404457320629",
+  "systems": [
+    "google"
+  ],
+  "evaluator_id": "andrewingram",
+  "following": ["what-s-the-story-where-creative-director-always-wanted-to-karrisaarinen"],
+  "eval_parts": [
+    {
+      "id": "1",
+      "content": "First attempt",
+      "images": [
+        {
+          "url": "https://pbs.twimg.com/media/GIFed1sXYAE8EVd?format=jpg&name=medium"
+        }
+      ]
+    },
+    {
+      "id": "2",
+      "content": "That doesn’t negate your point though, AI for half-remembered knowledge is getting seriously impressive"
+    }
+  ]
+},
+{
+  "id": "what-s-the-story-where-creative-director-always-wanted-to-katgleason",
+  "date": "2024-03-07",
+  "following": [
+    "what-s-the-story-where-creative-director-always-wanted-to-karrisaarinen"
+  ],
+  "query": "what's the story where the director always wanted to make a change and the designer added a duck",
+  "url": "https://twitter.com/katgleason/status/1765797659984400538",
+  "systems": [
+    "claude-3-opus"
+  ],
+  "images": [{"url": "https://pbs.twimg.com/media/GIFfnOjXEAE-yZi?format=jpg&name=large"}],
+  "content": "claude too single ask",
+  "evaluator_id": "katgleason"
+},
+{
+  "id": "the-designer-added-a-duck-to-the-game-character-pbshgthm",
+  "date": "2024-03-07",
+  "following": [
+      "what-s-the-story-where-creative-director-always-wanted-to-karrisaarinen"
+    ],
+  "query": "The designer added a duck to the game character",
+  "url": "https://twitter.com/pbshgthm/status/1765801254293508313",
+  "systems": [
+    "google"
+  ],
+  "content": "I think if asked the way we ask perplexity it might give better results? Also google’s AI generated overview explained it well.",
+  "evaluator_id": "pbshgthm",
+  "images": [{"url": "https://pbs.twimg.com/media/GIFi2kHWAAAbFo4?format=jpg&name=large"}]
 }
 ]
-
 

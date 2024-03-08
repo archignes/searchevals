@@ -1,12 +1,17 @@
 // SearchEvalCard.tsx
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import { useRouter } from 'next/router';
-
 import { Link2Icon, InfoCircledIcon, DrawingPinIcon } from '@radix-ui/react-icons';
-
 import DataContext from './DataContext';
 import SearchOnEvalInterface from './SearchOnEvalInterface';
 import SearchBracket from './SearchBracket'
+import { Button } from './ui/button'
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from './ui/dropdown-menu'
 
 import {
   Card,
@@ -23,12 +28,74 @@ import {
   TooltipTrigger,
 } from "./ui/tooltip"
   
+import FeedbackButton from './FeedbackButton';
+
 interface SearchEvalCardProps {
   id: string;
 }
 
+
+
+
+const ConnectedItemLabel: React.FC<{connection: string, currentEvaluation: string, currentEvaluator: boolean}> = ({ connection, currentEvaluation, currentEvaluator }) => {  
+  const { data, miniEvalCard } = useContext(DataContext);
+  
+
+  const connectedItem = data ? data.find(evalItem => evalItem.id === connection) : null;
+  const isCurrentEvaluation = currentEvaluation === connection;
+  return connectedItem ? (
+      <DropdownMenuItem className={isCurrentEvaluation ? "text-gray-400" : ""}>
+      {miniEvalCard && React.createElement(miniEvalCard, { evalItemId: connectedItem.id, currentEvaluation: currentEvaluation, currentEvaluator: currentEvaluator })}
+      </DropdownMenuItem>
+    ) : null;
+}
+
+const DropDownConnections: React.FC<SearchEvalCardProps> = ({ id }) => {
+  const { data } = useContext(DataContext);
+  const evalItem = data ? data.find(evalItem => evalItem.id === id) : null;
+
+  return (
+     <DropdownMenu>
+       <DropdownMenuTrigger asChild>
+          <Button variant="outline" className="mb-1" size="sm">Connected Evaluations</Button>
+        </DropdownMenuTrigger>
+       <DropdownMenuContent>
+         {evalItem!.connected?.map((connection) => (
+           <ConnectedItemLabel key={connection} connection={connection} currentEvaluation={id} currentEvaluator={false} />
+         ))}
+       </DropdownMenuContent>
+     </DropdownMenu>
+  )
+}
+
+const EvaluatorEvaluations: React.FC<SearchEvalCardProps> = ({ id }) => {
+  const { data } = useContext(DataContext);
+  const evalItem = data ? data.find(evalItem => evalItem.id === id) : null;
+  const evaluatorId = evalItem?.evaluator_id;
+  const evaluatorEvaluations = data ? data.filter(evalItem => evalItem.evaluator_id === evaluatorId) : null;
+  const evaluatorEvaluationsCount = evaluatorEvaluations ? evaluatorEvaluations.length : 0;
+
+
+  return (
+    <DropdownMenu>
+      <DropdownMenuTrigger>
+        <span className="text-xs border rounded-md  px-1 align-super">{evaluatorEvaluationsCount}</span>
+      </DropdownMenuTrigger>
+      <DropdownMenuContent>
+        {evaluatorEvaluations!.map((evaluation) => (
+          <ConnectedItemLabel key={evaluation.id} connection={evaluation.id} currentEvaluation={id} currentEvaluator={true} />
+        ))}
+      </DropdownMenuContent>
+    </DropdownMenu>
+  )
+}
+
+
+
+
 const SearchEvalCard: React.FC<SearchEvalCardProps> = ({ id }) => {
-  const { data, systems, evaluators } = useContext(DataContext);
+  const { data, systems, evaluators, miniEvalCard } = useContext(DataContext);
+  const [responseListVisible, setResponseListVisible] = useState(true)
   
   const router = useRouter();
   const { pathname } = router;
@@ -61,13 +128,13 @@ const SearchEvalCard: React.FC<SearchEvalCardProps> = ({ id }) => {
         query: query,
         queryTooltip: (         
           <><span>Click to start a <strong>{system?.name}</strong> search in a new tab:</span><SearchBracket className="not-italic text-sm">{query}</SearchBracket></>
-          )};
-    });
+          )}
+    })
   }
 
   let systemsEvaluatedSearchLinks;
   if (systems && systems.length > 0 && evalItem.systems) {
-    const encodedQuery = encodeURIComponent(evalItem.query);
+    const encodedQuery = encodeURIComponent(evalItem.query)
     systemsEvaluatedSearchLinks = systems
       .filter(system => evalItem.systems!.includes(system.id)) // Filter systems based on evalItem.systems
       .map((system, index, filteredSystems) => { // Use filteredSystems for accurate indexing
@@ -79,19 +146,16 @@ const SearchEvalCard: React.FC<SearchEvalCardProps> = ({ id }) => {
             </a>
             {index < filteredSystems.length - 1 ? ', ' : ''} {/* Use filteredSystems.length */}
           </span>
-        );
-      });
+        )
+      })
   } else {
-    systemsEvaluatedSearchLinks = "";
+    systemsEvaluatedSearchLinks = ""
   }
-  
   let cardTitle = <div><SearchBracket><span className="text-xl">{evalItem.query}</span></SearchBracket></div>
-
-
 
   return (
     <>
-      <SearchOnEvalInterface evalItem={evalItem} />
+      <SearchOnEvalInterface evalItem={evalItem} />      
       <div id="search-eval-card-div" className={`w-11/12 ${marqueeOrigin ? 'md:w-11/12' : 'md:w-2/3'} mx-auto mt-0 zIndex: 9999`}>
         <Card>  
         <CardHeader className="pb-2">
@@ -107,7 +171,13 @@ const SearchEvalCard: React.FC<SearchEvalCardProps> = ({ id }) => {
               <span className="text-sm">date: {evalItem.date}</span><br></br>
               {evalItem.methodology && (<>
               <span className="text-sm">methodology: <a className="underline" href={evalItem.methodology.url}>{evalItem.methodology.in_text}</a></span><br></br>
-              </>)}
+              {evalItem.methodology && (
+                <>
+                  <span className="text-sm">methodology: <a className="underline" href={evalItem.methodology.url}>{evalItem.methodology.in_text}</a></span><br></br>
+                </>
+              )}
+              </>
+              )}
               <span className="text-sm">systems: {systemsEvaluatedSearchLinks}</span>
                 {evalItem.key_phrases && (
                   <>
@@ -120,13 +190,50 @@ const SearchEvalCard: React.FC<SearchEvalCardProps> = ({ id }) => {
           </CardDescription>
         </CardHeader>
         <CardContent>
+            {evalItem.following && (
+              <>             
+              <div id="response-to-div" className="w-7/8 pb-1 mx-auto">
+                  {responseListVisible ? (
+                    <Button id="response-to-toggle-button"
+                            className="btn btn-outline-secondary ml-10 mt-1 w-21 h-7 rounded-bl-none rounded-br-none"
+                            aria-label="Toggle response list"
+                            onClick={() => setResponseListVisible(prev => !prev)}>
+                              <span className="mr-2 pr-2">Responding to: </span>
+                    </Button>
+                  ) : (
+                    <Button id="response-to-toggle-button"
+                            className="btn btn-outline-secondary ml-10 mt-1 w-21 h-7 rounded-md"
+                            aria-label="Toggle response list"
+                            onClick={() => setResponseListVisible(prev => !prev)}>
+                              <span className="mr-2">Responding to...</span>
+                    </Button>
+                  )}
+                {responseListVisible && (
+                  <ol id="response-to-list">
+                    {evalItem.following.map((following) => (
+                      <li key={following} className="ml-4 text-left px-1 mb-1">
+                        {miniEvalCard && React.createElement(miniEvalCard,
+                            { evalItemId: following, 
+                              currentEvaluation: evalItem.id,
+                              currentEvaluator: evalItem.evaluator_id === data?.find(item => item.id === following)?.evaluator_id,
+                              checks: true })}
+                      </li>
+                    ))}
+                  </ol>
+                )}
+              </div>
+              </>
+            )}
             {evalItem.tags && (
               <div className="text-sm m-1">{evalItem.tags.map(tag => <span key={tag} className="bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">{tag}</span>)}</div>
+            )}
+            {evalItem.connected && (
+              <DropDownConnections id={evalItem.id} />
             )}
           {evalEvaluatorDetails && (
             <figcaption className="mt-1 mb-2">
               <div className="flex items-center divide-x rtl:divide-x-reverse divide-gray-300 dark:divide-gray-700">
-                <cite id="person-name" className="pe-3 ml-3 font-medium text-gray-900 dark:text-white">{evalEvaluatorDetails.name}</cite>
+                  <cite id="person-name" className="pe-3 ml-3 font-medium text-gray-900 dark:text-white">{evalEvaluatorDetails.name}<EvaluatorEvaluations id={evalItem.id} /></cite>
                 <cite className="ps-3 text-sm text-gray-500 dark:text-gray-400">
                   <span id="person-info-link" className="inline-flex"><a href={evalEvaluatorDetails.URL} target="_blank" rel="noopener noreferrer"><InfoCircledIcon /></a></span>
                   <span id="person-role" className="ml-1">{evalEvaluatorDetails.role}</span>
@@ -174,8 +281,9 @@ const SearchEvalCard: React.FC<SearchEvalCardProps> = ({ id }) => {
             <span>References:</span><br></br>
             <div className="ml-3">{evalItem.methodology.full} <a className="underline" href={evalItem.methodology.url}>{evalItem.methodology.url}</a>
             </div></div>)}
-        <CardFooter className="mt-1">
-          <Link2Icon className="text-gray-500 dark:text-gray-400" /><small className="text-gray-500 dark:text-gray-500">Permalink id: <a className="underline" href={`/card/${evalItem!.id}`}>{evalItem!.id}</a></small>
+        <CardFooter className="mt-1 flex flex-row justify-between">
+          <div><Link2Icon className="inline text-gray-500 dark:text-gray-400" /><small className="text-gray-500 dark:text-gray-500">Permalink id: <a className="underline" href={`/card/${evalItem!.id}`}>{evalItem!.id}</a></small></div>
+          <FeedbackButton />
         </CardFooter>
       </Card>
     </div>

@@ -88,10 +88,7 @@ const CardPage = ({ evalItem, evaluators }: { evalItem: EvalItem; evaluators: ev
 
       </Head>
       <Script defer data-domain="searchevals.com" src="https://plausible.io/js/script.js" />
-      <Header/>
-      <SearchBar />
       <SearchEvalCard id={evalItem.id} />
-      <Footer />
     </>
   );
 };
