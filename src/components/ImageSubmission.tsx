@@ -13,7 +13,7 @@ import {
 import { Input } from "./ui/input";
 import { Checkbox } from './ui/checkbox';
 import { Button } from "./ui/button";
-import { imageItem } from './DataContext';
+import { imageItem } from '@/src/types/evalItem';
 
 export const ImageUploadField = () => {
   const { control, register, formState: { errors } } = useFormContext();

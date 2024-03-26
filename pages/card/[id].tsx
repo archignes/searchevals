@@ -1,5 +1,5 @@
 // card/[id].tsx
-import React from 'react';
+import React, { useContext } from 'react';
 import Head from 'next/head';
 import Script from 'next/script'
 import Header from '../../src/components/Header';
@@ -7,7 +7,9 @@ import SearchBar from '../../src/components/SearchBar';
 import SearchEvalCard from '../../src/components/SearchEvalCard';
 import Footer from '../../src/components/Footer';
 import { GetStaticProps, GetStaticPaths } from 'next';
-import { EvalItem, evalEvaluator } from '@/src/components/DataContext';
+import { evalEvaluator } from '@/src/components/DataContext';
+import OpenGraphCardMetaData from '@/src/components/OpenGraphCardMetaData';
+import { EvalItem } from '@/src/types/evalItem';
 
 // Import your JSON data at the top of your file
 import evals from "src/data/evals.json";
@@ -46,23 +48,11 @@ export const getStaticPaths: GetStaticPaths = async () => {
 }
 
 
+
 const CardPage = ({ evalItem, evaluators }: { evalItem: EvalItem; evaluators: evalEvaluator[] }) => {
   
-  const title = `Searcheval: [${evalItem.query.slice(0, 60)}]`;
-
-  const getEvaluatorName = (evaluatorId: string): string => {
-    const evaluator = evaluators.find(evaluator => evaluator.id === evaluatorId);
-    return evaluator ? evaluator.name : 'Unknown Evaluator';
-  };
-  const systems_readable = evalItem.systems.length === 2 ? evalItem.systems.join(' and ') : evalItem.systems.length > 2 ? evalItem.systems.slice(0, -1).join(', ') + ', and ' + evalItem.systems.slice(-1) : evalItem.systems[0];
-  const description = `Search evaluation of ${systems_readable} from ${getEvaluatorName(evalItem.evaluator_id)} for query: [${evalItem.query}]`
-  const domain = process.env.NEXT_PUBLIC_DOMAIN;
-  const url = `${domain}/card/${evalItem.id}`;
-  const image = `${domain}/screenshots/card-${evalItem.id}.png`;
-
-
-
-
+  const { title, description, url, image } = OpenGraphCardMetaData(evalItem);
+  
   return (
     <>
       <Head>

@@ -2,8 +2,10 @@
 import React, { useContext, useState } from 'react';
 import { useRouter } from 'next/router';
 import { Link2Icon, InfoCircledIcon, DrawingPinIcon, LinkedInLogoIcon, TwitterLogoIcon, InstagramLogoIcon } from '@radix-ui/react-icons';
-import DataContext, { EvalItem } from './DataContext';
+import DataContext from './DataContext';
+import { EvalItem } from '@/src/types/evalItem';
 import SearchOnEvalInterface from './SearchOnEvalInterface';
+import ShareCardInterface from './ShareCardInterface';
 import SearchBracket from './SearchBracket'
 import { Button } from './ui/button'
 import {
@@ -196,7 +198,10 @@ const SearchEvalCard: React.FC<SearchEvalCardProps> = ({ id }) => {
 
   return (
     <>
-      <SearchOnEvalInterface evalItem={evalItem} />      
+      <div className="flex justify-end space-x-0 mt-3 mr-14">
+        <SearchOnEvalInterface evalItem={evalItem} />
+        <ShareCardInterface evalItem={evalItem} />
+      </div>
       <div id="search-eval-card-div" className={`w-11/12 ${marqueeOrigin ? 'md:w-11/12' : 'md:w-2/3'} mx-auto mt-0 zIndex: 9999`}>
         <Card>  
         <CardHeader className="pb-2">

@@ -46,7 +46,7 @@ const EvalExtractCard: React.FC<EvalExtractCardProps> = ({ evalCardItem }) => {
                     </figure>
                     {evalCardItem?.media === "video" ? (
                         <div className="border border-black text-center p-2.5 w-1/2 mx-auto min-h-[200px] flex flex-col justify-center items-center">
-                            Video content in evals is currently not supported, click <a className="text-blue-500 underline" href={evalCardItem.url}>here</a> to see the video in content.
+                            Video content in evals is currently not supported, click <a className="text-blue-500 underline" href={evalCardItem.url}>here</a> to see the video in context.
                         </div>
                         ) : (
                         evalCardItem.images && evalCardItem.images.length > 0 && (<ImageDisplay images={evalCardItem.images} />))}

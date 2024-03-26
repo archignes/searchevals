@@ -7,10 +7,11 @@ import Header from '../src/components/Header';
 import Footer from '../src/components/Footer';
 import SearchBar from '../src/components/SearchBar';
 import FeedbackButton from '../src/components/FeedbackButton';
+
 function MyApp({ Component, pageProps }: AppProps) {
     return (
         <StrictMode>
-        <DataProvider>          
+        <DataProvider>
             <FeedbackButton/>
             <Header />
             <SearchBar />

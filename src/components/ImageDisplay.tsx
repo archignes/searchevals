@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useRouter } from 'next/router';
 import { ExclamationTriangleIcon } from '@radix-ui/react-icons';
-import { imageItem } from './DataContext';
+import { imageItem } from '@/src/types/evalItem';
 
 type ImageDisplayProps = {
     images: imageItem[];

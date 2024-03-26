@@ -1,5 +1,6 @@
 import { ExclamationTriangleIcon } from "@radix-ui/react-icons";
-import { EvalItem, evalEvaluator, System } from '@/src/components/DataContext';
+import { EvalItem } from '@/src/types/evalItem';
+import { evalEvaluator, System} from '@/src/components/DataContext';
 import { SearchEvalTitle } from "./Header";
 import ImageDisplay from "./ImageDisplay";
 

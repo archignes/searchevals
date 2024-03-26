@@ -7,6 +7,7 @@ import evals from "src/data/evals.json";
 import systems from "src/data/systems.json";
 import evaluators from "src/data/evaluators.json";
 import MiniEvalCard, { MiniEvalCardProps } from "./MiniEvalCard";
+import { EvalItem, evalPart } from '@/src/types/evalItem';
 
 export interface evalEvaluator {
     id: string; // twitter handle
@@ -16,48 +17,9 @@ export interface evalEvaluator {
     URL: string;
 }
 
-export interface evalPart {
-    id: string;
-    url?: string;
-    media?: string;
-    content: string;
-    images?: imageItem[]
-}
-
-export interface imageItem{
-    url: string;
-    caption?: string;
-    annotated?: boolean;
-}
 
 
 
-
-export interface methodologyCitation {
-    in_text: string;
-    full: string;
-    url: string;
-}
-
-export interface EvalItem {
-    id: string;
-    date: string;
-    query: string;
-    url: string;
-    connected?: string[];
-    following?: string[];
-    key_phrases?: string[];
-    tags?: string[];
-    methodology?: methodologyCitation;
-    context?: string;
-    systems: string[];
-    eval_parts?: evalPart[];
-    content?: string; // Make content optional
-    images?: imageItem[];
-    evaluator_id: string;
-    media?: string;
-    also_published_at?: string;
-}
 
 
 
