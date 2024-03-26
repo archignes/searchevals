@@ -1,11 +1,12 @@
 // ==UserScript==
-// @name         searchevals.extract
+// @name         searchevals.extract-experimental
 // @namespace    http://tampermonkey.net/
 // @version      0.1
 // @description  Extract data from a tweet link for input into searchevals.com/input
 // @author       searchevals.com
 // @match        https://twitter.com/*
 // @grant        GM_setClipboard
+// @grant        GM_xmlhttpRequest
 // ==/UserScript==
 
 // Goal: extract json formatted data objects from links, objects include Evaluators and Evals
@@ -34,8 +35,9 @@
 //     evaluator_id: string;
 // }
 
+// These next two lines are needed to skip the linting errors
 /* global GM_setClipboard */
-
+/* global GM_xmlhttpRequest */
 
 
 (function () {
@@ -200,7 +202,7 @@
 
         return formContainer;
     }
-
+    
     function createSectionContainer(titleText) {
         const container = document.createElement('div');
 
@@ -241,9 +243,9 @@
             }
 
             container.appendChild(inputContainer);
-
+            
         });
-
+        
         if (buttonText !== null) {
             const generateJsonButton = createGenerateJsonButton(buttonText);
             container.appendChild(generateJsonButton);
@@ -255,7 +257,7 @@
         button.type = 'button';
         button.id = buttonText.toLowerCase().replace(/\s+/g, '-') + "-button";
         button.textContent = buttonText;
-        button.addEventListener('click', function (event) {
+        button.addEventListener('click', function(event) {
             generateAndCopyJSON(event.target.id);
         });
         return button;
@@ -280,7 +282,37 @@
     }
 
     function getEvalFields() {
+        const systemsField = {
+            id: 'systems',
+            label: 'Systems:',
+            type: 'text' }
+        // Fetch systems and populate the field
+        GM_xmlhttpRequest().then(systems => {
+            // Assuming 'systems' is an array of objects with 'id' and 'name' properties
+            // and you're using a datalist for autocomplete functionality
+            const dataList = document.createElement('datalist');
+            dataList.id = 'systems-list';
+            console.log(`systems: ${systems}`)
+            console.log(`systems[0]: ${systems[0]}`)
+            console.log(`systems[0].id: ${systems[0].id}`)
+            console.log(`systems[0].name: ${systems[0].name}`)
+            systems.forEach(system => {
+                const option = document.createElement('option');
+                option.value = system.id; // Use system ID as the value
+                option.textContent = system.name; // Display system name to the user
+                dataList.appendChild(option);
+            });
+            document.body.appendChild(dataList); // Append the dataList to the body or a more specific element
+
+            // Assuming the 'Systems' field is an input element, set its list attribute
+            const systemsInput = document.getElementById(systemsField.id);
+            if (systemsInput) {
+                systemsInput.setAttribute('list', 'systems-list');
+            }
+        });
+
         return [
+            {systemsField},
             { id: 'eval-date', label: 'Date:', type: 'text' },
             { id: 'eval-query', label: 'Query:', type: 'text' },
             { id: 'eval-url', label: 'URL:', type: 'text', value: window.location.href, readonly: true },
@@ -320,7 +352,7 @@
                 formContainer.style.width = '80%';
                 formContainer.style.top = '10%';
                 formContainer.style.overflow = 'auto';
-
+                
                 collapseButton.textContent = '-';
                 formContainer.querySelectorAll('h2, label, input, textarea').forEach(element => {
                     element.style.visibility = 'visible'; // Unhide all text elements
@@ -395,9 +427,9 @@
             getAccountData(username).then(accountData => {
                 let cleanedData = accountData.split(`@${username}`)[1].replace(/\d{1,3}(,\d{3})*\s+Following\s*\d{1,3}(,\d{3})*\s+Followers/, '').trim();
                 profileField.innerText = cleanedData;
-
+                
             }).catch(error => console.error(error));
-
+            
             const imagesField = document.getElementById('images');
             if (imagesField) {
                 imagesField.value = findImagesInTweet(tweetPath).join('\n');
@@ -448,6 +480,30 @@
         // Extract and return the tweet text or a default message if not found
         return textElement ? textElement.textContent.trim() : "Text not found";
     };
+
+    GM_xmlhttpRequest({
+        method: "GET",
+        url: "https://xbq1s7ts13.execute-api.us-east-1.amazonaws.com/beta/?action=systems",
+        onload: function (response) {
+            try {
+                const data = JSON.parse(response.responseText); // Parse the response text as JSON
+                console.log('Parsed data:', data); // Log the parsed data
+
+                // Now you can access the systems array if the parsed data is an array
+                if (Array.isArray(data)) {
+                    console.log('systems:', data);
+                    if (data.length > 0) {
+                        console.log('systems[0]:', data[0]);
+                        console.log('systems[0].id:', data[0].id);
+                        console.log('systems[0].name:', data[0].name);
+                    }
+                }
+            } catch (e) {
+                console.error('Error parsing JSON:', e);
+            }
+        }
+    });
+
 
     async function getAccountData(username) {
         const links = document.querySelectorAll(`a[href="/${username}"]`);
@@ -538,7 +594,7 @@
 
         alert("JSON has been copied to the clipboard.");
     }
-
+    
     function validateFormData(evals, evaluator, buttonId) {
         let errors = []; // Initialize an array to collect error messages
 

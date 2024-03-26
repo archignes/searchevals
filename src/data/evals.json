@@ -509,7 +509,106 @@
   ],
   "content": "I think if asked the way we ask perplexity it might give better results? Also google’s AI generated overview explained it well.",
   "evaluator_id": "pbshgthm",
-  "images": [{"url": "https://pbs.twimg.com/media/GIFi2kHWAAAbFo4?format=jpg&name=large"}]
+  "images": [{"url": "https://pbs.twimg.com/media/GIFi2kHWAAAbFo4?format=jpg&name=medium"}]
+},
+{
+  "id": "pitbull-puppy-for-sale-craigslist-lilyraynyc",
+  "date": "2024-03-22",
+  "query": "pitbull puppy for sale craigslist",
+  "url": "https://twitter.com/lilyraynyc/status/1771217301863289140",
+  "systems": [
+    "google-sge"
+  ],
+  "content": "OH GOOD.\\n\\nSGE WILL EVEN RECOMMEND THE SPAM SITES AS PART OF THE ANSWER.",
+  "evaluator_id": "lilyraynyc",
+  "images": [
+    {
+      "url": "https://pbs.twimg.com/media/GJSgsp5WwAA8uau?format=png&name=medium", "annotated": true
+    }
+  ]
+},
+{
+  "id": "twitter-kelseyhightower-systemd-kelseyhightower",
+  "date": "2024-03-01",
+  "query": "twitter kelseyhightower systemd",
+    "eval_parts": [
+      {
+        "id": "1",
+        "content": "I finally got a chance to play with @perplexity_ai and I can see how this is going to replace search engines for some people. Instead of a bunch of links, you get answers, and the sources they were derived from.\\n\\nBest part, no ads, but I'm sure that won't last forever.",
+        "images": [
+          {
+            "url": "https://pbs.twimg.com/media/GHi-NbGawAAxAi3?format=jpg&name=medium"
+          }
+        ]
+      },
+      {
+        "id": "2",
+        "content": "I'm not sure I trust a single answer, even with sources, over a bunch of random links. When using Google search, I feel like I'm getting \"everything\", and get to do my own research.",
+        "images": [
+          {
+            "url": "https://pbs.twimg.com/media/GHjBHD1bkAAmkDr?format=jpg&name=medium"
+          }
+        ]
+      },
+      {
+        "id": "3",
+        "content": "The more I use Perplexity, the more I realize all I want is an answer most of the time."
+      }
+    ],
+  "url": "https://twitter.com/kelseyhightower/status/1763370577765777632",
+  "systems": [
+    "perplexity-ai", "google"
+  ],
+  "evaluator_id": "kelseyhightower"
+},
+{
+  "id": "247-basketball-recruiting-lilyraynyc",
+  "date": "2024-03-22",
+  "query": "247 basketball recruiting",
+  "url": "https://twitter.com/lilyraynyc/status/1771225964325790033",
+  "systems": [
+    "google-sge"
+  ],
+  "content": "Hey @247Sports make sure your users don't click this link in Google's SGE, it will take them to a porn website.",
+  "evaluator_id": "lilyraynyc",
+  "images": [
+    {
+      "url": "https://pbs.twimg.com/media/GJSoPu-WMAArdWJ?format=jpg&name=medium"
+    }
+  ]
+},
+{
+  "id": "craigslist-used-auto-parts-lilyraynyc",
+  "date": "2024-03-22",
+  "query": "craigslist used auto parts",
+  "url": "https://twitter.com/lilyraynyc/status/1771209789919359454",
+  "systems": [
+    "google"
+  ],
+  "content": "Checking my favorite test keyword to see if the search results are still full of spam for certain queries.\\n\\nYes, confirmed. Every result on page 1 for this query, aside from the 2 Craigslist URLs, is still spam.\\n\\nThe third result is full on porn - click at your own risk.",
+  "images": [
+    {
+      "url": "https://pbs.twimg.com/media/GJSZuK4WQAArPLf?format=png&name=medium"
+    }
+  ],
+  "evaluator_id": "lilyraynyc"
+},
+{
+  "id": "covid-vaccine-cvs-lilyraynyc",
+  "date": "2024-03-22",
+  "query": "covid vaccine CVS",
+  "url": "https://twitter.com/lilyraynyc/status/1771209789919359454",
+  "systems": [
+    "google"
+  ],
+  "content": "This one is fun too.",
+  "images": [
+    {
+      "url": "https://pbs.twimg.com/media/GJSaykNXgAEMlW3?format=png&name=medium",
+      "annotated": true
+    }
+  ],
+  "evaluator_id": "lilyraynyc"
 }
 ]
 

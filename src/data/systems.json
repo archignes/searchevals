@@ -2,7 +2,16 @@
   {
     "name": "Google",
     "id": "google",
-    "search_link": "https://www.google.com/search?q=%s"
+    "search_link": "https://www.google.com/search?q=%s",
+    "base_url_for": [
+        "google-sge"
+      ]
+  },
+  {
+    "id": "google-sge",
+    "name": "Google SGE",
+    "search_link": "https://www.google.com/search?q=test",
+    "nondistinct_url": true
   },
   {
     "name": "Exa",
