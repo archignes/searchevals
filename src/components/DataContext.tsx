@@ -18,6 +18,8 @@ export interface evalEvaluator {
 
 export interface evalPart {
     id: string;
+    url?: string;
+    media?: string;
     content: string;
     images?: imageItem[]
 }
@@ -53,6 +55,8 @@ export interface EvalItem {
     content?: string; // Make content optional
     images?: imageItem[];
     evaluator_id: string;
+    media?: string;
+    also_published_at?: string;
 }
 
 

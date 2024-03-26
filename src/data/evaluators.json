@@ -149,5 +149,13 @@
   "role": "Software engineer (including at Google formerly) and developer advocate",
   "URL": "https://twitter.com/kelseyhightower",
   "conflict": []
+},
+{
+  "id": "aselipsky",
+  "name": "Adam Selipsky",
+  "role": "CEO at Amazon Web Services (AWS)",
+  "URL": "https://twitter.com/aselipsky",
+  "conflict": ["perplexity-ai"]
 }
 ]
+

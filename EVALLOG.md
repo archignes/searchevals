@@ -162,3 +162,33 @@ Part of the issue is the multi-step manual work might include or need to navigat
 }
 ```
 
+## 2024-03-26
+
+### 2024-03-26 09:58:21
+
+[Adam Selipsky](https://twitter.com/aselipsky/status/1770173447106392182)
+
+CEO AWS
+
+Wanna check quickly how I phrased that for other CEOs...: `CEO at` 
+
+Used a screenshot and OCR shortcut I wrote to get the query quickly-ish...
+
+[How does Perplexity’s use of AWS technology improve their search platform?]
+
+
+Ahhh... Adding this:   "media": "video - unsupported at this time"
+
+Again, the id is annoying... 
+
+OK. Added a div to show videos are not supported. Wondered what to do about "conflict"...
+
+I added Perplexity AI, then was very pleased with the suggested search on Perplexity...
+
+It showed me a nearly identical endorsement from Selipsky on LinkedIn.
+
+So now I want to add some field that lets me link to 'syndicated'? or alternative platforms for the same eval?
+
+Very fiddly. Done. 2024-03-26 10:44:41
+
+

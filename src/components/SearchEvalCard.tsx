@@ -1,8 +1,8 @@
 // SearchEvalCard.tsx
 import React, { useContext, useState } from 'react';
 import { useRouter } from 'next/router';
-import { Link2Icon, InfoCircledIcon, DrawingPinIcon } from '@radix-ui/react-icons';
-import DataContext from './DataContext';
+import { Link2Icon, InfoCircledIcon, DrawingPinIcon, LinkedInLogoIcon, TwitterLogoIcon, InstagramLogoIcon } from '@radix-ui/react-icons';
+import DataContext, { EvalItem } from './DataContext';
 import SearchOnEvalInterface from './SearchOnEvalInterface';
 import SearchBracket from './SearchBracket'
 import { Button } from './ui/button'
@@ -44,7 +44,7 @@ const ConnectedItemLabel: React.FC<{connection: string, currentEvaluation: strin
   const connectedItem = data ? data.find(evalItem => evalItem.id === connection) : null;
   const isCurrentEvaluation = currentEvaluation === connection;
   return connectedItem ? (
-      <DropdownMenuItem className={`${isCurrentEvaluation ? "text-gray-4000" : ""}`}>
+    <DropdownMenuItem id="connected-item-label" className={`${isCurrentEvaluation ? "text-gray-4000" : ""}`}>
       {miniEvalCard && React.createElement(miniEvalCard, { evalItemId: connectedItem.id, currentEvaluation: currentEvaluation, currentEvaluator: currentEvaluator })}
       </DropdownMenuItem>
     ) : null;
@@ -67,6 +67,47 @@ const DropDownConnections: React.FC<SearchEvalCardProps> = ({ id }) => {
      </DropdownMenu>
   )
 }
+
+type evalItemProps = {
+  evalItem: EvalItem;
+}
+
+const AlsoPublished: React.FC<evalItemProps> = ({ evalItem }) => {
+  const venueLogos = {
+    "linkedin.com": <LinkedInLogoIcon className="inline pb-1 h-4 w-4"/>,
+    "twitter.com": <TwitterLogoIcon className="inline ml-1 pb-1"/>,
+    "instagram.com": <InstagramLogoIcon className="inline ml-1 pb-1"/>
+  };
+
+  const venueNames = {
+    "linkedin.com": "LinkedIn",
+    "twitter.com": "Twitter",
+    "instagram.com": "Instagram"
+  };
+
+  let alsoPublishedAtShortened = evalItem.also_published_at ? new URL(evalItem.also_published_at).hostname.replace(/^www\./, '') : "";
+  
+  let alsoPublishedAtLogo = venueLogos[alsoPublishedAtShortened as keyof typeof venueLogos] || "";
+  let alsoPublishedAtName = venueNames[alsoPublishedAtShortened as keyof typeof venueNames] || alsoPublishedAtShortened;
+
+  return (
+    <>
+      <br></br>
+      <span className="text-sm">also published {alsoPublishedAtLogo ? "on" : "at"}:
+        <a
+          className="underline ml-1"
+          href={evalItem.also_published_at}>
+          <span>
+            {alsoPublishedAtName}
+          </span>
+          {alsoPublishedAtLogo}
+        </a>
+      </span>
+    </>
+  );
+}
+
+
 
 const EvaluatorEvaluations: React.FC<SearchEvalCardProps> = ({ id }) => {
   const { data } = useContext(DataContext);
@@ -179,6 +220,9 @@ const SearchEvalCard: React.FC<SearchEvalCardProps> = ({ id }) => {
               </>
               )}
               <span className="text-sm">systems: {systemsEvaluatedSearchLinks}</span>
+              {evalItem.also_published_at && (
+                <AlsoPublished evalItem={evalItem} />
+              )}
                 {evalItem.key_phrases && (
                   <>
                     <br></br>

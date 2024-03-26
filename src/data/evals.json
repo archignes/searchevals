@@ -609,6 +609,22 @@
     }
   ],
   "evaluator_id": "lilyraynyc"
+},
+{
+  "id": "how-does-perplexity-use-aws-technology-improve-their-search-platform-aselipsky",
+  "date": "2024-03-19",
+  "query": "How does Perplexity’s use of AWS technology improve their search platform?",
+  "url": "https://twitter.com/aselipsky/status/1770173447106392182",
+  "systems": [
+    "perplexity-ai"
+  ],
+  "content": "Always a thrill to see customer results like this. @perplexity_ai is a pioneering generative AI startup that’s reimagining the future of search (catch their app in action below). They accelerated their foundation model training up to 40% using Amazon SageMaker HyperPod. And by deploying models on our best-in-class infrastructure, they’re able to handle over 100k queries per hour without compromising latency or the user experience. Proud to support innovators like Perplexity in pushing the boundaries of AI. Happy searching! https://aws.amazon.com/solutions/case-studies/perplexity-case-study/…",
+  "evaluator_id": "aselipsky",
+  "media": "video",
+  "tags": [
+    "implied positive evaluation"
+  ],
+  "also_published_at": "https://www.linkedin.com/posts/adamselipsky_always-a-thrill-to-see-customer-results-like-activity-7175940226731634688-bSWY/"
 }
 ]
 
