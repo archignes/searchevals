@@ -10,6 +10,14 @@
 // ==/UserScript==
 
 // Goal: extract json formatted data objects from links, objects include Evaluators and Evals
+//
+// TODO:
+//  - Add a field for the systems and let the user select multiple (pulled from the api)
+//  - Add a checkbox to indicate when images are annotated.
+//  - Ensure the image list is included in the json output.
+
+
+
 // Supported websites:
 //  - Twitter.com
 // Evaluators:
@@ -41,7 +49,6 @@
 
 
 (function () {
-    'use strict';
 
     // Add CSS to the head of the document
     const style = document.createElement('style');
@@ -223,12 +230,16 @@
             inputContainer.className = 'input-container';
 
             let input;
-            if (field.type === 'p') {
+            if (field.type === 'select-multiple') {
+                input = document.createElement('select');
+                input.id = field.id;
+                input.setAttribute('multiple', 'true');
+            } else if (field.type === 'p') {
                 input = document.createElement('p');
             } else {
                 input = document.createElement('input');
+                input.type = field.type;
             }
-            input.type = field.type;
             input.id = field.id;
             input.name = field.id;
             if (field.readonly) {
@@ -236,16 +247,14 @@
                 input.value = field.value;
             }
 
-            // Append input to the container
             inputContainer.appendChild(input);
             if (field.readonly) {
                 addLockIconToElement(inputContainer);
             }
 
             container.appendChild(inputContainer);
-            
         });
-        
+
         if (buttonText !== null) {
             const generateJsonButton = createGenerateJsonButton(buttonText);
             container.appendChild(generateJsonButton);
@@ -285,41 +294,58 @@
         const systemsField = {
             id: 'systems',
             label: 'Systems:',
-            type: 'text' }
-        // Fetch systems and populate the field
-        GM_xmlhttpRequest().then(systems => {
-            // Assuming 'systems' is an array of objects with 'id' and 'name' properties
-            // and you're using a datalist for autocomplete functionality
-            const dataList = document.createElement('datalist');
-            dataList.id = 'systems-list';
-            console.log(`systems: ${systems}`)
-            console.log(`systems[0]: ${systems[0]}`)
-            console.log(`systems[0].id: ${systems[0].id}`)
-            console.log(`systems[0].name: ${systems[0].name}`)
-            systems.forEach(system => {
-                const option = document.createElement('option');
-                option.value = system.id; // Use system ID as the value
-                option.textContent = system.name; // Display system name to the user
-                dataList.appendChild(option);
-            });
-            document.body.appendChild(dataList); // Append the dataList to the body or a more specific element
+            type: 'select-multiple',
+            options: [] // Initialize an empty array for options
+        };
 
-            // Assuming the 'Systems' field is an input element, set its list attribute
-            const systemsInput = document.getElementById(systemsField.id);
-            if (systemsInput) {
-                systemsInput.setAttribute('list', 'systems-list');
+        // Fetch systems and populate the field
+        GM_xmlhttpRequest({
+            method: "GET",
+            url: "https://xbq1s7ts13.execute-api.us-east-1.amazonaws.com/beta/?action=systems",
+            onload: function (response) {
+                if (response.status === 200) {
+                    try {
+                        let systems = JSON.parse(response.responseText);
+                        if (typeof systems === 'object' && !Array.isArray(systems)) {
+                            systems = Object.keys(systems).map(key => ({
+                                id: key,
+                                name: systems[key]
+                            }));
+                        }
+                        if (Array.isArray(systems)) {
+                            systemsField.options = systems; // Assign the fetched systems to the options array
+                            const selectElement = document.getElementById('systems');
+                            if (selectElement) {
+                                // Clear any existing options
+                                selectElement.innerHTML = '';
+                                // Add new options based on the fetched systems
+                                systems.forEach(system => {
+                                    const option = document.createElement('option');
+                                    option.value = system.id;
+                                    option.textContent = system.name;
+                                    selectElement.appendChild(option);
+                                });
+                            }
+                        } else {
+                            console.error('Expected an array for systems, but got:', systems);
+                        }
+                    } catch (e) {
+                        console.error('Error parsing JSON:', e);
+                    }
+                } else {
+                    console.error('Request failed with status:', response.status);
+                }
             }
         });
 
         return [
-            {systemsField},
-            { id: 'eval-date', label: 'Date:', type: 'text' },
-            { id: 'eval-query', label: 'Query:', type: 'text' },
-            { id: 'eval-url', label: 'URL:', type: 'text', value: window.location.href, readonly: true },
-            { id: 'eval-content', label: 'Content:', type: 'textarea' },
-            { id: 'systems', label: 'Systems:', type: 'text' },
-            { id: 'images', label: 'Images:', type: 'textarea', readonly: true },
-
+            systemsField,
+            { id: 'eval-content', label: 'Eval content:', type: 'textarea' },
+            { id: 'eval-date', label: 'Eval date:', type: 'date' },
+            { id: 'eval-url', label: 'Eval URL:', type: 'text', value: window.location.href, readonly: true },
+            { id: 'eval-id', label: 'Eval ID:', type: 'text', value: window.location.pathname.split('/')[2], readonly: true },
+            { id: 'eval-systems', label: 'Eval systems:', type: 'textarea' },
+            { id: 'eval-images', label: 'Eval images:', type: 'textarea' },
         ];
     }
 
@@ -480,30 +506,6 @@
         // Extract and return the tweet text or a default message if not found
         return textElement ? textElement.textContent.trim() : "Text not found";
     };
-
-    GM_xmlhttpRequest({
-        method: "GET",
-        url: "https://xbq1s7ts13.execute-api.us-east-1.amazonaws.com/beta/?action=systems",
-        onload: function (response) {
-            try {
-                const data = JSON.parse(response.responseText); // Parse the response text as JSON
-                console.log('Parsed data:', data); // Log the parsed data
-
-                // Now you can access the systems array if the parsed data is an array
-                if (Array.isArray(data)) {
-                    console.log('systems:', data);
-                    if (data.length > 0) {
-                        console.log('systems[0]:', data[0]);
-                        console.log('systems[0].id:', data[0].id);
-                        console.log('systems[0].name:', data[0].name);
-                    }
-                }
-            } catch (e) {
-                console.error('Error parsing JSON:', e);
-            }
-        }
-    });
-
 
     async function getAccountData(username) {
         const links = document.querySelectorAll(`a[href="/${username}"]`);

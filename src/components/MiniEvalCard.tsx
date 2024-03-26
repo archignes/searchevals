@@ -29,7 +29,7 @@ const MiniEvalCard: React.FC<{ evalItemId: string, checks?: boolean, currentEval
     return system ? system.name : null;
   }).join(', ');
   return (
-    <Card>
+    <Card id={`mini-eval-card-${evalItemId}`} className="flex-grow">
       <CardHeader className="p-1 space-y-0">
           <CardTitle className="text-sm">
             {isCurrentEvaluation ? "current: " : ""}

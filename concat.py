@@ -52,7 +52,7 @@ components_path = "./src/components"
 additional_files = ["./pages/index.tsx", "./pages/_app.tsx", "./src/data/evaluations.json", "./src/data/systems.json", "./src/data/evaluators.json"]
 
 # Output file
-output_file = "/Users/dsg/searchevals_concat.md"
+output_file = "/Users/dsg/arr/concats/searchevals_concat.md"
 
 # Get all the files in the components directory (without entering the shadcn-ui subdirectory)
 filenames = []

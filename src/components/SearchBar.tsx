@@ -57,7 +57,7 @@ export default function SearchBar(): JSX.Element {
 
   return (
     <><div className="flex justify-center items-center space-x-2">
-      <div className="search-box-container w-full md:w-2/3 mx-2 justify-center items-center flex flex-wrap space-x-2">
+      <div className="search-box-container w-full sm:w-3/4 md:w-2/3 mx-2 justify-center items-center flex flex-wrap space-x-2">
         <form className="flex space-x-2 items-center w-full md:w-1/2 input-group justify-center search-bar no-link"
           role="search"
           aria-label="Website Search"
@@ -78,7 +78,8 @@ export default function SearchBar(): JSX.Element {
           {useRouter().pathname.includes('/card/') ? 'Go to a different random Eval' : 'Go to a random Eval'}
           </Button>
       </div>
-    </div><div className="w-full md:px-10 fixed mt-[-1.5rem] mx-auto left-0 right-0">
+    </div>
+      <div className="w-full md:min-w-[600px] max-w-[800px] sm:w-2/3 md:w-1/2 md:px-10 fixed mt-1 mx-auto left-0 right-0">
     {query && showResults && results.length > 0 && query !== new URLSearchParams(window.location.search).get('q') && (
       <div id="dynamic-results" className="border mt-0 p-2 bg-white relative z-50 left-0 shadow-lg">
           <button onClick={handleCloseResults} className="absolute top-0 right-0">

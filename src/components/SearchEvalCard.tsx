@@ -44,7 +44,7 @@ const ConnectedItemLabel: React.FC<{connection: string, currentEvaluation: strin
   const connectedItem = data ? data.find(evalItem => evalItem.id === connection) : null;
   const isCurrentEvaluation = currentEvaluation === connection;
   return connectedItem ? (
-      <DropdownMenuItem className={isCurrentEvaluation ? "text-gray-400" : ""}>
+      <DropdownMenuItem className={`${isCurrentEvaluation ? "text-gray-4000" : ""}`}>
       {miniEvalCard && React.createElement(miniEvalCard, { evalItemId: connectedItem.id, currentEvaluation: currentEvaluation, currentEvaluator: currentEvaluator })}
       </DropdownMenuItem>
     ) : null;
