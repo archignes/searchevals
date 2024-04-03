@@ -75,6 +75,28 @@
     "search_link": "https://www.bing.com/search?q=%s"
   },
   {
+    "name": "Microsoft Copilot",
+    "id": "microsoft-copilot",
+    "search_link": "https://copilot.microsoft.com/"
+  },
+  {
+    "id": "google-gemini",
+    "name": "Google Gemini",
+    "search_link": "https://gemini.google.com/app",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Gemini_(chatbot)"
+  },
+  {
+    "name": "Devv",
+    "id": "devv",
+    "search_link": "https://devv.ai/",
+    "twitter_link": "https://twitter.com/devv_ai"
+  },
+  {
+    "name": "Lepton Search",
+    "id": "lepton-search",
+    "search_link": "https://search.lepton.run/"
+  },
+  {
     "name": "DuckDuckGo",
     "id": "duckduckgo",
     "search_link": "https://duckduckgo.com/?q=%s"
@@ -161,5 +183,15 @@
   "name": "Wikipedia",
   "search_link": "https://en.wikipedia.org/w/index.php?search=%s",
   "nondistinct_url": false
+},
+{
+  "name": "Mojeek",
+  "id": "mojeek",
+  "search_link": "https://www.mojeek.com/search?q=%s"
+},
+{
+  "name": "Mojeek - RAG",
+  "id": "mojeek-rag",
+  "search_link": "https://labs.mojeek.com/rag/index.html"
 }
 ]

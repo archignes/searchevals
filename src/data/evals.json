@@ -625,6 +625,166 @@
     "implied positive evaluation"
   ],
   "also_published_at": "https://www.linkedin.com/posts/adamselipsky_always-a-thrill-to-see-customer-results-like-activity-7175940226731634688-bSWY/"
+},
+{
+  "id": "sbf-sentencing-explained-richardsocher",
+  "date": "2024-03-28",
+  "query": "SBF sentencing explained",
+  "url": "https://twitter.com/RichardSocher/status/1773465458827792566",
+  "systems": [
+    "youchat-research-mode"
+  ],
+  "content": "\"SBF sentencing explained\" - that's all you need to get a good explanation in research mode.",
+  "evaluator_id": "RichardSocher",
+  "images": [
+    {
+      "url": "https://pbs.twimg.com/media/GJydWPfbEAQrWNA?format=jpg&name=4096x4096"
+    }
+  ]
+
+},
+{
+  "id": "what-do-we-know-about-uaps-colinhayhurst",
+  "date": "2024-03-19",
+  "query": "What do we know about UAPs?",
+  "url": "https://community.mojeek.com/t/testing-mojeek-summary/982/15",
+  "context": "[ ... ] Firstly the summariser is not so different from the RAG protoype at labs.mojeek.com. The summaries on both are the pulling the same information from the search results; actually from the snippets of the top 8 ranked search results. The differences are more in the UI; both are showing the search results (only 8 in the case of labs.mojeek.com) with those results cited in the “Summary”/“Answer”.  When search results give you links to less mainstream sources, the same will be true in both these AI answers. ",
+  "systems": [
+    "mojeek", "mojeek-rag", "google-gemini", "microsoft-copilot"
+  ],
+  "eval_parts": [
+          {
+            "id": "1",
+            "content": "You may note that when you hover over a citation in the summary the corresponding results on the vertical search links is highlighted:",
+            "images": [
+              {
+                "url": "https://community.mojeek.com/uploads/default/original/1X/9bd277961318d7b2682c51812d6d07ede2d9e92a.png"
+              }
+            ]
+          },
+          {
+            "id": "2",
+            "content": "Here is the same result in RAG, labs.mojeek.com, with the main differences being here the addition of suggested “Related” queries and a limit of 8 results aka “Sources”:",
+            "images": [
+              {
+                "url": "https://community.mojeek.com/uploads/default/optimized/1X/6d93b47b2b56185afc5100c3bdaed836e9639ef2_2_1000x1000.png"
+              }
+            ]
+          },{
+            "id": "3",
+            "content": "On Google Gemini and Bard Copilot you get the following, evidently with more mainstream sources:",
+            "images": [
+              {
+                "url": "https://community.mojeek.com/uploads/default/original/1X/20b6b96571af1846be4f6ede61923d250215dc44.png"
+              },
+              {
+                "url": "https://community.mojeek.com/uploads/default/optimized/1X/e58f46b272df3f184b2e9b3e79d896923ab4086c_2_1000x1000.png"
+              }
+            ]
+          }
+        ],
+  "evaluator_id": "ColinHayhurst"
+},
+{
+  "id": "huchuy-pichhu-aworldtravelguy",
+  "date": "2024-03-30",
+  "query": "huchuy picchu",
+  "url": "https://twitter.com/aworldtravelguy/status/1773935304002400766",
+  "systems": [
+    "google",
+    "bing"
+  ],
+  "content": "@searchliaison @dannysullivan @JohnMu A few years ago I traveled to Peru and wrote the first guide for Huchuy Picchu, which was a newly opened hike at that time.\\n\\nMy blog post ranked #1 on Google for years, which makes sense, because I did the hike myself and other Peru websites just recycled what I wrote without going there.\\n\\nBefore HCU, people stealing my content like this weren't a big problem because Google had the sense to rank me over them (Bing still has me at #1).\\n\\nAfter HCU, Google has dropped me down to #14 in the search results and I'm being outranked by lots of spammy commercial pages using MY photo of MY wife, while recycling MY words with AI. [ ... ]",
+  "images": [
+    {
+      "url": "https://pbs.twimg.com/media/GJ5A_ekWsAM6XWv?format=jpg&name=medium"
+    }
+  ],
+  "evaluator_id": "aworldtravelguy"
+},
+{
+  "id": "medieval-manuscript-frog-weirdmedieval",
+  "date": "2024-03-08",
+  "query": "medieval manuscript frog",
+  "url": "https://twitter.com/weirdmedieval/status/1766087285911523627",
+  "systems": [
+    "google"
+  ],
+  "content": "soooo fun and cool that if you google something related to medieval art now, half the top results are ai generated garbage. absolutely love that.",
+  "images": [
+    {
+      "url": "https://pbs.twimg.com/media/GIJm0RdXUAAstLO?format=jpg&name=medium","annotated": true
+    }
+  ],
+  "evaluator_id": "weirdmedieval"
+},
+{
+  "id": "how-long-does-magnus-carlsen-study-chess-mojeek",
+  "date": "2024-03-31",
+  "query": "how long does magnus carlsen study chess",
+  "url": "https://twitter.com/mojeek/status/1774436745506963701",
+  "systems": [
+    "google"
+  ],
+  "content": "chess pro 🤝 time traveller\\nor\\ninfobox fail? 🤣",
+  "evaluator_id": "mojeek",
+  "images": [
+    {
+      "url": "https://pbs.twimg.com/media/GKAQ0LrXUAAYsbz?format=jpg&name=medium"
+    }
+  ]
+},
+{
+  "id": "i-am-using-huggingface-s-python-sdk-to-deal-with-jiayq",
+  "date": "2024-04-01",
+  "query": "I am using huggingface's python sdk to deal with huggingface models. Given a huggingface model name, I want to then access the content of a specific file in that model repo - how do I do so ?",
+  "url": "https://twitter.com/jiayq/status/1774940937665556794",
+  "systems": [
+    "chatgpt-3-5", "google-sge", "perplexity-ai", "devv"
+  ],
+  "eval_parts": [
+    {
+      "id": "1",
+      "content": "ChatGPT hallucinated a \"ModelHub\" class:",
+      "query": "I am using huggingface's python sdk to deal with huggingface models. Given a huggingface model name, I want to then access the content of a specific file in that model repo - how do I do so ?",
+      "images": [
+        {
+          "url": "https://pbs.twimg.com/media/GKHbkjLbwAATBdK?format=jpg&name=large"
+        }
+      ]
+    },
+    {
+      "id": "2",
+      "content": "Google thought there was a class called \"HfFolder\".",
+      "query": "access files in huggingface model repo from python sdk",
+      "images": [
+        {
+          "url": "https://pbs.twimg.com/media/GKHbs4DboAAElez?format=jpg&name=large"
+        }
+      ]
+    },
+    {
+      "id": "3",
+      "content": "Perplexity proposed HfApi, which exists, but thought there were a function \"download_file\".",
+      "query": "I am using huggingface's python sdk to deal with huggingface models. Given a huggingface model name, I want to then access the content of a specific file in that model repo - how do I do so ?",
+      "images": [
+        {
+          "url": "https://pbs.twimg.com/media/GKHb5cxasAAYX2s?format=jpg&name=large"
+        }
+      ]
+    },
+    {
+      "id": "4",
+      "content": "devv.ai is the only one that gave runnable answer.",
+      "query": "I am using huggingface's python sdk to deal with huggingface models. Given a huggingface model name, I want to then access the content of a specific file in that model repo - how do I do so ?",
+      "images": [
+        {
+          "url": "https://pbs.twimg.com/media/GKHcAazbQAAqGV4?format=jpg&name=large"
+        }
+      ]
+    }
+  ],
+  "evaluator_id": "jiayq",
+  "context": "General AI models still hallucinate like crazy.\\n\\nI tried searching for \"how to download a file from a hugging face repo\". Results:\\n- @ChatGPTapp: fail\\n- @Google: fail\\n- @perplexity_ai: fail\\n\\nAnd devv.ai emerged as the only working solution. Details below."
 }
 ]
-

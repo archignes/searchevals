@@ -29,6 +29,7 @@ import {
   TooltipProvider,
   TooltipTrigger,
 } from "./ui/tooltip"
+import { conflictType } from "@/src/types";
   
 import FeedbackButton from './FeedbackButton';
 
@@ -41,8 +42,6 @@ interface SearchEvalCardProps {
 
 const ConnectedItemLabel: React.FC<{connection: string, currentEvaluation: string, currentEvaluator: boolean}> = ({ connection, currentEvaluation, currentEvaluator }) => {  
   const { data, miniEvalCard } = useContext(DataContext);
-  
-
   const connectedItem = data ? data.find(evalItem => evalItem.id === connection) : null;
   const isCurrentEvaluation = currentEvaluation === connection;
   return connectedItem ? (
@@ -111,11 +110,24 @@ const AlsoPublished: React.FC<evalItemProps> = ({ evalItem }) => {
 
 
 
-const EvaluatorEvaluations: React.FC<SearchEvalCardProps> = ({ id }) => {
+export const EvaluatorEvaluations: React.FC<{ evalId?: string, evaluatorId?: string }> = ({ evalId, evaluatorId }) => {
+  // Accessing the global data context to use the evaluations data across the component.
   const { data } = useContext(DataContext);
-  const evalItem = data ? data.find(evalItem => evalItem.id === id) : null;
-  const evaluatorId = evalItem?.evaluator_id;
+
+  // If an evaluatorId is not explicitly passed to the component, find the evaluation by evalId to extract the evaluator's ID.
+  // This is useful in scenarios where the evaluatorId is not readily available but the evaluation ID is.
+  if (!evaluatorId) {
+    // Finding the specific evaluation item by its ID to access the evaluator's ID.
+    const evalItem = data.find(evalItem => evalItem.id === evalId);
+    // Assigning the found evaluator's ID to the evaluatorId variable for further use.
+    evaluatorId = evalItem?.evaluator_id;
+  }
+  
+  // Filtering the data to get all evaluations conducted by the specific evaluator.
+  // This allows us to display all evaluations associated with a particular evaluator.
   const evaluatorEvaluations = data ? data.filter(evalItem => evalItem.evaluator_id === evaluatorId) : null;
+  // Calculating the total number of evaluations conducted by the evaluator.
+  // This count is used to display the number of evaluations and provide a quick overview.
   const evaluatorEvaluationsCount = evaluatorEvaluations ? evaluatorEvaluations.length : 0;
 
 
@@ -126,7 +138,7 @@ const EvaluatorEvaluations: React.FC<SearchEvalCardProps> = ({ id }) => {
       </DropdownMenuTrigger>
       <DropdownMenuContent>
         {evaluatorEvaluations!.map((evaluation) => (
-          <ConnectedItemLabel key={evaluation.id} connection={evaluation.id} currentEvaluation={id} currentEvaluator={true} />
+          <ConnectedItemLabel key={evaluation.id} connection={evaluation.id} currentEvaluation={evalId || 'none'} currentEvaluator={true} />
         ))}
       </DropdownMenuContent>
     </DropdownMenu>
@@ -153,12 +165,7 @@ const SearchEvalCard: React.FC<SearchEvalCardProps> = ({ id }) => {
     return <div>No data found for this ID</div>; // Return a valid JSX element
   }
 
-  type conflictType = {
-    name: string;
-    searchLink: string;
-    query: string;
-    queryTooltip: JSX.Element
-  };
+  
 
   let conflicts: conflictType[] = [];
   if (evalEvaluatorDetails && evalEvaluatorDetails.conflict) {
@@ -282,7 +289,7 @@ const SearchEvalCard: React.FC<SearchEvalCardProps> = ({ id }) => {
           {evalEvaluatorDetails && (
             <figcaption className="mt-1 mb-2">
               <div className="flex items-center divide-x rtl:divide-x-reverse divide-gray-300 dark:divide-gray-700">
-                  <cite id="person-name" className="pe-3 ml-3 font-medium text-gray-900 dark:text-white">{evalEvaluatorDetails.name}<EvaluatorEvaluations id={evalItem.id} /></cite>
+                  <cite id="person-name" className="pe-3 ml-3 font-medium text-gray-900 dark:text-white">{evalEvaluatorDetails.name}<EvaluatorEvaluations evalId={evalItem.id} /></cite>
                 <cite className="ps-3 text-sm text-gray-500 dark:text-gray-400">
                   <span id="person-info-link" className="inline-flex"><a href={evalEvaluatorDetails.URL} target="_blank" rel="noopener noreferrer"><InfoCircledIcon /></a></span>
                   <span id="person-role" className="ml-1">{evalEvaluatorDetails.role}</span>
@@ -316,14 +323,14 @@ const SearchEvalCard: React.FC<SearchEvalCardProps> = ({ id }) => {
                 </div>
                 </figcaption>)}
             {evalItem.context && (
-              <EvalExtractCard evalCardItem={{id: "context", content: evalItem.context}} />
+              <EvalExtractCard evalCardItem={{id: "context", content: evalItem.context}} evalQuery={evalItem.query} />
             )}
           {evalItem.eval_parts ? (
             evalItem.eval_parts.map((part, index) => (
-              <EvalExtractCard key={index} evalCardItem={part}/>
+              <EvalExtractCard key={index} evalCardItem={part} evalQuery={evalItem.query} />
             ))
           ) : (
-              <EvalExtractCard evalCardItem={evalItem}/>
+              <EvalExtractCard evalCardItem={evalItem} evalQuery={evalItem.query} />
           )}
         </CardContent>
           {evalItem.methodology && (<div className="text-sm text-gray-700 mx-7">

@@ -1,8 +1,15 @@
-import { useContext } from 'react';
+// MiniEvalCard.tsx
+// This component is used to display a miniature evaluation card in the Systems page.
+// It is used to display the evaluation item, the evaluator, and the systems evaluated.
+// It also displays the temporal difference and query consistency checks.
+// If the showConflicts flag is set, it will display the evaluator's conflicts.
+
+import React, { useContext } from 'react';
 import DataContext from './DataContext';
+import { conflictType } from '@/src/types/';
 import { CheckQueryConsistency, CheckTemporalDifference } from './EvalComparisonChecks';
 import SearchBracket from './SearchBracket'
-import { InfoCircledIcon } from "@radix-ui/react-icons"
+import { InfoCircledIcon, DrawingPinIcon } from "@radix-ui/react-icons"
 import {
   Card,
   CardContent,
@@ -11,49 +18,110 @@ import {
   CardHeader,
   CardTitle,
 } from './ui/card';
-
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipProvider,
+  TooltipTrigger,
+} from "./ui/tooltip"
 export interface MiniEvalCardProps {
   evalItemId: string;
+  textsize?: string;
   checks?: boolean;
   currentEvaluation?: string;
   currentEvaluator?: boolean;
+  showConflicts?: boolean;
 }
 
-const MiniEvalCard: React.FC<{ evalItemId: string, checks?: boolean, currentEvaluation?: string, currentEvaluator?: boolean }> = ({ evalItemId, checks, currentEvaluation, currentEvaluator }) => {
+export const MiniEvalCard: React.FC<MiniEvalCardProps> = ({
+  evalItemId,
+  checks,
+  currentEvaluation,
+  currentEvaluator,
+  textsize,
+  showConflicts
+}) => {
   const { data, evaluators, systems } = useContext(DataContext);
-  const evalItem = data ? data.find(evalItem => evalItem.id === evalItemId) : null;
+  const evalItem = data.find(item => item.id === evalItemId) || null;
   const isCurrentEvaluation = currentEvaluation === evalItemId;
   const evalEvaluatorDetails = evaluators.find(evaluator => evaluator.id === evalItem?.evaluator_id);
   const systemsEvaluated = evalItem?.systems.map(systemId => {
     const system = systems.find(system => system.id === systemId);
     return system ? system.name : null;
   }).join(', ');
+
+  const textSizeClass = textsize || 'text-sm';
+
+  let conflicts: conflictType[] = []; 
+  if (showConflicts) {
+    if (evalEvaluatorDetails && evalEvaluatorDetails.conflict) {
+      conflicts = evalEvaluatorDetails.conflict.map(conflictId => {
+        const system = systems.find(system => system.id === conflictId);
+        let query = `How is ${evalEvaluatorDetails.name} connected to ${system?.name}?`
+        return {
+          name: system!.name,
+          searchLink: system!.search_link,
+          query: query,
+          queryTooltip: (
+            <><span>Click to start a <strong>{system?.name}</strong> search in a new tab:</span><SearchBracket className="not-italic text-sm">{query}</SearchBracket></>
+          )
+        }
+      })
+    }
+  }
+
   return (
     <Card id={`mini-eval-card-${evalItemId}`} className="flex-grow">
       <CardHeader className="p-1 space-y-0">
-          <CardTitle className="text-sm">
+          <CardTitle className={`${textSizeClass}`}>
             {isCurrentEvaluation ? "current: " : ""}
             <a href={`/card/${evalItemId}`}>
               <div>
-              <SearchBracket className="text-sm">
-                <span className="text-sm font-normal">{evalItem!.query}</span>
+              <SearchBracket className={textSizeClass}>
+                <span className={`${textSizeClass} font-normal`}>{evalItem!.query}</span>
                   </SearchBracket>
                   </div>
             </a>
           </CardTitle>
         <CardDescription className="p-0 m-0 pl-3">
-          <span className="text-sm">date: {evalItem!.date}</span><br></br>
-          <span className="text-sm">systems: {systemsEvaluated}</span>
+          <span className={`${textSizeClass}`}>date: {evalItem!.date}</span><br></br>
+          <span className={`${textSizeClass}`}>systems: {systemsEvaluated}</span>
         </CardDescription>
       </CardHeader>
       <CardContent className='p-1 py-0'>
         {!currentEvaluator && evalEvaluatorDetails && (
           <figcaption className="mt-1 mb-2">
             <div className="flex items-center divide-x rtl:divide-x-reverse divide-gray-300 dark:divide-gray-700">
-              <cite id="person-name" className="pe-3 ml-3 text-sm text-gray-900 dark:text-white">{evalEvaluatorDetails.name}</cite>
-              <cite className="ps-3 text-sm text-gray-500 dark:text-gray-400">
+              <cite id="person-name" className={`pe-3 ml-3 ${textSizeClass} text-gray-900 dark:text-white`}>{evalEvaluatorDetails.name}</cite>
+              <cite className={`ps-3 ${textSizeClass} text-gray-500 dark:text-gray-400`}>
                 <span id="person-info-link" className="inline-flex"><a href={evalEvaluatorDetails.URL} target="_blank" rel="noopener noreferrer"><InfoCircledIcon /></a></span>
                 <span id="person-role" className="ml-1">{evalEvaluatorDetails.role}</span>
+                {conflicts && conflicts.length > 0 && (
+                  <><br></br>
+                    <TooltipProvider>
+                      <Tooltip>
+                        <TooltipTrigger><span className="inline-flex"><DrawingPinIcon /></span></TooltipTrigger>
+                        <TooltipContent>
+                          <p>This evaluator has a potential conflict-of-interest due to their relationship with the entities pinned to the right.</p>
+                        </TooltipContent>
+                      </Tooltip>
+                    </TooltipProvider>
+                    {conflicts.map((conflict, index) => (
+                      <React.Fragment key={index}>
+                        <TooltipProvider>
+                          <Tooltip>
+                            <TooltipTrigger><a className="underline ml-1" href={conflict.searchLink.replace('%s', encodeURIComponent(conflict.query).replace(/%20/g, '+'))} target="_blank" rel="noopener noreferrer">
+                              {conflict.name}
+                            </a>
+                              {index < conflicts.length - 1 ? ', ' : ''}</TooltipTrigger>
+                            <TooltipContent >
+                              {conflict.queryTooltip}
+                            </TooltipContent>
+                          </Tooltip>
+                        </TooltipProvider>
+                      </React.Fragment>
+                    ))}
+                  </>)}
               </cite>
             </div>
           </figcaption>

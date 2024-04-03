@@ -7,15 +7,15 @@ import {
 } from './ui/card';
 import ImageDisplay from './ImageDisplay';
 
-import { evalCardItem } from './DataContext';
+import { evalCardItem } from '@/src/types';
 
-// Define a type for your component's props
 type EvalExtractCardProps = {
     evalCardItem: evalCardItem;
+    evalQuery: string;
 };
 
 
-const EvalExtractCard: React.FC<EvalExtractCardProps> = ({ evalCardItem }) => {
+const EvalExtractCard: React.FC<EvalExtractCardProps> = ({ evalCardItem, evalQuery }) => {
     let contentWithNewlines: string[] = []
     let skipBlockQuote = false;
     if (evalCardItem && evalCardItem.content) {
@@ -35,6 +35,9 @@ const EvalExtractCard: React.FC<EvalExtractCardProps> = ({ evalCardItem }) => {
         <>
             <Card className="rounded-none mb-2">
                 <CardContent>
+                    {evalCardItem.query && evalCardItem.query !== evalQuery && (
+                        <div className="text-red-500 text-center">Note: The query below does not exactly match the base query for this evaluation.</div>
+                    )}
                     <figure className="max-w-screen-md">
                         {skipBlockQuote && (<br></br>)}
                         {!skipBlockQuote && (

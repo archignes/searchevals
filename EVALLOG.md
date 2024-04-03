@@ -192,3 +192,114 @@ So now I want to add some field that lets me link to 'syndicated'? or alternativ
 Very fiddly. Done. 2024-03-26 10:44:41
 
 
+## 2024-04-02
+## 2024-04-02 22:03:59
+
+https://twitter.com/deliprao/status/1773466735363952722
+
+How might I handle comments on other evals?
+
+Going to just add this for now: 
+https://twitter.com/RichardSocher/status/1773465458827792566
+
+Done. 2024-04-02 22:11:18
+
+## 2024-04-02 22:11:27
+
+This is in my notes: https://community.mojeek.com/t/testing-mojeek-summary/982/14
+
+[What do we know about UAPs?]
+
+OFF twitter
+CEO of Mojeek
+I still compiled the evaluator extract from Twitter, via a random tweet.
+
+```
+,
+{
+  "name": "Colin Hayhurst",
+  "id": "ColinHayhurst",
+  "role": "CEO at Mojeek",
+  "URL": "https://twitter.com/ColinHayhurst",
+  "conflict": ["mojeek"]
+}
+```
+
+Then going to /input to try adding the eval itself.
+
+excerpting:
+
+Firstly the summariser is not so different from the RAG protoype at labs.mojeek.com. The summaries on both are the pulling the same information from the search results; actually from the snippets of the top 8 ranked search results. The differences are more in the UI; both are showing the search results (only 8 in the case of labs.mojeek.com) with those results cited in the “Summary”/“Answer”.
+
+When search results give you links to less mainstream sources, the same will be true in both these AI answers. 
+
+You may note that when you hover over a citation in the summary the corresponding results on the vertical search links is highlighted:
+https://community.mojeek.com/uploads/default/optimized/1X/9bd277961318d7b2682c51812d6d07ede2d9e92a_2_1000x1000.png
+
+Here is the same result in RAG, labs.mojeek.com, with the main differences being here the addition of suggested “Related” queries and a limit of 8 results aka “Sources”:
+https://community.mojeek.com/uploads/default/optimized/1X/6d93b47b2b56185afc5100c3bdaed836e9639ef2_2_1000x1000.png
+
+
+On Google Gemini and Bard Copilot you get the following, evidently with more mainstream sources:
+https://community.mojeek.com/uploads/default/original/1X/20b6b96571af1846be4f6ede61923d250215dc44.png
+https://community.mojeek.com/uploads/default/optimized/1X/e58f46b272df3f184b2e9b3e79d896923ab4086c_2_1000x1000.png
+
+
+I need to add mojeek to the systems.json file too
+
+I haven't yet implemented pulling from the SearchSystems api.
+
+Added. Done. 2024-04-02 22:43:58
+
+
+### 2024-04-02 22:45:07
+
+https://twitter.com/aworldtravelguy/status/1773935304002400766/photo/4
+this is a smaller account, but clearly a tweet meant for publicity (which it received)
+also a verified account, and public blogger
+David Leiter
+[huchuy picchu]
+
+done... 2024-04-02 22:52:58
+
+### 2024-04-02 22:53:02
+https://twitter.com/lilyraynyc/status/1774966272536494312
+
+"ip-cloaked spam"
+
+problem for my current approach is I don't know the query
+
+### 2024-04-02 22:59:06 
+
+https://twitter.com/weirdmedieval/status/1766087285911523627
+
+large account
+
+
+686.4K Followers
+
+[medieval manuscript frog]
+
+done... 2024-04-02 23:09:23
+
+### 2024-04-02 23:10:58
+
+https://twitter.com/mojeek/status/1774436745506963701
+
+- add evaluator
+
+[how long does magnus carlsen study chess]
+
+-- What type of query might this be? A certain type of ambiguous, unspecified?
+
+done 2024-04-02 23:16:32
+
+### 2024-04-02 23:19:03
+
+https://twitter.com/jiayq/status/1774943275063157192
+
+new evaluator: jiayq; 11k+ followers, tweeting for the public
+new system: devv ai
+
+I got a little distracted adding new Evaluator and System pages and then finally adding this one.
+

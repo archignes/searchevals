@@ -3,16 +3,16 @@ export interface evalPart {
   url?: string;
   media?: string;
   content: string;
+  query?: string;
   images?: imageItem[]
 }
+
 
 export interface imageItem {
   url: string;
   caption?: string;
   annotated?: boolean;
 }
-
-
 
 
 export interface methodologyCitation {
@@ -40,3 +40,5 @@ export interface EvalItem {
   media?: string;
   also_published_at?: string;
 }
+
+export type evalCardItem = EvalItem | evalPart

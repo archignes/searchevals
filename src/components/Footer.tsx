@@ -3,7 +3,7 @@ import { Button } from "./ui/button";
 import { Input } from "./ui/input";
 import FeedbackButton from "./FeedbackButton";
 
-const lastUpdated = "2024-03-26T23:36:43.716Z";
+const lastUpdated = "2024-04-03T09:09:39.894Z";
 
 const Footer: React.FC = () => {
   return (

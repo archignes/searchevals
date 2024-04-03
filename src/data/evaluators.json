@@ -139,7 +139,7 @@
 {
   "id": "lilyraynyc",
   "name": "Lily Ray ",
-  "role": "SEO",
+  "role": "Vice President of SEO Strategy & Research at Amsive Digital",
   "URL": "https://twitter.com/lilyraynyc",
   "conflict": []
 },
@@ -156,6 +156,45 @@
   "role": "CEO at Amazon Web Services (AWS)",
   "URL": "https://twitter.com/aselipsky",
   "conflict": ["perplexity-ai"]
+},
+{
+  "name": "Colin Hayhurst",
+  "id": "ColinHayhurst",
+  "role": "CEO at Mojeek",
+  "URL": "https://twitter.com/ColinHayhurst",
+  "conflict": [
+    "mojeek"
+  ]
+},
+{
+  "id": "aworldtravelguy",
+  "name": "David Leiter",
+  "role": "travel blogger",
+  "URL": "https://twitter.com/aworldtravelguy",
+  "conflict": []
+},
+{
+  "id": "weirdmedieval",
+  "name": "Weird Medieval Guys",
+  "role": "Twitter account managed by author Olivia Swarthout",
+  "URL": "https://twitter.com/weirdmedieval",
+  "conflict": []
+},
+{
+  "id": "mojeek",
+  "name": "Mojeek",
+  "role": "Search engine company",
+  "URL": "https://twitter.com/mojeek",
+  "conflict": [
+    "mojeek"
+  ]
+},
+{
+  "id": "jiayq",
+  "name": "Yangqing Jia",
+  "role": "Founder at Lepton AI",
+  "URL": "https://twitter.com/jiayq",
+  "conflict": ["lepton-search"]
 }
 ]
 

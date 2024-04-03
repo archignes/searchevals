@@ -1,19 +1,24 @@
 import { ExclamationTriangleIcon } from "@radix-ui/react-icons";
+import Link from 'next/link';
 import { EvalItem } from '@/src/types/evalItem';
 import { evalEvaluator, System} from '@/src/components/DataContext';
 import { SearchEvalTitle } from "./Header";
 import ImageDisplay from "./ImageDisplay";
 
 const Intro = ({ evals, evaluators, systems }: { evals: EvalItem[]; evaluators: evalEvaluator[]; systems: System[]}) => { 
+  
+  const uniqueSystemsCount = new Set(evals.flatMap(evalItem => evalItem.systems)).size;
+  
   return (
     <>
-      <section id="about" className="p-1 mt-5 w-4/5 md:w-2/5 mx-auto">
+      <section id="about" className="p-1 mt-5 w-90 md:w-2/5 mx-auto">
         <h2 className="text-xl font-semibold">What is <SearchEvalTitle/>?</h2>
       A platform for sharing, sharing about, and searching for evaluations of search systems.
       <ul className="ml-2 space-y-2">
         <li className="font-medium">Search for search evaluations:</li>
           <ul className="list-disc list-outside ml-4 space-y-1 pl-5">
-            <li>Discover over <span className='font-bold'>{evals.length - 1}</span> public evaluations by <span className='font-bold'>{evaluators.length}</span> unique evaluators</li>
+            <li>Discover over <span className='font-bold'>{evals.length - 1}</span> evaluations of <Link href="/systems" className='hover:bg-blue-100 underline'><span className='font-bold'>{uniqueSystemsCount}</span> search systems</Link> collected across the web from <Link href="/evaluators" className='hover:bg-blue-100 underline'><span className="font-bold">{evaluators.length}</span> evaluators</Link></li>
+    
             <ImageDisplay className="mx-5" type="solo" images={[{ "url": "/screenshots/home.png"}]} />
             <li>In an open eval card, click <span className='font-bold'>SearchOnEval</span> to conduct the subject search across <span className='font-bold'>{systems.length}</span> search systems.</li>
             <ImageDisplay className="mx-5" type="solo" images={[{ "url": "/screenshots/SearchOnEval.png" }]} />

@@ -10,7 +10,7 @@ const searchevals_logo = "public/og_logo_wide.png";
 
 
 function getScreenshotOutputPath(url) {
-    const root = "https://searchevals.com/"
+    const root = "http://localhost:3001/"
     if (url === root) {
         return `${publicScreenshotDir}home.png`
     }
@@ -110,7 +110,7 @@ const addLogoToImage = async (original_image, searchevals_logo) => {
 
 const existingOgScreenshots = fs1.readdirSync(publicScreenshotDir).map(file => file.replace('.png', '').replace(/_/g, '-'));
 const evalsData = require('../src/data/evals.json');
-const existingPages = evalsData.map(evalItem => `https://searchevals.com/card/${evalItem.id}`);
+const existingPages = evalsData.map(evalItem => `http://localhost:3001/card/${evalItem.id}`);
 
 const filteredPagesForScreenshots = existingPages.filter(page => {
     const pageId = page.split('/').pop();
@@ -122,4 +122,5 @@ console.log(`Pages to capture: ${filteredPagesForScreenshots.length + 1}`);
 captureScreenshots(filteredPagesForScreenshots);
 
 console.log(' - Capturing homepage...')
-captureScreenshots(["https://searchevals.com/"]);
+captureScreenshots(["http://localhost:3001/"]);
+
