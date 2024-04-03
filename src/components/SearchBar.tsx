@@ -1,11 +1,12 @@
 //SearchBar.tsx
 "use client"
 
-import React, { useContext, useState } from 'react';
+import React, { useContext, useState, useEffect } from 'react';
 import { useRouter } from 'next/router';
 import DataContext from "./DataContext";
 import { Input } from "./ui/input";
 import { Button } from "./ui/button";
+import { ScrollArea } from "./ui/scroll-area";
 
 export default function SearchBar(): JSX.Element {
   const { data, results, query, setQuery, miniEvalCard } = useContext(DataContext);
@@ -35,10 +36,32 @@ export default function SearchBar(): JSX.Element {
     router.push(`/search?q=${query}`);
   };
 
+  useEffect(() => {
+    const originalStyle = document.body.style.overflow;
+    document.body.style.overflow = showResults ? 'hidden' : 'auto';
+
+    return () => {
+      document.body.style.overflow = originalStyle;
+    };
+  }, [showResults]);
 
   const handleCloseResults = () => {
     setShowResults(false);
   };
+
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      const element = event.target as HTMLElement;
+      const dynamicResults = document.getElementById("dynamic-results");
+      const searchArea = document.getElementById("search-form");
+      if (dynamicResults && !dynamicResults.contains(element) && searchArea && !searchArea.contains(element)) {
+        handleCloseResults();
+      }
+    };
+
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, []);
 
 
   const goToRandomCard = () => {
@@ -56,7 +79,7 @@ export default function SearchBar(): JSX.Element {
   
 
   return (
-    <><div className="flex justify-center items-center space-x-2">
+    <><div id="search-area" className="flex justify-center items-center space-x-2">
       <div className="search-box-container w-full sm:w-3/4 md:w-2/3 mx-2 justify-center items-center flex flex-wrap space-x-2">
         <form className="flex space-x-2 items-center w-full md:w-1/2 input-group justify-center search-bar no-link"
           role="search"
@@ -79,14 +102,16 @@ export default function SearchBar(): JSX.Element {
           </Button>
       </div>
     </div>
-      <div className="w-full md:min-w-[600px] max-w-[800px] sm:w-2/3 md:w-1/2 md:px-10 fixed mt-1 mx-auto left-0 right-0">
-    {query && showResults && results.length > 0 && query !== new URLSearchParams(window.location.search).get('q') && (
-      <div id="dynamic-results" className="border mt-0 p-2 bg-white relative z-50 left-0 shadow-lg">
-          <button onClick={handleCloseResults} className="absolute top-0 right-0">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" className="bi bi-x" viewBox="0 0 16 16">
-              <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z" />
-            </svg>
-          </button>
+      {query && showResults && results.length > 0 && query !== new URLSearchParams(window.location.search).get('q') && (
+      <div id="dynamic-results" className="w-full fixed bg-white pb-5 md:min-w-[600px] max-w-[800px] sm:w-2/3 md:w-1/2 md:px-10 mt-1 mx-auto left-0 right-0">
+        <button onClick={handleCloseResults} className="mr-0 hover:bg-blue-100 p-1 rounded-md"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" className="bi bi-x" viewBox="0 0 16 16">
+          <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z" />
+        </svg>
+        </button>
+      <ScrollArea className="w-full h-[calc(100vh-210px)] md:px-10 mt-1 mx-auto left-0 right-0">
+    
+      <div className="border mt-0 p-2 bg-white relative z-50 left-0 shadow-lg">
+            
           <ul className='mt-2'>
           {results.map((result: any) => (
             <li key={result.id} className='p-1'>
@@ -97,9 +122,10 @@ export default function SearchBar(): JSX.Element {
           ))}
         </ul>
       </div>
-      
-    )}
-    </div>
+    
+      </ScrollArea>
+      </div>
+      )}
     </>
   );
 };

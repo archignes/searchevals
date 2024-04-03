@@ -3,7 +3,6 @@
 
 import React, { useContext, useEffect, useState } from 'react';
 import { useRouter } from 'next/router';
-import Header from '../src/components/Header';
 import DataContext from '../src/components/DataContext';
 
 const SearchResults: React.FC = () => {
@@ -28,7 +27,6 @@ const SearchResults: React.FC = () => {
 
   return (
     <>
-    <Header/>
     <div id='search-results' className="w-2/3 mx-auto">
       <>
         <hr className="mt-10"></hr>
