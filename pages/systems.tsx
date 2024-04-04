@@ -3,15 +3,7 @@
 
 import React, { useContext } from 'react';
 import DataContext from '../src/components/DataContext';
-
 import { MiniEvalCard } from '../src/components/MiniEvalCard';
-
-import {
-  Alert,
-  AlertDescription,
-  AlertTitle,
-} from "../src/components/ui/alert";
-import { ExclamationTriangleIcon } from '@radix-ui/react-icons';
 
 const SearchResults: React.FC = () => {
   

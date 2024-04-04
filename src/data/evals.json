@@ -786,5 +786,25 @@
   ],
   "evaluator_id": "jiayq",
   "context": "General AI models still hallucinate like crazy.\\n\\nI tried searching for \"how to download a file from a hugging face repo\". Results:\\n- @ChatGPTapp: fail\\n- @Google: fail\\n- @perplexity_ai: fail\\n\\nAnd devv.ai emerged as the only working solution. Details below."
+},
+{
+  "id": "candle-lighting-nyc-shalomgood",
+  "date": "2024-04-02",
+  "query": "candle lighting nyc",
+  "url": "https://twitter.com/shalomgood/status/1775339870115783069",
+  "systems": [
+    "google",
+    "google-sge"
+  ],
+  "content": "Look how different the SGE results are compared to the regular search results.\\n\\nThey’re so very different",
+  "images": [
+    {
+      "url": "https://pbs.twimg.com/media/GKNGM8DWIAA-bkR?format=jpg&name=large"
+    },
+    {
+      "url": "https://pbs.twimg.com/media/GKNGM8EXAAA3WPd?format=jpg&name=large"
+    }
+  ],
+  "evaluator_id": "shalomgood"
 }
 ]

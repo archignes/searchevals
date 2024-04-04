@@ -323,5 +323,75 @@ I think I should add this, but I want to first add a feedback link like I have o
 
 I'll use https://www.radix-ui.com/icons ChatBubbleIcon atop the EvalCard.
 
+... added that but decided to wait on the eval for now because of the lack of clear identity.
+
+### 2024-04-04 14:42:00
+
+cannot add currently because query is not clearly identified
+
+https://twitter.com/theuntitled1one/status/1775864801924714979:
+  username: theuntitled1one
+  name: Name not found
+  source: Twitter
+  date: Apr 4, 2024
+  text: |
+    Dear @Google @GoogleAI @googledevs <br>
+    <br>
+    I prefer my AI search results to contain Web Links like this. (As you have demonstrated in this screenshot)<br>
+    <br>
+    P.S. mind the tabs<br>
+    <br>
+    Note: Take this as positive feedback and send it to @sergey_brine or the AI dev team.
+
+
+### 2024-04-04 15:01:12
+
+Responded to https://twitter.com/danielko/status/1774230087325343872 requesting to add their eval.
+
+(It also made me wonder about how we might define "AI-first search" tools as compared to the existing tools)
+
+### 2024-04-04 15:02:38
+
+https://twitter.com/thecomicdevil/status/1773273349147271331:
+  username: thecomicdevil
+  name: Comicdevil
+  source: Twitter
+  date: Mar 28, 2024
+  images:
+    - ["[object FileSystemDirectoryHandle]/GJvutjFbEAArugO.jpeg", "Image 1"]
+  text: |
+    Genuinely upsets me that you can't even search for comic art anymore without being bombarded with AI slop. <br>
+    <br>
+    These are the first results!
+
+
+Not sure how to proceed. Will hold off for now. But found lots of interesting replies about appending [-ai] to queries...
+
+
+## 2024-04-04 16:24:37
+
+unclear query
+
+https://twitter.com/NatasaIlincic/status/1773656261071888815:
+  username: NatasaIlincic
+  name: Nataša Ilinčić
+  source: Twitter
+  date: Mar 29, 2024
+  images:
+    - ["[object FileSystemDirectoryHandle]/GJ1KmZPXQAE_a6F.jpeg", "Image 1"]
+  text: |
+    Quick image search this morning to check deer leg anatomy for a painting.<br>
+    Yup, this is exactly how deer legs work. Just love the internet right now.
+
+it was maybe: baby deer laying down
+
+https://twitter.com/danielsgriffin/status/1776018506980679896
+
+## 2024-04-04 16:27:13
+
+Shalom Goodman
+3k+ followers
+SEO Editor at The Wall Street Journal
+
 
 

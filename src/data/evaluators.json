@@ -195,6 +195,13 @@
   "role": "Founder at Lepton AI",
   "URL": "https://twitter.com/jiayq",
   "conflict": ["lepton-search"]
+},
+{
+  "id": "shalomgood",
+  "name": "Shalom Goodman",
+  "role": "SEO Editor at The Wall Street Journal",
+  "URL": "https://twitter.com/shalomgood",
+  "conflict": []
 }
 ]
 

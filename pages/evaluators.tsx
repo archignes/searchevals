@@ -4,12 +4,6 @@
 import React, { useContext } from 'react';
 import DataContext from '../src/components/DataContext';
 import { EvaluatorDetails } from '../src/components/EvaluatorDetails';
-import {
-  Alert,
-  AlertDescription,
-  AlertTitle,
-} from "../src/components/ui/alert";
-import { ExclamationTriangleIcon } from '@radix-ui/react-icons';
 
 const SearchResults: React.FC = () => {
   

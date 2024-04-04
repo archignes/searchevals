@@ -117,7 +117,6 @@ export const DataProvider: React.FC<DataProviderProps> = ({ children }) => {
             const searchResults = index.search(query);
             const foundItems = searchResults.map(result => data.find(evalItem => evalItem.id === result)).filter(Boolean) as EvalItem[];
             setResults(foundItems);
-            console.log(`searchResults: ${foundItems}`)
         } else {
             setResults([]);
         }

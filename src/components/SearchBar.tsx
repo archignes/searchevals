@@ -10,12 +10,7 @@ import { ScrollArea } from "./ui/scroll-area";
 
 export default function SearchBar(): JSX.Element {
   const { data, results, query, setQuery, miniEvalCard } = useContext(DataContext);
-  const [showResults, setShowResults] = useState(true);
-
-  // const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-  //   setQuery(event.target.value);
-  //   setShowResults(true);
-  // };
+  const [showResults, setShowResults] = useState(false);
 
   const router = useRouter();
 
@@ -26,7 +21,7 @@ export default function SearchBar(): JSX.Element {
     setQuery(event.target.value); // Temporarily use local state
     setShowResults(true);
 
-    console.log(localQuery)
+    // console.log(localQuery)
     // setQuery(event.target.value); // Comment this out temporarily
   };
 
@@ -38,6 +33,7 @@ export default function SearchBar(): JSX.Element {
 
   useEffect(() => {
     const originalStyle = document.body.style.overflow;
+
     document.body.style.overflow = showResults ? 'hidden' : 'auto';
 
     return () => {
@@ -76,7 +72,6 @@ export default function SearchBar(): JSX.Element {
     router.push(`/card/${randomId}`);
   };
 
-  
 
   return (
     <><div id="search-area" className="flex justify-center items-center space-x-2">
