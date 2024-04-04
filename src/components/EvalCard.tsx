@@ -1,4 +1,4 @@
-// SearchEvalCard.tsx
+// EvalCard.tsx
 import React, { useContext, useState } from 'react';
 import { useRouter } from 'next/router';
 import { Link2Icon, InfoCircledIcon, DrawingPinIcon, LinkedInLogoIcon, TwitterLogoIcon, InstagramLogoIcon } from '@radix-ui/react-icons';
@@ -32,8 +32,9 @@ import {
 import { conflictType } from "@/src/types";
   
 import FeedbackButton from './FeedbackButton';
+import FeedbackLink from './Feedback';
 
-interface SearchEvalCardProps {
+interface EvalCardProps {
   id: string;
 }
 
@@ -51,7 +52,7 @@ const ConnectedItemLabel: React.FC<{connection: string, currentEvaluation: strin
     ) : null;
 }
 
-const DropDownConnections: React.FC<SearchEvalCardProps> = ({ id }) => {
+const DropDownConnections: React.FC<EvalCardProps> = ({ id }) => {
   const { data } = useContext(DataContext);
   const evalItem = data ? data.find(evalItem => evalItem.id === id) : null;
 
@@ -148,7 +149,7 @@ export const EvaluatorEvaluations: React.FC<{ evalId?: string, evaluatorId?: str
 
 
 
-const SearchEvalCard: React.FC<SearchEvalCardProps> = ({ id }) => {
+const EvalCard: React.FC<EvalCardProps> = ({ id }) => {
   const { data, systems, evaluators, miniEvalCard } = useContext(DataContext);
   const [responseListVisible, setResponseListVisible] = useState(true)
   
@@ -208,6 +209,7 @@ const SearchEvalCard: React.FC<SearchEvalCardProps> = ({ id }) => {
       <div className="flex justify-end space-x-0 mt-3 mr-14">
         <SearchOnEvalInterface evalItem={evalItem} />
         <ShareCardInterface evalItem={evalItem} />
+        <FeedbackLink id={evalItem.id} />
       </div>
       <div id="search-eval-card-div" className={`w-11/12 ${marqueeOrigin ? 'md:w-11/12' : 'md:w-2/3'} mx-auto mt-0 zIndex: 9999`}>
         <Card>  
@@ -347,4 +349,4 @@ const SearchEvalCard: React.FC<SearchEvalCardProps> = ({ id }) => {
   );
 };
 
-export default SearchEvalCard;
+export default EvalCard;

@@ -9,7 +9,7 @@ import {
 } from "./ui/tooltip"
 
 
-import { EvaluatorEvaluations } from "./SearchEvalCard";
+import { EvaluatorEvaluations } from "./EvalCard";
 import { conflictType } from "@/src/types";
 import { evalEvaluator } from "./DataContext";
 import { DrawingPinIcon, InfoCircledIcon } from "@radix-ui/react-icons";

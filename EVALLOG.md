@@ -303,3 +303,25 @@ new system: devv ai
 
 I got a little distracted adding new Evaluator and System pages and then finally adding this one.
 
+### 2024-04-04 13:34:59
+
+https://twitter.com/idkfa3/status/1775941331606700244:
+  username: idkfa3
+  name: Name not found
+  source: Twitter
+  date: Apr 4, 2024
+  text: |
+    @Google How do I turn off AI generated search results?<br>
+    <br>
+    I asked AI and it gave me the wrong answer.
+
+- 4k+ followers
+- tagged @Google
+- I interacted with this tweet w/ RT and Like
+
+I think I should add this, but I want to first add a feedback link like I have on Searchjunct so that people can more quickly and easily report any issues to get their eval removed.
+
+I'll use https://www.radix-ui.com/icons ChatBubbleIcon atop the EvalCard.
+
+
+

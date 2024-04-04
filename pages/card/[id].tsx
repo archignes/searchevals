@@ -4,7 +4,7 @@ import Head from 'next/head';
 import Script from 'next/script'
 import Header from '../../src/components/Header';
 import SearchBar from '../../src/components/SearchBar';
-import SearchEvalCard from '../../src/components/SearchEvalCard';
+import EvalCard from '../../src/components/EvalCard';
 import Footer from '../../src/components/Footer';
 import { GetStaticProps, GetStaticPaths } from 'next';
 import { evalEvaluator } from '@/src/components/DataContext';
@@ -78,7 +78,7 @@ const CardPage = ({ evalItem, evaluators }: { evalItem: EvalItem; evaluators: ev
 
       </Head>
       <Script defer data-domain="searchevals.com" src="https://plausible.io/js/script.js" />
-      <SearchEvalCard id={evalItem.id} />
+      <EvalCard id={evalItem.id} />
     </>
   );
 };

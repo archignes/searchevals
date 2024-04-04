@@ -30,13 +30,11 @@ const ShareCardInterface: React.FC<ShareCardInterfaceProps> = ({ evalItem }) => 
     return null;
   }
   return (
-      <div
-      className="w-1/3 ml-auto mr-5"
-      >
       <Popover>
         <PopoverTrigger asChild={true}>
-          <Button variant="ghost" id="share-card-button" className="w-21 h-7 rounded-bl-none rounded-tl-none rounded-br-none" aria-label="Search on the eval"><span className="mr-2"><Share2Icon /></span>
-          </Button>
+          <Button variant="ghost" id="share-card-button" className="h-7 p-1 rounded-bl-none rounded-br-none" aria-label="Share link to eval card">
+            <Share2Icon />
+            </Button>
         </PopoverTrigger>
         <PopoverContent id="share-card-popover" className="mr-2 float-center w-[350px] md:w-[900px] md:mr-5 rounded-md">
             <CardHeader>
@@ -61,15 +59,14 @@ const ShareCardInterface: React.FC<ShareCardInterfaceProps> = ({ evalItem }) => 
               </Button>
               </div>
               Rough example of the sharecard:
-          <div className="flex flex-col items-center border-2 rounded-md justify-center w-2/3 p-4">
-            <Image src={`/screenshots/card-${evalItem.id}.png`} alt="Open Graph Image" width={500} height={300} className="object-cover rounded-lg mb-4" />
-            <h3 className="text-md font-semibold">{title}</h3>
+          <div className="flex flex-col border-2 rounded-md justify-center w-full sm:w-2/3 p-4">
+            <Image src={`/screenshots/card-${evalItem.id}.png`} alt="Open Graph Image" width={500} height={300} className="object-cover rounded-lg mb-4 justify-center" />
+            <span className="text-sm text-left md:text-md font-semibold">{title}</span>
           </div>
               
           </CardContent>
         </PopoverContent>
       </Popover>
-    </div>
   );
 }
 
