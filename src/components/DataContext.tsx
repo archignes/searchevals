@@ -67,7 +67,7 @@ const DataContext = createContext<DataContextType>(defaultContextValue);
 const index = new FlexSearch.Index({ tokenize: 'forward' });
 
 export const DataProvider: React.FC<DataProviderProps> = ({ children }) => {
-    const [data, setData] = useState<EvalItem[]>(evals);
+    const [data, setData] = useState<EvalItem[]>(evals as EvalItem[]);
     const [query, setQuery] = useState('');
     const [results, setResults] = useState<EvalItem[]>([]);
 

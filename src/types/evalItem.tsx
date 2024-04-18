@@ -31,8 +31,8 @@ export interface EvalItem {
   connected?: string[];
   following?: string[];
   key_phrases?: string[];
-  tags?: evalTag[];
-  methodology?: methodologyCitation;
+  tags?: Array<evalTag>;
+  methodology?: methodologyCitation | null;
   context?: string;
   systems: string[];
   eval_parts?: evalPart[];
