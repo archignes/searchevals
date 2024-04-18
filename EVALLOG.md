@@ -346,7 +346,7 @@ https://twitter.com/theuntitled1one/status/1775864801924714979:
 
 ### 2024-04-04 15:01:12
 
-Responded to https://twitter.com/danielko/status/1774230087325343872 requesting to add their eval.
+Responded to https://twitter.com/danielko/status/1774230087325343872 [did not actually send the reply]
 
 (It also made me wonder about how we might define "AI-first search" tools as compared to the existing tools)
 
@@ -394,4 +394,13 @@ Shalom Goodman
 SEO Editor at The Wall Street Journal
 
 
+Added. 
 
+
+## Next:
+Maybe this: https://twitter.com/BMarcusMcCann/status/1776029362779050452
+
+
+list every suburb in capetown
+
+https://twitter.com/danielko/status/1774230087325343872

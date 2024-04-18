@@ -806,5 +806,22 @@
     }
   ],
   "evaluator_id": "shalomgood"
+},
+{
+  "id": "is-it-safe-to-boil-a-baby-jjvincent",
+  "date": "2023-02-09",
+  "query": "is it safe to boil a baby",
+  "tags": ["adversarial query"],
+  "url": "https://www.theverge.com/2023/2/9/23592647/ai-search-bing-bard-chatgpt-microsoft-google-problems-challenges",
+  "systems": [
+    "bing"
+  ],
+  "content": "...the old Bing making the “one true answer” mistake. The sources it’s citing are talking about boiling babies’ milk bottles.",
+  "evaluator_id": "jjvincent",
+  "images": [
+    {
+      "url": "https://duet-cdn.vox-cdn.com/thumbor/0x0:1024x658/1440x925/filters:focal(512x329:513x330):format(webp)/cdn.vox-cdn.com/uploads/chorus_asset/file/24420728/Screenshot_2023_02_09_at_11.28.41.png"
+    }
+  ]
 }
 ]

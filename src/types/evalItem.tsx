@@ -21,6 +21,8 @@ export interface methodologyCitation {
   url: string;
 }
 
+export type evalTag = "implied negative evaluation" | "implied positive evaluation" | "adversarial query"
+
 export interface EvalItem {
   id: string;
   date: string;
@@ -29,7 +31,7 @@ export interface EvalItem {
   connected?: string[];
   following?: string[];
   key_phrases?: string[];
-  tags?: string[];
+  tags?: evalTag[];
   methodology?: methodologyCitation;
   context?: string;
   systems: string[];
