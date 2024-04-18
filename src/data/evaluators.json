@@ -209,6 +209,12 @@
   "role": "author and journalist",
   "URL": "https://twitter.com/jjvincent",
   "conflict": []
+},{
+  "id": "jordirib1",
+  "name": "Jordi Ribas",
+  "role": "Microsoft Corpoate Vice President; Head of Engineering and Product for Copilot and Bing",
+  "URL": "https://twitter.com/JordiRib1",
+  "conflict": ["bing", "microsoft-copilot", "bing-deep-search"]
 }
 ]
 

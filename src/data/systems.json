@@ -193,5 +193,14 @@
   "name": "Mojeek - RAG",
   "id": "mojeek-rag",
   "search_link": "https://labs.mojeek.com/rag/index.html"
+},
+{
+  "name": "Bing Deep Search",
+  "id": "bing-deep-search",
+  "twitter_link": "https://twitter.com/bing",
+  "search_link": "https://www.bing.com/search?q=%s&shm=cr&form=DEEPSH",
+  "search_link_note": "If the query is empty it is processed by Microsoft as a standard Bing search.",
+  "search_link_requires_query": true,
+  "wikipedia_link": "https://en.wikipedia.org/wiki/Bing_(search_engine)"
 }
 ]

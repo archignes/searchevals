@@ -823,5 +823,18 @@
       "url": "https://duet-cdn.vox-cdn.com/thumbor/0x0:1024x658/1440x925/filters:focal(512x329:513x330):format(webp)/cdn.vox-cdn.com/uploads/chorus_asset/file/24420728/Screenshot_2023_02_09_at_11.28.41.png"
     }
   ]
-}
+},
+  {
+    "id": "handwriting-camera-for-teachers-in-online-school-setting-jordirib1",
+    "date": "2024-03-22",
+    "query": "handwriting camera for teachers in online school setting",
+    "url": "https://twitter.com/JordiRib1/status/1771214752485691797",
+    "systems": [
+      "bing-deep-search"
+    ],
+    "media": "video",
+    "content": "Deep search is now available. It uses our existing Bing index and leverages GPT-4 to expand and enhance your query, and determine possible intents. In this example, if your intent is the document camera, then you’d select the top option and get a full page of enhanced results.",
+    "evaluator_id": "jordirib1"
+  }
 ]
+
