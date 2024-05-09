@@ -2,7 +2,7 @@
 import React, { useContext } from 'react';
 import Head from 'next/head';
 import Script from 'next/script'
-import Header from '../../src/components/Header';
+import Header from '../../src/components/header/Header';
 import SearchBar from '../../src/components/SearchBar';
 import EvalCard from '../../src/components/EvalCard';
 import Footer from '../../src/components/Footer';

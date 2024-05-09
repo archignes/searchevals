@@ -106,13 +106,13 @@
     }
 
     function createFloatingButton() {
-        const searchEvalTitle = document.createElement('span');
-        searchEvalTitle.style.fontWeight = "bold";
-        searchEvalTitle.innerHTML = "Search<span style='color: #718096;'>evals</span>.extract";
+        const SearchevalTitle = document.createElement('span');
+        SearchevalTitle.style.fontWeight = "bold";
+        SearchevalTitle.innerHTML = "Search<span style='color: #718096;'>evals</span>.extract";
 
         // Example JavaScript to create a floating button
         const floatingButton = document.createElement('button');
-        floatingButton.appendChild(searchEvalTitle);
+        floatingButton.appendChild(SearchevalTitle);
         floatingButton.setAttribute("aria-label", "Extract tweet information for searchevals");
         floatingButton.setAttribute("title", "Extract tweet information for searchevals");
         floatingButton.style.position = 'fixed';

@@ -831,6 +831,35 @@
     "media": "video",
     "content": "Deep search is now available. It uses our existing Bing index and leverages GPT-4 to expand and enhance your query, and determine possible intents. In this example, if your intent is the document camera, then you’d select the top option and get a full page of enhanced results.",
     "evaluator_id": "jordirib1"
+  },
+  {
+    "id": "give-me-some-examples-of-ai-weirdness-blog-posts-janellecshane",
+    "date": "2023-03-11",
+    "query": "Give me some examples of AI Weirdness blog posts.",
+    "url": "https://www.aiweirdness.com/search-or-fabrication/",
+    "systems": [
+      "microsoft-copilot"
+    ],
+    "tags": ["more evaluations available at the link"],
+    "content": "I've put red boxes around the factual errors. What is notable is that these are not just slight typos or errors in context - those items never appeared anywhere on my blog, and are pure fabrications. Asking for further details or clarification didn't help...",
+    "evaluator_id": "janellecshane",
+    "images": [
+      {
+        "url": "https://www.aiweirdness.com/content/images/size/w1600/2023/03/AI-Weirdness-blog-examples-annotated.jpg",
+        "annotated": true
+      }
+    ]
+  },
+  {
+    "id": "eval-xjmbwf3pa",
+    "date": "2024-05-03",
+    "query": "What did the most popular post in hacker news say today?",
+    "url": "https://twitter.com/jiayq/status/1786208795720593789",
+    "systems": [
+      "chatgpt-4", "microsoft-copilot", "google-gemini", "perplexity-ai", "lepton-search"
+    ],
+    "content": "The new ChatGPT search is killing the \"simply call conventional search and summarize with LLM\" wrappers. [ ... ] Try searching with \"what did the most popular post in hacker news say today?\" and you'll see the difference.\n\nIf you simply translate that to a google query like \"most popular post in hacker news\" - it won't give you useful result to summarize. [ ... ]",
+    "evaluator_id": "jiayq"
   }
 ]
 

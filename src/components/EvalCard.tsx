@@ -31,7 +31,6 @@ import {
 } from "./ui/tooltip"
 import { conflictType } from "@/src/types";
   
-import FeedbackButton from './FeedbackButton';
 import FeedbackLink from './Feedback';
 
 interface EvalCardProps {
@@ -211,7 +210,7 @@ const EvalCard: React.FC<EvalCardProps> = ({ id }) => {
         <ShareCardInterface evalItem={evalItem} />
         <FeedbackLink id={evalItem.id} />
       </div>
-      <div id="search-eval-card-div" className={`w-11/12 ${marqueeOrigin ? 'md:w-11/12' : 'md:w-2/3'} mx-auto mt-0 zIndex: 9999`}>
+      <div id="search-eval-card-div" className={`w-11/12 md:w-2/3 mx-auto mt-0 zIndex: 9999`}>
         <Card>  
         <CardHeader className="pb-2">
           <CardTitle>
@@ -341,7 +340,6 @@ const EvalCard: React.FC<EvalCardProps> = ({ id }) => {
             </div></div>)}
         <CardFooter className="mt-1 flex flex-row justify-between">
           <div><Link2Icon className="inline text-gray-500 dark:text-gray-400" /><small className="text-gray-500 dark:text-gray-500">Permalink id: <a className="underline" href={`/card/${evalItem!.id}`}>{evalItem!.id}</a></small></div>
-          <FeedbackButton />
         </CardFooter>
       </Card>
     </div>

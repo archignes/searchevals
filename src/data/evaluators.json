@@ -215,6 +215,13 @@
   "role": "Microsoft Corpoate Vice President; Head of Engineering and Product for Copilot and Bing",
   "URL": "https://twitter.com/JordiRib1",
   "conflict": ["bing", "microsoft-copilot", "bing-deep-search"]
+},
+{
+  "id": "janellecshane",
+  "name": "Janelle Shane",
+  "role": "research scientist; blogger at aiweirdness.com",
+  "URL": "https://twitter.com/JanelleCShane",
+  "conflict": []
 }
 ]
 

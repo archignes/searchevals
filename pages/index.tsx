@@ -2,8 +2,7 @@ import React from 'react';
 import { GetStaticProps } from 'next';
 import Head from 'next/head'; 
 import Script from 'next/script'
-import Intro from '../src/components/Intro';
-import Marquee from '../src/components/Marquee';
+import Feed from '../src/components/Feed';
 import evals from "../src/data/evals.json";
 import evaluators from "../src/data/evaluators.json";
 import systems from "../src/data/systems.json";
@@ -46,8 +45,7 @@ const HomePage = () => {
         <meta name="twitter:card" content="summary_large_image" />
       </Head>
       <Script defer data-domain="searchevals.com" src="https://plausible.io/js/script.js" />
-      <Intro evals={evals} evaluators={evaluators} systems={systems} />
-      <Marquee />
+      <Feed/>
     </>
   );
 };

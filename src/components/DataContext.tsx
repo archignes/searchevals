@@ -7,7 +7,7 @@ import evals from "src/data/evals.json";
 import systems from "src/data/systems.json";
 import evaluators from "src/data/evaluators.json";
 import MiniEvalCard, { MiniEvalCardProps } from "./MiniEvalCard";
-import { EvalItem, evalCardItem } from '@/src/types/evalItem';
+import { EvalItem } from '@/src/types/evalItem';
 
 export interface evalEvaluator {
     id: string; // twitter handle

@@ -173,11 +173,6 @@
     "id": "huggingchat",
     "search_link": "https://huggingface.co/chat/"
   },
-    {
-    "name": "Lepton Search",
-    "id": "lepton-search",
-    "search_link": "https://search.lepton.run/search?q=%s"
-  },
 {
   "id": "wikipedia",
   "name": "Wikipedia",

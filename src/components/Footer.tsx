@@ -1,9 +1,8 @@
 import { GitHubLogoIcon, TwitterLogoIcon, LinkedInLogoIcon } from '@radix-ui/react-icons';
 import { Button } from "./ui/button";
 import { Input } from "./ui/input";
-import FeedbackButton from "./FeedbackButton";
 
-const lastUpdated = "2024-04-18T22:03:47.647Z";
+const lastUpdated = "2024-05-09T00:00:19.783Z";
 
 const Footer: React.FC = () => {
   return (
@@ -45,7 +44,6 @@ const Footer: React.FC = () => {
       <p>Last Updated: <span id="last-updated-placeholder" title={new Date(lastUpdated).toLocaleString()}>{lastUpdated} UTC</span></p>
         
     </div>
-      <FeedbackButton />
     </footer>
   );
 };
