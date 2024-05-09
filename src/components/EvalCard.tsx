@@ -3,6 +3,7 @@ import React, { useContext, useState } from 'react';
 import { useRouter } from 'next/router';
 import { Link2Icon, InfoCircledIcon, DrawingPinIcon, LinkedInLogoIcon, TwitterLogoIcon, InstagramLogoIcon } from '@radix-ui/react-icons';
 import DataContext from './DataContext';
+import { EvaluationTarget } from './eval-card-elements';
 import { EvalItem } from '@/src/types/evalItem';
 import SearchOnEvalInterface from './SearchOnEvalInterface';
 import ShareCardInterface from './ShareCardInterface';
@@ -34,7 +35,7 @@ import { conflictType } from "@/src/types";
 import FeedbackLink from './Feedback';
 
 interface EvalCardProps {
-  id: string;
+  evalItemId: string;
 }
 
 
@@ -51,9 +52,9 @@ const ConnectedItemLabel: React.FC<{connection: string, currentEvaluation: strin
     ) : null;
 }
 
-const DropDownConnections: React.FC<EvalCardProps> = ({ id }) => {
+const DropDownConnections: React.FC<EvalCardProps> = ({ evalItemId }) => {
   const { data } = useContext(DataContext);
-  const evalItem = data ? data.find(evalItem => evalItem.id === id) : null;
+  const evalItem = data ? data.find(evalItem => evalItem.id === evalItemId) : null;
 
   return (
      <DropdownMenu>
@@ -62,7 +63,7 @@ const DropDownConnections: React.FC<EvalCardProps> = ({ id }) => {
         </DropdownMenuTrigger>
        <DropdownMenuContent>
          {evalItem!.connected?.map((connection) => (
-           <ConnectedItemLabel key={connection} connection={connection} currentEvaluation={id} currentEvaluator={false} />
+           <ConnectedItemLabel key={connection} connection={connection} currentEvaluation={evalItemId} currentEvaluator={false} />
          ))}
        </DropdownMenuContent>
      </DropdownMenu>
@@ -148,7 +149,7 @@ export const EvaluatorEvaluations: React.FC<{ evalId?: string, evaluatorId?: str
 
 
 
-const EvalCard: React.FC<EvalCardProps> = ({ id }) => {
+const EvalCard: React.FC<EvalCardProps> = ({ evalItemId }) => {
   const { data, systems, evaluators, miniEvalCard } = useContext(DataContext);
   const [responseListVisible, setResponseListVisible] = useState(true)
   
@@ -156,7 +157,7 @@ const EvalCard: React.FC<EvalCardProps> = ({ id }) => {
   const { pathname } = router;
   const marqueeOrigin: boolean = (pathname === "/")
 
-  const evalItem = data ? data.find(evalItem => evalItem.id === id) : null;
+  const evalItem = data ? data.find(evalItem => evalItem.id === evalItemId) : null;
   
   const evalEvaluatorDetails = evaluators.find(evaluator => evaluator.id === evalItem?.evaluator_id);
   
@@ -210,7 +211,7 @@ const EvalCard: React.FC<EvalCardProps> = ({ id }) => {
         <ShareCardInterface evalItem={evalItem} />
         <FeedbackLink id={evalItem.id} />
       </div>
-      <div id="search-eval-card-div" className={`w-11/12 md:w-2/3 mx-auto mt-0 zIndex: 9999`}>
+      <div id={`search-eval-card-${evalItem.id}`} className={`w-11/12 md:w-2/3 mx-auto mt-0 zIndex: 9999`}>
         <Card>  
         <CardHeader className="pb-2">
           <CardTitle>
@@ -245,6 +246,7 @@ const EvalCard: React.FC<EvalCardProps> = ({ id }) => {
                     </>
                 )}
           </CardDescription>
+            <EvaluationTarget evalItemID={evalItemId}/>
         </CardHeader>
         <CardContent>
             {evalItem.following && (
@@ -285,7 +287,7 @@ const EvalCard: React.FC<EvalCardProps> = ({ id }) => {
               <div className="text-sm m-1">{evalItem.tags.map(tag => <span key={tag} className="bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">{tag}</span>)}</div>
             )}
             {evalItem.connected && (
-              <DropDownConnections id={evalItem.id} />
+              <DropDownConnections evalItemId={evalItem.id} />
             )}
           {evalEvaluatorDetails && (
             <figcaption className="mt-1 mb-2">

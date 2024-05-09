@@ -5,7 +5,9 @@
 // If the showConflicts flag is set, it will display the evaluator's conflicts.
 
 import React, { useContext } from 'react';
-import DataContext from './DataContext';
+import DataContext, { System } from './DataContext';
+import { EvalItem } from '@/src/types/evalItem';
+import { EvaluationTarget } from './eval-card-elements';
 import { conflictType } from '@/src/types/';
 import { CheckQueryConsistency, CheckTemporalDifference } from './EvalComparisonChecks';
 import SearchBracket from './SearchBracket'
@@ -24,6 +26,7 @@ import {
   TooltipProvider,
   TooltipTrigger,
 } from "./ui/tooltip"
+
 export interface MiniEvalCardProps {
   evalItemId: string;
   textsize?: string;
@@ -31,24 +34,39 @@ export interface MiniEvalCardProps {
   currentEvaluation?: string;
   currentEvaluator?: boolean;
   showConflicts?: boolean;
+  maxHeight?: string;
+  trimQueryHeight?: boolean;
+  ref?: React.ForwardedRef<HTMLDivElement>;
+}
+
+export const getSystemsEvaluated = (evalItem: EvalItem, systems: System[]): string => {
+  return evalItem?.systems.map((systemId: string) => {
+    const system = systems.find(system => system.id === systemId);
+    return system ? system.name : null;
+  }).filter((name: string | null): name is string => name !== null).join(', ');
 }
 
 export const MiniEvalCard: React.FC<MiniEvalCardProps> = ({
+  ref,
   evalItemId,
   checks,
   currentEvaluation,
   currentEvaluator,
   textsize,
-  showConflicts
+  showConflicts,
+  maxHeight,
+  trimQueryHeight,
 }) => {
+  
   const { data, evaluators, systems } = useContext(DataContext);
   const evalItem = data.find(item => item.id === evalItemId) || null;
   const isCurrentEvaluation = currentEvaluation === evalItemId;
   const evalEvaluatorDetails = evaluators.find(evaluator => evaluator.id === evalItem?.evaluator_id);
-  const systemsEvaluated = evalItem?.systems.map(systemId => {
-    const system = systems.find(system => system.id === systemId);
-    return system ? system.name : null;
-  }).join(', ');
+
+  let systemsEvaluated = null;
+  if (evalItem) {
+    systemsEvaluated = getSystemsEvaluated(evalItem, systems);
+  } else { return null; }
 
   const textSizeClass = textsize || 'text-sm';
 
@@ -69,24 +87,31 @@ export const MiniEvalCard: React.FC<MiniEvalCardProps> = ({
       })
     }
   }
-
   return (
-    <Card id={`mini-eval-card-${evalItemId}`} className="flex-grow">
+    <Card
+      ref={ref}
+      id={`mini-eval-card-${evalItemId}`}
+      className={`flex-grow ${maxHeight ? 'overflow-y-scroll no-scrollbar' : ''}`}
+      style={{
+        maxHeight: maxHeight || 'auto'
+      }}    >
       <CardHeader className="p-1 space-y-0">
           <CardTitle className={`${textSizeClass}`}>
             {isCurrentEvaluation ? "current: " : ""}
+            
             <a href={`/card/${evalItemId}`}>
-              <div>
+            <div className={`arrLink w-fit ${trimQueryHeight ? 'two-lines-height-limit' : ''}`}>
               <SearchBracket className={textSizeClass}>
-                <span className={`${textSizeClass} font-normal`}>{evalItem!.query}</span>
-                  </SearchBracket>
-                  </div>
+                <span className={`${textSizeClass} font-normal`}>{evalItem.query}</span>
+              </SearchBracket>
+              </div>
             </a>
           </CardTitle>
         <CardDescription className="p-0 m-0 pl-3">
           <span className={`${textSizeClass}`}>date: {evalItem!.date}</span><br></br>
           <span className={`${textSizeClass}`}>systems: {systemsEvaluated}</span>
         </CardDescription>
+        <EvaluationTarget evalItemID={evalItemId} className={`pl-3 ${textSizeClass}`} />
       </CardHeader>
       <CardContent className='p-1 py-0'>
         {!currentEvaluator && evalEvaluatorDetails && (

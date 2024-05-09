@@ -718,6 +718,7 @@
   "id": "how-long-does-magnus-carlsen-study-chess-mojeek",
   "date": "2024-03-31",
   "query": "how long does magnus carlsen study chess",
+  "evaluation_target": ["featured snippet", "logic error"],
   "url": "https://twitter.com/mojeek/status/1774436745506963701",
   "systems": [
     "google"
@@ -781,6 +782,7 @@
     }
   ],
   "evaluator_id": "jiayq",
+  "evaluation_target": ["generated response", "hallucination"],
   "context": "General AI models still hallucinate like crazy.\\n\\nI tried searching for \"how to download a file from a hugging face repo\". Results:\\n- @ChatGPTapp: fail\\n- @Google: fail\\n- @perplexity_ai: fail\\n\\nAnd devv.ai emerged as the only working solution. Details below."
 },
 {
@@ -792,6 +794,7 @@
     "google",
     "google-sge"
   ],
+  "evaluation_target": ["generated response v. list of results"],
   "content": "Look how different the SGE results are compared to the regular search results.\\n\\nThey’re so very different",
   "images": [
     {
@@ -851,15 +854,78 @@
     ]
   },
   {
-    "id": "eval-xjmbwf3pa",
+    "id": "eval-what-did-the-most-popular-post-in-hacker-news-say-today-jiayq",
     "date": "2024-05-03",
     "query": "What did the most popular post in hacker news say today?",
+    "evaluation_target": ["generated response", "fresh retreival"],
     "url": "https://twitter.com/jiayq/status/1786208795720593789",
     "systems": [
       "chatgpt-4", "microsoft-copilot", "google-gemini", "perplexity-ai", "lepton-search"
     ],
     "content": "The new ChatGPT search is killing the \"simply call conventional search and summarize with LLM\" wrappers. [ ... ] Try searching with \"what did the most popular post in hacker news say today?\" and you'll see the difference.\n\nIf you simply translate that to a google query like \"most popular post in hacker news\" - it won't give you useful result to summarize. [ ... ]",
     "evaluator_id": "jiayq"
+  },
+  {
+    "id": "eval-how-to-get-rid-of-cockroaches-anku199724",
+    "date": "2024-05-08",
+    "query": "how to get rid of cockroaches",
+    "url": "https://twitter.com/anku199724/status/1788289667336433727",
+    "evaluation_target": [
+      "'From sources across the web'"
+    ],
+    "systems": [
+      "google"
+    ],
+    "connected": ["eval-how-to-get-rid-of-cockroaches-mayank_jee"],
+    "content": "If you have got cockroaches .. shoot them with a missile 🚀 …..according to Google\\n\\n@lilyraynyc @NicheSiteLady @rustybrick @searchliaison @JohnMu",
+    "evaluator_id": "anku199724",
+    "images": [
+      {
+        "url": "https://pbs.twimg.com/media/GNFH-LRX0AEWgzY?format=jpg&name=large",
+        "annotated": true
+      }
+    ]
+  },
+  {
+    "id": "eval-how-to-get-rid-of-cockroaches-mayank_jee",
+    "date": "2024-05-09",
+    "query": "how to get rid of cockroaches",
+    "following": ["eval-how-to-get-rid-of-cockroaches-anku199724"],
+    "evaluation_target": ["'From sources across the web'"],
+    "url": "https://twitter.com/mayank_jee/status/1788490209283428703",
+    "systems": [
+      "google", "bing"
+    ],
+    "content": "That is exactly why I stopped using Google and switched to Bing",
+    "images": [
+      {
+        "url": "https://pbs.twimg.com/media/GNH-IppakAA_LQk?format=jpg&name=large",
+        "annotated": true
+      },
+      {
+        "url": "https://pbs.twimg.com/media/GNH-JNTasAAnavg?format=jpg&name=large",
+        "annotated": false
+      }
+    ],
+    "evaluator_id": "mayank_jee"
+  },
+  {
+    "id": "eval-how-to-get-rid-of-cockroaches-archignes",
+    "date": "2024-05-09",
+    "query": "how to get rid of cockroaches",
+    "url": "https://twitter.com/ARCHIGNES/status/1788704299620413945",
+    "following": ["eval-how-to-get-rid-of-cockroaches-anku199724"],
+    "systems": [
+      "google"
+    ],
+    "images": [
+      {
+        "url": "https://pbs.twimg.com/media/GNLBDpQXgAILH-d?format=jpg&name=4096x4096",
+        "annotated": true
+      }
+    ],
+    "content": "",
+    "evaluator_id": "ARCHIGNES"
   }
 ]
 

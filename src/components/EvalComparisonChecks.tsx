@@ -61,7 +61,7 @@ export const CheckQueryConsistency: React.FC<{ evalItemId: string; currentEvalua
   var diff = dmp.diff_main(currentQuery, followingQuery);
   const diffInsert = () => { return { __html: dmp.diff_prettyHtml(diff) } };
 
-  if (currentQuery.toLowerCase() === followingQuery.toLowerCase()) {
+  if (currentQuery !== followingQuery && currentQuery.toLowerCase() === followingQuery.toLowerCase()) {
     return (
       <div className="flex justify-center w-full text-xs items-center text-warning">
         <ExclamationTriangleIcon className="text-blue-500" />

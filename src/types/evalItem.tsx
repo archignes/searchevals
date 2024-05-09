@@ -23,6 +23,16 @@ export interface methodologyCitation {
 
 export type evalTag = "implied negative evaluation" | "implied positive evaluation" | "adversarial query" | "more evaluations available at the link"
 
+export type evalTarget = 
+  | "featured snippet" 
+  | "generated response" 
+  | "top results" 
+  | "generated response v. list of results"
+  | "fresh retreival"
+  | "hallucination"
+  | "logic error"
+  | "'From sources across the web'";
+
 export interface EvalItem {
   id: string;
   date: string;
@@ -31,6 +41,7 @@ export interface EvalItem {
   connected?: string[];
   following?: string[];
   key_phrases?: string[];
+  evaluation_target?: Array<evalTag>;
   tags?: Array<evalTag>;
   methodology?: methodologyCitation | null;
   context?: string;
