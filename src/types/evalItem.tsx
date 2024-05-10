@@ -37,6 +37,7 @@ export type evalTarget =
   | "'From sources across the web'"
   | "world model"
   | "prompt injection"
+  | "inconsistent alignment"
   | "SERP";
 
 export interface EvalItem {

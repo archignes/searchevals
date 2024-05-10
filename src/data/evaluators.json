@@ -292,6 +292,27 @@
   "role": "sociologist",
   "URL": "https://twitter.com/SanNuvola",
   "conflict": []
+},
+{
+  "id": "SarahPerezTC",
+  "name": "Sarah Perez",
+  "role": "Reporter at TechCrunch",
+  "URL": "https://twitter.com/SarahPerezTC",
+  "conflict": []
+},
+{
+  "id": "max_oats",
+  "name": "Max Turnbull ",
+  "role": "game developer",
+  "URL": "https://twitter.com/max_oats",
+  "conflict": []
+},
+{
+  "id": "MrRobzilla",
+  "name": "Rob P",
+  "role": "digital marketer",
+  "URL": "https://twitter.com/MrRobzilla",
+  "conflict": []
 }
 ]
 

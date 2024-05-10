@@ -197,5 +197,9 @@
   "search_link_note": "If the query is empty it is processed by Microsoft as a standard Bing search.",
   "search_link_requires_query": true,
   "wikipedia_link": "https://en.wikipedia.org/wiki/Bing_(search_engine)"
+},
+  {"name": "Meta AI",
+  "id": "meta-ai",
+  "search_link": "https://www.meta.ai/"
 }
 ]

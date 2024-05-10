@@ -1106,6 +1106,34 @@
         "url": "https://pbs.twimg.com/media/GNLA4jOXcAAJw65?format=png&name=900x900"
       }
     ]
+  },
+  {
+    "id": "check-mouse-dpi-max-oats",
+    "date": "2022-05-04",
+    "query": "check mouse dpi",
+    "url": "https://twitter.com/max_oats/status/1521801590432497664",
+    "systems": [
+      "google"
+    ],
+    "content": "google in 2022 is dogshit bc if i want to search \"check mouse dpi\" it comes up with 10000000 AI-driven tech blogs of which the content is eighteen paragraphs of:What is the DPI Mouse?Many people would like to check their DPI of mouse. The DPI of a mouse is the dots-per-second",
+    "evaluator_id": "max_oats"
+  },
+  {
+    "id": "buy-glock-switch-mrrobzilla",
+    "date": "2024-05-05",
+    "query": "buy glock switch",
+    "evaluation_target": ["generated response", "inconsistent alignment"],
+    "url": "https://twitter.com/mrrobzilla/status/1787185340970914110",
+    "systems": [
+      "google-sge"
+    ],
+    "content": "‘Illegal, but here’s a link’ 🤦",
+    "evaluator_id": "mrrobzilla",
+    "images": [
+      {
+        "url": "https://pbs.twimg.com/media/GM1bmCzaMAEQtol?format=jpg&name=large"
+      }
+    ]
   }
 ]
 
