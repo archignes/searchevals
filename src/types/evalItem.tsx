@@ -42,6 +42,7 @@ export type evalTarget =
 export interface EvalItem {
   id: string;
   date: string;
+  validation_image?: string;
   query: string;
   url: string;
   connected?: string[];

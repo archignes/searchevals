@@ -15,7 +15,7 @@ const ImageDisplay: React.FC<ImageDisplayProps> = ({ images, type, className }) 
     const handleImageClick = (image: { url: string; caption?: string; annotated?: boolean }) => {
         setSelectedImage(image);
     };
-
+    
     const { pathname } = useRouter();
 
     return (

@@ -1088,6 +1088,24 @@
         "url": "https://pbs.twimg.com/media/GNEvBMKXIAAAADG?format=jpg&name=medium"
       }
     ]
+  },
+  {
+    "id": "factory-lore-folklore-sannuvola",
+    "date": "2024-05-09",
+    "query": "factory lore folklore",
+    "evaluation_target": ["query understanding"],
+    "url": "https://twitter.com/SanNuvola/status/1788704086851780942",
+    "systems": [
+      "google"
+    ],
+    "content": "I hate what \"AI\" is doing to web search. Just absolute idiocy. If I type a word I am looking for that word not for a related term that might have more results. Fuck this",
+    "evaluator_id": "SanNuvola",
+    "validation_image": "screencapture-google-search-2024-05-10-16_09_21-edit.png",
+    "images": [
+      {
+        "url": "https://pbs.twimg.com/media/GNLA4jOXcAAJw65?format=png&name=900x900"
+      }
+    ]
   }
 ]
 
