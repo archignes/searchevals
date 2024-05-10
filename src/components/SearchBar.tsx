@@ -72,10 +72,20 @@ export default function SearchBar(): JSX.Element {
     router.push(`/card/${randomId}`);
   };
 
+  const displayResults = query && showResults && results.length > 0 && query !== new URLSearchParams(window.location.search).get('q')
+
 
   return (
     <><div id="search-area" className="flex justify-center items-center space-x-2">
-      <div className="search-box-container w-full sm:w-3/4 md:w-2/3 mx-2 justify-center items-center flex flex-wrap space-x-2">
+      <div className={`search-box-container border border-b-0 ${displayResults ? 'border-gray-200' : 'border-transparent'} w-full sm:w-3/4 md:w-2/3 p-2 mx-2 justify-center items-center flex flex-wrap space-x-2`}>
+        <button 
+          onClick={handleCloseResults} 
+          className={`mr-0 hover:bg-blue-100 p-1 rounded-md ${displayResults ? '' : 'invisible'}`}
+        >
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" className="bi bi-x" viewBox="0 0 16 16">
+            <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z" />
+          </svg>
+        </button>
         <form className="flex space-x-2 items-center w-full md:w-1/2 input-group justify-center search-bar no-link"
           role="search"
           aria-label="Website Search"
@@ -97,15 +107,12 @@ export default function SearchBar(): JSX.Element {
           </Button>
       </div>
     </div>
-      {query && showResults && results.length > 0 && query !== new URLSearchParams(window.location.search).get('q') && (
-      <div id="dynamic-results" className="w-full fixed bg-white mt-2 left-0 right-0">
-        <button onClick={handleCloseResults} className="mr-0 hover:bg-blue-100 p-1 rounded-md"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" className="bi bi-x" viewBox="0 0 16 16">
-          <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z" />
-        </svg>
-        </button>
-      <ScrollArea className="w-full h-[calc(100vh-210px)] md:px-10 mt-1 mx-auto left-0 right-0">
+      {displayResults && (
+        <div id="dynamic-results" className="w-full border border-gray-200 shadow-lg sm:w-3/4 md:w-2/3 mx-auto fixed bg-white left-0 right-0 z-50">
+        
+      <ScrollArea className="w-full h-[calc(100vh-155px)] md:px-10 mt-1 mx-auto left-0 right-0 z-50">
     
-      <div className="border mt-0 p-2 bg-white relative z-50 left-0 shadow-lg">
+      <div className="mt-0 p-2 bg-white relative z-50 left-0 ">
             
           <ul className='mt-2'>
           {results.map((result: any) => (
