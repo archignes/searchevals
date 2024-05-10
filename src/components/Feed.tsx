@@ -46,7 +46,18 @@ const Row = ({ sortedData, index, style, setSize, windowWidth }: {
 const Feed: React.FC = () => {
   const { data } = useContext(DataContext);
   const sortedData = useMemo(() =>
-    [...data].sort((a, b) => b.date.localeCompare(a.date)),
+    [...data].sort((a, b) => {
+      const dateComparison = b.date.localeCompare(a.date);
+      if (dateComparison !== 0) return dateComparison;
+      // If both URLs are Twitter links, extract the last segment
+      // as the tweet ID and compare them
+      if (a.url.startsWith('https://twitter.com') && b.url.startsWith('https://twitter.com')) {
+        const aTweetId = a.url.split('/').pop() || "";
+        const bTweetId = b.url.split('/').pop() || "";
+        return bTweetId.localeCompare(aTweetId);
+      }
+      return 0;
+    }),
     [data]
   );
    

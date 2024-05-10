@@ -1,3 +1,5 @@
+// adapted from: https://github.com/bvaughn/react-window/issues/190#issuecomment-1916091172
+
 import { useState, useEffect } from "react";
 import { useIsomorphicLayoutEffect } from "react-use";
 
