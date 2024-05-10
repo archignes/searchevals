@@ -243,6 +243,48 @@
   "role": "a search research & development lab",
   "URL": "https://twitter.com/ARCHIGNES",
   "conflict": []
+},
+{
+  "id": "allgarbled",
+  "name": "gabe (allgarbled)",
+  "role": "pseudonymous Twitter user",
+  "URL": "https://twitter.com/allgarbled",
+  "conflict": []
+},
+{
+  "id": "BrendanOConnel",
+  "name": "Brendan O'Connell",
+  "role": "Sr. Manager, Organic Search at The New York Post",
+  "URL": "https://twitter.com/BrendanOConnel",
+  "conflict": []
+},
+{
+  "id": "mikefutia",
+  "name": "Mike Futia",
+  "role": "Founder at Stupid Simple SEO",
+  "URL": "https://twitter.com/mikefutia",
+  "conflict": []
+},
+{
+  "id": "DariusAtmar",
+  "name": "Darius Atmar",
+  "role": "data scientist",
+  "URL": "https://twitter.com/DariusAtmar",
+  "conflict": []
+},
+{
+  "id": "fabianstelzer",
+  "name": "Fabian Stelzer",
+  "role": "tech entrepreneur at GLIF",
+  "URL": "https://twitter.com/fabianstelzer",
+  "conflict": []
+},
+{
+  "id": "navahf",
+  "name": "Navah Hopkins",
+  "role": "paid media strategist",
+  "URL": "https://twitter.com/navahf",
+  "conflict": []
 }
 ]
 

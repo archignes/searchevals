@@ -22,12 +22,14 @@ const ImageDisplay: React.FC<ImageDisplayProps> = ({ images, type, className }) 
         <div className={`grid ${type === 'solo' ? 'grid-cols-1' : (pathname === "/" || images.length > 1) ? 'grid-cols-2' : 'grid-cols-1'} gap-4 justify-items-center ${className}`}>
             {images.map((image, index) => (
                 <div key={index} className="text-center">
-                    {image.annotated && (
+                    {(image.annotated || image.extension_modified) && (
                         <div className="flex items-center mx-auto w-2/3 m-1 text-center text-sm text-red-500 mt-2">
                             <span className="inline-flex mr-2"><ExclamationTriangleIcon /></span>
-                            <span>This image appears to contain annotation.</span>
+                            {image.annotated && <span>This image appears to contain annotation.</span>}
+                            {image.extension_modified && <span>This image appears include browser extension modifications.</span>}
                         </div>
                     )}
+                    
                     <img
                         src={image.url}
                         alt={image.caption} // Assuming you want to use the caption as alt text for accessibility

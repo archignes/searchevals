@@ -98,7 +98,7 @@ export default function SearchBar(): JSX.Element {
       </div>
     </div>
       {query && showResults && results.length > 0 && query !== new URLSearchParams(window.location.search).get('q') && (
-      <div id="dynamic-results" className="w-full fixed bg-white pb-5 md:min-w-[600px] max-w-[800px] sm:w-2/3 md:w-1/2 md:px-10 mt-1 mx-auto left-0 right-0">
+      <div id="dynamic-results" className="w-full fixed bg-white mt-2 left-0 right-0">
         <button onClick={handleCloseResults} className="mr-0 hover:bg-blue-100 p-1 rounded-md"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" className="bi bi-x" viewBox="0 0 16 16">
           <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z" />
         </svg>
@@ -110,9 +110,7 @@ export default function SearchBar(): JSX.Element {
           <ul className='mt-2'>
           {results.map((result: any) => (
             <li key={result.id} className='p-1'>
-              <a href={`/card/${result.id}`}>
                 {miniEvalCard && React.createElement(miniEvalCard, { evalItemId: result.id})}
-                </a>
             </li>
           ))}
         </ul>

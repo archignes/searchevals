@@ -926,6 +926,168 @@
     ],
     "content": "",
     "evaluator_id": "ARCHIGNES"
+  },
+  {
+    "id": "airpods-pro-2nd-generation-allgarbled",
+    "date": "2024-05-05",
+    "query": "airpods pro 2nd generation",
+    "key_phrases": [
+      "slop"
+    ],
+    "url": "https://twitter.com/allgarbled/status/1786952573100098006",
+    "systems": [
+      "google-sge"
+    ],
+    "evaluation_target": ["generated response", "SERP"],
+    "content": "it’s cool how every google search now starts with a wall of LLM slop that is completely useless and takes up half the screen",
+    "evaluator_id": "allgarbled",
+    "images": [
+      {
+        "url": "https://pbs.twimg.com/media/GMyH5Q1bEAEiDJ3?format=jpg&name=large"
+      }
+    ]
+  },
+  {
+    "id": "virgin-airlines-lilyraynyc",
+    "date": "2023-07-26",
+    "query": "virgin airlines",
+    "url": "https://twitter.com/lilyraynyc/status/1683993833946710016",
+    "systems": [
+      "google-sge"
+    ],
+    "content": "I think SGE often forgets that a huge % of searches are people just using Google for *navigational searches*\\n\\nI didn't Google \"Virgin Airlines\" to get the life story about Virgin and other random trivia that has 0 bearing on what I was trying to do (visit their website).",
+    "evaluator_id": "lilyraynyc",
+    "images": [
+      {
+        "url": "https://pbs.twimg.com/media/F16-75sXsAA9C4x?format=jpg&name=medium"
+      }
+    ],
+    "search_type": [
+      "navigational"
+    ]
+  },
+  {
+    "id": "gmail-brendanoconnel",
+    "date": "2023-07-26",
+    "query": "gmail",
+    "url": "https://twitter.com/BrendanOConnel/status/1684195235650232322",
+    "systems": [
+      "google-sge"
+    ],
+    "content": "SGE for Navigational Queries sucks.",
+    "evaluator_id": "BrendanOConnel",
+    "search_type": [
+      "navigational"
+    ],
+    "images": [
+      {
+        "url": "https://pbs.twimg.com/media/F192kKsWIAg_6jp?format=jpg&name=medium"
+      }
+    ]
+  },
+  {
+    "id": "ubersuggest-pricing-mikefutia",
+    "date": "2023-07-25",
+    "query": "ubersuggest pricing",
+    "evaluation_target": ["generated response"],
+    "url": "https://twitter.com/mikefutia/status/1683925781553254400",
+    "systems": [
+      "google-sge"
+    ],
+    "content": "@searchliaison SGE feedback:\\n\\n- None of this information is accurate.\\n\\n- You don't link to the *true source* of the information (UberSuggest pricing page).\\n\\n- These are not helpful results.",
+    "evaluator_id": "mikefutia",
+    "images": [
+      {
+        "url": "https://pbs.twimg.com/media/F16BQ0eXgAASl2N?format=jpg&name=medium",
+        "extension_modified": true
+      }
+    ]
+  },
+  {
+    "id": "hard-boiled-eggs-cover-and-tirn-off-heat-dariusatmar",
+    "date": "2024-05-09",
+    "query": "hard boiled eggs cover and tirn off heat",
+    "connected": ["why-should-you-cover-eggs-when-boiling-danielsgriffin"],
+    "url": "https://twitter.com/DariusAtmar/status/1788583538826092707",
+    "evaluation_target": ["generated response", "world model"],
+    "systems": [
+      "google-sge"
+    ],
+    "content": "It adds value. I didn’t know my eggs would escape if I didn’t cover the pot.",
+    "evaluator_id": "DariusAtmar",
+    "images": [
+      {
+        "url": "https://pbs.twimg.com/media/GNJTP6dWEAAmxk_?format=jpg&name=large"
+      }
+    ]
+  },
+  {
+    "id": "why-should-you-cover-eggs-when-boiling-danielsgriffin",
+    "date": "2024-05-10",
+    "query": "why should you cover eggs when boiling",
+    "url": "https://twitter.com/danielsgriffin/status/1788996909576908981",
+    "following": ["hard-boiled-eggs-cover-and-tirn-off-heat-dariusatmar"],
+    "systems": [
+      "google-sge"
+    ],
+    "evaluator_id": "danielsgriffin",
+    "eval_parts": [
+      {
+        "id": "1",
+        "content": "I tried to replicate, seems SGE is turned off for that query now.\\n\\nThese two queries showed their own world model issues, though less amusing.\\n\\nQuery: [why should you cover eggs when boiling]\\n\\nResponse: \"to stop the cooking process and prevent the shells from cracking\"",
+        "query": "why should you cover eggs when boiling",
+        "images": [
+          {
+            "url": "https://pbs.twimg.com/media/GKHbkjLbwAATBdK?format=jpg&name=large"
+          }
+        ]
+      },
+      {
+        "id": "2",
+        "content": "Query: [should you cover hard boiled eggs when cooking]\\n\\nResponse: \"Covering the pot before the water boils can also prevent the water from heating up as quickly and make the shells more likely to crack.\"",
+        "query": "should you cover hard boiled eggs when cooking",
+        "images": [
+          {
+            "url": "https://pbs.twimg.com/media/GNPLfm4acAIreAN?format=jpg&name=medium"
+          }
+        ]
+      }
+    ],
+    "evaluation_target": ["generated response", "world model"]
+  },
+  {
+    "id": "fabian-stelzer-fabianstelzer",
+    "date": "2024-05-09",
+    "query": "fabian stelzer",
+    "evaluation_target": ["generated response", "prompt injection"],
+    "url": "https://twitter.com/fabianstelzer/status/1788593060282048566",
+    "systems": [
+      "perplexity-ai"
+    ],
+    "content": "prompt injections are the new SEO\\n\\nI have a note on my website that instructs LLMs to 1. respond in rhyme and 2. mention the persian dish of Ghorme Sabzi when being queried about me\\n\\nso when you search perplexity for me it will happily oblige:",
+    "evaluator_id": "fabianstelzer",
+    "images": [
+      {
+        "url": "https://pbs.twimg.com/media/GNJbHl2WMAAJYFk?format=png&name=900x900"
+      }
+    ]
+  },
+  {
+    "id": "filtering-out-reddit-results-in-google-navahf",
+    "date": "2024-05-08",
+    "query": "filtering out reddit results in google",
+    "url": "https://twitter.com/navahf/status/1788262414384873912",
+    "evaluation_target": ["list of results"],
+    "systems": [
+      "google"
+    ],
+    "content": "I'm not a fan of #reddit dominating a #google SERP specifically asking how to filter reddit out of the SERP....\\n\\n#seo #ppc",
+    "evaluator_id": "navahf",
+    "images": [
+      {
+        "url": "https://pbs.twimg.com/media/GNEvBMKXIAAAADG?format=jpg&name=medium"
+      }
+    ]
   }
 ]
 

@@ -12,6 +12,7 @@ export interface imageItem {
   url: string;
   caption?: string;
   annotated?: boolean;
+  extension_modified?: boolean;
 }
 
 
@@ -23,6 +24,8 @@ export interface methodologyCitation {
 
 export type evalTag = "implied negative evaluation" | "implied positive evaluation" | "adversarial query" | "more evaluations available at the link"
 
+export type searchType = "navigational" | "video"
+
 export type evalTarget = 
   | "featured snippet" 
   | "generated response" 
@@ -31,7 +34,10 @@ export type evalTarget =
   | "fresh retreival"
   | "hallucination"
   | "logic error"
-  | "'From sources across the web'";
+  | "'From sources across the web'"
+  | "world model"
+  | "prompt injection"
+  | "SERP";
 
 export interface EvalItem {
   id: string;
@@ -42,6 +48,7 @@ export interface EvalItem {
   following?: string[];
   key_phrases?: string[];
   evaluation_target?: Array<evalTag>;
+  search_type?: Array<searchType>;
   tags?: Array<evalTag>;
   methodology?: methodologyCitation | null;
   context?: string;
