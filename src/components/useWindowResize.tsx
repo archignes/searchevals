@@ -1,9 +1,14 @@
-import { useState, useLayoutEffect } from "react";
+import { useState, useEffect } from "react";
+import { useIsomorphicLayoutEffect } from "react-use";
 
 export const useWindowResize = () => {
   const [size, setSize] = useState([0, 0]);
 
-  useLayoutEffect(() => {
+  useEffect(() => {
+    setSize([window.innerWidth, window.innerHeight]);
+  }, []);
+
+  useIsomorphicLayoutEffect(() => {
     function updateSize() {
       setSize([window.innerWidth, window.innerHeight]);
     }

@@ -854,7 +854,7 @@
     ]
   },
   {
-    "id": "eval-what-did-the-most-popular-post-in-hacker-news-say-today-jiayq",
+    "id": "what-did-the-most-popular-post-in-hacker-news-say-today-jiayq",
     "date": "2024-05-03",
     "query": "What did the most popular post in hacker news say today?",
     "evaluation_target": ["generated response", "fresh retreival"],
@@ -866,7 +866,7 @@
     "evaluator_id": "jiayq"
   },
   {
-    "id": "eval-how-to-get-rid-of-cockroaches-anku199724",
+    "id": "how-to-get-rid-of-cockroaches-anku199724",
     "date": "2024-05-08",
     "query": "how to get rid of cockroaches",
     "url": "https://twitter.com/anku199724/status/1788289667336433727",
@@ -876,7 +876,7 @@
     "systems": [
       "google"
     ],
-    "connected": ["eval-how-to-get-rid-of-cockroaches-mayank_jee"],
+    "connected": ["how-to-get-rid-of-cockroaches-mayank_jee"],
     "content": "If you have got cockroaches .. shoot them with a missile 🚀 …..according to Google\\n\\n@lilyraynyc @NicheSiteLady @rustybrick @searchliaison @JohnMu",
     "evaluator_id": "anku199724",
     "images": [
@@ -887,7 +887,7 @@
     ]
   },
   {
-    "id": "eval-how-to-get-rid-of-cockroaches-mayank_jee",
+    "id": "how-to-get-rid-of-cockroaches-mayank_jee",
     "date": "2024-05-09",
     "query": "how to get rid of cockroaches",
     "following": ["eval-how-to-get-rid-of-cockroaches-anku199724"],
@@ -910,7 +910,7 @@
     "evaluator_id": "mayank_jee"
   },
   {
-    "id": "eval-how-to-get-rid-of-cockroaches-archignes",
+    "id": "how-to-get-rid-of-cockroaches-archignes",
     "date": "2024-05-09",
     "query": "how to get rid of cockroaches",
     "url": "https://twitter.com/ARCHIGNES/status/1788704299620413945",

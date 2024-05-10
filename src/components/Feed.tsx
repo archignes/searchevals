@@ -70,6 +70,7 @@ const Feed: React.FC = () => {
     return null;
   }
 
+  
   return (
     <div className="w-full max-w-[900px] mx-auto">
       <div id="feed" className="flex mt-5 flex-col items-center">

@@ -51,35 +51,39 @@ const captureCardScreenshot = async (url, page, outputPath, outputPathCropped) =
             }
         }
     });
+    const evalId = url.split('card/')[1]
+    console.log(`  - evalId: ${evalId}`)
 
-    const element = await page.$('#search-eval-card-div');
+    const element = await page.$(`#search-eval-card-${evalId}`);
     if (element) {
         await element.screenshot({ path: outputPath });
     } else {
-        console.error(`Could not find the element '#search-eval-card-div' on the page: ${url}`);
+        console.error(`Could not find the element '#search-eval-card-${evalId}' on the page: ${url}`);
     }
 
     await extractResize(url, outputPath, outputPathCropped)
 };
 
 const extractResize = async (url, outputPath, outputPathCropped) => {
-    await sharp(outputPath)
-        .metadata()
-        .then(({ width, height }) => {
-            // Ensure the image is large enough to be cropped and resized as desired
-            return sharp(outputPath)
-                .extract({ left: 1, top: 1, width: width - 2, height: height - 2 }) // Adjust based on the actual border size
-                .resize(1200, 630, {
-                    fit: 'cover',
-                    position: 'top',
-                })
-                .toFile(outputPathCropped);
-        })
-        .then(() => {
-            console.log(`Cropped and resized screenshot:\n  - url: ${url}\n  - file: ${outputPathCropped}`);
-        })
-        .catch(err => console.error("Error in cropping and resizing image:", err));
-
+    try {
+        await sharp(outputPath)
+            .metadata()
+            .then(({ width, height }) => {
+                // Ensure the image is large enough to be cropped and resized as desired
+                return sharp(outputPath)
+                    .extract({ left: 1, top: 1, width: width - 2, height: height - 2 }) // Adjust based on the actual border size
+                    .resize(1200, 630, {
+                        fit: 'cover',
+                        position: 'top',
+                    })
+                    .toFile(outputPathCropped);
+            })
+            .then(() => {
+                console.log(`Cropped and resized screenshot:\n  - url: ${url}\n  - file: ${outputPathCropped}`);
+            });
+    } catch (err) {
+        console.error("Error in cropping and resizing image:", err);
+    }
 };
 const addLogoToImage = async (original_image, searchevals_logo) => {
     // Read the original image and the logo
