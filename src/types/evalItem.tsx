@@ -38,7 +38,8 @@ export type evalTarget =
   | "world model"
   | "prompt injection"
   | "inconsistent alignment"
-  | "SERP";
+  | "SERP"
+  | "lack of critical evaluation or contextualization of source material";
 
 export interface EvalItem {
   id: string;

@@ -17,7 +17,6 @@ const Row = ({ sortedData, index, style, setSize, windowWidth }: {
   windowWidth: number;
 }) => {
   const rowRef = useRef<HTMLDivElement>(null);
-  const isEven = index % 2 === 0;
 
   React.useEffect(() => {
     if (rowRef.current) {
@@ -37,6 +36,7 @@ const Row = ({ sortedData, index, style, setSize, windowWidth }: {
       <MiniEvalCard
         evalItemId={sortedData[index].id}
         trimQueryHeight={true}
+        evalPlacement='feed'
       />
     </div>
   );

@@ -7,7 +7,7 @@ export const EvaluationTarget: React.FC<{ evalItemID: string, className?: string
     const evaluationTarget = evalItem ? evalItem.evaluation_target : null;
     return evaluationTarget ? (
         <div className={`text-sm text-gray-500 ${className}`} style={{ marginTop: '0' }}>
-            evaluating: {evaluationTarget.map((target, index) => (
+            <span className="font-bold">evaluating:</span> {evaluationTarget.map((target, index) => (
                 <span key={target.replace(/\s/g, '-')}>
                     {target}{index < evaluationTarget.length - 1 ? ', ' : ''}
                 </span>

@@ -1134,6 +1134,82 @@
         "url": "https://pbs.twimg.com/media/GM1bmCzaMAEQtol?format=jpg&name=large"
       }
     ]
+  },
+  {
+    "id": "food-names-end-with-um-thetruthfulseo",
+    "date": "2024-05-10",
+    "query": "food names end with um",
+    "evaluation_target": ["generated response", "lack of critical evaluation or contextualization of source material"],
+    "url": "https://twitter.com/TheTruthfulSEO/status/1788914018641383670?ref_src=twsrc%5Etfw",
+    "systems": [
+      "google-sge"
+    ],
+    "content": "SGE is yum",
+    "connected": ["food-names-end-with-um-publishbrain", "fruit-names-that-end-with-ana-nickcesarz"],
+    "evaluator_id": "TheTruthfulSEO",
+    "images": [
+      {
+        "url": "https://pbs.twimg.com/media/GNN_0dcWgAAGgdw?format=jpg&name=medium"
+      }
+    ]
+  },
+  {
+    "id": "food-names-end-with-um-publishbrain",
+    "date": "2024-05-12",
+    "query": "food names end with um",
+    "following": [
+      "fruit-names-that-end-with-ana-nickcesarz"
+    ],
+    "url": "https://publishbrain.com/google-sge-invents-food-names/",
+    "also_published_at": "https://twitter.com/PublishBrain/status/1789713623905956160",
+    "evaluation_target": ["generated response", "lack of critical evaluation or contextualization of source material"],
+    "systems": [
+      "google-sge"
+    ],
+    "content": "Google SGE Suggests Fictitious Food Names for a Search for Food Names Ending in \"um.\"https://publishbrain.com/google-sge-invents-food-names/…",
+    "evaluator_id": "PublishBrain",
+    "images": [
+      {
+        "url": "https://pbs.twimg.com/media/GNZXDjuWgAAENI2?format=jpg&name=large"
+      }
+    ]
+  },
+  {
+    "id": "fruit-names-that-end-with-ana-nickcesarz",
+    "date": "2024-05-11",
+    "evaluation_target": ["generated response", "lack of critical evaluation or contextualization of source material", "featured snippet"],
+    "following": ["fruit-names-that-end-with-ana-nickcesarz"],
+    "query": "fruit names that end with ana",
+    "url": "https://twitter.com/nickcesarz/status/1789427385428738298",
+    "systems": [
+      "google-sge",
+      "google"
+    ],
+    "content": "here's another one from the same thread.. the featured snippet does much better",
+    "evaluator_id": "nickcesarz",
+    "images": [
+      {
+        "url": "https://pbs.twimg.com/media/GNVSeT-XoAANXDV?format=jpg&name=medium"
+      }
+    ]
+  },
+  {
+    "id": "eval-2mgqlfukz",
+    "date": "2024-05-13",
+    "query": "what food names end with um today",
+    "url": "https://twitter.com/danielsgriffin/status/1790053553311994362",
+    "following": ["what-food-names-end-with-um-publishbrain"],
+    "evaluation_target": ["generated response", "lack of critical evaluation or contextualization of source material"],
+    "systems": [
+      "google-sge"
+    ],
+    "content": "I could not replicate with the exact query, everything always in flux. But I did find this:[what food names end with um today]=>```Here are some food names that end with \"um\":- Key lime pie...- Burnt corn...```",
+    "evaluator_id": "danielsgriffin",
+    "images": [
+      {
+        "url": "https://pbs.twimg.com/media/GNeLyy-bUAA_E2M?format=jpg&name=medium"
+      }
+    ]
   }
 ]
 

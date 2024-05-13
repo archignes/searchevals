@@ -12,6 +12,8 @@ import { conflictType } from '@/src/types/';
 import { CheckQueryConsistency, CheckTemporalDifference } from './EvalComparisonChecks';
 import SearchBracket from './SearchBracket'
 import { InfoCircledIcon, DrawingPinIcon } from "@radix-ui/react-icons"
+import ImageDisplay from './ImageDisplay'
+import Link from 'next/link'
 import {
   Card,
   CardContent,
@@ -37,6 +39,7 @@ export interface MiniEvalCardProps {
   maxHeight?: string;
   trimQueryHeight?: boolean;
   ref?: React.ForwardedRef<HTMLDivElement>;
+  evalPlacement?: string;
 }
 
 export const getSystemsEvaluated = (evalItem: EvalItem, systems: System[]): string => {
@@ -56,6 +59,7 @@ export const MiniEvalCard: React.FC<MiniEvalCardProps> = ({
   showConflicts,
   maxHeight,
   trimQueryHeight,
+  evalPlacement
 }) => {
   
   const { data, evaluators, systems } = useContext(DataContext);
@@ -87,14 +91,21 @@ export const MiniEvalCard: React.FC<MiniEvalCardProps> = ({
       })
     }
   }
+
+  const images = [
+    ...(evalItem?.images || []),
+    ...(evalItem?.eval_parts?.flatMap(part => part.images || []) || [])
+  ];
+
   return (
     <Card
       ref={ref}
       id={`mini-eval-card-${evalItemId}`}
-      className={`flex-grow ${maxHeight ? 'overflow-y-scroll no-scrollbar' : ''}`}
+      className={`grid grid-cols-4 ${maxHeight ? 'overflow-y-scroll no-scrollbar' : ''}`}
       style={{
         maxHeight: maxHeight || 'auto'
       }}    >
+        <div className="flex flex-col items-start justify-center space-y-1 p-1 pt-0 m-0 col-span-3">
       <CardHeader className="p-1 space-y-0">
           <CardTitle className={`${textSizeClass}`}>
             {isCurrentEvaluation ? "current: " : ""}
@@ -108,8 +119,8 @@ export const MiniEvalCard: React.FC<MiniEvalCardProps> = ({
             </a>
           </CardTitle>
         <CardDescription className="p-0 m-0 pl-3">
-          <span className={`${textSizeClass}`}>date: {evalItem!.date}</span><br></br>
-          <span className={`${textSizeClass}`}>systems: {systemsEvaluated}</span>
+          <span className={`${textSizeClass}`}><span className="font-bold">date:</span> {evalItem!.date}</span><br></br>
+          <span className={`${textSizeClass}`}><span className="font-bold">systems:</span> {systemsEvaluated}</span>
         </CardDescription>
         <EvaluationTarget evalItemID={evalItemId} className={`pl-3 ${textSizeClass}`} />
       </CardHeader>
@@ -159,7 +170,20 @@ export const MiniEvalCard: React.FC<MiniEvalCardProps> = ({
         </CardFooter>
         )
         }
-      
+        </div>
+      {evalPlacement === "feed" && images && images.length > 0 && (
+        <div
+          className="flex flex-col items-start justify-center m-2 border rounded p-2 relative overflow-hidden"
+          style={{ height: '150px' }}>
+          <Link href={`/card/${evalItemId}`}>
+            <img
+              src={images[0].url}
+              alt={images[0].caption}
+              className="cursor-pointer border shadow object-cover object-top w-full h-full"
+            />
+          </Link>
+        </div>
+      )}
     </Card>
   );
 };
