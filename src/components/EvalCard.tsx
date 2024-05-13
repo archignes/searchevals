@@ -205,13 +205,13 @@ const EvalCard: React.FC<EvalCardProps> = ({ evalItemId }) => {
             )}
             </CardTitle>
           <CardDescription>
-            <a href={evalItem.url} target="_blank" rel="noopener noreferrer" className="w-7/8 truncate block">{evalItem.url}</a>
-              <span className="text-sm">date: {evalItem.date}</span><br></br>
+            <a href={evalItem.url} target="_blank" rel="noopener noreferrer" className="w-7/8 truncate block arrLinkFlat">{evalItem.url}</a>
+              <span className="text-sm"><span className="font-bold">date: </span>{evalItem.date}</span><br></br>
               {evalItem.methodology && (<>
-              <span className="text-sm">methodology: <a className="underline" href={evalItem.methodology.url}>{evalItem.methodology.in_text}</a></span><br></br>
+                <span className="text-sm">methodology: <a className="underline arrLinkFlat" href={evalItem.methodology.url}>{evalItem.methodology.in_text}</a></span><br></br>
               {evalItem.methodology && (
                 <>
-                  <span className="text-sm">methodology: <a className="underline" href={evalItem.methodology.url}>{evalItem.methodology.in_text}</a></span><br></br>
+                  <span className="text-sm">methodology: <a className="underline arrLinkFlat" href={evalItem.methodology.url}>{evalItem.methodology.in_text}</a></span><br></br>
                 </>
               )}
               </>

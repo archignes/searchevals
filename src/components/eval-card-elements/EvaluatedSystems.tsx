@@ -16,7 +16,7 @@ export const EvaluatedSystems: React.FC<{ evalItemID: string, systemIDs: string[
             const systemLink = system.search_link; // Directly access the searchLink property of the system object
             return (
                 <span key={system.id}> {/* Use system.id for a unique key */}
-                    <a className="underline" target="_blank" rel="noopener noreferrer" href={systemLink.replace('%s', encodedQuery)}>
+                    <a className="underline arrLinkFlat" target="_blank" rel="noopener noreferrer" href={systemLink.replace('%s', encodedQuery)}>
                         {system.name}
                     </a>
                     {index < filteredSystems.length - 1 ? ', ' : ''} {/* Use filteredSystems.length */}

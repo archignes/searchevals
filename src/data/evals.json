@@ -1210,6 +1210,101 @@
         "url": "https://pbs.twimg.com/media/GNeLyy-bUAA_E2M?format=jpg&name=medium"
       }
     ]
+  },
+  {
+    "id": "list-some-good-winter-recipes-nabeelqu",
+    "date": "2024-01-09",
+    "query": "list some good winter recipes",
+    "url": "https://twitter.com/nabeelqu/status/1744694199818322157",
+    "systems": [
+      "google",
+      "perplexity-ai"
+    ],
+    "content": "Google vs @Perplexity. Nice illustration of how over-optimizing KPIs ends up ruining internet products.",
+    "evaluator_id": "nabeelqu",
+    "connected": ["list-some-good-winter-recipes-thosiawa", "list-some-good-winter-recipes-1nf0rmed"],
+    "images": [
+      {
+        "url": "https://pbs.twimg.com/media/GDZmH7XbYAAaLdM?format=jpg&name=large"
+      },
+      {
+        "url": "https://pbs.twimg.com/media/GDZmH7ZakAALHBJ?format=jpg&name=large",
+        "query": "List some good\\nwinter recipes"
+      }
+    ]
+  },
+  {
+    "id": "list-some-good-winter-recipes-thosiawa",
+    "date": "2024-01-10",
+    "following": ["list-some-good-winter-recipes-nabeelqu"],
+    "query": "list some good winter recipes",
+    "url": "https://twitter.com/thosiawa/status/1744967784293965980",
+    "systems": [
+      "google"
+    ],
+    "content": "I get this and the first result seems like a better experience to be honest",
+    "evaluator_id": "thosiawa",
+    "images": [
+      {
+        "url": "https://pbs.twimg.com/media/GDde4jmWgAAMxjn?format=jpg&name=small"
+      },
+      {
+        "url": "https://pbs.twimg.com/media/GDdefQ9XQAACzci?format=jpg&name=small"
+      }
+    ]
+  },
+  {
+    "id": "list-some-good-winter-recipes-1nf0rmed",
+    "date": "2024-01-10",
+    "query": "list some good winter recipes",
+    "url": "https://twitter.com/_1nF0rmed_/status/1744960047963377855",
+    "following": ["list-some-good-winter-recipes-nabeelqu"],
+    "images": [
+      {
+        "url": "https://pbs.twimg.com/media/GDdXvEnb0AAlqZo?format=png&name=900x900"
+      }
+    ],
+    "systems": [
+      "google-sge"
+    ],
+    "content": "Google has some experimental features - I think the generation is alright",
+    "evaluator_id": "_1nF0rmed_"
+  },
+  {
+    "id": "what-is-apple-going-to-do-about-the-apple-watch-ban-ravishah",
+    "date": "2023-12-26",
+    "query": "what is apple going to do about the apple watch ban",
+    "url": "https://twitter.com/_ravishah/status/1739759587757105480",
+    "systems": [
+      "google",
+      "perplexity-ai"
+    ],
+    "content": "Google vs. Perplexity An interesting observation on usefulness as we head in 2024",
+    "evaluator_id": "_ravishah",
+    "images": [
+      {
+        "url": "https://pbs.twimg.com/media/GCTd2_oXEAAkNFN?format=jpg&name=small"
+      },
+      {
+        "url": "https://pbs.twimg.com/media/GCTd375WgAAnUbC?format=jpg&name=small"
+      }
+    ]
+  },
+  {
+    "id": "seo-timing-davidgquaid",
+    "date": "2024-04-28",
+    "query": "seo timing",
+    "url": "https://twitter.com/DavidGQuaid/status/1784429691249504732",
+    "systems": [
+      "perplexity-ai"
+    ],
+    "content": "So basically - Perplexity, an AI \"search engine\" (it is not) or \"answer engine\" - is SGE - an LLM summary tool.\\n\\nIf you want to be in it, you just need to rank in Google",
+    "evaluator_id": "DavidGQuaid",
+    "images": [
+      {
+        "url": "https://pbs.twimg.com/media/GMORVeoW8AEY7Fs?format=png&name=900x900"
+      }
+    ]
   }
 ]
 

@@ -117,6 +117,16 @@
         /* Hover background color blue-100 */
     }
 
+    .arrLinkFlat {
+        text-decoration: underline;
+    }
+
+    .arrLinkFlat:hover {
+        background-color: rgb(219, 234, 254);
+        /* Hover background color blue-100 */
+    }
+
+
     .two-lines-height-limit {
         display: -webkit-box;
         -webkit-line-clamp: 2;

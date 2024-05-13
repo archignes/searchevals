@@ -26,7 +26,7 @@ const ImageDisplay: React.FC<ImageDisplayProps> = ({ images, type, className="",
     };
     
     return (
-        <div className={`${type === 'solo' || images.length <= 1 ? '' : 'grid grid-cols-2'} ${className}`}>
+        <div className={`${type === 'solo' || images.length <= 1 ? '' : 'grid grid-cols-2 gap-4'} ${className}`}>
             {images.map((image, index) => (
                 <div key={index}>
                     {(image.annotated || image.extension_modified) && showWarnings && (

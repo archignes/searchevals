@@ -334,6 +334,34 @@
   "role": "drummer; editor",
   "URL": "https://twitter.com/nickcesarz",
   "conflict": []
+},
+{
+  "id": "nabeelqu",
+  "name": "Nabeel S. Qureshi",
+  "role": "software engineer",
+  "URL": "https://twitter.com/nabeelqu",
+  "conflict": []
+},
+{
+  "id": "thosiawa",
+  "name": "Tom Hosiawa",
+  "role": "entrepreneur",
+  "URL": "https://twitter.com/thosiawa",
+  "conflict": []
+},
+{
+  "id": "_ravishah",
+  "name": "Ravi Shah",
+  "role": "private equity",
+  "URL": "https://twitter.com/_ravishah",
+  "conflict": []
+},
+{
+  "id": "DavidGQuaid",
+  "name": "David Quaid",
+  "role": "SEO",
+  "URL": "https://twitter.com/DavidGQuaid",
+  "conflict": []
 }
 ]
 
