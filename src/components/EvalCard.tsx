@@ -8,6 +8,7 @@ import { EvalItem } from '@/src/types/evalItem';
 import SearchOnEvalInterface from './SearchOnEvalInterface';
 import ShareCardInterface from './ShareCardInterface';
 import SearchBracket from './SearchBracket'
+import { EvaluatedSystems } from './eval-card-elements';
 import { Button } from './ui/button'
 import {
   DropdownMenu,
@@ -183,25 +184,7 @@ const EvalCard: React.FC<EvalCardProps> = ({ evalItemId }) => {
     })
   }
 
-  let systemsEvaluatedSearchLinks;
-  if (systems && systems.length > 0 && evalItem.systems) {
-    const encodedQuery = encodeURIComponent(evalItem.query)
-    systemsEvaluatedSearchLinks = systems
-      .filter(system => evalItem.systems!.includes(system.id)) // Filter systems based on evalItem.systems
-      .map((system, index, filteredSystems) => { // Use filteredSystems for accurate indexing
-        const systemLink = system.search_link; // Directly access the searchLink property of the system object
-        return (
-          <span key={system.id}> {/* Use system.id for a unique key */}
-            <a className="underline" target="_blank" rel="noopener noreferrer" href={systemLink.replace('%s', encodedQuery)}>
-              {system.name}
-            </a>
-            {index < filteredSystems.length - 1 ? ', ' : ''} {/* Use filteredSystems.length */}
-          </span>
-        )
-      })
-  } else {
-    systemsEvaluatedSearchLinks = ""
-  }
+
   let cardTitle = <div><SearchBracket><span className="text-xl">{evalItem.query}</span></SearchBracket></div>
 
   return (
@@ -233,7 +216,7 @@ const EvalCard: React.FC<EvalCardProps> = ({ evalItemId }) => {
               )}
               </>
               )}
-              <span className="text-sm">systems: {systemsEvaluatedSearchLinks}</span>
+              <EvaluatedSystems evalItemID={evalItemId} systemIDs={evalItem.systems} />
               {evalItem.also_published_at && (
                 <AlsoPublished evalItem={evalItem} />
               )}

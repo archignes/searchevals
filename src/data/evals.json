@@ -1140,7 +1140,7 @@
     "date": "2024-05-10",
     "query": "food names end with um",
     "evaluation_target": ["generated response", "lack of critical evaluation or contextualization of source material"],
-    "url": "https://twitter.com/TheTruthfulSEO/status/1788914018641383670?ref_src=twsrc%5Etfw",
+    "url": "https://twitter.com/TheTruthfulSEO/status/1788914018641383670",
     "systems": [
       "google-sge"
     ],
@@ -1178,7 +1178,7 @@
     "id": "fruit-names-that-end-with-ana-nickcesarz",
     "date": "2024-05-11",
     "evaluation_target": ["generated response", "lack of critical evaluation or contextualization of source material", "featured snippet"],
-    "following": ["fruit-names-that-end-with-ana-nickcesarz"],
+    "following": ["food-names-end-with-um-thetruthfulseo"],
     "query": "fruit names that end with ana",
     "url": "https://twitter.com/nickcesarz/status/1789427385428738298",
     "systems": [
@@ -1194,11 +1194,11 @@
     ]
   },
   {
-    "id": "eval-2mgqlfukz",
+    "id": "what-food-names-end-with-um-today-danielsgriffin",
     "date": "2024-05-13",
     "query": "what food names end with um today",
     "url": "https://twitter.com/danielsgriffin/status/1790053553311994362",
-    "following": ["what-food-names-end-with-um-publishbrain"],
+    "following": ["food-names-end-with-um-publishbrain"],
     "evaluation_target": ["generated response", "lack of critical evaluation or contextualization of source material"],
     "systems": [
       "google-sge"

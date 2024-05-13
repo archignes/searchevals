@@ -105,7 +105,7 @@ export const MiniEvalCard: React.FC<MiniEvalCardProps> = ({
       style={{
         maxHeight: maxHeight || 'auto'
       }}    >
-        <div className="flex flex-col items-start justify-center space-y-1 p-1 pt-0 m-0 col-span-3">
+        <div className={`flex flex-col items-start justify-start space-y-1 p-1 pt-0 m-0 ${evalPlacement === 'feed' ? 'col-span-3' : 'col-span-4'}`}>
       <CardHeader className="p-1 space-y-0">
           <CardTitle className={`${textSizeClass}`}>
             {isCurrentEvaluation ? "current: " : ""}
@@ -164,7 +164,7 @@ export const MiniEvalCard: React.FC<MiniEvalCardProps> = ({
         )}
       </CardContent>
         {checks && currentEvaluation && 
-        (<CardFooter className="flex flex-col space-y-1 p-1 pt-0 m-0">
+        (<CardFooter className="flex flex-col space-y-1 p-1 pt-0 w-full">
           <CheckTemporalDifference evalItemId={evalItemId} currentEvaluation={currentEvaluation} />
           <CheckQueryConsistency evalItemId={evalItemId} currentEvaluation={currentEvaluation} />
         </CardFooter>
