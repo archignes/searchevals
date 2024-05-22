@@ -4,38 +4,50 @@ const puppeteer = require('puppeteer');
 const sharp = require('sharp');
 const Jimp = require('jimp');
 
-const screenshotDir = "src/screenshots/"
-const publicScreenshotDir = "public/screenshots/"
-const searchevals_logo = "public/og_logo_wide.png";
-
-
-function getScreenshotOutputPath(url) {
-    const root = "http://localhost:3001/"
-    if (url === root) {
-        return `${publicScreenshotDir}home.png`
-    }
-    const url_trimmed = url.replace(root, "")
-    const outputPath = `${screenshotDir}${url_trimmed.replace(/[^a-zA-Z0-9\-]/g, "-")}.png`;
-    return outputPath
+// Polyfill for CSS.escape
+function cssEscape(value) {
+    return String(value).replace(/[^a-zA-Z0-9\-_]/g, (s) => {
+        const c = s.charCodeAt(0);
+        if (c === 0x20) return '\\ ';
+        if (c >= 0x30 && c <= 0x39) return '\\3' + c.toString(16) + ' ';
+        if (c >= 0x41 && c <= 0x5a) return s;
+        if (c >= 0x61 && c <= 0x7a) return s;
+        return '\\' + c.toString(16) + ' ';
+    });
 }
 
-async function captureScreenshots(urls) {
+const port = 3000;
+const baseUrl = `http://localhost:${port}/`;
+
+const screenshotDir = "src/screenshots/";
+const publicScreenshotDir = "public/screenshots/";
+const searchevals_logo = "public/og_logo_wide.png";
+
+function getScreenshotOutputPath(url, baseUrl) {
+    if (url === baseUrl) {
+        return `${publicScreenshotDir}home.png`;
+    }
+    const url_trimmed = url.replace(baseUrl, "");
+    const outputPath = `${screenshotDir}${url_trimmed.replace(/[^a-zA-Z0-9\-]/g, "-")}.png`;
+    return outputPath;
+}
+
+async function captureScreenshots(urls, baseUrl, port) {
     const browser = await puppeteer.launch();
     for (const url of urls) {
-        const outputPath = getScreenshotOutputPath(url);
+        const outputPath = getScreenshotOutputPath(url, baseUrl);
         const outputPathCropped = outputPath.replace('.png', '_crop.png');
 
         const page = await browser.newPage();
-        await page.goto(url, { waitUntil: 'networkidle2' });
+        await page.goto(`${url}`, { waitUntil: 'networkidle2' });
         await page.setViewport({ width: 1200, height: 630 });
 
         if (outputPath.endsWith('home.png')) {
             await page.screenshot({ path: outputPath });
             console.log(`  - url: ${url}\n  - file: ${outputPath}`);
-
         } else {
-            await captureCardScreenshot(url, page, outputPath, outputPathCropped)
-            await addLogoToImage(outputPathCropped || outputPath, searchevals_logo)
+            await captureCardScreenshot(url, page, outputPath, outputPathCropped);
+            await addLogoToImage(outputPathCropped || outputPath, searchevals_logo);
         }
     }
     await browser.close();
@@ -51,17 +63,21 @@ const captureCardScreenshot = async (url, page, outputPath, outputPathCropped) =
             }
         }
     });
-    const evalId = url.split('card/')[1]
-    console.log(`  - evalId: ${evalId}`)
+    const evalId = url.split('card/')[1];
+    console.log(`  - evalId: ${evalId}`);
 
-    const element = await page.$(`#search-eval-card-${evalId}`);
+    // Escape special characters in the evalId
+    const escapedEvalId = cssEscape(`search-eval-card-${evalId}`);
+    console.log(`  - Escaped evalId: ${escapedEvalId}`);
+
+    const element = await page.$(`#${escapedEvalId}`);
     if (element) {
         await element.screenshot({ path: outputPath });
     } else {
-        console.error(`Could not find the element '#search-eval-card-${evalId}' on the page: ${url}`);
+        console.error(`Could not find the element '#${escapedEvalId}' on the page: ${url}`);
     }
 
-    await extractResize(url, outputPath, outputPathCropped)
+    await extractResize(url, outputPath, outputPathCropped);
 };
 
 const extractResize = async (url, outputPath, outputPathCropped) => {
@@ -85,6 +101,7 @@ const extractResize = async (url, outputPath, outputPathCropped) => {
         console.error("Error in cropping and resizing image:", err);
     }
 };
+
 const addLogoToImage = async (original_image, searchevals_logo) => {
     // Read the original image and the logo
     const [image, logo] = await Promise.all([
@@ -106,15 +123,14 @@ const addLogoToImage = async (original_image, searchevals_logo) => {
     });
 
     // Save the result
-    const publicOutputPath = original_image.replace("_crop", "").replace(screenshotDir, publicScreenshotDir)
-    image.write(publicOutputPath)
-    console.log(`  - added logo: ${publicOutputPath}`)
-
+    const publicOutputPath = original_image.replace("_crop", "").replace(screenshotDir, publicScreenshotDir);
+    image.write(publicOutputPath);
+    console.log(`  - added logo: ${publicOutputPath}`);
 };
 
 const existingOgScreenshots = fs1.readdirSync(publicScreenshotDir).map(file => file.replace('.png', '').replace(/_/g, '-'));
 const evalsData = require('../src/data/evals.json');
-const existingPages = evalsData.map(evalItem => `http://localhost:3001/card/${evalItem.id}`);
+const existingPages = evalsData.map(evalItem => `${baseUrl}card/${evalItem.id}`);
 
 const filteredPagesForScreenshots = existingPages.filter(page => {
     const pageId = page.split('/').pop();
@@ -123,8 +139,8 @@ const filteredPagesForScreenshots = existingPages.filter(page => {
 
 console.log(`Pages to capture: ${filteredPagesForScreenshots.length + 1}`);
 
-captureScreenshots(filteredPagesForScreenshots);
+captureScreenshots(filteredPagesForScreenshots, baseUrl, port);
 
-console.log(' - Capturing homepage...')
-captureScreenshots(["http://localhost:3001/"]);
+console.log(' - Capturing homepage...');
+captureScreenshots([baseUrl], baseUrl, port);
 

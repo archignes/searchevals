@@ -12,7 +12,7 @@ export const CheckTemporalDifference: React.FC<{ evalItemId: string; currentEval
 
   if (!currentEvalItem || !followingEvalItem) return null;
 
-  if (currentEvalItem.url.includes('twitter.com') && followingEvalItem.url.includes('twitter.com')) {
+  if ((currentEvalItem.url.includes('twitter.com') || currentEvalItem.url.includes('x.com')) && (followingEvalItem.url.includes('twitter.com') || followingEvalItem.url.includes('x.com'))) {
     const extractTimestamp = (statusId: string) => {
       const tweetId = BigInt(statusId);
       const timestampMs = tweetId / BigInt(2 ** 22) + BigInt(1288834974657);

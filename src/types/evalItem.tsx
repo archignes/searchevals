@@ -36,10 +36,22 @@ export type evalTarget =
   | "logic error"
   | "'From sources across the web'"
   | "world model"
+  | "election related"
   | "prompt injection"
   | "inconsistent alignment"
   | "SERP"
+  | "sponsored search results"
+  | "unclear focus"
+  | "knowledge cards"
   | "lack of critical evaluation or contextualization of source material";
+
+export interface resourceItem {
+  url: string;
+  title: string;
+  date: string;
+  author: string;
+  publisher: string;
+}
 
 export interface EvalItem {
   id: string;
@@ -48,8 +60,11 @@ export interface EvalItem {
   query: string;
   url: string;
   connected?: string[];
+  pull_quote?: string;
+  query_interpolated?: boolean;
   following?: string[];
   key_phrases?: string[];
+  content_warning?: string;
   evaluation_target?: Array<evalTag>;
   search_type?: Array<searchType>;
   tags?: Array<evalTag>;
@@ -60,6 +75,7 @@ export interface EvalItem {
   content?: string; // Make content optional
   images?: imageItem[];
   evaluator_id: string;
+  resources?: resourceItem[];
   media?: string;
   also_published_at?: string;
 }

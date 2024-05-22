@@ -1305,6 +1305,558 @@
         "url": "https://pbs.twimg.com/media/GMORVeoW8AEY7Fs?format=png&name=900x900"
       }
     ]
+  },
+  {
+    "id": "who-ruined-google-edzitron",
+    "date": "2024-05-19",
+    "query": "who ruined google",
+    "url": "https://x.com/edzitron/status/1792298310671462630",
+    "systems": [
+      "google"
+    ],
+    "content": "Google! I have used your weapons against you! You have been cursed by The Smiling Man!",
+    "images": [
+      {
+        "url": "https://pbs.twimg.com/media/GN-FwPZb0AA1e8o?format=jpg&name=medium"
+      }
+    ],
+    "evaluator_id": "edzitron"
+  },
+  {
+    "id": "best-chromebook-AravSrinivas",
+    "date": "2024-05-20",
+    "query": "best chromebook",
+    "url": "https://twitter.com/AravSrinivas/status/1792689564357914704",
+    "systems": [
+      "google",
+      "perplexity-ai"
+    ],
+    "pull_quote": "[...] The question is whether it benefits the user or the advertiser and whose benefit ultimately benefits Google more. [...]",
+    "content": "I watched Nilay of Verge's interview with Sundar. Nilay asked him a simple question: why are we not getting AI overviews when I type in \"best Chromebook\" and instead get many links/ads? the answer was \"we only fire it when we think it's beneficial\". The question is whether it benefits the user or the advertiser and whose benefit ultimately benefits Google more. A lot of people texted me saying folks like JCal or Sacks declared, \"We are screwed, and it's over for us.\" Reality is different. People are soon going to realize that a product should be intended for one clear single purpose for the user and work without variability and guessing what's going to happen. This applies the other way, too: you don't need AI summaries for every single navigational query that has already annoyed users. There is a sweet spot between LLM summaries, links, answer boxes, widgets, graphs, cards, panels, etc - what exactly it is - is unclear - hence why there isn't a clear winner in this race yet.",
+    "key_phrases": ["navigational query"],
+    "connected": ["best-chromebook-ChrisLaidler13"],
+    "evaluation_target": ["sponsored search results", "unclear focus", "SERP"],
+    "images": [
+      {
+        "url": "https://pbs.twimg.com/media/GODoIMFa8AAin7I?format=jpg&name=900x900"
+      },
+      {
+        "url": "https://pbs.twimg.com/media/GODoIMDaIAM7V1N?format=jpg&name=900x900"
+      }
+    ],
+    "evaluator_id": "AravSrinivas",
+    "resources": [
+      {
+        "url": "https://www.theverge.com/24158374/google-ceo-sundar-pichai-ai-search-gemini-future-of-the-internet-web-openai-decoder-interview",
+        "title": "Google CEO Sundar Pichai on AI-powered search and the future of the web",
+        "date": "2024-05-20",
+        "author": "Nilay Patel",
+        "publisher": "The Verge"
+      }
+    ]
+  },
+  {
+    "id": "scarlett-johansson-AravSrinivas",
+    "date": "2024-05-21",
+    "query": "scarlett johansson",
+    "url": "https://x.com/AravSrinivas/status/1792964762990682539",
+    "systems": [
+      "perplexity-ai"
+    ],
+    "content": "We have been doing this for a while already. When you search for people, you get knowledge cards that compress the essential information in a card, vs long bios. Not universally to every person on the planet yet. But that's the ambition as our index expands.",
+    "evaluation_target": ["knowledge cards"],
+    "images": [
+      {
+        "url": "https://pbs.twimg.com/media/GOHj1U0asAAfgeb?format=jpg&name=medium"
+      }
+    ],
+    "evaluator_id": "AravSrinivas"
+  },
+  {
+    "id": "$tsla-during-trump-presidency-AravSrinivas",
+    "date": "2024-05-21",
+    "query": "$tsla during trump presidency",
+    "url": "https://x.com/AravSrinivas/status/1792964343874892202",
+    "systems": [
+      "perplexity-ai"
+    ],
+    "content": "Getting the latest stock or crypto spot price, comparing different stock prices, finding out how much the US has been lending to other countries like Ukraine or Israel, tracking the national debt, crime cases across states, and customizing these queries to specific timelines - all is possible now on one single search bar.",
+    "images": [
+      {
+        "url": "https://pbs.twimg.com/media/GOHjkCBbkAABZe4?format=jpg&name=large"
+      }
+    ],
+    "evaluator_id": "AravSrinivas"
+  },
+  {
+    "id": "i-need-a-list-of-all-mla-candidates-contested-in-bharathchinneni",
+    "date": "2024-05-21",
+    "query": "I need a list of all mla candidates contested in 2024 ap assembly elections",
+    "url": "https://x.com/bharathchinneni/status/1792847918338294166",
+    "systems": [
+      "perplexity-ai"
+    ],
+    "evaluation_target": ["election related"],
+    "eval_parts":[
+      {"id": 1,
+      "content": "Perplexity is not the sweet spot yet  it's  annoying most of the times I don't know the experience of pro users I am a free user Here is an example:By the way election done it still thinks its upcoming",
+      "images": [
+        {
+          "url": "https://pbs.twimg.com/media/GOF5kSebUAEXL7N?format=jpg&name=medium"
+        }
+      ]
+    }, 
+    {"id": 2,
+      "content": "Of course its a long list but when i asked the names of all candidates from one party it gave a link but unable to extract atleast 10 names"
+    },
+    {"id": 3,
+      "content": "I feel like free users can't get long answers even with the output prices for llm's plummeted near zero with all the advancements"
+    }
+    ],
+    "evaluator_id": "bharathchinneni"
+  },
+  {
+    "id": "iran-elisethoma5",
+    "date": "2024-05-20",
+    "query": "Iran",
+    "query_interpolated": true,
+    "url": "https://x.com/elisethoma5/status/1792419015417274718",
+    "systems": [
+      "google"
+    ],
+    "evaluation_target": ["breaking news", "misinformation"],
+    "eval_parts":[
+      {"id": 1,
+      "content": "Is this ‘posts on X’ pane in Google search results new or have I just somehow not noticed it before? Because boy this seems like the ideal* vector for misinformation from X to get out into the broader public\\n\\n*not ideal",
+      "images": [
+        {
+        "url": "https://pbs.twimg.com/media/GN_zl0KbYAI0TDO?format=jpg&name=large"
+      }]},
+      {"id": 2,
+      "content": "I’m not sure how Google is selecting which tweets to amplify. Some are news orgs, some are journalists, but some are just random people. It doesn’t seem to be scanning for manifestly unproven claims like this, just pushing them out there",
+      "images": [
+        {
+          "url": "https://pbs.twimg.com/media/GN_3wVMbIAAsxGA?format=jpg&name=medium"
+        }
+      ]
+      },
+      {
+        "id": 3,
+        "content": "I searched for ‘Mossad’ and Google pointed me directly to this account which is clearly not officially linked to Mossad. Again this seems like a weird and poorly thought through decision by Google",
+        "images":
+          [
+            {
+              "url": "https://pbs.twimg.com/media/GN_9q4db0AALzZF?format=jpg&name=large",
+              "query": "Mossad"
+            }
+          ]
+      }
+    ],
+    "evaluator_id": "elisethoma5"
+  },
+  {
+    "id": "bitwarden-KarlEmilNikka",
+    "date": "2024-05-20",
+    "query": "bitwarden",
+    "url": "https://x.com/KarlEmilNikka/status/1792554054893072672",
+    "systems": [
+      "google"
+    ],
+    "content": "Warning! Fake @Bitwarden ad shows up in Google’s “search results”. It’s yet another example of a Google ad where the real site’s domain is misleadingly shown (it’s not a homograph attack).\\n\\nNever click on search result ads. FBI recommends hiding them with an adblocker.",
+    "media": "video",
+    "evaluator_id": "KarlEmilNikka",
+    "resources": [
+      {
+        "url": "https://www.ic3.gov/Media/Y2022/PSA221221",
+        "title": "Cyber Criminals Impersonating Brands Using Search Engine Advertisement Services to Defraud Users",
+        "date": "2022-12-21",
+        "author": "Federal Bureau of Investigation",
+        "publisher": "Internet Crime Complaint Center"
+      }
+    ],
+    "connected": ["bitwarden-danielsgriffin"]
+  },
+  {
+    "id": "bitwarden-danielsgriffin",
+    "date": "2024-05-21",
+    "query": "bitwarden",
+    "following": ["bitwarden-KarlEmilNikka"],
+    "url": "https://x.com/danielsgriffin/status/1792976777310294284",
+    "evaluation_target": ["sponsored search results"],
+    "systems": [
+      "google"
+    ],
+    "media": "video",
+    "content": "Still live:\\nLeft: video using Chrome incognito to find the misleading sponsored search result.\\nRight: A screenshot showing Google does not send users to any page for that website in organic search.",
+    "images": [
+      {
+        "url": "https://pbs.twimg.com/media/GOHuFVDaIAIcDua?format=jpg&name=900x900"
+      }
+    ],
+    "evaluator_id": "danielsgriffin"
+  },
+  {
+    "id": "1000-km-to-miles-lispeaks_",
+    "date": "2024-05-20",
+    "query": "1000 km to miles",
+    "evaluation_target": ["unit conversion feature"],
+    "url": "https://x.com/lispeaks_/status/1792438913908236753",
+    "systems": [
+      "google"
+    ],
+    "content": "oh so google is like. BROKEN broken",
+    "images": [
+      {
+        "url": "https://pbs.twimg.com/media/GOAFsWiWsAEQ3os?format=jpg&name=medium"
+      }
+    ],
+    "evaluator_id": "lispeaks_",
+    "connected": ["1000km-to-miles-zachsilberberg",
+      "1000km-in-mile-90skid2001",
+      "1000-km-to-miles-MXJPEG", "1000km-to-mile-MajimeKoala", "1000-km-to-miles-Mufsyy",
+      "1000km-to-miles-Batwing3435"
+    ]
+  },
+  {
+    "id": "1000km-to-miles-zachsilberberg",
+    "date": "2024-05-21",
+    "query": "1000km to miles",
+    "evaluation_target": [
+      "unit conversion feature"
+    ],
+    "following": ["1000-km-to-miles-lispeaks_"],
+    "url": "https://x.com/zachsilberberg/status/1792755846574923904",
+    "systems": [
+      "google"
+    ],
+    "content": "if you google the same thing but without a space between “1000” and “km” you get a different, also wrong answer. cool!",
+    "images": [
+      {
+        "url": "https://pbs.twimg.com/media/GOEl8IJWMAAfw63?format=jpg&name=mediumhttps://pbs.twimg.com/media/GOAFsWiWsAEQ3os?format=jpg&name=medium"
+      }
+    ],
+    "evaluator_id": "zachsilberberg",
+    "connected": ["1000km-in-mile-90skid2001", "1000-km-to-miles-MXJPEG",
+      "1000km-to-mile-MajimeKoala", "1000-km-to-miles-Mufsyy",
+      "1000km-to-miles-Batwing3435"
+    ]
+  },
+  {
+    "id": "1000km-in-mile-90skid2001",
+    "date": "2024-05-21",
+    "query": "1000km in mile",
+    "following": ["1000km-to-miles-zachsilberberg", "1000-km-to-miles-lispeaks_"],
+    "evaluation_target": ["unit conversion feature"],
+    "url": "https://x.com/90skid2001/status/1792804066747367753",
+    "systems": [
+      "google"
+    ],
+    "content": "What I find frustrating is a slight adjustment to the word choice gets you a correct answer. Like it understands \"km in mile\" but not \"km to miles\" or \"km in miles\".",
+    "images": [
+      {
+        "url": "https://pbs.twimg.com/media/GOFRzFWXwAAbjna?format=jpg&name=medium"
+      }
+    ],
+    "evaluator_id": "90skid2001"
+  },
+  {
+    "id": "1000-km-to-miles-MXJPEG",
+    "date": "2024-05-21",
+    "query": "1000 km to miles",
+    "following": ["1000km-to-miles-zachsilberberg", "1000km-in-mile-90skid2001"],
+    "evaluation_target": ["unit conversion feature"],
+    "url": "https://x.com/MXJPEG/status/1792770868520628695",
+    "systems": [
+      "google", "duckduckgo"
+    ],
+    "content": "thank god for duckduckgo",
+    "images": [
+      {
+        "url": "https://pbs.twimg.com/media/GOEzWRdWMAASFPx?format=jpg&name=medium",
+        "query": "1000 km to miles"
+      },
+      {
+        "url": "https://pbs.twimg.com/media/GOEzcHYWYAAP3oM?format=png&name=small",
+        "query": "1000km to miles"
+      },
+      {
+        "url": "https://pbs.twimg.com/media/GOEzgZBWYAASd7G?format=png&name=900x900",
+        "query": "1000km to miles"
+      }
+    ],
+    "evaluator_id": "MXJPEG"
+  },
+  {
+    "id": "5km-to-mi-JoeyOtweets",
+    "date": "2024-03-31",
+    "query": "5km to mi",
+    "url": "https://x.com/JoeyOtweets/status/1774478188380397658",
+    "evaluation_target": ["unit conversion feature"],
+    "systems": [
+      "google"
+    ],
+    "content": "How does google continue to get worse?",
+    "images": [
+      {
+        "url": "https://pbs.twimg.com/media/GKA2f8RXQAA3cM_?format=jpg&name=900x900"
+      }
+    ],
+    "evaluator_id": "JoeyOtweets"
+  },
+  {
+    "id": "1000km-to-mile-MajimeKoala",
+    "date": "2024-05-21",
+    "query": "1000km to mile",
+    "evaluation_target": ["unit conversion feature"],
+    "following": ["1000-km-to-miles-lispeaks_", "1000km-to-miles-zachsilberberg"],
+    "url": "https://x.com/MajimeKoala/status/1792904684757455151",
+    "systems": [
+      "google"
+    ],
+    "content": "Got the same wrong answer you did, but then I took the s off of miles and finally got the night answer?!?! It's so fubared!",
+    "images": [
+      {
+        "url": "https://pbs.twimg.com/media/GOGtTxCbMAA8_Kj?format=jpg&name=900x900"
+      }
+    ],
+    "evaluator_id": "MajimeKoala"
+  },
+  {
+    "id": "1000-km-to-miles-Mufsyy",
+    "date": "2024-05-21",
+    "query": "1000 km to miles",
+    "evaluation_target": ["unit conversion feature"],
+    "following": ["1000-km-to-miles-lispeaks_", "1000km-to-miles-zachsilberberg"],
+    "url": "https://x.com/Mufsyy/status/1792907168523354254",
+    "systems": [
+      "google"
+    ],
+    "content": "You have to command it like it’s chatGBT now I guess. Good work google.",
+    "images": [
+      {
+        "url": "https://pbs.twimg.com/media/GOGvkTHXIAE6sBP?format=jpg&name=small"
+      },
+      {
+        "url": "https://pbs.twimg.com/media/GOGvkTHWsAAGWcv?format=jpg&name=small",
+        "query": "convert 1000 km to miles"
+      }
+    ],
+    "evaluator_id": "Mufsyy"
+  },
+  {
+    "id": "1000km-to-miles-Batwing3435",
+    "date": "2024-05-21",
+    "query": "1000km to miles",
+    "url": "https://x.com/Batwing3435/status/1792909554054779241",
+    "systems": [
+      "brave"
+    ],
+    "content": "Brave search does not fuck up",
+    "evaluation_target": ["unit conversion feature"],
+    "following": ["1000-km-to-miles-lispeaks_", "1000km-to-miles-zachsilberberg"],
+    "images": [
+      {
+        "url": "https://pbs.twimg.com/media/GOGxvNrXAAAZECX?format=jpg&name=medium"
+      }
+    ],
+    "evaluator_id": "Batwing3435"
+  },
+  {
+    "id": "felony-murder-EthanSCorey",
+    "date": "2024-05-21",
+    "query": "felony murder",
+    "query_interpolated": true,
+    "evaluation_target": ["generated response"],
+    "url": "https://x.com/EthanSCorey/status/1792942088624992671",
+    "systems": [
+      "google"
+    ],
+    "content": "Google's search results AI overview claims that prosecutors have to prove you intended to kill someone to charge you with felony murder and that turning over Brady material is optional.",
+    "images": [
+      {
+        "url": "https://pbs.twimg.com/media/GOHOxa9XMAEzcKt?format=png&name=small",
+        "query": "felony murder"
+      },
+      {
+        "url": "https://pbs.twimg.com/media/GOHPB13XMAIydpH?format=png&name=small",
+        "query": "brady material"
+      }
+    ],
+    "evaluator_id": "EthanSCorey",
+    "connected": ["felony-murder-danielsgriffin", "brady-material-danielsgriffin"],
+    "resources":[
+      {
+        "url": "https://theappeal.org/the-lab/explainers/felony-murder-explained/",
+        "title": "FELONY MURDER, EXPLAINED",
+        "date": "2021-03-04",
+        "author": "Shobha L. Mahadev and Steven Drizin",
+        "publisher": "The Appeal"
+      },
+      {
+        "url": "https://theappeal.org/the-epidemic-of-brady-violations-explained-94a38ad3c800/",
+        "title": "THE EPIDEMIC OF BRADY VIOLATIONS, EXPLAINED",
+        "date": "2018-04-25",
+        "author": "Jessica Brand",
+        "publisher": "The Appeal"
+      }
+    ]
+  },
+  {
+    "id": "felony-murder-danielsgriffin",
+    "date": "2024-05-21",
+    "query": "felony murder",
+    "url": "https://x.com/danielsgriffin/status/1793052766186983606",
+    "systems": [
+      "google"
+    ],
+    "content": "Replicated for [felony murder]",
+    "evaluation_target": ["generated response"],
+    "following": ["felony-murder-EthanSCorey"],
+    "images": [
+      {
+        "url": "https://pbs.twimg.com/media/GOIzhL5aMAAykN_?format=jpg&name=medium"
+      }
+    ],
+    "evaluator_id": "danielsgriffin"
+  },
+  {
+    "id": "brady-material-danielsgriffin",
+    "date": "2024-05-21",
+    "query": "brady material",
+    "following": ["felony-murder-EthanSCorey"],
+    "evaluation_target": ["generated response"],
+    "url": "https://x.com/danielsgriffin/status/1793057330789327318",
+    "systems": [
+      "google"
+    ],
+    "content": "Guessing at your query, but this feature is so haphazard:\\n\\n1. [brady material] => \"An AI overview is not available for this search\"\\n\\n2. [brady disclosure] => none\\n\\n3. [does the prosecutor have to disclose brady material?] => ?\\n\\n4. A curated (semi) self-critique of #3.",
+    "images": [
+      {
+        "url": "https://pbs.twimg.com/media/GOI0D8nbMAAgO9a?format=jpg&name=large"
+      },
+      {
+        "url": "https://pbs.twimg.com/media/GOI0ROdbkAABdDf?format=jpg&name=900x900"
+      },
+      {
+        "url": "https://pbs.twimg.com/media/GOI1CYGa4AAqvvT?format=jpg&name=small"
+      },
+      {
+        "url": "https://pbs.twimg.com/media/GOI3PK3asAA26Z8?format=jpg&name=900x900"
+      }
+    ],
+    "evaluator_id": "danielsgriffin"
+  },
+  {
+    "id": "who-is-the-equvalent-of-fed-in-the-uk--yar_vol",
+    "date": "2024-05-20",
+    "query": "Who is the equvalent of Fed in the UK?",
+    "url": "https://x.com/yar_vol/status/1792600149593579904",
+    "systems": [
+      "youchat-smart-mode"
+    ],
+    "content": "Just rediscovered you-dot-com and it is fast, reliable, cites sources, and looks gorgeous, it is awesome!ChatGPT despite the model update and support for browsing is somehow harder to use (e.g. doesn't have \"response modes\")@RichardSocher & team you rock!",
+    "images": [
+      {
+        "url": "https://pbs.twimg.com/media/GOCYSMDXMAEPDa7?format=jpg&name=medium"
+      }
+    ],
+    "evaluator_id": "yar_vol"
+  },
+  {
+    "id": "population-of-usa-vs-canada-from-1960-till-now-marvy_101",
+    "date": "2024-04-24",
+    "query": "Population of USA vs Canada from 1960 till now",
+    "url": "https://x.com/marvy_101/status/1782994606705057923",
+    "systems": [
+      "perplexity-ai"
+    ],
+    "content": "@perplexity_ai please can you make custom graphs/visualizations for queries?",
+    "images": [
+      {
+        "url": "https://pbs.twimg.com/media/GL54IscXoAEho7u?format=jpg&name=medium"
+      }
+    ],
+    "evaluator_id": "marvy_101"
+  },
+  {
+    "id": "best-chromebook-ChrisLaidler13",
+    "date": "2024-05-21",
+    "query": "Best Chromebook",
+    "following": ["best-chromebook-AravSrinivas"],
+    "evaluation_target": ["generated response"],
+    "url": "https://x.com/ChrisLaidler13/status/1792988503560581401",
+    "systems": [
+      "google-gemini"
+    ],
+    "content": "Gemini does this though, and suggests an arguably better option. No ads either",
+    "images": [
+      {
+        "url": "https://pbs.twimg.com/media/GOH5irEWgAALZiw?format=jpg&name=large"
+      }
+    ],
+    "evaluator_id": "ChrisLaidler13"
+  },
+  {
+    "id": "rhyme-dictionary-pavement-flglmn",
+    "date": "2024-05-17",
+    "query": "rhyme dictionary pavement",
+    "evaluation_target": [
+      "generated response"
+    ],
+    "url": "https://x.com/flglmn/status/1791603559680680320",
+    "systems": [
+      "google"
+    ],
+    "content": "thanks",
+    "images": [
+      {
+        "url": "https://pbs.twimg.com/media/GN0N8TMWgAA-UvI?format=jpg&name=medium"
+      }
+    ],
+    "evaluator_id": "flglmn",
+    "connected": ["rhyme-dictionary-pavement-iainahendry", "rhyme-dictionary-pavement-KLAVIERGAVlN"]
+  },
+  {
+    "id": "rhyme-dictionary-pavement-iainahendry",
+    "date": "2024-05-17",
+    "query": "rhyme dictionary pavement",
+    "url": "https://x.com/iainahendry/status/1791612450846154920",
+    "systems": [
+      "google"
+    ],
+    "content": "mine just straight up served me, well you know",
+    "evaluation_target": [
+      "generated response"
+    ],
+    "following": [
+      "rhyme-dictionary-pavement-flglmn"
+    ],
+    "images": [
+      {
+        "url": "https://pbs.twimg.com/media/GN0WBq5acAA0eQ-?format=png&name=900x900"
+      }
+    ],
+    "evaluator_id": "iainahendry",
+    "content_warning": "offensive language in screenshot"
+  },
+  {
+    "id": "rhyme-dictionary-pavement-KLAVIERGAVlN",
+    "date": "2024-05-18",
+    "query": "rhyme dictionary pavement",
+    "content_warning": "offensive language in screenshot",
+    "evaluation_target": ["generated response"],
+    "following": ["rhyme-dictionary-pavement-flglmn"],
+    "url": "https://x.com/KLAVIERGAVlN/status/1791644497383698715",
+    "systems": [
+      "google"
+    ],
+    "content": "why did i get a worse result",
+    "images": [
+      {
+        "url": "https://pbs.twimg.com/media/GN0zLQcW0AAUVXK?format=jpg&name=large"
+      }
+    ],
+    "evaluator_id": "KLAVIERGAVlN"
   }
 ]
 

@@ -51,7 +51,7 @@ const Feed: React.FC = () => {
       if (dateComparison !== 0) return dateComparison;
       // If both URLs are Twitter links, extract the last segment
       // as the tweet ID and compare them
-      if (a.url.startsWith('https://twitter.com') && b.url.startsWith('https://twitter.com')) {
+      if (a.url.startsWith('https://twitter.com') || a.url.startsWith('https://x.com') && b.url.startsWith('https://twitter.com') || b.url.startsWith('https://x.com')) {
         const aTweetId = a.url.split('/').pop() || "";
         const bTweetId = b.url.split('/').pop() || "";
         return bTweetId.localeCompare(aTweetId);

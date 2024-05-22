@@ -47,12 +47,13 @@ const EvalExtractCard: React.FC<EvalExtractCardProps> = ({ evalCardItem, evalQue
                         </blockquote>
                         )}
                     </figure>
-                    {evalCardItem?.media === "video" ? (
-                        <div className="border border-black text-center p-2.5 w-1/2 mx-auto min-h-[200px] flex flex-col justify-center items-center">
-                            Video content in evals is currently not supported, click <a className="text-blue-500 underline" href={evalCardItem.url}>here</a> to see the video in context.
+                    {evalCardItem?.media === "video" && (
+                        <div className="border shadow-sm  m-2 text-center p-2.5 w-1/2 mx-auto min-h-[200px] flex flex-col justify-center items-center">
+                            <p>Video content in evals is currently not supported, click <a className="text-blue-500 underline" href={evalCardItem.url}>here</a> to see the video in context.</p>
                         </div>
-                        ) : (
-                        evalCardItem.images && evalCardItem.images.length > 0 && (<ImageDisplay images={evalCardItem.images} />))}
+                        )
+                    }
+                    {evalCardItem.images && evalCardItem.images.length > 0 && (<ImageDisplay images={evalCardItem.images} />)}
                     
                     </CardContent>
             </Card>

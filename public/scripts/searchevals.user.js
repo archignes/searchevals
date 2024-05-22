@@ -1,10 +1,11 @@
 // ==UserScript==
-// @name         searchevals.extract
+// @name         searchevals.extract - legacy
 // @namespace    http://tampermonkey.net/
 // @version      0.1
 // @description  Extract data from a tweet link for input into searchevals.com/input
 // @author       searchevals.com
 // @match        https://twitter.com/*
+// @match        https://x.com/*
 // @grant        GM_setClipboard
 // ==/UserScript==
 
@@ -97,13 +98,13 @@
     }
 
     function createFloatingButton() {
-        const SearchevalTitle = document.createElement('span');
-        SearchevalTitle.style.fontWeight = "bold";
-        SearchevalTitle.innerHTML = "Search<span style='color: #718096;'>evals</span>.extract";
+        const searchEvalTitle = document.createElement('span');
+        searchEvalTitle.style.fontWeight = "bold";
+        searchEvalTitle.innerHTML = "Search<span style='color: #718096;'>evals</span>.extract";
 
         // Example JavaScript to create a floating button
         const floatingButton = document.createElement('button');
-        floatingButton.appendChild(SearchevalTitle);
+        floatingButton.appendChild(searchEvalTitle);
         floatingButton.setAttribute("aria-label", "Extract tweet information for searchevals");
         floatingButton.setAttribute("title", "Extract tweet information for searchevals");
         floatingButton.style.position = 'fixed';
@@ -506,12 +507,14 @@
 
         // Collecting Evals data from form fields
         const evals = {
-            id: "eval-" + Math.random().toString(36).substr(2, 9),
+            id: document.getElementById('eval-query').value.trim().toLowerCase()
+                .split(' ').slice(0, 10).join('-') + '-' + evaluator.id,
             date: document.getElementById('eval-date').value,
             query: document.getElementById('eval-query').value.trim(),
             url: document.getElementById('eval-url').value.trim() || window.location.href,
             systems: document.getElementById('systems').value.split(',').map(system => system.trim()),
             content: document.getElementById('eval-content').value.trim(),
+            images: document.getElementById('images').value.split('\n').map(url => ({ url: url.trim() })),
             evaluator_id: evaluator.id,
         };
 

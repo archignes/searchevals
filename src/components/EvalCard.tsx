@@ -1,9 +1,9 @@
 // EvalCard.tsx
 import React, { useContext, useState } from 'react';
 import { useRouter } from 'next/router';
-import { Link2Icon, InfoCircledIcon, DrawingPinIcon, LinkedInLogoIcon, TwitterLogoIcon, InstagramLogoIcon } from '@radix-ui/react-icons';
+import { Link2Icon, InfoCircledIcon, DrawingPinIcon, LinkedInLogoIcon, TwitterLogoIcon, InstagramLogoIcon, ExclamationTriangleIcon } from '@radix-ui/react-icons';
 import DataContext from './DataContext';
-import { EvaluationTarget } from './eval-card-elements';
+import { EvaluationTarget, KeyPhrases, Resources, ContentWarning } from './eval-card-elements';
 import { EvalItem } from '@/src/types/evalItem';
 import SearchOnEvalInterface from './SearchOnEvalInterface';
 import ShareCardInterface from './ShareCardInterface';
@@ -34,6 +34,7 @@ import {
 import { conflictType } from "@/src/types";
   
 import FeedbackLink from './Feedback';
+import MiniEvalCard from './MiniEvalCard';
 
 interface EvalCardProps {
   evalItemId: string;
@@ -48,7 +49,7 @@ const ConnectedItemLabel: React.FC<{connection: string, currentEvaluation: strin
   const isCurrentEvaluation = currentEvaluation === connection;
   return connectedItem ? (
     <DropdownMenuItem id="connected-item-label" className={`${isCurrentEvaluation ? "text-gray-4000" : ""}`}>
-      {miniEvalCard && React.createElement(miniEvalCard, { evalItemId: connectedItem.id, currentEvaluation: currentEvaluation, currentEvaluator: currentEvaluator })}
+      <MiniEvalCard evalItemId={connectedItem.id} currentEvaluation={currentEvaluation} currentEvaluator={currentEvaluator} />
       </DropdownMenuItem>
     ) : null;
 }
@@ -60,7 +61,7 @@ const DropDownConnections: React.FC<EvalCardProps> = ({ evalItemId }) => {
   return (
      <DropdownMenu>
        <DropdownMenuTrigger asChild>
-          <Button variant="outline" className="mb-1" size="sm">Connected Evaluations</Button>
+          <Button variant="outline" className="mb-1" size="sm">Connected Evaluations <span className="text-xs border rounded-full px-1 mb-[8px]">{evalItem!.connected?.length}</span></Button>
         </DropdownMenuTrigger>
        <DropdownMenuContent>
          {evalItem!.connected?.map((connection) => (
@@ -204,6 +205,9 @@ const EvalCard: React.FC<EvalCardProps> = ({ evalItemId }) => {
               cardTitle
             )}
             </CardTitle>
+            {evalItem.query_interpolated && (
+              <span className="border border-orange-400 p-2 w-fit mx-auto text-xs text-center"><ExclamationTriangleIcon className="h-4 w-4 text-orange-400 inline mr-1" />The query was not provided in the source and has been interpolated from context.</span>
+            )}
           <CardDescription>
             <a href={evalItem.url} target="_blank" rel="noopener noreferrer" className="w-7/8 truncate block arrLinkFlat">{evalItem.url}</a>
               <span className="text-sm"><span className="font-bold">date: </span>{evalItem.date}</span><br></br>
@@ -220,16 +224,16 @@ const EvalCard: React.FC<EvalCardProps> = ({ evalItemId }) => {
               {evalItem.also_published_at && (
                 <AlsoPublished evalItem={evalItem} />
               )}
-                {evalItem.key_phrases && (
-                  <>
-                    <br></br>
-                      <span className="text-sm">
-                        key phrases: {evalItem.key_phrases.map(phrase => `“${phrase}”`).join(', ')}
-                      </span>
-                    </>
-                )}
           </CardDescription>
+            <KeyPhrases evalItemID={evalItemId} />
             <EvaluationTarget evalItemID={evalItemId}/>
+            {evalItem.pull_quote && (
+                <div className="bg-gray-100 border-l-4 border-gray-400 p-4 rounded-md shadow-md my-4">
+                  <blockquote className="text-xl text-gray-800 font-medium">
+                    {evalItem.pull_quote}
+                  </blockquote>
+                </div>
+            )}
         </CardHeader>
         <CardContent>
             {evalItem.following && (
@@ -254,11 +258,12 @@ const EvalCard: React.FC<EvalCardProps> = ({ evalItemId }) => {
                   <ol id="response-to-list">
                     {evalItem.following.map((following) => (
                       <li key={following} className="ml-4 text-left px-1 mb-1">
-                        {miniEvalCard && React.createElement(miniEvalCard,
-                            { evalItemId: following, 
-                              currentEvaluation: evalItem.id,
-                              currentEvaluator: evalItem.evaluator_id === data?.find(item => item.id === following)?.evaluator_id,
-                              checks: true })}
+                          <MiniEvalCard
+                            evalItemId={following}
+                            currentEvaluation={evalItem.id}
+                            currentEvaluator={evalItem.evaluator_id === data?.find(item => item.id === following)?.evaluator_id}
+                            checks={true}
+                          />
                       </li>
                     ))}
                   </ol>
@@ -308,6 +313,7 @@ const EvalCard: React.FC<EvalCardProps> = ({ evalItemId }) => {
                   </cite>
                 </div>
                 </figcaption>)}
+                <ContentWarning evalItemID={evalItem.id} />
             {evalItem.context && (
               <EvalExtractCard evalCardItem={{id: "context", content: evalItem.context}} evalQuery={evalItem.query} />
             )}
@@ -319,6 +325,7 @@ const EvalCard: React.FC<EvalCardProps> = ({ evalItemId }) => {
               <EvalExtractCard evalCardItem={evalItem} evalQuery={evalItem.query} />
           )}
         </CardContent>
+          <Resources evalItemID={evalItemId} />
           {evalItem.methodology && (<div className="text-sm text-gray-700 mx-7">
             <span>References:</span><br></br>
             <div className="ml-3">{evalItem.methodology.full} <a className="underline" href={evalItem.methodology.url}>{evalItem.methodology.url}</a>
