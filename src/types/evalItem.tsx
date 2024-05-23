@@ -80,7 +80,7 @@ export interface EvalItem {
   resources?: resourceItem[];
   media?: string;
   also_published_at?: string;
-  claim_review?: ClaimReview;
+  claimReview?: ClaimReview;
   referenced_at?: {
     link_text: string;
     link_url: string;

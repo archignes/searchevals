@@ -3,7 +3,13 @@ import React, { useContext, useState } from 'react';
 import { useRouter } from 'next/router';
 import { Link2Icon, InfoCircledIcon, DrawingPinIcon, ExclamationTriangleIcon } from '@radix-ui/react-icons';
 import DataContext from './DataContext';
-import { EvaluationTarget, KeyPhrases, Resources, ContentWarning, AlsoPublished, ReferencedAt } from './eval-card-elements';
+import { ClaimReview, 
+  EvaluationTarget,
+  KeyPhrases,
+  Resources,
+  ContentWarning,
+  AlsoPublished,
+  ReferencedAt } from './eval-card-elements';
 import SearchOnEvalInterface from './SearchOnEvalInterface';
 import ShareCardInterface from './ShareCardInterface';
 import SearchBracket from './SearchBracket'
@@ -197,6 +203,7 @@ const EvalCard: React.FC<EvalCardProps> = ({ evalItemId }) => {
                 </div>
             )}
         </CardHeader>
+        <ClaimReview evalItem={evalItem} />
         <CardContent>
             {evalItem.following && (
               <>             

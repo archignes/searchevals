@@ -7,6 +7,9 @@ type evalItemProps = {
 }
 
 export const AlsoPublished: React.FC<evalItemProps> = ({ evalItem }) => {
+    if (!evalItem.also_published_at) {
+        return null;
+    }
     const venueLogos = {
         "linkedin.com": <LinkedInLogoIcon className="inline pb-1 h-4 w-4" />,
         "twitter.com": <TwitterLogoIcon className="inline ml-1 pb-1" />,

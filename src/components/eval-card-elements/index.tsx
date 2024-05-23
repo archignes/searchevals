@@ -5,4 +5,5 @@ export { Resources } from "./Resources";
 export { ContentWarning } from "./ContentWarning";
 export { AlsoPublished } from "./AlsoPublished";
 export { ReferencedAt } from "./ReferencedAt";
+export { ClaimReview } from "./ClaimReview";
 

@@ -10,7 +10,7 @@ import { GetStaticProps, GetStaticPaths } from 'next';
 import { evalEvaluator } from '@/src/components/DataContext';
 import OpenGraphCardMetaData from '@/src/components/OpenGraphCardMetaData';
 import { EvalItem } from '@/src/types/evalItem';
-
+import { claimReviewJsonLD } from '@/src/components/eval-card-elements/ClaimReview';
 // Import your JSON data at the top of your file
 import evals from "src/data/evals.json";
 import evaluators from "src/data/evaluators.json";
@@ -78,6 +78,11 @@ const CardPage = ({ evalItem, evaluators }: { evalItem: EvalItem; evaluators: ev
 
       </Head>
       <Script defer data-domain="searchevals.com" src="https://plausible.io/js/script.js" />
+      {evalItem.claimReview && 
+        (<Script type="application/ld+json">
+          claimReviewJsonLD(evalItem) 
+        </Script>)
+      }
       <EvalCard evalItemId={evalItem.id} />
     </>
   );
