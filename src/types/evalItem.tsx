@@ -81,6 +81,10 @@ export interface EvalItem {
   media?: string;
   also_published_at?: string;
   claim_review?: ClaimReview;
+  referenced_at?: {
+    link_text: string;
+    link_url: string;
+  }[];
 }
 
 export type evalCardItem = EvalItem | evalPart

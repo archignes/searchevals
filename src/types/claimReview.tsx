@@ -7,6 +7,7 @@
 // Currently: getting confired in Google Search Console in order to use the markup tool
 
 
+
 export interface Rating {
   alternateName: string; // Required: Truthfulness rating as a short word or phrase
   bestRating?: number; // Recommended: Best value possible in the rating scale

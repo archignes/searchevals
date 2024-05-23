@@ -1919,6 +1919,29 @@
       }
     ],
     "evaluator_id": "dril"
+  },
+  {
+    "id": "how-many-arms-does-mark-williams-cook-have-thetafferboy",
+    "date": "2019-05-16",
+    "query": "how many arms does mark williams-cook have?",
+    "url": "https://twitter.com/thetafferboy/status/1129015245740093440",
+    "systems": [
+      "google"
+    ],
+    "content": "Yes it is wrong. Don't get your answers from rich snippets. Rich snippets are wrong a lot of the time. Btw I have 512 arms.",
+    "images": [
+      {
+        "url": "https://pbs.twimg.com/media/D6sRYUtXkAERs6n?format=png&name=900x900",
+        "extension_modified": true
+      }
+    ],
+    "evaluator_id": "thetafferboy",
+    "evaluation_target": ["featured snippet"],
+    "also_published_at": "https://i83.uk/googles-crazy-leg-counting-in-featured-snippets/",
+    "referenced_at": [{
+      "link_text": "a May 22, 2024 tweet from Mark Williams-Cook",
+      "link_url": "https://twitter.com/thetafferboy/status/1793390465598857384"
+    }]
   }
 ]
 

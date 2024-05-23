@@ -1,10 +1,9 @@
 // EvalCard.tsx
 import React, { useContext, useState } from 'react';
 import { useRouter } from 'next/router';
-import { Link2Icon, InfoCircledIcon, DrawingPinIcon, LinkedInLogoIcon, TwitterLogoIcon, InstagramLogoIcon, ExclamationTriangleIcon } from '@radix-ui/react-icons';
+import { Link2Icon, InfoCircledIcon, DrawingPinIcon, ExclamationTriangleIcon } from '@radix-ui/react-icons';
 import DataContext from './DataContext';
-import { EvaluationTarget, KeyPhrases, Resources, ContentWarning } from './eval-card-elements';
-import { EvalItem } from '@/src/types/evalItem';
+import { EvaluationTarget, KeyPhrases, Resources, ContentWarning, AlsoPublished, ReferencedAt } from './eval-card-elements';
 import SearchOnEvalInterface from './SearchOnEvalInterface';
 import ShareCardInterface from './ShareCardInterface';
 import SearchBracket from './SearchBracket'
@@ -72,44 +71,8 @@ const DropDownConnections: React.FC<EvalCardProps> = ({ evalItemId }) => {
   )
 }
 
-type evalItemProps = {
-  evalItem: EvalItem;
-}
 
-const AlsoPublished: React.FC<evalItemProps> = ({ evalItem }) => {
-  const venueLogos = {
-    "linkedin.com": <LinkedInLogoIcon className="inline pb-1 h-4 w-4"/>,
-    "twitter.com": <TwitterLogoIcon className="inline ml-1 pb-1"/>,
-    "instagram.com": <InstagramLogoIcon className="inline ml-1 pb-1"/>
-  };
 
-  const venueNames = {
-    "linkedin.com": "LinkedIn",
-    "twitter.com": "Twitter",
-    "instagram.com": "Instagram"
-  };
-
-  let alsoPublishedAtShortened = evalItem.also_published_at ? new URL(evalItem.also_published_at).hostname.replace(/^www\./, '') : "";
-  
-  let alsoPublishedAtLogo = venueLogos[alsoPublishedAtShortened as keyof typeof venueLogos] || "";
-  let alsoPublishedAtName = venueNames[alsoPublishedAtShortened as keyof typeof venueNames] || alsoPublishedAtShortened;
-
-  return (
-    <>
-      <br></br>
-      <span className="text-sm">also published {alsoPublishedAtLogo ? "on" : "at"}:
-        <a
-          className="underline ml-1"
-          href={evalItem.also_published_at}>
-          <span>
-            {alsoPublishedAtName}
-          </span>
-          {alsoPublishedAtLogo}
-        </a>
-      </span>
-    </>
-  );
-}
 
 
 
@@ -221,9 +184,8 @@ const EvalCard: React.FC<EvalCardProps> = ({ evalItemId }) => {
               </>
               )}
               <EvaluatedSystems evalItemID={evalItemId} systemIDs={evalItem.systems} />
-              {evalItem.also_published_at && (
-                <AlsoPublished evalItem={evalItem} />
-              )}
+              <AlsoPublished evalItem={evalItem} />
+              <ReferencedAt evalItem={evalItem} />
           </CardDescription>
             <KeyPhrases evalItemID={evalItemId} />
             <EvaluationTarget evalItemID={evalItemId}/>
