@@ -32,9 +32,55 @@
         "systems": ["google"],
         "evaluator_id": "soft",
         "images": [
-    {"url": "https://pbs.twimg.com/media/FB1TS0kVIAAVWFZ?format=jpg&name=900x900"},
-{"url": "https://pbs.twimg.com/media/FB1TTYBUUAQwAoD?format=jpg&name=900x900"}]
-    },
+          {"url": "https://pbs.twimg.com/media/FB1TS0kVIAAVWFZ?format=jpg&name=900x900"},
+          {"url": "https://pbs.twimg.com/media/FB1TTYBUUAQwAoD?format=jpg&name=900x900"}
+        ],
+      "claimReview": {
+          "@context": "https://schema.org",
+          "@type": "ClaimReview",
+          "url": "https://twitter.com/UniversityOfUtahHealth/status/1360212345678901234",
+          "claimReviewed": "Google said that information is what to do during & after a seizure, per University of Utah Health.",
+          "itemReviewed": {
+              "@type": "Claim",
+              "author": {
+                  "@type": "Organization",
+                  "name": "University of Utah Health",
+                  "sameAs": "https://healthcare.utah.edu/"
+              },
+              "datePublished": "2021-02-11",
+              "appearance": {
+                  "@type": "WebPage",
+                  "url": "https://twitter.com/soft/status/1449406390976409600",
+                  "headline": "Seizure First Aid",
+                  "datePublished": "2021-02-11",
+                  "author": {
+                      "@type": "Organization",
+                      "name": "University of Utah Health"
+                  },
+                  "image": "https://healthcare.utah.edu/images/seizure-first-aid.jpg",
+                  "publisher": {
+                      "@type": "Organization",
+                      "name": "University of Utah Health",
+                      "logo": {
+                          "@type": "ImageObject",
+                          "url": "https://healthcare.utah.edu/images/logo.jpg"
+                      }
+                  }
+              }
+          },
+          "author": {
+              "@type": "Organization",
+              "name": "University of Utah Health"
+          },
+          "reviewRating": {
+              "@type": "Rating",
+              "ratingValue": "1",
+              "bestRating": "5",
+              "worstRating": "1",
+              "alternateName": "False"
+          }
+      }
+  },
     { 
         "id": "how-much-should-i-pay-for-home-insurance-in-moss-beach-ca-vivek7ue", 
         "date": "2023-12-23",
@@ -1857,6 +1903,22 @@
       }
     ],
     "evaluator_id": "KLAVIERGAVlN"
+  },
+  {
+    "id": "how-to-pass-kidney-stones-quickly-dril",
+    "date": "2024-05-05",
+    "query": "how to pass kidney stones quickly",
+    "url": "https://twitter.com/dril/status/1787041991391584549",
+    "systems": [
+      "google"
+    ],
+    "content": "perfect. ready to go. ship it out",
+    "images": [
+      {
+        "url": "https://pbs.twimg.com/media/GMzZOHxaIAAP-pg?format=jpg&name=medium"
+      }
+    ],
+    "evaluator_id": "dril"
   }
 ]
 

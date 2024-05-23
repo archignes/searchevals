@@ -1,3 +1,5 @@
+import { ClaimReview } from "./claimReview";
+
 export interface evalPart {
   id: string;
   url?: string;
@@ -78,6 +80,7 @@ export interface EvalItem {
   resources?: resourceItem[];
   media?: string;
   also_published_at?: string;
+  claim_review?: ClaimReview;
 }
 
 export type evalCardItem = EvalItem | evalPart
