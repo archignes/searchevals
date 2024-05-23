@@ -2010,6 +2010,71 @@
         "title": "a May 22, 2024 tweet from Mark Williams-Cook"
       }
     ]
+  },
+  {
+    "id": "non-venomous-snakes-in-georgia-pmaxwell",
+    "date": "2021-10-18",
+    "query": "non venomous snakes in georgia",
+    "url": "https://twitter.com/pmaxwell/status/1450157415190700033",
+    "systems": [
+      "google"
+    ],
+    "content": "This search for “non venomous snakes in georgia” returns all venomous snakes",
+    "images": [
+      {
+        "url": "https://pbs.twimg.com/media/FB_-ezJXEAQbmEE?format=jpg&name=large"
+      }
+    ],
+    "evaluator_id": "pmaxwell"
+  },
+  {
+    "id": "is-it-illegal-not-to-do-taxes-in-canada-pr0zac",
+    "date": "2020-09-04",
+    "query": "Is it illegal not to do taxes in Canada?",
+    "url": "https://twitter.com/pr0zac/status/1301713232881745921",
+    "systems": [
+      "google"
+    ],
+    "eval_parts": [
+      {
+        "id": 1,
+        "content": "Love how Google automatically pulls data from websites now and presents it so you don’t ever need to click to get the necessary info! Anyway off to cancel my appointment with a tax accountant I had for next week!",
+        "images": [
+          {
+            "url": "https://pbs.twimg.com/media/EhCdSTRXgAE0S2l?format=jpg&name=small"
+          }
+        ]
+      },
+      {
+        "id": 2,
+        "content": "Off chance someone at @Google actually looks at this, the easiest way I found to find the referenced incorrect featured snippet is searching: \"canadian income tax unconstitutional\".",
+        "query": "canadian income tax unconstitutional",
+        "images": [
+          {
+            "url": "https://pbs.twimg.com/media/EhF4dWzWoAEqSxm?format=png&name=900x900"
+          }
+        ]
+      }
+    ],
+    "evaluator_id": "pr0zac"
+  },
+  {
+    "id": "canadian-income-tax-unconstitutional-danielsgriffin",
+    "date": "2024-05-23",
+    "query": "canadian income tax unconstitutional",
+    "url": "https://twitter.com/danielsgriffin/status/1793783971320578325",
+    "systems": [
+      "google"
+    ],
+    "content": "The featured snippet for this query has been updated, but it is still confusing and misleading nearly four years later.",
+    "images": [
+      {
+        "url": "https://pbs.twimg.com/media/GOTM2SMbwAA_MaI?format=jpg&name=medium"
+      }
+    ],
+    "following": ["is-it-illegal-not-to-do-taxes-in-canada-pr0zac"],
+    "evaluation_target": ["featured snippet"],
+    "evaluator_id": "danielsgriffin"
   }
 ]
 

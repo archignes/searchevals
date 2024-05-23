@@ -6,16 +6,19 @@ import {
     CardContent
 } from './ui/card';
 import ImageDisplay from './ImageDisplay';
+import { EvaluatedSystems } from './eval-card-elements/EvaluatedSystems';
 
-import { evalCardItem } from '@/src/types';
+import { evalCardItem, EvalItem } from '@/src/types';
 
 type EvalExtractCardProps = {
+    evalItem: EvalItem;
     evalCardItem: evalCardItem;
     evalQuery: string;
 };
 
 
-const EvalExtractCard: React.FC<EvalExtractCardProps> = ({ evalCardItem, evalQuery }) => {
+const EvalExtractCard: React.FC<EvalExtractCardProps> = ({ evalItem, evalCardItem, evalQuery }) => {
+    const evalItemId = evalItem.id
     let contentWithNewlines: string[] = []
     let skipBlockQuote = false;
     if (evalCardItem && evalCardItem.content) {
@@ -36,7 +39,10 @@ const EvalExtractCard: React.FC<EvalExtractCardProps> = ({ evalCardItem, evalQue
             <Card className="rounded-none mb-2">
                 <CardContent>
                     {evalCardItem.query && evalCardItem.query !== evalQuery && (
-                        <div className="text-red-500 text-center">Note: The query below does not exactly match the base query for this evaluation.</div>
+                        <div className="flex flex-col text-center text-xs">
+                            <span className="text-red-500">Note: The query below does not exactly match the base query for this evaluation.</span>
+                            <div> Search for this query on <EvaluatedSystems skipHeading={true} evalItemID={evalItemId} systemIDs={evalItem.systems} query={evalCardItem.query} /></div>
+                        </div>
                     )}
                     <figure className="max-w-screen-md">
                         {skipBlockQuote && (<br></br>)}

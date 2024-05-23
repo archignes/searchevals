@@ -516,6 +516,20 @@
   "role": "SEO",
   "URL": "https://twitter.com/thetafferboy",
   "conflict": []
+},
+{
+  "id": "pmaxwell",
+  "name": "Phil Maxwell",
+  "role": "unknown",
+  "URL": "https://twitter.com/pmaxwell",
+  "conflict": []
+},
+{
+  "id": "pr0zac",
+  "name": "zac",
+  "role": "web developer",
+  "URL": "https://twitter.com/pr0zac",
+  "conflict": []
 }
 ]
 

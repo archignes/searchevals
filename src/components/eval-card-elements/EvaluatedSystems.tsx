@@ -1,16 +1,14 @@
 import React, { useContext } from "react";
 import DataContext from "../DataContext";
-import { System } from '../DataContext';
-import { EvalItem } from '@/src/types/evalItem';
 
-export const EvaluatedSystems: React.FC<{ evalItemID: string, systemIDs: string[], className?: string }> = ({ evalItemID, systemIDs, className }) => {
+export const EvaluatedSystems: React.FC<{ evalItemID: string, systemIDs: string[], query?: string, className?: string, skipHeading?: boolean }> = ({ evalItemID, systemIDs, query, className, skipHeading }) => {
     const { data, systems } = useContext(DataContext);
     const evalItem = data ? data.find(item => item.id === evalItemID) : null;
     let systemsEvaluatedSearchLinks;
     console.log(systemIDs);
     if (systemIDs && systemIDs.length > 0) {
-        const query = evalItem?.query ?? ''; // Ensure query is never undefined
-        const encodedQuery = encodeURIComponent(query);
+        const queryTarget = query || evalItem?.query || ''; // Ensure query is never undefined
+        const encodedQuery = encodeURIComponent(queryTarget);
         const filteredSystems = systems.filter(system => systemIDs.includes(system.id));
         systemsEvaluatedSearchLinks = filteredSystems.map((system: any, index: number) => {
             const systemLink = system.search_link; // Directly access the searchLink property of the system object
@@ -28,6 +26,9 @@ export const EvaluatedSystems: React.FC<{ evalItemID: string, systemIDs: string[
     }
     const textSizeClass = className ?? "text-sm";
     return (
-        <span className={`${textSizeClass}`}><span className="font-bold">systems:</span> {systemsEvaluatedSearchLinks}</span>
+        <span className={`${textSizeClass}`}>
+            {!skipHeading && <span className="font-bold">systems:</span>} 
+            {systemsEvaluatedSearchLinks}
+        </span>
     )
 }

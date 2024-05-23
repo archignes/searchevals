@@ -283,14 +283,14 @@ const EvalCard: React.FC<EvalCardProps> = ({ evalItemId }) => {
                 </figcaption>)}
                 <ContentWarning evalItemID={evalItem.id} />
             {evalItem.context && (
-              <EvalExtractCard evalCardItem={{id: "context", content: evalItem.context}} evalQuery={evalItem.query} />
+              <EvalExtractCard evalItem={evalItem} evalCardItem={{id: "context", content: evalItem.context}} evalQuery={evalItem.query} />
             )}
           {evalItem.eval_parts ? (
             evalItem.eval_parts.map((part, index) => (
-              <EvalExtractCard key={index} evalCardItem={part} evalQuery={evalItem.query} />
+              <EvalExtractCard key={index} evalItem={evalItem} evalCardItem={part} evalQuery={evalItem.query} />
             ))
           ) : (
-              <EvalExtractCard evalCardItem={evalItem} evalQuery={evalItem.query} />
+              <EvalExtractCard evalItem={evalItem} evalCardItem={evalItem} evalQuery={evalItem.query} />
           )}
         </CardContent>
           <Resources evalItemID={evalItemId} />
