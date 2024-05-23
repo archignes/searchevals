@@ -47,12 +47,12 @@ export type evalTarget =
   | "knowledge cards"
   | "lack of critical evaluation or contextualization of source material";
 
-export interface resourceItem {
+export interface documentItem {
   url: string;
   title: string;
   date: string;
   author: string;
-  publisher: string;
+  publisher?: string;
 }
 
 export interface EvalItem {
@@ -77,14 +77,11 @@ export interface EvalItem {
   content?: string; // Make content optional
   images?: imageItem[];
   evaluator_id: string;
-  resources?: resourceItem[];
   media?: string;
   also_published_at?: string;
   claimReview?: ClaimReview;
-  referenced_at?: {
-    link_text: string;
-    link_url: string;
-  }[];
+  resources?: documentItem[];
+  referenced_at?: documentItem[];
 }
 
 export type evalCardItem = EvalItem | evalPart

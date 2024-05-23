@@ -6,13 +6,12 @@
 // https://toolbox.google.com/factcheck/about#fcmt-creators
 
 export interface Rating {
-  alternateName: string; // Required: Truthfulness rating as a short word or phrase
+  name: string; // Required: Truthfulness rating as a short word or phrase
   author?: {
     name: string; // Recommended: Name of the organization or person publishing the fact check
     url?: string; // Recommended: URL of the publisher of the fact check
   };
   bestRating?: number; // Recommended: Best value possible in the rating scale
-  name?: string; // Recommended: Same as alternateName, used if alternateName is not provided
   ratingValue: number; // Required: Numeric rating of the claim
   worstRating?: number; // Recommended: Worst value possible in the rating scale
   ratingExplanation?: string; // Optional: Explanation of the rating

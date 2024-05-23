@@ -49,7 +49,7 @@ interface EvalCardProps {
 
 
 const ConnectedItemLabel: React.FC<{connection: string, currentEvaluation: string, currentEvaluator: boolean}> = ({ connection, currentEvaluation, currentEvaluator }) => {  
-  const { data, miniEvalCard } = useContext(DataContext);
+  const { data } = useContext(DataContext);
   const connectedItem = data ? data.find(evalItem => evalItem.id === connection) : null;
   const isCurrentEvaluation = currentEvaluation === connection;
   return connectedItem ? (
@@ -121,7 +121,7 @@ export const EvaluatorEvaluations: React.FC<{ evalId?: string, evaluatorId?: str
 
 
 const EvalCard: React.FC<EvalCardProps> = ({ evalItemId }) => {
-  const { data, systems, evaluators, miniEvalCard } = useContext(DataContext);
+  const { data, systems, evaluators } = useContext(DataContext);
   const [responseListVisible, setResponseListVisible] = useState(true)
   
   const router = useRouter();
@@ -191,7 +191,6 @@ const EvalCard: React.FC<EvalCardProps> = ({ evalItemId }) => {
               )}
               <EvaluatedSystems evalItemID={evalItemId} systemIDs={evalItem.systems} />
               <AlsoPublished evalItem={evalItem} />
-              <ReferencedAt evalItem={evalItem} />
           </CardDescription>
             <KeyPhrases evalItemID={evalItemId} />
             <EvaluationTarget evalItemID={evalItemId}/>
@@ -295,6 +294,7 @@ const EvalCard: React.FC<EvalCardProps> = ({ evalItemId }) => {
           )}
         </CardContent>
           <Resources evalItemID={evalItemId} />
+          <ReferencedAt evalItemID={evalItemId} />
           {evalItem.methodology && (<div className="text-sm text-gray-700 mx-7">
             <span>References:</span><br></br>
             <div className="ml-3">{evalItem.methodology.full} <a className="underline" href={evalItem.methodology.url}>{evalItem.methodology.url}</a>

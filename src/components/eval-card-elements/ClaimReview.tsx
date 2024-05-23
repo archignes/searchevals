@@ -97,7 +97,7 @@ export const ClaimReview: React.FC<evalItemProps> = ({ evalItem }) => {
                 </PopoverContent>
             </Popover>
         <div className="text-xs flex items-center ml-2">
-            {evalItem.claimReview.reviewRating.alternateName}: {evalItem.claimReview.reviewRating.ratingExplanation}
+            {evalItem.claimReview.reviewRating.name}: {evalItem.claimReview.reviewRating.ratingExplanation}
         </div>
         </div>
     );

@@ -35,52 +35,70 @@
           {"url": "https://pbs.twimg.com/media/FB1TS0kVIAAVWFZ?format=jpg&name=900x900"},
           {"url": "https://pbs.twimg.com/media/FB1TTYBUUAQwAoD?format=jpg&name=900x900"}
         ],
-      "claimReview": {
-          "@context": "https://schema.org",
-          "@type": "ClaimReview",
-          "url": "https://twitter.com/UniversityOfUtahHealth/status/1360212345678901234",
-          "claimReviewed": "Google said that information is what to do during & after a seizure, per University of Utah Health.",
-          "itemReviewed": {
-              "@type": "Claim",
-              "author": {
-                  "@type": "Organization",
-                  "name": "University of Utah Health",
-                  "sameAs": "https://healthcare.utah.edu/"
-              },
-              "datePublished": "2021-02-11",
-              "appearance": {
-                  "@type": "WebPage",
-                  "url": "https://twitter.com/soft/status/1449406390976409600",
-                  "headline": "Seizure First Aid",
-                  "datePublished": "2021-02-11",
-                  "author": {
-                      "@type": "Organization",
-                      "name": "University of Utah Health"
-                  },
-                  "image": "https://healthcare.utah.edu/images/seizure-first-aid.jpg",
-                  "publisher": {
-                      "@type": "Organization",
-                      "name": "University of Utah Health",
-                      "logo": {
-                          "@type": "ImageObject",
-                          "url": "https://healthcare.utah.edu/images/logo.jpg"
-                      }
-                  }
-              }
+      
+        "referenced_at":
+        [
+          {
+            "url": "https://doi.org/10.1145/3531146.3533158",
+            "title": "The Fallacy of AI Functionality",
+            "date": "2022-06",
+            "author": "Inioluwa Deborah Raji, I. Elizabeth Kumar, Aaron Horowitz, and Andrew Selbst",
+            "publisher": "ACM FAccT '22"
           },
+        {
+            "url": "https://doi.org/10.1177/14614448221136505",
+            "title": "Search quality complaints and imaginary repair: Control in articulations of Google Search",
+            "date": "2022-11-23",
+            "author": "Daniel Griffin and Emma Lurie",
+            "publisher": "New Media & Society"
+        }
+        ],
+        "resources":[
+        {"url": "https://service-manual.nhs.uk/design-system/components/do-and-dont-lists",
+            "title": "Do and Don't lists",
+            "date": "2024-01",
+            "author": "National Health Service"
+      }
+      ],
+      "claimReview": {
+          "@context": "http://schema.org",
+          "@type": "ClaimReview",
           "author": {
-              "@type": "Organization",
-              "name": "University of Utah Health"
+            "@type": "Organization",
+            "name": "ARCHIGNES",
+            "url": "https://searchevals.com/"
+          },          
+          "claimReviewed": "If someone has a seizure, you should: 'Hold the person down or try to stop their movements. Put something in the person's mouth (this can cause tooth or jaw injuries) Administer CPR or other mouth-to-mouth breathing during the seizure. Give the person food or water until they are alert again.'",
+          "datePublished": "2024-05-23",
+          "itemReviewed": {
+            "@type": "Claim",
+            "author": {
+              "@type": "Person",
+              "name": "Google"
+            },
+            "datePublished": "2024-05-05",
+            "firstAppearance": {
+              "@type": "CreativeWork",
+              "url": "https://twitter.com/soft/status/1449406390976409600"
+            }
           },
           "reviewRating": {
-              "@type": "Rating",
-              "ratingValue": "1",
-              "bestRating": "5",
-              "worstRating": "1",
-              "alternateName": "False"
-          }
-      }
-  },
+            "@type": "Rating",
+            "author": {
+              "@type": "Organization",
+              "name": "ARCHIGNES",
+              "url": "https://searchevals.com/"
+            },
+            "bestRating": "5",
+            "ratingValue": "1",
+            "ratingExplanation": "The medical advice depicted in the screenshots is not correct and may harm the user if followed. This is likely the result of low quality excerpting from the source website along with immature or otherwise insufficient quality controls on the part of the search provider (and the design of the Do and Don't list on the source website itself).",
+            "reviewAspect": "medical advice",
+            "worstRating": "1",
+            "name": "False"
+          },
+          "url": "https://searchevals.com/card/had-a-seizure-now-what-soft"
+        }
+    },
     { 
         "id": "how-much-should-i-pay-for-home-insurance-in-moss-beach-ca-vivek7ue", 
         "date": "2023-12-23",
@@ -1960,10 +1978,10 @@
         },
         "bestRating": "5",
         "ratingValue": "1",
-        "ratingExplanation": "The medical advice depicted in the screenshots is not correct and may harm the user if followed. This is likely the result of a misreading or mistaken summarization of the source website along with immature or otherwise insufficient quality controls on the part of the search engine.",
+        "ratingExplanation": "The medical advice depicted in the screenshots is not correct and may harm the user if followed. This is likely the result of a misreading or mistaken summarization of the source website along with immature or otherwise insufficient quality controls on the part of the search provider.",
         "reviewAspect": "medical advice",
         "worstRating": "1",
-        "alternateName": "False"
+        "name": "False"
       },
       "url": "https://searchevals.com/card/how-to-pass-kidney-stones-quickly-dril"
     }
@@ -1986,10 +2004,12 @@
     "evaluator_id": "thetafferboy",
     "evaluation_target": ["featured snippet"],
     "also_published_at": "https://i83.uk/googles-crazy-leg-counting-in-featured-snippets/",
-    "referenced_at": [{
-      "link_text": "a May 22, 2024 tweet from Mark Williams-Cook",
-      "link_url": "https://twitter.com/thetafferboy/status/1793390465598857384"
-    }]
+    "referenced_at": [
+      {
+        "url": "https://twitter.com/thetafferboy/status/1793390465598857384",
+        "title": "a May 22, 2024 tweet from Mark Williams-Cook"
+      }
+    ]
   }
 ]
 
