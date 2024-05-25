@@ -544,6 +544,13 @@
   "role": "computer networking and security instructor",
   "URL": "https://twitter.com/sambowne",
   "conflict": []
+},
+{
+  "id": "blennon_",
+  "name": "Bill Lennon",
+  "role": "Co-founder & CEO at Ollie AI",
+  "URL": "https://twitter.com/blennon_",
+  "conflict": ["ollie-ai"]
 }
 ]
 

@@ -53,6 +53,7 @@ export interface documentItem {
   date: string;
   author: string;
   publisher?: string;
+  platform?: string;
 }
 
 export interface EvalItem {
@@ -60,6 +61,7 @@ export interface EvalItem {
   date: string;
   validation_image?: string;
   query: string;
+  likely_fabricated?: boolean;
   url: string;
   connected?: string[];
   pull_quote?: string;

@@ -21,9 +21,12 @@ export const DocumentList: React.FC<DocumentListProps> = ({ documents, documents
           <li key={index} className="w-full">
             <div className="p-2 w-full flex flex-col space-y-0">
                 <a href={resource.url}
-                className="break-words font-medium hover:bg-blue-100 rounded-md p-2 underline w-full">
+                className="break-words font-medium hover:bg-blue-100 rounded-md p-2 underline w-fit">
                 {resource.title}</a>
               <span className="ml-4 text-gray-500">author: {resource.author}</span>
+            {resource.platform && (
+                <span className="ml-4 text-gray-500">platform: {resource.platform}</span>
+            )}
               {resource.publisher && (
                 <span className="ml-4 text-gray-500">publisher: {resource.publisher}</span>
               )}

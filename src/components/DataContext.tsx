@@ -25,6 +25,7 @@ export interface System {
     account_required?: boolean;
     search_link: string;
     mobile_app_breaks_links_warning?: boolean;
+    limited_release?: boolean;
 }
 
 interface DataContextType {

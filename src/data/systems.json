@@ -201,5 +201,11 @@
   {"name": "Meta AI",
   "id": "meta-ai",
   "search_link": "https://www.meta.ai/"
+},
+{
+  "name": "Ollie AI",
+  "id": "ollie-ai",
+  "search_link": "https://ollie.ai/",
+  "limited_release": true
 }
 ]

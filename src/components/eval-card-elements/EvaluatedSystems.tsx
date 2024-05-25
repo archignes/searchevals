@@ -5,7 +5,6 @@ export const EvaluatedSystems: React.FC<{ evalItemID: string, systemIDs: string[
     const { data, systems } = useContext(DataContext);
     const evalItem = data ? data.find(item => item.id === evalItemID) : null;
     let systemsEvaluatedSearchLinks;
-    console.log(systemIDs);
     if (systemIDs && systemIDs.length > 0) {
         const queryTarget = query || evalItem?.query || ''; // Ensure query is never undefined
         const encodedQuery = encodeURIComponent(queryTarget);
@@ -14,9 +13,11 @@ export const EvaluatedSystems: React.FC<{ evalItemID: string, systemIDs: string[
             const systemLink = system.search_link; // Directly access the searchLink property of the system object
             return (
                 <span key={system.id}> {/* Use system.id for a unique key */}
+                    {console.log(system)}
                     <a className="underline arrLinkFlat" target="_blank" rel="noopener noreferrer" href={systemLink.replace('%s', encodedQuery)}>
                         {system.name}
                     </a>
+                    {system.limited_release && <span className="text-xs text-red-500 ml-1">(Limited Release)</span>}
                     {index < filteredSystems.length - 1 ? ', ' : ''} {/* Use filteredSystems.length */}
                 </span>
             )
