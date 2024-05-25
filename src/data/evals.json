@@ -1927,6 +1927,7 @@
     "date": "2024-05-05",
     "query": "how to pass kidney stones quickly",
     "url": "https://twitter.com/dril/status/1787041991391584549",
+    "connected": ["how-to-pass-kidney-stones-quickly-9___________3"],
     "systems": [
       "google"
     ],
@@ -2128,7 +2129,7 @@
     "url": "https://twitter.com/blennon_/status/1794054307069010352",
     "following": ["can-i-use-gasoline-to-cook-spaghetti-joeuchill"],
     "systems": [
-      "ollie-ai"
+      "ollie-ai", "google"
     ],
     "content": "That's what happens when you use small, cheap, dumb models. Our AI meal planner, Ollie, won't let you poison yourself.",
     "images": [
@@ -2143,6 +2144,264 @@
       }
     ],
     "evaluator_id": "blennon_"
+  },
+  {
+    "id": "explain-what-happened-with-bing-outage-and-what-else-it-brave",
+    "date": "2024-05-23",
+    "query": "explain what happened with bing outage and what else it affected",
+    "url": "https://twitter.com/brave/status/1793743270398275794",
+    "systems": [
+      "brave"
+    ],
+    "content": "Btw, Brave Search has a very thorough summary of today's Bing outage",
+    "images": [
+      {
+        "url": "https://pbs.twimg.com/media/GOSn1o9WwAAc-t5?format=jpg&name=medium"
+      }
+    ],
+    "evaluator_id": "brave",
+    "evaluation_target": ["generated response"],
+    "connected": ["explain-what-happened-with-bing-outage-and-what-else-it-danielsgriffin"]
+  },
+  {
+    "id": "explain-what-happened-with-bing-outage-and-what-else-it-danielsgriffin",
+    "date": "2024-05-25",
+    "query": "explain what happened with bing outage and what else it affected",
+    "url": "https://twitter.com/danielsgriffin/status/1794261429543215473",
+    "systems": [
+      "brave"
+    ],
+    "content": "I'm always wondering about what sorta quality control goes into the production of example search results that search engine accounts post.\\n\\nThis is a tiny example of a placeholder fragment in a screenshot from Brave.",
+    "images": [
+      {
+        "url": "https://pbs.twimg.com/media/GOSn1o9WwAAc-t5?format=jpg&name=medium"
+      }
+    ],
+    "evaluator_id": "danielsgriffin",
+    "following": ["explain-what-happened-with-bing-outage-and-what-else-it-brave"],
+    "evaluation_target": ["generated response"]
+  },
+  {
+    "id": "how-to-pass-kidney-stones-quickly-9___________3",
+    "date": "2024-05-21",
+    "following": ["how-to-pass-kidney-stones-quickly-dril"],
+    "query": "how to pass kidney stones quickly",
+    "url": "https://twitter.com/9___________3/status/1792850965592240432",
+    "systems": [
+      "brave", "google"
+    ],
+    "content": "Brave search is so much better holy shit. How is Google so bad it literally tells you to drink piss.",
+    "images": [
+      {
+        "url": "https://pbs.twimg.com/media/GOF7WknWgAA6zOV?format=jpg&name=large"
+      }
+    ],
+    "evaluator_id": "9___________3"
+  },
+  {
+    "id": "find-the-best-yoga-or-pilates-studios-in-boston-and-google",
+    "date": "2024-05-14",
+    "query": "Find the best yoga or pilates studios in Boston and show me details on their intro offers, and walking time from Beacon Hill",
+    "url": "https://blog.google/products/search/generative-ai-google-search-may-2024/",
+    "systems": [
+      "google"
+    ],
+    "content": "With our custom Gemini model’s multi-step reasoning capabilities, AI Overviews will help with increasingly complex questions. Rather than breaking your question into multiple searches, you can ask your most complex questions, with all the nuances and caveats you have in mind, all in one go.\\n\\nFor example, maybe you’re looking for a new yoga or pilates studio, and you want one that’s popular with locals, conveniently located for your commute, and also offers a discount for new members. Soon, with just one search, you’ll be able to ask something like “find the best yoga or pilates studios in Boston and show me details on their intro offers, and walking time from Beacon Hill.”",
+    "images": [
+      {
+        "url": "/eval_images/find-the-best-yoga-or-pilates-studios-in-boston-and-google.png"
+      }
+    ],
+    "evaluator_id": "google",
+    "evaluation_target": ["generated response"],
+    "connected": ["find-the-best-yoga-or-pilates-studios-in-boston-and-KhazzanYassine"]
+  },
+  {
+    "id": "find-the-best-yoga-or-pilates-studios-in-boston-and-KhazzanYassine",
+    "date": "2024-05-24",
+    "query": "Find the best yoga or pilates studios in Boston and show me details on their intro offers, and walking time from Beacon Hill",
+    "url": "https://x.com/KhazzanYassine/status/1794151410306527504",
+    "systems": [
+      "google",
+      "openperplex"
+    ],
+    "content": "Check out this response from OpenPerplex. This version of openperplex isn't currently available, but it will be live by tomorrow.",
+    "images": [
+      {
+        "url": "https://pbs.twimg.com/media/GOYa2phXcAAZVpx?format=jpg&name=medium"
+      }
+    ],
+    "evaluator_id": "KhazzanYassine",
+    "evaluation_target": ["generated response"],
+    "following": ["find-the-best-yoga-or-pilates-studios-in-boston-and-google"]
+  },
+  {
+    "id": "can-baby-sleep-in-pack-n-play-napper-brimwats",
+    "date": "2021-10-17",
+    "query": "Can baby sleep in pack n play napper?",
+    "url": "https://twitter.com/brimwats/status/1449749173130067974",
+    "systems": [
+      "google"
+    ],
+    "content": "baby-killing recommendations from @scott_bot, who is currently locked, so sharing these here",
+    "images": [
+      {
+        "url": "https://pbs.twimg.com/media/FB6LLiBUcAwD9rf?format=jpg&name=medium"
+      },
+      {
+        "url": "https://pbs.twimg.com/media/FB6LL0OUYAItVa6?format=jpg&name=medium"
+      }
+    ],
+    "evaluator_id": "brimwats"
+  },
+  {
+    "id": "can-you-drink-before-surgery-BishopBlougram",
+    "date": "2021-10-18",
+    "query": "can you drink before surgery",
+    "url": "https://twitter.com/BishopBlougram/status/1449957091431501824",
+    "systems": [
+      "google"
+    ],
+    "content": "I encountered the exact same things a few years ago: a medical Google snippet where a prefatory \"DO NOT\" was lost in transition. Wrote a paper on how such algorithmic edits should not enjoy Section 230 protection.",
+    "images": [
+      {
+        "url": "https://pbs.twimg.com/media/FB9ISi0VkAUrwj4?format=jpg&name=medium"
+      }
+    ],
+    "evaluator_id": "BishopBlougram",
+    "evaluation_target": ["featured snippet"],
+    "reply_to": "had-a-seizure-now-what-soft",
+    "also_published_at": "https://medium.com/@Blougram/dr-jekyll-and-mr-google-ce18e3123cea"
+  },
+  {
+    "id": "is-everything-you-see-on-the-internet-is-real-wongmjane",
+    "date": "2024-05-24",
+    "likely_fabricated": true,
+    "query": "is everything you see on the internet is real?",
+    "url": "https://x.com/wongmjane/status/1794069341392056516",
+    "systems": [
+      "google"
+    ],
+    "content": "another crazy Google AI Overview result lol",
+    "images": [
+      {
+        "url": "https://pbs.twimg.com/media/GOXQjjcbwAAdj3g?format=jpg&name=medium"
+      }
+    ],
+    "evaluator_id": "wongmjane"
+  },
+  {
+    "id": "how-many-muslim-presidents-has-the-us-had-MelMitchell1",
+    "date": "2024-05-23",
+    "query": "How many muslim presidents has the US had?",
+    "url": "https://x.com/MelMitchell1/status/1793749621690474696",
+    "systems": [
+      "google"
+    ],
+    "content": "Google, FFS.",
+    "images": [
+      {
+        "url": "https://pbs.twimg.com/media/GOStkgnWMAEwVSW?format=jpg&name=medium"
+      }
+    ],
+    "evaluator_id": "MelMitchell1",
+    "evaluation_target": ["generated response"],
+    "connected": ["how-many-muslim-presidents-has-the-us-had-ChaseMc67",
+    "muslim-president-usa-rebellteknolog",
+    "how-many-muslim-presidents-has-the-united-states-had-soleio",
+    "how-many-muslim-presidents-has-the-us-had-9___________3"
+  ]
+  },
+  {
+    "id": "how-many-muslim-presidents-has-the-us-had-ChaseMc67",
+    "date": "2024-05-23",
+    "query": "How many muslim presidents has the US had?",
+    "url": "https://x.com/ChaseMc67/status/1793758379799969969",
+    "systems": [
+      "perplexity-ai",
+      "google"
+    ],
+    "content": "Perplexity’s answer to the same prompt",
+    "evaluation_target": ["generated response"],
+    "following": ["how-many-muslim-presidents-has-the-us-had-MelMitchell1"],
+    "images": [
+      {
+        "url": "https://pbs.twimg.com/media/GOS1vWca0AAHs3j?format=jpg&name=large"
+      }
+    ],
+    "evaluator_id": "ChaseMc67"
+  },
+  {
+    "id": "muslim-president-usa-rebellteknolog",
+    "date": "2024-05-23",
+    "query": "muslim president usa",
+    "url": "https://x.com/rebellteknolog/status/1793786117277560934",
+    "systems": [
+      "google"
+    ],
+    "content": "Interesting how google surfaces this in normal search:",
+    "following": ["how-many-muslim-presidents-has-the-us-had-MelMitchell1"],
+    "images": [
+      {
+        "url": "https://pbs.twimg.com/media/GOTO9teW0AAVduL?format=jpg&name=900x900"
+      }
+    ],
+    "evaluator_id": "rebellteknolog"
+  },
+  {
+    "id": "muslim-president-usa-rebellteknolog",
+    "date": "2024-05-23",
+    "query": "muslim president usa",
+    "url": "https://x.com/rebellteknolog/status/1793786117277560934",
+    "systems": [
+      "google"
+    ],
+    "content": "Interesting how google surfaces this in normal search:",
+    "images": [
+      {
+        "url": "https://pbs.twimg.com/media/GOaZPhTagAAqvn_?format=jpg&name=medium"
+      }
+    ],
+    "evaluator_id": "rebellteknolog",
+    "evaluation_target": ["featured snippet"],
+    "following": ["muslim-president-usa-rebellteknolog"]
+  },
+  {
+    "id": "how-many-muslim-presidents-has-the-us-had-9___________3",
+    "date": "2024-05-23",
+    "query": "how many muslim presidents has the US had?",
+    "url": "https://x.com/9___________3/status/1793766417432756277",
+    "systems": [
+      "brave", "google"
+    ],
+    "content": "Here is @Brave's answer.",
+    "evaluation_target": ["generated response"],
+    "following": ["how-many-muslim-presidents-has-the-us-had-MelMitchell1"],
+    "images": [
+      {
+        "url": "https://pbs.twimg.com/media/GOS83pfWUAEa4S5?format=jpg&name=large"
+      }
+    ],
+    "evaluator_id": "9___________3"
+  },
+  {
+    "id": "how-many-muslim-presidents-has-the-united-states-had-soleio",
+    "date": "2024-05-24",
+    "query": "How many Muslim presidents has the United States had?",
+    "url": "https://x.com/soleio/status/1793951661850812466",
+    "systems": [
+      "perplexity-ai",
+      "google"
+    ],
+    "content": "https://perplexity.ai/search/How-many-Muslim-Lq1q8M_8TFiTM0Z9AvXrAg…",
+    "images": [
+      {
+        "url": "https://pbs.twimg.com/card_img/1793951652870774784/1j8FMxtc?format=jpg&name=medium"
+      }
+    ],
+    "evaluator_id": "soleio",
+    "evaluation_target": ["generated response"],
+    "following": ["how-many-muslim-presidents-has-the-us-had-MelMitchell1"]
   }
 ]
 

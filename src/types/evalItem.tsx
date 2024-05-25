@@ -65,6 +65,7 @@ export interface EvalItem {
   url: string;
   connected?: string[];
   pull_quote?: string;
+  reply_to?: string;
   query_interpolated?: boolean;
   following?: string[];
   key_phrases?: string[];

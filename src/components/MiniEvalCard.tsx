@@ -11,7 +11,7 @@ import { EvaluationTarget } from './eval-card-elements';
 import { conflictType } from '@/src/types/';
 import { CheckQueryConsistency, CheckTemporalDifference } from './EvalComparisonChecks';
 import SearchBracket from './SearchBracket'
-import { InfoCircledIcon, DrawingPinIcon } from "@radix-ui/react-icons"
+import { InfoCircledIcon, DrawingPinIcon, ExclamationTriangleIcon } from "@radix-ui/react-icons"
 import ImageDisplay from './ImageDisplay'
 import Link from 'next/link'
 import {
@@ -124,6 +124,9 @@ export const MiniEvalCard: React.FC<MiniEvalCardProps> = ({
         </CardDescription>
         <EvaluationTarget evalItemID={evalItemId} className={`pl-3 ${textSizeClass}`} />
       </CardHeader>
+        {evalItem.likely_fabricated && (
+          <span className="border border-red-500 bg-red-100 font-semibold p-2 w-fit ml-4 text-xs text-center"><ExclamationTriangleIcon className="h-4 w-4 text-red-400 inline mr-1" />This image is likely fabricated.</span>
+        )}
       <CardContent className='p-1 py-0'>
         {!currentEvaluator && evalEvaluatorDetails && (
           <figcaption className="mt-1 mb-2">

@@ -207,5 +207,10 @@
   "id": "ollie-ai",
   "search_link": "https://ollie.ai/",
   "limited_release": true
+},
+{
+  "name": "OpenPerplex",
+  "id": "openperplex",
+  "search_link": "https://openperplex.com/"
 }
 ]

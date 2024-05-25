@@ -46,7 +46,7 @@
   {
     "id": "yousearchengine",
     "name": "You.com",
-    "role": "Search engine company",
+    "role": "Search engine",
     "URL": "https://twitter.com/YouSearchEngine",
     "conflict": [
       "you-com"
@@ -82,7 +82,7 @@
 {
   "id": "google",
   "name": "Google",
-  "role": "Search engine company",
+  "role": "Search engine",
   "URL": "https://twitter.com/google",
   "conflict": [
     "google"
@@ -183,7 +183,7 @@
 {
   "id": "mojeek",
   "name": "Mojeek",
-  "role": "Search engine company",
+  "role": "Search engine",
   "URL": "https://twitter.com/mojeek",
   "conflict": [
     "mojeek"
@@ -551,6 +551,76 @@
   "role": "Co-founder & CEO at Ollie AI",
   "URL": "https://twitter.com/blennon_",
   "conflict": ["ollie-ai"]
+},
+{
+  "id": "brave",
+  "name": "Brave",
+  "role": "Search engine",
+  "URL": "https://twitter.com/brave",
+  "conflict": ["brave"]
+},
+{
+  "id": "9___________3",
+  "name": "9_3",
+  "role": "unknown",
+  "URL": "https://twitter.com/9___________3",
+  "conflict": []
+},
+{
+  "id": "KhazzanYassine",
+  "name": "khazzan yassine",
+  "role": "Creator of OpenPerplex",
+  "URL": "https://twitter.com/KhazzanYassine",
+  "conflict": ["openperplex"]
+},
+{
+  "id": "brimwats",
+  "name": "bri watson ",
+  "role": "archivist",
+  "URL": "https://twitter.com/brimwats",
+  "conflict": []
+},
+{
+  "id": "BishopBlougram",
+  "name": "Jonas Persson",
+  "role": "immigration attorney",
+  "URL": "https://twitter.com/BishopBlougram",
+  "conflict": []
+},
+{
+  "id": "wongmjane",
+  "name": "Jane Manchun Wong",
+  "role": "security engineer",
+  "URL": "https://twitter.com/wongmjane",
+  "conflict": []
+},
+{
+  "id": "MelMitchell1",
+  "name": "Melanie Mitchell",
+  "role": "Professor, Sante Fe Institute",
+  "URL": "https://twitter.com/MelMitchell1",
+  "conflict": []
+},
+{
+  "id": "ChaseMc67",
+  "name": "Chase",
+  "role": "Founding engineer at Codegen",
+  "URL": "https://twitter.com/ChaseMc67",
+  "conflict": []
+},
+{
+  "id": "rebellteknolog",
+  "name": "Hassan of the North",
+  "role": "Founder at R2C",
+  "URL": "https://twitter.com/rebellteknolog",
+  "conflict": []
+},
+{
+  "id": "soleio",
+  "name": "Soleio ✦",
+  "role": "software designer; investor",
+  "URL": "https://twitter.com/soleio",
+  "conflict": ["perplexity-ai"]
 }
 ]
 

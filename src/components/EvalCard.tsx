@@ -7,6 +7,7 @@ import { ClaimReview,
   EvaluationTarget,
   KeyPhrases,
   Resources,
+  ReplyTo,
   ContentWarning,
   AlsoPublished,
   ReferencedAt } from './eval-card-elements';
@@ -63,18 +64,28 @@ const DropDownConnections: React.FC<EvalCardProps> = ({ evalItemId }) => {
   const { data } = useContext(DataContext);
   const evalItem = data ? data.find(evalItem => evalItem.id === evalItemId) : null;
 
-  return (
-     <DropdownMenu>
-       <DropdownMenuTrigger asChild>
-          <Button variant="outline" className="mb-1" size="sm">Connected Evaluations <span className="text-xs border rounded-full px-1 mb-[8px]">{evalItem!.connected?.length}</span></Button>
-        </DropdownMenuTrigger>
-       <DropdownMenuContent>
-         {evalItem!.connected?.map((connection) => (
-           <ConnectedItemLabel key={connection} connection={connection} currentEvaluation={evalItemId} currentEvaluator={false} />
-         ))}
-       </DropdownMenuContent>
-     </DropdownMenu>
-  )
+return (
+  <DropdownMenu>
+    <DropdownMenuTrigger asChild>
+      <Button variant="outline" className="mb-1" size="sm">
+        Connected Evaluations 
+        <span className="text-xs border rounded-full px-1 mb-[8px]">
+          {evalItem!.connected?.length}
+        </span>
+      </Button>
+    </DropdownMenuTrigger>
+    <DropdownMenuContent className="max-h-[300px] overflow-y-auto">
+      {evalItem!.connected?.map((connection) => (
+        <ConnectedItemLabel
+          key={connection}
+          connection={connection}
+          currentEvaluation={evalItemId}
+          currentEvaluator={false}
+        />
+      ))}
+    </DropdownMenuContent>
+  </DropdownMenu>
+)
 }
 
 
@@ -177,6 +188,9 @@ const EvalCard: React.FC<EvalCardProps> = ({ evalItemId }) => {
             {evalItem.query_interpolated && (
               <span className="border border-orange-400 p-2 w-fit mx-auto text-xs text-center"><ExclamationTriangleIcon className="h-4 w-4 text-orange-400 inline mr-1" />The query was not provided in the source and has been interpolated from context.</span>
             )}
+            {evalItem.likely_fabricated && (
+              <span className="border border-red-500 bg-red-100 font-semibold p-2 w-fit mx-auto text-xs text-center"><ExclamationTriangleIcon className="h-4 w-4 text-red-400 inline mr-1" />This image is likely fabricated.</span>
+            )}
           <CardDescription>
             <a href={evalItem.url} target="_blank" rel="noopener noreferrer" className="w-7/8 truncate block arrLinkFlat">{evalItem.url}</a>
               <span className="text-sm"><span className="font-bold">date: </span>{evalItem.date}</span><br></br>
@@ -201,8 +215,10 @@ const EvalCard: React.FC<EvalCardProps> = ({ evalItemId }) => {
                   </blockquote>
                 </div>
             )}
+            <ReplyTo evalItemID={evalItem.id} />
         </CardHeader>
         <ClaimReview evalItem={evalItem} />
+        
         <CardContent>
             {evalItem.following && (
               <>             
