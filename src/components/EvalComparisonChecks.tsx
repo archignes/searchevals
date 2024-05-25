@@ -2,7 +2,7 @@ import { useContext } from "react";
 import { ExclamationTriangleIcon, InfoCircledIcon } from "@radix-ui/react-icons";
 import DataContext from "./DataContext";
 import DiffMatchPatch from 'diff-match-patch';
-import { extractTimestamp } from '../lib/utils';
+import { extractTimestamp, isTimestampFriendly } from '../lib/utils';
 
 
 export const CheckTemporalDifference: React.FC<{ evalItemId: string; currentEvaluation: string }> = ({ evalItemId, currentEvaluation }) => {
@@ -12,8 +12,7 @@ export const CheckTemporalDifference: React.FC<{ evalItemId: string; currentEval
 
   if (!currentEvalItem || !followingEvalItem) return null;
 
-  if (['twitter.com', 'x.com', 'infosec.exchange', 'mastodon.social'].some(domain => currentEvalItem.url.includes(domain)) && 
-      ['twitter.com', 'x.com', 'infosec.exchange', 'mastodon.social'].some(domain => followingEvalItem.url.includes(domain))) {
+  if (isTimestampFriendly(currentEvalItem.url) && isTimestampFriendly(followingEvalItem.url)) {
     
     const currentTimestamp = extractTimestamp(currentEvalItem.url);
     const followingTimestamp = extractTimestamp(followingEvalItem.url);

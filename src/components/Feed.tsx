@@ -8,6 +8,7 @@ import { EvalItem } from '../types';
 import MiniEvalCard, { getSystemsEvaluated } from './MiniEvalCard';
 import { VariableSizeList } from 'react-window';
 import { useWindowResize } from "./useWindowResize";
+import { extractTimestamp, isTimestampFriendly } from '../lib/utils';
 
 const Row = ({ sortedData, index, style, setSize, windowWidth }: {
   sortedData: any;
@@ -49,12 +50,11 @@ const Feed: React.FC = () => {
     [...data].sort((a, b) => {
       const dateComparison = b.date.localeCompare(a.date);
       if (dateComparison !== 0) return dateComparison;
-      // If both URLs are Twitter links, extract the last segment
-      // as the tweet ID and compare them
-      if (a.url.startsWith('https://twitter.com') || a.url.startsWith('https://x.com') && b.url.startsWith('https://twitter.com') || b.url.startsWith('https://x.com')) {
-        const aTweetId = a.url.split('/').pop() || "";
-        const bTweetId = b.url.split('/').pop() || "";
-        return bTweetId.localeCompare(aTweetId);
+      // If both URLs are timestamp-friendly links, get the timestamp and compare
+      if (isTimestampFriendly(a.url) && isTimestampFriendly(b.url)) {
+        const aTimestamp = extractTimestamp(a.url);
+        const bTimestamp = extractTimestamp(b.url);
+        return bTimestamp.getTime() - aTimestamp.getTime();
       }
       return 0;
     }),

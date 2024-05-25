@@ -13,6 +13,12 @@ const extractTimestampTwitter = (statusId: string) => {
 
 
 
+export const isTimestampFriendly = (url: string): boolean => {
+    return ['twitter.com', 'x.com', 'infosec.exchange', 'mastodon.social'].some(domain => url.includes(domain));
+};
+
+
+
 /**
  * Extracts the timestamp from a Mastodon status ID (Snowflake ID)
  * @param {string} statusId - The Mastodon status ID
