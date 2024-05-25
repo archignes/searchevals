@@ -2092,7 +2092,15 @@
     ],
     "connected": ["can-i-use-gasoline-to-cook-spaghetti-sambowne"],
     "evaluator_id": "joeuchill",
-    "evaluation_target": ["generated response"]
+    "evaluation_target": ["generated response"],
+    "referenced_at":[
+      {
+        "url": "https://twitter.com/JohnDCook/status/1793996021162504581",
+        "title": "[a screenshot only tweet]",
+        "author": "John D. Cook",
+        "date": "2024-05-24"
+      }
+    ]
   },
   {
     "id": "can-i-use-gasoline-to-cook-spaghetti-sambowne",

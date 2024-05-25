@@ -2,7 +2,7 @@ import { useContext } from "react";
 import { ExclamationTriangleIcon, InfoCircledIcon } from "@radix-ui/react-icons";
 import DataContext from "./DataContext";
 import DiffMatchPatch from 'diff-match-patch';
-
+import { extractTimestamp } from '../lib/utils';
 
 
 export const CheckTemporalDifference: React.FC<{ evalItemId: string; currentEvaluation: string }> = ({ evalItemId, currentEvaluation }) => {
@@ -12,72 +12,64 @@ export const CheckTemporalDifference: React.FC<{ evalItemId: string; currentEval
 
   if (!currentEvalItem || !followingEvalItem) return null;
 
-  if ((currentEvalItem.url.includes('twitter.com') || currentEvalItem.url.includes('x.com')) && (followingEvalItem.url.includes('twitter.com') || followingEvalItem.url.includes('x.com'))) {
-    const extractTimestamp = (statusId: string) => {
-      const tweetId = BigInt(statusId);
-      const timestampMs = tweetId / BigInt(2 ** 22) + BigInt(1288834974657);
-      return new Date(Number(timestampMs));
-    };
+  if (['twitter.com', 'x.com', 'infosec.exchange', 'mastodon.social'].some(domain => currentEvalItem.url.includes(domain)) && 
+      ['twitter.com', 'x.com', 'infosec.exchange', 'mastodon.social'].some(domain => followingEvalItem.url.includes(domain))) {
+    
+    const currentTimestamp = extractTimestamp(currentEvalItem.url);
+    const followingTimestamp = extractTimestamp(followingEvalItem.url);
+    const timeDifference = currentTimestamp.getTime() - followingTimestamp.getTime();
 
-    const currentStatusId = currentEvalItem.url.split('/').pop();
-    const followingStatusId = followingEvalItem.url.split('/').pop();
-    if (currentStatusId && followingStatusId) {
-      const currentTimestamp = extractTimestamp(currentStatusId);
-      const followingTimestamp = extractTimestamp(followingStatusId);
-      const timeDifference = currentTimestamp.getTime() - followingTimestamp.getTime();
+    const minutes = Math.floor(timeDifference / (1000 * 60));
+    const hours = Math.floor(minutes / 60);
+    const days = Math.floor(hours / 24);
+    const weeks = Math.floor(days / 7);
+    const months = Math.floor(days / 30);
+    const years = Math.floor(days / 365);
 
-      const minutes = Math.floor(timeDifference / (1000 * 60));
-      const hours = Math.floor(minutes / 60);
-      const days = Math.floor(hours / 24);
-      const weeks = Math.floor(days / 7);
-      const months = Math.floor(days / 30);
-      const years = Math.floor(days / 365);
-
-      let humanFriendlyDifference = '';
-      if (years > 0) {
-        humanFriendlyDifference = `${years} year${years > 1 ? 's' : ''} and ${months % 12} month${months > 1 ? 's' : ''}`;
-      } else if (months > 0) {
-        humanFriendlyDifference = `${months} month${months > 1 ? 's' : ''} and ${weeks % 4} week${weeks > 1 ? 's' : ''}`;
-      } else if (weeks > 0) {
-        humanFriendlyDifference = `${weeks} week${weeks > 1 ? 's' : ''} and ${days % 7} day${days > 1 ? 's' : ''}`;
-      } else if (days > 0) {
-        humanFriendlyDifference = `${days} day${days > 1 ? 's' : ''} and ${hours % 24} hour${hours > 1 ? 's' : ''}`;
-      } else if (hours > 0) {
-        humanFriendlyDifference = `${hours} hour${hours > 1 ? 's' : ''} and ${minutes % 60} minute${minutes > 1 ? 's' : ''}`;
-      } else {
-        humanFriendlyDifference = `${minutes} minute${minutes > 1 ? 's' : ''}`;
-      }
-
-      const exactDifference = `${years} year${years !== 1 ? 's' : ''}, ${months % 12} month${months % 12 !== 1 ? 's' : ''}, ${weeks % 4} week${weeks % 4 !== 1 ? 's' : ''}, ${days % 7} day${days % 7 !== 1 ? 's' : ''}, ${hours % 24} hour${hours % 24 !== 1 ? 's' : ''}, ${minutes % 60} minute${minutes % 60 !== 1 ? 's' : ''}`;
-
-      const combinedSystems = currentEvalItem.systems.map((system: any) => system.name).concat(followingEvalItem.systems.map((system: any) => system.name));
-      const randomSystem = combinedSystems[Math.floor(Math.random() * combinedSystems.length)];
-      const systemData = systems.find(
-        (system: any) => system.name === randomSystem
-      );
-      const systemSearchLink = systemData?.search_link || `https://www.google.com/search?q=`;
-      // create human friendly time stamps in dates and hours
-      let currentHumanFriendlyTimestamp = '';
-      let followingHumanFriendlyTimestamp = '';
-      if (weeks > 0) {
-        currentHumanFriendlyTimestamp = currentTimestamp.toLocaleDateString();
-        followingHumanFriendlyTimestamp = followingTimestamp.toLocaleDateString();
-      } else {
-        currentHumanFriendlyTimestamp = currentTimestamp.toLocaleString();
-        followingHumanFriendlyTimestamp = followingTimestamp.toLocaleString();
-      }
-      
-      const timeDifferenceQuery = `${systemSearchLink}what+is+the+time+difference+between+${followingHumanFriendlyTimestamp}+and+${currentHumanFriendlyTimestamp}`;
-
-      return (
-        <div className="flex justify-center w-full text-xs items-center text-info">
-          <InfoCircledIcon className="text-grey-500" />
-          <a href={timeDifferenceQuery} className="ml-1 text-grey-500" title={exactDifference}>
-            Temporal difference: {humanFriendlyDifference}
-          </a>
-        </div>
-      );
+    let humanFriendlyDifference = '';
+    if (years > 0) {
+      humanFriendlyDifference = `${years} year${years > 1 ? 's' : ''} and ${months % 12} month${months > 1 ? 's' : ''}`;
+    } else if (months > 0) {
+      humanFriendlyDifference = `${months} month${months > 1 ? 's' : ''} and ${weeks % 4} week${weeks > 1 ? 's' : ''}`;
+    } else if (weeks > 0) {
+      humanFriendlyDifference = `${weeks} week${weeks > 1 ? 's' : ''} and ${days % 7} day${days > 1 ? 's' : ''}`;
+    } else if (days > 0) {
+      humanFriendlyDifference = `${days} day${days > 1 ? 's' : ''} and ${hours % 24} hour${hours > 1 ? 's' : ''}`;
+    } else if (hours > 0) {
+      humanFriendlyDifference = `${hours} hour${hours > 1 ? 's' : ''} and ${minutes % 60} minute${minutes > 1 ? 's' : ''}`;
+    } else {
+      humanFriendlyDifference = `${minutes} minute${minutes > 1 ? 's' : ''}`;
     }
+
+    const exactDifference = `${years} year${years !== 1 ? 's' : ''}, ${months % 12} month${months % 12 !== 1 ? 's' : ''}, ${weeks % 4} week${weeks % 4 !== 1 ? 's' : ''}, ${days % 7} day${days % 7 !== 1 ? 's' : ''}, ${hours % 24} hour${hours % 24 !== 1 ? 's' : ''}, ${minutes % 60} minute${minutes % 60 !== 1 ? 's' : ''}`;
+
+    const combinedSystems = currentEvalItem.systems.map((system: any) => system.name).concat(followingEvalItem.systems.map((system: any) => system.name));
+    const randomSystem = combinedSystems[Math.floor(Math.random() * combinedSystems.length)];
+    const systemData = systems.find(
+      (system: any) => system.name === randomSystem
+    );
+    const systemSearchLink = systemData?.search_link || `https://www.google.com/search?q=`;
+    // create human friendly time stamps in dates and hours
+    let currentHumanFriendlyTimestamp = '';
+    let followingHumanFriendlyTimestamp = '';
+    if (weeks > 0) {
+      currentHumanFriendlyTimestamp = currentTimestamp.toLocaleDateString();
+      followingHumanFriendlyTimestamp = followingTimestamp.toLocaleDateString();
+    } else {
+      currentHumanFriendlyTimestamp = currentTimestamp.toLocaleString();
+      followingHumanFriendlyTimestamp = followingTimestamp.toLocaleString();
+    }
+    
+    const timeDifferenceQuery = `${systemSearchLink}what+is+the+time+difference+between+${followingHumanFriendlyTimestamp}+and+${currentHumanFriendlyTimestamp}`;
+
+    return (
+      <div className="flex justify-center w-full text-xs items-center text-info">
+        <InfoCircledIcon className="text-grey-500" />
+        <a href={timeDifferenceQuery} className="ml-1 text-grey-500" title={exactDifference}>
+          Temporal difference: {humanFriendlyDifference}
+        </a>
+      </div>
+    );
   }
   return null;
 };
