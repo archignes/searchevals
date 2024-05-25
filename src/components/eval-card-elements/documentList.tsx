@@ -1,14 +1,9 @@
 import React from "react";
+import { documentItem } from '@/src/types/';
 
 interface DocumentListProps {
+  documents: Array<documentItem>;
   documents_type: string;
-  documents: Array<{
-    url: string;
-    title: string;
-    author: string;
-    publisher?: string;
-    date: string;
-  }>;
   className?: string;
 }
 
