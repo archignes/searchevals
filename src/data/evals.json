@@ -2075,6 +2075,43 @@
     "following": ["is-it-illegal-not-to-do-taxes-in-canada-pr0zac"],
     "evaluation_target": ["featured snippet"],
     "evaluator_id": "danielsgriffin"
+  },
+  {
+    "id": "can-i-use-gasoline-to-cook-spaghetti-joeuchill",
+    "date": "2024-05-23",
+    "query": "can i use gasoline to cook spaghetti",
+    "url": "https://mastodon.social/@JoeUchill/112493317168967705",
+    "systems": [
+      "google"
+    ],
+    "content": "Can I use gasoline to cook spaghetti faster?",
+    "images": [
+      {
+        "url": "https://files.mastodon.social/media_attachments/files/112/493/316/164/886/273/original/e03102ab11a9621e.png"
+      }
+    ],
+    "connected": ["can-i-use-gasoline-to-cook-spaghetti-sambowne"],
+    "evaluator_id": "joeuchill",
+    "evaluation_target": ["generated response"]
+  },
+  {
+    "id": "can-i-use-gasoline-to-cook-spaghetti-sambowne",
+    "date": "2024-05-23",
+    "query": "can i use gasoline to cook spaghetti",
+    "following": ["can-i-use-gasoline-to-cook-spaghetti-joeuchill"],
+    "url": "https://infosec.exchange/@sambowne/112493365685659547",
+    "systems": [
+      "google"
+    ],
+    "content": "@JoeUchill Wow, I thought this was fake but I was able to reproduce it easily",
+    "images": [
+      {
+        "url": "https://media.infosec.exchange/infosec.exchange/media_attachments/files/112/493/365/505/479/325/original/ed001b31566ec01a.png"
+      }
+    ],
+    "evaluator_id": "sambowne",
+    "evaluation_target": ["generated response"]
   }
+
 ]
 

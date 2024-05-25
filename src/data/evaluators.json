@@ -530,6 +530,20 @@
   "role": "web developer",
   "URL": "https://twitter.com/pr0zac",
   "conflict": []
+},
+{
+  "id": "joeuchill",
+  "name": "Joe Uchill",
+  "role": "infosec reporter",
+  "URL": "https://twitter.com/joeuchill",
+  "conflict": []
+},
+{
+  "id": "sambowne",
+  "name": "Sam Bowne",
+  "role": "computer networking and security instructor",
+  "URL": "https://twitter.com/sambowne",
+  "conflict": []
 }
 ]
 

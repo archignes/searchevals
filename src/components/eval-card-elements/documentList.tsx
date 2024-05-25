@@ -18,11 +18,11 @@ export const DocumentList: React.FC<DocumentListProps> = ({ documents, documents
       <span className="text-lg font-semibold">{documents_type}:</span>
       <ul className={`ml-1 list-none flex flex-col gap-1 ${className}`}>
         {documents.map((resource, index) => (
-          <li key={index} className="w-max">
+          <li key={index} className="w-full">
             <div className="p-2 w-full flex flex-col space-y-0">
-              <a href={resource.url} className="hover:bg-blue-100 rounded-md p-2 underline">
-                <span className="font-medium">{resource.title}</span>
-              </a>
+                <a href={resource.url}
+                className="break-words font-medium hover:bg-blue-100 rounded-md p-2 underline w-full">
+                {resource.title}</a>
               <span className="ml-4 text-gray-500">author: {resource.author}</span>
               {resource.publisher && (
                 <span className="ml-4 text-gray-500">publisher: {resource.publisher}</span>
