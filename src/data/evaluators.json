@@ -621,7 +621,48 @@
   "role": "software designer; investor",
   "URL": "https://twitter.com/soleio",
   "conflict": ["perplexity-ai"]
+},
+{
+  "id": "CyrusShepard",
+  "name": "Cyrus Shephard",
+  "role": "SEO",
+  "URL": "https://x.com/cyrusshepard"
+},
+{
+  "id": "xhfloz",
+  "name": "XH",
+  "role": "founder at mmm.page",  
+  "URL": "https://x.com/xhfloz"
+},
+{
+  "id": "arun31415",
+  "name": "Arun",
+  "role": "software developer",
+  "URL": "https://x.com/arun31415"
+},{
+  "id": "re_modulate",
+  "name": "re_modulate",
+  "role": "Unknown",
+  "URL": "https://x.com/re_modulate"
+},
+{
+  "id": "JaroszewskiK",
+  "name": "Kamil Jaroszewski ",
+  "role": "unknown",
+  "URL": "https://x.com/JaroszewskiK"
+},
+{
+  "id": "pranay01",
+  "name": "Pranay Prateek",
+  "role": "building SigNoz",
+  "URL": "https://x.com/pranay01"
+},{
+  "id": "GergelyOrosz",
+  "name": "Gergely Orosz",
+  "role": "software engineer, author",
+  "URL": "https://x.com/GergelyOrosz"
 }
+ 
 ]
 
 

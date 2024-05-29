@@ -2402,6 +2402,210 @@
     "evaluator_id": "soleio",
     "evaluation_target": ["generated response"],
     "following": ["how-many-muslim-presidents-has-the-us-had-MelMitchell1"]
+  },
+  {
+    "id": "how-to-go-keto-lilyraynyc",
+    "date": "2024-05-25",
+    "datetime": "2024-05-25T14:37:42.000Z",
+    "query": "how to go keto",
+    "url": "https://x.com/lilyraynyc/status/1794377305633984724",
+    "content": "This small ecomm website was cited in AIO for a health query - \"how to go keto\" - and it does not rank anywhere in Google's U.S. results for that keyword\\n\\nGoogle's scroll-to-text feature highlights text from that page that... does not appear anywhere on that page\\n\\nIt just links to the homepage of an ecomm store. Lucky them.",
+    "systems": [
+      "google"
+    ],
+    "images": [
+      {
+        "url": "https://pbs.twimg.com/media/GOboHf_XQAAvKW8?format=jpg&name=900x900",
+        "caption": "",
+        "annotated": false,
+        "extension_modified": false
+      },
+      {
+        "url": "https://pbs.twimg.com/media/GOboT99WsAAaGKI?format=jpg&name=large",
+        "caption": "",
+        "annotated": false,
+        "extension_modified": false
+      }
+    ],
+    "evaluator_id": "lilyraynyc"
+  }, {
+    "id": "google-sheets-formula-extract-root-domain-CyrusShepard",
+    "date": "2024-05-21",
+    "datetime": "2024-05-21T04:31:48.000Z",
+    "query": "google sheets formula extract root domain",
+    "url": "https://x.com/CyrusShepard/status/1792775276004626747",
+    "content": "Wrong info from Google's AI answers are:\\n\\n1) All over social media and \\n2) Incredibly easy to find\\n\\nA simple click on the source link clearly says this is the wrong solution\\n\\nEither Google is going to slow this rollout until it fixes it, or wait for the @nytimes to embarrass it",
+    "systems": [
+      "google"
+    ],
+    "images": [
+      {
+        "url": "https://pbs.twimg.com/media/GOE2Ypta4AAJcv0?format=jpg&name=medium",
+        "caption": "",
+        "annotated": false,
+        "extension_modified": false
+      }
+    ],
+    "evaluator_id": "CyrusShepard"
+  },
+  {
+    "id": "essays-about-how-it-feels-to-finish-a-long-project-xhfloz",
+    "date": "2024-05-27",
+    "datetime": "2024-05-27T18:06:32.000Z",
+    "query": "essays about how it feels to finish a long project",
+    "url": "https://x.com/xhfloz/status/1795154637890162860",
+    "content": "",
+    "eval_parts": [
+  {
+    "content": "http://exa.ai is really remarkable. It's one of the few software that's stuck from first use.\\n\\nBelow is what I find with Google for \"essays about how it feels to finish a long project\" ——— mostly blogspam.",
+    "id": "part-1",
+    "images": [
+      {
+        "url": "https://pbs.twimg.com/media/GOmrCGwXIAA8jXM?format=jpg&name=large"
+      }
+    ]
+  },
+  {
+    "content": "http://exa.ai's results, by contrast. Real essays written by people, describing the exact experience I'm looking to have described.",
+    "id": "part-2",
+    "images": [
+      {
+        "url": "https://pbs.twimg.com/media/GOmrH0OWcAADCme?format=jpg&name=small"
+      },
+      {
+        "url": "https://pbs.twimg.com/media/GOmrL-VXEAAma_n?format=jpg&name=small"
+      }
+    ]
+  },
+  {
+    "content": "And even if they're not exact matches, the beauty of human responses is that it gives you starting points.\\n\\nWhat else have they written? Who are their friends? What do they link to? What else is on that site? So on and so forth.",
+    "id": "part-3",
+    "images": []
+  }
+  ],
+    "systems": [
+      "google",
+      "exa"
+    ],
+    "images": [],
+    "evaluator_id": "xhfloz"
+  },
+  {
+    "id": "js-request-disable-cors-arun31415",
+    "date": "2024-05-28",
+    "datetime": "2024-05-28T10:59:59.000Z",
+    "query": "js request disable cors",
+    "url": "https://x.com/arun31415/status/1795409678349771076",
+    "content": "I switched to @brave search when DDG was down. I might stick with it.\\nNice features I've seen so far:\\n1. quick answers from LLM\\n2. results from discussion forums (no need to type reddit)\\n+ Privacy preserving!",
+    "systems": [
+      "brave"
+    ],
+    "images": [
+      {
+        "url": "https://pbs.twimg.com/media/GOqScJ6XoAAq3yc?format=jpg&name=medium",
+        "caption": "",
+        "annotated": false,
+        "extension_modified": false
+      }
+    ],
+    "evaluator_id": "arun31415"
+  },
+  {
+    "id": "luke-16:3-kjv-re_modulate",
+    "date": "2024-05-26",
+    "datetime": "2024-05-26T17:27:05.000Z",
+    "query": "luke 16:3 kjv",
+    "evaluation_target": ["query understanding"],
+    "url": "https://x.com/re_modulate/status/1795336064091197509",
+    "content": "Just one gripe here. Every time so far, if I search for instance \"luke 16:3 kjv\" the results will show entirely different verses. Why?",
+    "systems": [
+      "brave"
+    ],
+    "images": [
+      {
+        "url": "https://pbs.twimg.com/media/GOpQoKLWYAApBds?format=jpg&name=large",
+        "caption": "",
+        "annotated": false,
+        "extension_modified": false
+      }
+    ],
+    "evaluator_id": "re_modulate"
+  },
+  {
+    "id": "switching-to-a-professional-seller-account-amazon-JaroszewskiK",
+    "date": "2024-05-27",
+    "datetime": "2024-05-27T18:06:32.000Z",
+    "query_interpolated":true,
+    "query": "switching to a professional seller account Amazon",
+    "url": "https://x.com/JaroszewskiK/status/1795398898707546262",
+    "content": "This is worse than google",
+    "systems": [
+      "google",
+      "exa"
+    ],
+    "images": [
+      {
+        "url": "https://pbs.twimg.com/media/GOqJx47XsAArTC8?format=jpg&name=large",
+        "caption": "",
+        "annotated": false,
+        "extension_modified": false
+      },
+      {
+        "url": "https://pbs.twimg.com/media/GOqJx49X0AAUNaG?format=jpg&name=large",
+        "caption": "",
+        "annotated": false,
+        "extension_modified": false
+      }
+    ],
+    "evaluator_id": "JaroszewskiK"
+  },
+  {
+    "id": "open-source-datadog-alternative-pranay01",
+    "date": "2023-04-13",
+    "datetime": "2023-04-13T23:59:51.000Z",
+    "query": "open source datadog alternative",
+    "evaluation_target": ["generated response"],
+    "url": "https://x.com/pranay01/status/1646664528619540480",
+    "content": "What does ChatGPT thinks as the best open source datadog alternative \\n\\nAny guesses?\\n\\nhttps://phind.com/search?cache=4f70279c-5024-47ac-bd67-06fa68b759cb…\\n\\nlove what folks @phindsearch are doing. @MichaelRoyzen",
+    "systems": [
+      "phind-search"
+    ],
+    "images": [
+      {
+        "url": "https://pbs.twimg.com/media/Ftof6tOaQAAHtsv?format=jpg&name=medium",
+        "caption": "",
+        "annotated": false,
+        "extension_modified": false
+      }
+    ],
+    "evaluator_id": "pranay01"
+  },
+  {
+    "id": "mentoring-developers-GergelyOrosz",
+    "date": "2022-03-25",
+    "datetime": "2022-03-25T06:32:23.000Z",
+    "query": "mentoring developers",
+    "evaluation_target": ["sponsored search results", "relevant search results"],
+    "url": "https://x.com/GergelyOrosz/status/1507243982430031883",
+    "content": "Google is becoming an advertising engine for an ever-increasing number of results. My blog post is the #1 non-ad result for the term \"mentoring developers\" and is exactly on this topic.\\n\\nTry finding relevant search results without scrolling on desktop or mobile. You can't.",
+    "systems": [
+      "google"
+    ],
+    "images": [
+      {
+        "url": "https://pbs.twimg.com/media/FOrOStgWUBYPYGN?format=jpg&name=900x900",
+        "caption": "",
+        "annotated": false,
+        "extension_modified": false
+      },
+      {
+        "url": "https://pbs.twimg.com/media/FOrOOCjXMAI2SVK?format=jpg&name=900x900",
+        "caption": "",
+        "annotated": false,
+        "extension_modified": false
+      }
+    ],
+    "evaluator_id": "GergelyOrosz"
   }
 ]
 

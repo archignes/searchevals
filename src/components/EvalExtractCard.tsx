@@ -22,13 +22,17 @@ const EvalExtractCard: React.FC<EvalExtractCardProps> = ({ evalItem, evalCardIte
     let contentWithNewlines: string[] = []
     let skipBlockQuote = false;
     if (evalCardItem && evalCardItem.content) {
-        contentWithNewlines = evalCardItem.content.split(/\\n/);
-    };
-    if (!evalCardItem ) {
+        const content = evalCardItem.content.replace(
+            /http:\/\/exa\.ai/g,
+            '<a style="color: #3b82f6; cursor: pointer; text-decoration: none;" href="http://exa.ai" onmouseover="this.style.textDecoration=\'underline\'" onmouseout="this.style.textDecoration=\'none\'">exa.ai</a>'
+        );
+        contentWithNewlines = content.split(/\\n/);
+    }
+    if (!evalCardItem) {
         return <p>Item not found</p>;
     }
     if (evalCardItem.content === "" && evalCardItem.images) {
-        skipBlockQuote = true
+        skipBlockQuote = true;
     } else if (!contentWithNewlines) {
         return <p>Item not found</p>;
     }
@@ -48,8 +52,7 @@ const EvalExtractCard: React.FC<EvalExtractCardProps> = ({ evalItem, evalCardIte
                         {skipBlockQuote && (<br></br>)}
                         {!skipBlockQuote && (
                         <blockquote className="my-2">
-                            <p className="text-l text-gray-900 dark:text-white before:text-2xl before:text-gray-400 before:content-['“']">{contentWithNewlines.map((line, index) => (<span key={index}>{line}<br></br></span>
-                            ))}</p>
+                            <p className="text-l text-gray-900 dark:text-white before:text-2xl before:text-gray-400 before:content-['“']" dangerouslySetInnerHTML={{ __html: contentWithNewlines.join('<br>') }}></p>
                         </blockquote>
                         )}
                     </figure>

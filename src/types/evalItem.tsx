@@ -32,6 +32,7 @@ export type evalTarget =
   | "featured snippet" 
   | "generated response" 
   | "top results" 
+  | "relevant search results"
   | "generated response v. list of results"
   | "fresh retreival"
   | "hallucination"
