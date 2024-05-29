@@ -2605,7 +2605,29 @@
         "extension_modified": false
       }
     ],
-    "evaluator_id": "GergelyOrosz"
+    "evaluator_id": "GergelyOrosz",
+    "connected": ["mentoring-developers-danielsgriffin"]
+  },
+  {
+    "id": "mentoring-developers-danielsgriffin",
+    "date": "2024-05-29",
+    "datetime": "2024-05-29T18:27:54.000Z",
+    "query": "mentoring developers",
+    "following": ["mentoring-developers-GergelyOrosz"],
+    "url": "https://x.com/danielsgriffin/status/1795884788261466473",
+    "content": "Looks like Google as at least improved for this search query...",
+    "systems": [
+      "google"
+    ],
+    "images": [
+      {
+        "url": "https://pbs.twimg.com/media/GOxDn63aMAcELpc?format=jpg&name=large",
+        "caption": "",
+        "annotated": false,
+        "extension_modified": false
+      }
+    ],
+    "evaluator_id": "danielsgriffin"
   }
 ]
 
