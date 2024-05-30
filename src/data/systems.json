@@ -212,5 +212,20 @@
   "name": "OpenPerplex",
   "id": "openperplex",
   "search_link": "https://openperplex.com/"
+},
+{
+  "name": "Devv",
+  "id": "devv",
+  "search_link": "https://devv.ai/search/%s"
+},
+{
+  "name": "Morphic",
+  "id": "morphic",
+  "search_link": "https://morphic.sh/"
+},
+{
+  "name": "AskPandi",
+  "id": "ask-pandi",
+  "search_link": "https://askpandi.com/ask"
 }
 ]

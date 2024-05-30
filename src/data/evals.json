@@ -2628,6 +2628,126 @@
       }
     ],
     "evaluator_id": "danielsgriffin"
+  },{
+    "id": "should-you-put-gasoline-on-spaghetti-brave",
+    "date": "2024-05-29",
+    "datetime": "2024-05-29T18:57:49.000Z",
+    "query": "should you put gasoline on spaghetti",
+    "url": "https://x.com/brave/status/1795892316755939748",
+    "content": "We know you've seen some bad info from Google Search floating around so we wanted to set the record straight with our own search results.",
+    "systems": [
+      "brave",
+      "google"
+    ],
+    "images": [
+      {
+        "url": "https://pbs.twimg.com/media/GOxHa5PW8AAnfOk?format=png&name=small",
+        "caption": "",
+        "annotated": false,
+        "extension_modified": false
+      },
+      {
+        "url": "https://pbs.twimg.com/media/GOxHa5QXkAAXb6t?format=png&name=small",
+        "caption": "",
+        "annotated": false,
+        "extension_modified": false
+      },
+      {
+        "url": "https://pbs.twimg.com/media/GOxKYY9XQAAuNQu?format=png&name=small",
+        "caption": "",
+        "annotated": false,
+        "extension_modified": false
+      }
+    ],
+    "evaluator_id": "brave"
+  },{
+    "id": "does-an-18-year-old-have-any-point-of-reference-danielsgriffin",
+    "date": "2024-05-30",
+    "datetime": "2024-05-30T13:30:59.000Z",
+    "query": "does an 18 year old have any point of reference for what a telegraph is? have they seen it in prominent films/tv?",
+    "url": "https://x.com/danielsgriffin/status/1796172457872912873",
+    "content": "",
+    "eval_parts": [
+      {
+        "content": "[does an 18 year old have any point of reference for what a telegraph is? have they seen it in prominent films/tv?]\\n\\nA fun query to run through the new search tools.\\n\\nI have not found a response I'm impressed with.\\nOlder media, unhelpful, unnecessary claims, irrelevant sources...",
+        "id": "part-1",
+        "images": [
+          {
+            "url": "https://pbs.twimg.com/media/GO1B5kMboAArwmL?format=jpg&name=small"
+          },
+          {
+            "url": "https://pbs.twimg.com/media/GO1CqRzbgAAfkaD?format=jpg&name=small"
+          },
+          {
+            "url": "https://pbs.twimg.com/media/GO1CvN5boAEiIix?format=jpg&name=small"
+          },
+          {
+            "url": "https://pbs.twimg.com/media/GO1C9MubgAED7qQ?format=jpg&name=small"
+          }
+        ]
+      },
+      {
+        "content": "Here we have one that is at least not jarring, another that shows a healthy humility for null results, and two consecutive responses from Google's Gemini...",
+        "id": "part-2",
+        "images": [
+          {
+            "url": "https://pbs.twimg.com/media/GO1D8EGbUAArJiO?format=jpg&name=small"
+          },
+          {
+            "url": "https://pbs.twimg.com/media/GO1EgYJa4AAbtDu?format=jpg&name=small"
+          },
+          {
+            "url": "https://pbs.twimg.com/media/GO1FigRaMAAo17J?format=jpg&name=small"
+          },
+          {
+            "url": "https://pbs.twimg.com/media/GO1Fmxea8AACC3a?format=jpg&name=small"
+          }
+        ]
+      },
+      {
+        "content": "The here response is much less helpful than the sources (they seem filtered for relevance, something some of the others don't seem to be doing?), but the overall search experience is definitely lacking.",
+        "id": "part-3",
+        "images": [
+          {
+            "url": "https://pbs.twimg.com/media/GO1Gng9bcAAzPIz?format=jpg&name=medium"
+          }
+        ]
+      },
+      {
+        "content": "More...",
+        "id": "part-4",
+        "images": [
+          {
+            "url": "https://pbs.twimg.com/media/GO1HavLbAAAeaEW?format=jpg&name=small"
+          },
+          {
+            "url": "https://pbs.twimg.com/media/GO1ICnyaUAATPOF?format=jpg&name=small"
+          },
+          {
+            "url": "https://pbs.twimg.com/media/GO1IMZDaIAAsW3Z?format=jpg&name=small"
+          },
+          {
+            "url": "https://pbs.twimg.com/media/GO1IhD3bQAAs8E-?format=jpg&name=small"
+          }
+        ]
+      }
+    ],
+    "systems": [
+      "perplexity-ai-copilot",
+      "microsoft-copilot",
+      "brave",
+      "kagi",
+      "youchat-research-mode",
+      "ask-pandi",
+      "google-gemini",
+      "cohere-coral",
+      "morphic",
+      "devv",
+      "exa",
+      "andi-search"
+    ],
+    "images": [],
+    "evaluator_id": "danielsgriffin"
   }
 ]
 
