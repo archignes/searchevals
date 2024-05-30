@@ -1310,10 +1310,10 @@
     "evaluator_id": "thosiawa",
     "images": [
       {
-        "url": "https://pbs.twimg.com/media/GDde4jmWgAAMxjn?format=jpg&name=small"
+        "url": "https://pbs.twimg.com/media/GDde4jmWgAAMxjn?format=jpg&name=large"
       },
       {
-        "url": "https://pbs.twimg.com/media/GDdefQ9XQAACzci?format=jpg&name=small"
+        "url": "https://pbs.twimg.com/media/GDdefQ9XQAACzci?format=jpg&name=large"
       }
     ]
   },
@@ -1347,10 +1347,10 @@
     "evaluator_id": "_ravishah",
     "images": [
       {
-        "url": "https://pbs.twimg.com/media/GCTd2_oXEAAkNFN?format=jpg&name=small"
+        "url": "https://pbs.twimg.com/media/GCTd2_oXEAAkNFN?format=jpg&name=large"
       },
       {
-        "url": "https://pbs.twimg.com/media/GCTd375WgAAnUbC?format=jpg&name=small"
+        "url": "https://pbs.twimg.com/media/GCTd375WgAAnUbC?format=jpg&name=large"
       }
     ]
   },
@@ -1640,7 +1640,7 @@
         "query": "1000 km to miles"
       },
       {
-        "url": "https://pbs.twimg.com/media/GOEzcHYWYAAP3oM?format=png&name=small",
+        "url": "https://pbs.twimg.com/media/GOEzcHYWYAAP3oM?format=png&name=large",
         "query": "1000km to miles"
       },
       {
@@ -1698,10 +1698,10 @@
     "content": "You have to command it like it’s chatGBT now I guess. Good work google.",
     "images": [
       {
-        "url": "https://pbs.twimg.com/media/GOGvkTHXIAE6sBP?format=jpg&name=small"
+        "url": "https://pbs.twimg.com/media/GOGvkTHXIAE6sBP?format=jpg&name=large"
       },
       {
-        "url": "https://pbs.twimg.com/media/GOGvkTHWsAAGWcv?format=jpg&name=small",
+        "url": "https://pbs.twimg.com/media/GOGvkTHWsAAGWcv?format=jpg&name=large",
         "query": "convert 1000 km to miles"
       }
     ],
@@ -1738,11 +1738,11 @@
     "content": "Google's search results AI overview claims that prosecutors have to prove you intended to kill someone to charge you with felony murder and that turning over Brady material is optional.",
     "images": [
       {
-        "url": "https://pbs.twimg.com/media/GOHOxa9XMAEzcKt?format=png&name=small",
+        "url": "https://pbs.twimg.com/media/GOHOxa9XMAEzcKt?format=png&name=large",
         "query": "felony murder"
       },
       {
-        "url": "https://pbs.twimg.com/media/GOHPB13XMAIydpH?format=png&name=small",
+        "url": "https://pbs.twimg.com/media/GOHPB13XMAIydpH?format=png&name=large",
         "query": "brady material"
       }
     ],
@@ -1802,7 +1802,7 @@
         "url": "https://pbs.twimg.com/media/GOI0ROdbkAABdDf?format=jpg&name=900x900"
       },
       {
-        "url": "https://pbs.twimg.com/media/GOI1CYGa4AAqvvT?format=jpg&name=small"
+        "url": "https://pbs.twimg.com/media/GOI1CYGa4AAqvvT?format=jpg&name=large"
       },
       {
         "url": "https://pbs.twimg.com/media/GOI3PK3asAA26Z8?format=jpg&name=900x900"
@@ -2042,7 +2042,7 @@
         "content": "Love how Google automatically pulls data from websites now and presents it so you don’t ever need to click to get the necessary info! Anyway off to cancel my appointment with a tax accountant I had for next week!",
         "images": [
           {
-            "url": "https://pbs.twimg.com/media/EhCdSTRXgAE0S2l?format=jpg&name=small"
+            "url": "https://pbs.twimg.com/media/EhCdSTRXgAE0S2l?format=jpg&name=large"
           }
         ]
       },
@@ -2470,10 +2470,10 @@
     "id": "part-2",
     "images": [
       {
-        "url": "https://pbs.twimg.com/media/GOmrH0OWcAADCme?format=jpg&name=small"
+        "url": "https://pbs.twimg.com/media/GOmrH0OWcAADCme?format=jpg&name=large"
       },
       {
-        "url": "https://pbs.twimg.com/media/GOmrL-VXEAAma_n?format=jpg&name=small"
+        "url": "https://pbs.twimg.com/media/GOmrL-VXEAAma_n?format=jpg&name=large"
       }
     ]
   },
@@ -2641,19 +2641,19 @@
     ],
     "images": [
       {
-        "url": "https://pbs.twimg.com/media/GOxHa5PW8AAnfOk?format=png&name=small",
+        "url": "https://pbs.twimg.com/media/GOxHa5PW8AAnfOk?format=png&name=large",
         "caption": "",
         "annotated": false,
         "extension_modified": false
       },
       {
-        "url": "https://pbs.twimg.com/media/GOxHa5QXkAAXb6t?format=png&name=small",
+        "url": "https://pbs.twimg.com/media/GOxHa5QXkAAXb6t?format=png&name=large",
         "caption": "",
         "annotated": false,
         "extension_modified": false
       },
       {
-        "url": "https://pbs.twimg.com/media/GOxKYY9XQAAuNQu?format=png&name=small",
+        "url": "https://pbs.twimg.com/media/GOxKYY9XQAAuNQu?format=png&name=large",
         "caption": "",
         "annotated": false,
         "extension_modified": false
@@ -2673,16 +2673,16 @@
         "id": "part-1",
         "images": [
           {
-            "url": "https://pbs.twimg.com/media/GO1B5kMboAArwmL?format=jpg&name=small"
+            "url": "https://pbs.twimg.com/media/GO1B5kMboAArwmL?format=jpg&name=large"
           },
           {
-            "url": "https://pbs.twimg.com/media/GO1CqRzbgAAfkaD?format=jpg&name=small"
+            "url": "https://pbs.twimg.com/media/GO1CqRzbgAAfkaD?format=jpg&name=large"
           },
           {
-            "url": "https://pbs.twimg.com/media/GO1CvN5boAEiIix?format=jpg&name=small"
+            "url": "https://pbs.twimg.com/media/GO1CvN5boAEiIix?format=jpg&name=large"
           },
           {
-            "url": "https://pbs.twimg.com/media/GO1C9MubgAED7qQ?format=jpg&name=small"
+            "url": "https://pbs.twimg.com/media/GO1C9MubgAED7qQ?format=jpg&name=large"
           }
         ]
       },
@@ -2691,16 +2691,16 @@
         "id": "part-2",
         "images": [
           {
-            "url": "https://pbs.twimg.com/media/GO1D8EGbUAArJiO?format=jpg&name=small"
+            "url": "https://pbs.twimg.com/media/GO1D8EGbUAArJiO?format=jpg&name=large"
           },
           {
-            "url": "https://pbs.twimg.com/media/GO1EgYJa4AAbtDu?format=jpg&name=small"
+            "url": "https://pbs.twimg.com/media/GO1EgYJa4AAbtDu?format=jpg&name=large"
           },
           {
-            "url": "https://pbs.twimg.com/media/GO1FigRaMAAo17J?format=jpg&name=small"
+            "url": "https://pbs.twimg.com/media/GO1FigRaMAAo17J?format=jpg&name=large"
           },
           {
-            "url": "https://pbs.twimg.com/media/GO1Fmxea8AACC3a?format=jpg&name=small"
+            "url": "https://pbs.twimg.com/media/GO1Fmxea8AACC3a?format=jpg&name=large"
           }
         ]
       },
@@ -2718,16 +2718,16 @@
         "id": "part-4",
         "images": [
           {
-            "url": "https://pbs.twimg.com/media/GO1HavLbAAAeaEW?format=jpg&name=small"
+            "url": "https://pbs.twimg.com/media/GO1HavLbAAAeaEW?format=jpg&name=large"
           },
           {
-            "url": "https://pbs.twimg.com/media/GO1ICnyaUAATPOF?format=jpg&name=small"
+            "url": "https://pbs.twimg.com/media/GO1ICnyaUAATPOF?format=jpg&name=large"
           },
           {
-            "url": "https://pbs.twimg.com/media/GO1IMZDaIAAsW3Z?format=jpg&name=small"
+            "url": "https://pbs.twimg.com/media/GO1IMZDaIAAsW3Z?format=jpg&name=large"
           },
           {
-            "url": "https://pbs.twimg.com/media/GO1IhD3bQAAs8E-?format=jpg&name=small"
+            "url": "https://pbs.twimg.com/media/GO1IhD3bQAAs8E-?format=jpg&name=large"
           }
         ]
       }
