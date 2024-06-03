@@ -2748,6 +2748,250 @@
     ],
     "images": [],
     "evaluator_id": "danielsgriffin"
+  },
+  {
+    "id": "when-is-the-genai-summit-in-san-francisco-RichardSocher",
+    "date": "2024-05-30",
+    "datetime": "2024-05-30T19:01:57.000Z",
+    "query": "when is the genai summit in san francisco",
+    "url": "https://x.com/RichardSocher/status/1796255745840922988",
+    "evaluation_target": ["generated response"],
+    "content": "",
+    "systems": [
+      "youchat-smart-mode"
+    ],
+    "images": [
+      {
+        "url": "https://pbs.twimg.com/media/GO2VDvba8AAuZhF?format=jpg&name=medium",
+        "caption": "",
+        "annotated": false,
+        "extension_modified": false
+      }
+    ],
+    "evaluator_id": "RichardSocher"
+  },
+  {
+    "id": "ugliest-language-in-india-PCMohanMP",
+    "date": "2021-06-03",
+    "datetime": "2021-06-03T09:16:13.000Z",
+    "query": "ugliest language in india",
+    "url": "https://x.com/PCMohanMP/status/1400380793260679171",
+    "content": "Home to the great Vijayanagara Empire, #Kannada language has a rich heritage, a glorious legacy and a unique culture. One of the world’s oldest languages Kannada had great scholars who wrote epics much before Geoffrey Chaucer was born in the 14th century. Apologise @GoogleIndia.",
+    "systems": [
+      "google"
+    ],
+    "images": [
+      {
+        "url": "https://pbs.twimg.com/media/E28m53-UcAAIZiy?format=jpg&name=medium",
+        "caption": "",
+        "annotated": false,
+        "extension_modified": false
+      }
+    ],
+    "evaluator_id": "PCMohanMP",
+    "referenced_at": [
+      {
+        "url": "https://www.nytimes.com/2021/06/04/world/asia/google-india-language-kannada.html",
+        "title": "India’s ‘Ugliest’ Language? Google Had an Answer (and Drew a Backlash).",
+        "date": "2021-06-04",
+        "author": "Mike Ives and Paul Mozur",
+        "publisher": "The New York Times"
+      },
+      {
+        "url": "https://www.vice.com/en/article/k787ev/google-search-called-kannada-indias-ugliest-language",
+        "title": "Google Search Called This India’s ‘Ugliest Language.’ The Backstory Isn’t Pretty.",
+        "date": "2021-06-08",
+        "author": "Shamani Joshi",
+        "publisher": "Vice"
+      }
+    ]
+  },{
+    "id": "jew-amyspitalnick",
+    "date": "2022-12-27",
+    "datetime": "2022-12-27T17:14:09.000Z",
+    "query": "jew",
+    "url": "https://x.com/amyspitalnick/status/1607786925930291200",
+    "content": "So, if you Google the word “Jew” - this is what comes up as the definition.\\n\\n“Bargain with someone in a miserly or petty way.”\\n\\nSeriously, @Google?",
+    "systems": [
+      "google"
+    ],
+    "images": [
+      {
+        "url": "https://pbs.twimg.com/media/FlABr7mXwAEZegL?format=jpg&name=large",
+        "caption": "",
+        "annotated": false,
+        "extension_modified": false
+      }
+    ],
+    "evaluator_id": "amyspitalnick",
+    "referenced_at": [
+      {
+        "url": "https://www.cbsnews.com/news/google-search-jew-offensive-slur-dictionary-result/",
+        "title": "Google fixes leading definition of \"Jew\" after search engine results showed offensive slur",
+        "date": "2022-12-27",
+        "author": "Emily Mae Czachor",
+        "publisher": "CBS News"
+      }
+    ]
+  },{
+    "id": "what-is-a-scraper-site-danbarker",
+    "date": "2014-02-27",
+    "datetime": "2014-02-27T19:39:46.000Z",
+    "query": "what is a scraper site",
+    "url": "https://x.com/danbarker/status/439125570115223552",
+    "content": ".@mattcutts I think I have spotted one, Matt. Note the similarities in the content text:",
+    "systems": [
+      "google"
+    ],
+    "images": [
+      {
+        "url": "https://pbs.twimg.com/media/BhgWYSMCQAATdlv?format=png&name=900x900",
+        "caption": "",
+        "annotated": true,
+        "extension_modified": false
+      }
+    ],
+    "evaluator_id": "danbarker",
+    "referenced_at": [
+      {
+        "url": "https://www.searchenginepeople.com/blog/evolution-expansion-googles-featured-snippets.html",
+        "title": "The Evolution and Expansion of Google’s Featured Snippets",
+        "author": "Ann Smarty",
+        "date": "2018-07-17"
+      }
+    ]
+  },{
+    "id": "-i-would-be-more-inclined-to-just-carry-out-searchmartin",
+    "date": "2013-05-14",
+    "datetime": "2013-05-14T15:39:44.000Z",
+    "query": "\" I would be more inclined to just carry out a full SEO audit on a competitors website\"",
+    "url": "https://x.com/searchmartin/status/334332207843913730",
+    "content": "I REST MY CASE ABOUT GOOGLE BEING CRAP AT IDENTIFYING CONTENT SOURCES.",
+    "systems": [
+      "google"
+    ],
+    "images": [
+      {
+        "url": "https://pbs.twimg.com/media/BKPJXyXCMAIoB-7?format=jpg&name=medium",
+        "caption": "",
+        "annotated": false,
+        "extension_modified": true
+      }
+    ],
+    "evaluator_id": "searchmartin",
+    "connected": [
+      "if-i-were-going-to-look-for-seo-vulnerabilities-i-AdamJamesMason",
+      "-i-would-be-more-inclined-to-just-carry-out-danielsgriffin"
+    ]
+  },{
+    "id": "if-i-were-going-to-look-for-seo-vulnerabilities-i-AdamJamesMason",
+    "date": "2013-05-14",
+    "datetime": "2013-05-14T15:39:44.000Z",
+    "query": "\"If I were going to look for SEO vulnerabilities, I would be more inclined to just carry out a full SEO audit on a competitors website and look for weak spots, then try and optimise their weakness.\"",
+    "url": "https://x.com/AdamJamesMason/status/334336991833493505",
+    "content": "@searchmartin From what I can see your site has been omitted from search results!",
+    "systems": [
+      "google"
+    ],
+    "images": [
+      {
+        "url": "https://pbs.twimg.com/media/BKPNuQHCEAEWuxZ?format=png&name=900x900",
+        "caption": "",
+        "annotated": false,
+        "extension_modified": false
+      }
+    ],
+    "evaluator_id": "AdamJamesMason",
+    "following": ["-i-would-be-more-inclined-to-just-carry-out-searchmartin"]
+  },{
+    "id": "-i-would-be-more-inclined-to-just-carry-out-danielsgriffin",
+    "date": "2024-06-03",
+    "datetime": "2024-06-03T18:27:53.000Z",
+    "query": "\" I would be more inclined to just carry out a full SEO audit on a competitors website\"",
+    "url": "https://x.com/danielsgriffin/status/1797696724431216799",
+    "content": "Today:",
+    "systems": [
+      "google"
+    ],
+    "images": [
+      {
+        "url": "https://pbs.twimg.com/media/GPKzj1yaYAAkbSJ?format=jpg&name=small",
+        "caption": "",
+        "annotated": false,
+        "extension_modified": false
+      },
+      {
+        "url": "https://pbs.twimg.com/media/GPKzmOlakAIKBCg?format=jpg&name=small",
+        "caption": "",
+        "annotated": false,
+        "extension_modified": false
+      }
+    ],
+    "evaluator_id": "danielsgriffin",
+    "following":["-i-would-be-more-inclined-to-just-carry-out-searchmartin"]
+  },{
+    "id": "how-to-prevent-influenza-gfiorelli1",
+    "date": "2024-06-03",
+    "datetime": "2024-06-03T20:40:47.000Z",
+    "query": "how to prevent influenza",
+    "url": "https://x.com/gfiorelli1/status/1797730171342205202",
+    "content": "Hola @lilyraynyc! It seems that Google started to take seriously health queries' AIO answers, as they promised in their recent article. See this example: it is citing only official governmental websites as sources",
+    "systems": [
+      "google"
+    ],
+    "images": [
+      {
+        "url": "https://pbs.twimg.com/media/GPLR9WBXgAA-zet?format=jpg&name=medium",
+        "caption": "",
+        "annotated": false,
+        "extension_modified": false
+      }
+    ],
+    "evaluator_id": "gfiorelli1"
+  },{
+    "id": "african-countries-beginning-with-a-p-yuroon",
+    "date": "2024-06-02",
+    "datetime": "2024-06-02T17:12:12.000Z",
+    "query": "african countries beginning with a p",
+    "url": "https://x.com/yuroon/status/1797340326916448474",
+    "content": "",
+    "systems": [
+      "google"
+    ],
+    "images": [
+      {
+        "url": "https://pbs.twimg.com/media/GPFvc5qWUAEIh0X?format=jpg&name=medium",
+        "caption": "",
+        "annotated": false,
+        "extension_modified": false
+      }
+    ],
+    "evaluator_id": "yuroon",
+    "connected": [
+      "african-countries-beginning-with-a-p-danielsgriffin"
+    ]
+  },{
+    "id": "african-countries-beginning-with-a-p-danielsgriffin",
+    "date": "2024-06-04",
+    "datetime": "2024-06-04T21:21:12.000Z",
+    "query": "african countries beginning with a p",
+    "url": "https://x.com/danielsgriffin/status/1797740341845786886",
+    "content": "Oops. Replicated, a worse version, here:\\n[african countries beginning with a p]",
+    "systems": [
+      "google"
+    ],
+    "images": [
+      {
+        "url": "https://pbs.twimg.com/media/GPLbHaPbsAAXFQ-?format=jpg&name=medium",
+        "caption": "",
+        "annotated": false,
+        "extension_modified": false
+      }
+    ],
+    "evaluator_id": "danielsgriffin",
+    "following": [
+      "african-countries-beginning-with-a-p-yuroon"
+    ]
   }
 ]
 
