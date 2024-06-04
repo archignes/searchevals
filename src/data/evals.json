@@ -2992,6 +2992,46 @@
     "following": [
       "african-countries-beginning-with-a-p-yuroon"
     ]
+  },{
+    "id": "fide-candidates-2024-standings-iAnonymous3000",
+    "date": "2024-04-16",
+    "datetime": "2024-04-16T18:18:35.000Z",
+    "query": "fide candidates 2024 standings",
+    "url": "https://x.com/iAnonymous3000/status/1780299768427589859",
+    "content": "Comparing the search results of some of the most popular #private search engines: @brave, @DuckDuckGo, @startpage, @mojeek \\n\\nQuery: 'fide candidates 2024 standings'\\n\\nPersonal Favourite: Brave Search (with AI summarizer)\\n\\nLike the recent Summary feature added on Mojeek!",
+    "systems": [
+      "brave",
+      "duckduckgo",
+      "startpage",
+      "mojeek"
+    ],
+    "images": [
+      {
+        "url": "https://pbs.twimg.com/media/GLTjMddWYAAmr9g?format=jpg&name=large",
+        "caption": "",
+        "annotated": false,
+        "extension_modified": false
+      },
+      {
+        "url": "https://pbs.twimg.com/media/GLTjMdTXMAAmRSH?format=png&name=large",
+        "caption": "",
+        "annotated": false,
+        "extension_modified": false
+      },
+      {
+        "url": "https://pbs.twimg.com/media/GLTjMd_XYAAOcWO?format=jpg&name=large",
+        "caption": "",
+        "annotated": false,
+        "extension_modified": false
+      },
+      {
+        "url": "https://pbs.twimg.com/media/GLTj3dfW4AAICYb?format=jpg&name=large",
+        "caption": "",
+        "annotated": false,
+        "extension_modified": false
+      }
+    ],
+    "evaluator_id": "iAnonymous3000"
   }
 ]
 

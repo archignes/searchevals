@@ -227,5 +227,10 @@
   "name": "AskPandi",
   "id": "ask-pandi",
   "search_link": "https://askpandi.com/ask"
+},
+{
+  "name": "Startpage",
+  "id": "startpage",
+  "search_link": "https://www.startpage.com/do/search?q=%s"
 }
 ]
