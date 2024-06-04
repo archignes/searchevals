@@ -3032,6 +3032,47 @@
       }
     ],
     "evaluator_id": "iAnonymous3000"
+  },{
+    "id": "sundar-pichai-danielsgriffin",
+    "date": "2024-05-30",
+    "datetime": "2024-05-30T15:53:08.000Z",
+    "query": "sundar pichai",
+    "url": "https://x.com/danielsgriffin/status/1796231867139768340",
+    "content": "More, cc: @gaganghotra_",
+    "systems": [
+      "google"
+    ],
+    "images": [
+      {
+        "url": "https://pbs.twimg.com/media/GO19q7bbUAA9fsU?format=jpg&name=large",
+        "caption": "",
+        "annotated": false,
+        "extension_modified": false,
+        "query": "sundar pichai"
+      },
+      {
+        "url": "https://pbs.twimg.com/media/GO1-DMDaQAAHFJo?format=jpg&name=large",
+        "caption": "",
+        "annotated": false,
+        "extension_modified": false,
+        "query": "sergey brin"
+      },
+      {
+        "url": "https://pbs.twimg.com/media/GO1-y1baQAEEHgK?format=jpg&name=large",
+        "caption": "",
+        "annotated": false,
+        "extension_modified": false,
+        "query": "eric schmidt"
+      },
+      {
+        "url": "https://pbs.twimg.com/media/GO1_RBPbEAAOW2M?format=jpg&name=large",
+        "caption": "",
+        "annotated": false,
+        "extension_modified": false,
+        "query": "prabhakar raghavan"
+      }
+    ],
+    "evaluator_id": "danielsgriffin"
   }
 ]
 
