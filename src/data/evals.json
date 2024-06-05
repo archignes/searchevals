@@ -3233,6 +3233,46 @@
     "following": [
       "luke-16:3-kjv-re_modulate"
     ]
+  },{
+    "id": "anat-ashkenazi-danielsgriffin",
+    "date": "2024-06-05",
+    "datetime": "2024-06-05T13:39:45.000Z",
+    "query": "anat ashkenazi",
+    "url": "https://x.com/danielsgriffin/status/1798348990700040502",
+    "content": "",
+    "eval_parts": [
+      {
+        "content": "See something: New Alphabet CFO?\\nSearch something: [anat ashkenazi]\\nSee again the goofy social profile links from Google: Linking to the LinkedIn profile of an actress from Israel.\\n____\\nInstead of https://linkedin.com/in/anat-a-a334433/… ?",
+        "id": "part-1",
+        "images": [
+          {
+            "url": "https://pbs.twimg.com/media/GPUE07ibIAAklls?format=jpg&name=medium",
+            "caption": "",
+            "annotated": true,
+            "extension_modified": false
+          }
+        ]
+      },
+      {
+        "content": "",
+        "id": "part-2",
+        "images": [
+          {
+            "url": "https://pbs.twimg.com/media/GPUF18KakAAHInI?format=jpg&name=medium",
+            "caption": "",
+            "annotated": true,
+            "extension_modified": false,
+            "query": "anat ashkenazi linkedin"
+          }
+        ]
+      }
+    ],
+    "systems": [
+      "google"
+    ],
+    "images": [],
+    "evaluator_id": "danielsgriffin",
+    "evaluation_target": ["social profile links"]
   }
 ]
 

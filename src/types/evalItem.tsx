@@ -45,6 +45,7 @@ export type evalTarget =
   | "SERP"
   | "sponsored search results"
   | "unclear focus"
+  | "social profile links"
   | "knowledge cards"
   | "dates"
   | "lack of critical evaluation or contextualization of source material";
