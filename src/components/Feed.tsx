@@ -28,10 +28,9 @@ const Row = ({ sortedData, index, style, setSize, windowWidth }: {
   return (
     <div
       ref={rowRef}
-      className="mx-2 py-1"
+      className="mx-auto py-1 w-[95%] max-w-[800px] sm:w-[500px] md:w-[800px]"
       style={{
-        marginLeft: "20px",
-        marginRight: "20px"
+        
       }}
     >
       <MiniEvalCard
@@ -96,7 +95,7 @@ const Feed: React.FC = () => {
         <VariableSizeList
           ref={listRef}
           height={window.innerHeight - 150}
-          width="100%"
+          width={windowWidth}
           itemCount={sortedData.length}
           itemSize={getSize}
           itemData={sortedData}

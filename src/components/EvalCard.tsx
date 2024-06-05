@@ -2,6 +2,7 @@
 import React, { useContext, useState } from 'react';
 import { useRouter } from 'next/router';
 import { Link2Icon, InfoCircledIcon, DrawingPinIcon, ExclamationTriangleIcon } from '@radix-ui/react-icons';
+import {ReplicationRerouteCheck} from './eval-card-elements/ReplicationRerouteCheck';
 import DataContext from './DataContext';
 import { ClaimReview, 
   EvaluationTarget,
@@ -191,6 +192,7 @@ const EvalCard: React.FC<EvalCardProps> = ({ evalItemId }) => {
             {evalItem.likely_fabricated && (
               <span className="border border-red-500 bg-red-100 font-semibold p-2 w-fit mx-auto text-xs text-center"><ExclamationTriangleIcon className="h-4 w-4 text-red-400 inline mr-1" />This image is likely fabricated.</span>
             )}
+            <ReplicationRerouteCheck evalItem={evalItem} />
           <CardDescription>
             <a href={evalItem.url} target="_blank" rel="noopener noreferrer" className="w-7/8 truncate block arrLinkFlat">{evalItem.url}</a>
               <span className="text-sm"><span className="font-bold">date: </span>{evalItem.date}</span><br></br>

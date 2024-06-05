@@ -88,7 +88,16 @@ export interface EvalItem {
   claimReview?: ClaimReview;
   resources?: documentItem[];
   referenced_at?: documentItem[];
-  replication_attempt?: boolean;
+  replication_attempt?: {
+    id: string;
+    date: string;
+    replication_status: "replicated" | "failed" | "partial" | "patched"
+  }
+  rerouted?: {
+    id: string;
+    date: string;
+    reroute_status: "success" | "failure" | "partial"
+  }
 }
 
 export type evalCardItem = EvalItem | evalPart

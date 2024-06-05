@@ -1095,6 +1095,10 @@
       "google-sge"
     ],
     "evaluator_id": "danielsgriffin",
+    "replication_attempt": {
+      "id": "hard-boiled-eggs-cover-and-tirn-off-heat-DariusAtmar",
+      "replication_status": "partial"
+    },
     "eval_parts": [
       {
         "id": "1",
@@ -2375,6 +2379,7 @@
       "brave", "google"
     ],
     "content": "Here is @Brave's answer.",
+    "rerouted": "success",
     "evaluation_target": ["generated response"],
     "following": ["how-many-muslim-presidents-has-the-us-had-MelMitchell1"],
     "images": [
@@ -3303,7 +3308,36 @@
         "extension_modified": false
       }
     ],
-    "evaluator_id": "lilyraynyc"
+    "evaluator_id": "lilyraynyc",
+    "connected": [
+      "improve-skin-naturally-danielsgriffin"
+    ]
+  },{
+    "id": "improve-skin-naturally-danielsgriffin",
+    "date": "2024-06-05",
+    "datetime": "2024-06-05T16:14:19.000Z",
+    "query": "improve skin naturally",
+    "url": "https://x.com/danielsgriffin/status/1798387886573941106",
+    "content": "",
+    "systems": [
+      "google"
+    ],
+    "images": [
+      {
+        "url": "https://pbs.twimg.com/media/GPUoA38bYAAi6hp?format=jpg&name=medium",
+        "caption": "",
+        "annotated": false,
+        "extension_modified": false
+      }
+    ],
+    "evaluator_id": "danielsgriffin",
+    "replication_attempt": {
+      "id": "improve-skin-naturally-lilyraynyc",
+      "replication_status": "replicated"
+    },
+    "following": [
+      "improve-skin-naturally-lilyraynyc"
+    ]
   }
 ]
 
