@@ -46,6 +46,7 @@ export type evalTarget =
   | "sponsored search results"
   | "unclear focus"
   | "knowledge cards"
+  | "dates"
   | "lack of critical evaluation or contextualization of source material";
 
 export interface documentItem {
@@ -86,6 +87,7 @@ export interface EvalItem {
   claimReview?: ClaimReview;
   resources?: documentItem[];
   referenced_at?: documentItem[];
+  replication_attempt?: boolean;
 }
 
 export type evalCardItem = EvalItem | evalPart

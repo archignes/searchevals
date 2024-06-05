@@ -80,6 +80,10 @@ export const CheckQueryConsistency: React.FC<{ evalItemId: string; currentEvalua
 
   if (!currentEvalItem || !followingEvalItem) return null;
 
+  if (currentEvalItem.replication_attempt !== undefined && !currentEvalItem.replication_attempt) {
+    return null;
+  }
+
   const currentQuery = currentEvalItem.query;
   const followingQuery = followingEvalItem.query;
   

@@ -32,8 +32,8 @@
         "systems": ["google"],
         "evaluator_id": "soft",
         "images": [
-          {"url": "https://pbs.twimg.com/media/FB1TS0kVIAAVWFZ?format=jpg&name=900x900"},
-          {"url": "https://pbs.twimg.com/media/FB1TTYBUUAQwAoD?format=jpg&name=900x900"}
+          {"url": "https://pbs.twimg.com/media/FB1TS0kVIAAVWFZ?format=jpg&name=large"},
+          {"url": "https://pbs.twimg.com/media/FB1TTYBUUAQwAoD?format=jpg&name=large"}
         ],
       
         "referenced_at":
@@ -254,7 +254,7 @@
       ],
       "content": "Perplexity continues to impress",
       "images": [
-        {"url": "https://pbs.twimg.com/media/GGGuGmRaMAAt5Oz?format=png&name=900x900"}
+        {"url": "https://pbs.twimg.com/media/GGGuGmRaMAAt5Oz?format=png&name=large"}
       ],
       "evaluator_id": "chrisalbon"
     },
@@ -1132,7 +1132,7 @@
     "evaluator_id": "fabianstelzer",
     "images": [
       {
-        "url": "https://pbs.twimg.com/media/GNJbHl2WMAAJYFk?format=png&name=900x900"
+        "url": "https://pbs.twimg.com/media/GNJbHl2WMAAJYFk?format=png&name=large"
       }
     ]
   },
@@ -1167,7 +1167,7 @@
     "validation_image": "screencapture-google-search-2024-05-10-16_09_21-edit.png",
     "images": [
       {
-        "url": "https://pbs.twimg.com/media/GNLA4jOXcAAJw65?format=png&name=900x900"
+        "url": "https://pbs.twimg.com/media/GNLA4jOXcAAJw65?format=png&name=large"
       }
     ]
   },
@@ -1325,7 +1325,7 @@
     "following": ["list-some-good-winter-recipes-nabeelqu"],
     "images": [
       {
-        "url": "https://pbs.twimg.com/media/GDdXvEnb0AAlqZo?format=png&name=900x900"
+        "url": "https://pbs.twimg.com/media/GDdXvEnb0AAlqZo?format=png&name=large"
       }
     ],
     "systems": [
@@ -1366,7 +1366,7 @@
     "evaluator_id": "DavidGQuaid",
     "images": [
       {
-        "url": "https://pbs.twimg.com/media/GMORVeoW8AEY7Fs?format=png&name=900x900"
+        "url": "https://pbs.twimg.com/media/GMORVeoW8AEY7Fs?format=png&name=large"
       }
     ]
   },
@@ -1402,10 +1402,10 @@
     "evaluation_target": ["sponsored search results", "unclear focus", "SERP"],
     "images": [
       {
-        "url": "https://pbs.twimg.com/media/GODoIMFa8AAin7I?format=jpg&name=900x900"
+        "url": "https://pbs.twimg.com/media/GODoIMFa8AAin7I?format=jpg&name=large"
       },
       {
-        "url": "https://pbs.twimg.com/media/GODoIMDaIAM7V1N?format=jpg&name=900x900"
+        "url": "https://pbs.twimg.com/media/GODoIMDaIAM7V1N?format=jpg&name=large"
       }
     ],
     "evaluator_id": "AravSrinivas",
@@ -1554,7 +1554,7 @@
     "content": "Still live:\\nLeft: video using Chrome incognito to find the misleading sponsored search result.\\nRight: A screenshot showing Google does not send users to any page for that website in organic search.",
     "images": [
       {
-        "url": "https://pbs.twimg.com/media/GOHuFVDaIAIcDua?format=jpg&name=900x900"
+        "url": "https://pbs.twimg.com/media/GOHuFVDaIAIcDua?format=jpg&name=large"
       }
     ],
     "evaluator_id": "danielsgriffin"
@@ -1644,7 +1644,7 @@
         "query": "1000km to miles"
       },
       {
-        "url": "https://pbs.twimg.com/media/GOEzgZBWYAASd7G?format=png&name=900x900",
+        "url": "https://pbs.twimg.com/media/GOEzgZBWYAASd7G?format=png&name=large",
         "query": "1000km to miles"
       }
     ],
@@ -1662,7 +1662,7 @@
     "content": "How does google continue to get worse?",
     "images": [
       {
-        "url": "https://pbs.twimg.com/media/GKA2f8RXQAA3cM_?format=jpg&name=900x900"
+        "url": "https://pbs.twimg.com/media/GKA2f8RXQAA3cM_?format=jpg&name=large"
       }
     ],
     "evaluator_id": "JoeyOtweets"
@@ -1680,7 +1680,7 @@
     "content": "Got the same wrong answer you did, but then I took the s off of miles and finally got the night answer?!?! It's so fubared!",
     "images": [
       {
-        "url": "https://pbs.twimg.com/media/GOGtTxCbMAA8_Kj?format=jpg&name=900x900"
+        "url": "https://pbs.twimg.com/media/GOGtTxCbMAA8_Kj?format=jpg&name=large"
       }
     ],
     "evaluator_id": "MajimeKoala"
@@ -1799,13 +1799,13 @@
         "url": "https://pbs.twimg.com/media/GOI0D8nbMAAgO9a?format=jpg&name=large"
       },
       {
-        "url": "https://pbs.twimg.com/media/GOI0ROdbkAABdDf?format=jpg&name=900x900"
+        "url": "https://pbs.twimg.com/media/GOI0ROdbkAABdDf?format=jpg&name=large"
       },
       {
         "url": "https://pbs.twimg.com/media/GOI1CYGa4AAqvvT?format=jpg&name=large"
       },
       {
-        "url": "https://pbs.twimg.com/media/GOI3PK3asAA26Z8?format=jpg&name=900x900"
+        "url": "https://pbs.twimg.com/media/GOI3PK3asAA26Z8?format=jpg&name=large"
       }
     ],
     "evaluator_id": "danielsgriffin"
@@ -1897,7 +1897,7 @@
     ],
     "images": [
       {
-        "url": "https://pbs.twimg.com/media/GN0WBq5acAA0eQ-?format=png&name=900x900"
+        "url": "https://pbs.twimg.com/media/GN0WBq5acAA0eQ-?format=png&name=large"
       }
     ],
     "evaluator_id": "iainahendry",
@@ -1998,7 +1998,7 @@
     "content": "Yes it is wrong. Don't get your answers from rich snippets. Rich snippets are wrong a lot of the time. Btw I have 512 arms.",
     "images": [
       {
-        "url": "https://pbs.twimg.com/media/D6sRYUtXkAERs6n?format=png&name=900x900",
+        "url": "https://pbs.twimg.com/media/D6sRYUtXkAERs6n?format=png&name=large",
         "extension_modified": true
       }
     ],
@@ -2052,7 +2052,7 @@
         "query": "canadian income tax unconstitutional",
         "images": [
           {
-            "url": "https://pbs.twimg.com/media/EhF4dWzWoAEqSxm?format=png&name=900x900"
+            "url": "https://pbs.twimg.com/media/EhF4dWzWoAEqSxm?format=png&name=large"
           }
         ]
       }
@@ -2343,7 +2343,7 @@
     "following": ["how-many-muslim-presidents-has-the-us-had-MelMitchell1"],
     "images": [
       {
-        "url": "https://pbs.twimg.com/media/GOTO9teW0AAVduL?format=jpg&name=900x900"
+        "url": "https://pbs.twimg.com/media/GOTO9teW0AAVduL?format=jpg&name=large"
       }
     ],
     "evaluator_id": "rebellteknolog"
@@ -2415,7 +2415,7 @@
     ],
     "images": [
       {
-        "url": "https://pbs.twimg.com/media/GOboHf_XQAAvKW8?format=jpg&name=900x900",
+        "url": "https://pbs.twimg.com/media/GOboHf_XQAAvKW8?format=jpg&name=large",
         "caption": "",
         "annotated": false,
         "extension_modified": false
@@ -2529,7 +2529,8 @@
         "extension_modified": false
       }
     ],
-    "evaluator_id": "re_modulate"
+    "evaluator_id": "re_modulate",
+    "connected": ["luke-16:3-kjv-danielsgriffin"]
   },
   {
     "id": "switching-to-a-professional-seller-account-amazon-JaroszewskiK",
@@ -2593,13 +2594,13 @@
     ],
     "images": [
       {
-        "url": "https://pbs.twimg.com/media/FOrOStgWUBYPYGN?format=jpg&name=900x900",
+        "url": "https://pbs.twimg.com/media/FOrOStgWUBYPYGN?format=jpg&name=large",
         "caption": "",
         "annotated": false,
         "extension_modified": false
       },
       {
-        "url": "https://pbs.twimg.com/media/FOrOOCjXMAI2SVK?format=jpg&name=900x900",
+        "url": "https://pbs.twimg.com/media/FOrOOCjXMAI2SVK?format=jpg&name=large",
         "caption": "",
         "annotated": false,
         "extension_modified": false
@@ -2845,7 +2846,7 @@
     ],
     "images": [
       {
-        "url": "https://pbs.twimg.com/media/BhgWYSMCQAATdlv?format=png&name=900x900",
+        "url": "https://pbs.twimg.com/media/BhgWYSMCQAATdlv?format=png&name=large",
         "caption": "",
         "annotated": true,
         "extension_modified": false
@@ -2895,7 +2896,7 @@
     ],
     "images": [
       {
-        "url": "https://pbs.twimg.com/media/BKPNuQHCEAEWuxZ?format=png&name=900x900",
+        "url": "https://pbs.twimg.com/media/BKPNuQHCEAEWuxZ?format=png&name=large",
         "caption": "",
         "annotated": false,
         "extension_modified": false
@@ -2915,13 +2916,13 @@
     ],
     "images": [
       {
-        "url": "https://pbs.twimg.com/media/GPKzj1yaYAAkbSJ?format=jpg&name=small",
+        "url": "https://pbs.twimg.com/media/GPKzj1yaYAAkbSJ?format=jpg&name=large",
         "caption": "",
         "annotated": false,
         "extension_modified": false
       },
       {
-        "url": "https://pbs.twimg.com/media/GPKzmOlakAIKBCg?format=jpg&name=small",
+        "url": "https://pbs.twimg.com/media/GPKzmOlakAIKBCg?format=jpg&name=large",
         "caption": "",
         "annotated": false,
         "extension_modified": false
@@ -3046,33 +3047,192 @@
       {
         "url": "https://pbs.twimg.com/media/GO19q7bbUAA9fsU?format=jpg&name=large",
         "caption": "",
-        "annotated": false,
+        "annotated": true,
         "extension_modified": false,
         "query": "sundar pichai"
       },
       {
         "url": "https://pbs.twimg.com/media/GO1-DMDaQAAHFJo?format=jpg&name=large",
         "caption": "",
-        "annotated": false,
+        "annotated": true,
         "extension_modified": false,
         "query": "sergey brin"
       },
       {
         "url": "https://pbs.twimg.com/media/GO1-y1baQAEEHgK?format=jpg&name=large",
         "caption": "",
-        "annotated": false,
+        "annotated": true,
         "extension_modified": false,
         "query": "eric schmidt"
       },
       {
         "url": "https://pbs.twimg.com/media/GO1_RBPbEAAOW2M?format=jpg&name=large",
         "caption": "",
-        "annotated": false,
+        "annotated": true,
         "extension_modified": false,
         "query": "prabhakar raghavan"
       }
     ],
+    "evaluator_id": "danielsgriffin",
+    "evaluation_target": ["knowledge cards"],
+    "replication_attempt": false,
+    "following": [
+      "elon-musk-gaganghotra_"
+    ]
+  },{
+    "id": "elon-musk-gaganghotra_",
+    "date": "2024-05-29",
+    "datetime": "2024-05-29T18:01:25.000Z",
+    "query": "elon musk",
+    "url": "https://x.com/gaganghotra_/status/1795878123764068790",
+    "content": "YIKES I'm seeing a surge in Google linking to wrong social profiles in panels.\\n\\nIn the screenshots below the socials that I highlighted (blue pointer) are not their real accounts and it seems like these are managed by someone else.\\n\\nAround 4 weeks ago these social links were not there, not sure why Google started to show these and it's not able to pick up the signal that it's not their real accounts.\\n\\nPS - It's happening at scale I just explored many names and found links to wrong social profiles.\\n\\nSome examples here",
+    "systems": [
+      "google"
+    ],
+    "images": [
+      {
+        "url": "https://pbs.twimg.com/media/GOw9n0OaMAguxgL?format=jpg&name=large",
+        "caption": "",
+        "annotated": true,
+        "extension_modified": false
+      },
+      {
+        "url": "https://pbs.twimg.com/media/GOw9n1RaMAIydu5?format=jpg&name=large",
+        "caption": "",
+        "annotated": true,
+        "extension_modified": false,
+        "query": "jeff bezos"
+      },
+      {
+        "url": "https://pbs.twimg.com/media/GOw9n2YaMAQ9oLF?format=jpg&name=large",
+        "caption": "",
+        "annotated": true,
+        "extension_modified": false,
+        "query": "Warren Buffet"
+      },
+      {
+        "url": "https://pbs.twimg.com/media/GOw9oCSaMA06lSM?format=jpg&name=large",
+        "caption": "",
+        "annotated": true,
+        "extension_modified": false,
+        "query": "Larry Ellison"
+      }
+    ],
+    "evaluator_id": "gaganghotra_",
+    "evaluation_target": ["knowledge cards"],
+    "connected": [
+      "sundar-pichai-danielsgriffin", "elon-musk-danielsgriffin"
+    ]
+  },{
+    "id": "elon-musk-danielsgriffin",
+    "date": "2024-05-29",
+    "datetime": "2024-05-29T18:01:25.000Z",
+    "query": "elon musk",
+    "url": "https://x.com/danielsgriffin/status/1796229962921558346",
+    "content": "Replicated",
+    "systems": [
+      "google"
+    ],
+    "images": [
+      {
+        "url": "https://pbs.twimg.com/media/GO180vIbQAA1u8H?format=jpg&name=large",
+        "caption": "",
+        "annotated": true,
+        "extension_modified": false
+      },
+      {
+        "url": "https://pbs.twimg.com/media/GO19NqNa0AATygS?format=jpg&name=large",
+        "caption": "",
+        "annotated": true,
+        "extension_modified": false,
+        "query": "jeff bezos"
+      }
+    ],
+    "evaluator_id": "danielsgriffin",
+    "evaluation_target": ["knowledge cards"],
+    "following": [
+      "elon-musk-gaganghotra_"
+    ],
+    "connected": [
+      "sundar-pichai-danielsgriffin"
+    ]
+  },{
+    "id": "site-https-www-perplexity-ai-page-*-danielsgriffin",
+    "date": "2024-06-04",
+    "datetime": "2024-06-04T22:22:32.000Z",
+    "query": "site:https://www.perplexity.ai/page/*",
+    "url": "https://x.com/danielsgriffin/status/1798118164842352725",
+    "evaluation_target": ["dates"],
+    "content": "I know dates are tough to determine, but here is Google showing dates for these @perplexity_ai Pages inconsistent with the pages themselves. (Though a June 2023 date and an October 2021 date appear in the texts.)\\n\\nThe other pages do seem to have a lastmod in the pages-sitemap.xml",
+    "systems": [
+      "google"
+    ],
+    "images": [
+      {
+        "url": "https://pbs.twimg.com/media/GPQm0bxbsAA9SVt?format=jpg&name=large",
+        "caption": "",
+        "annotated": false,
+        "extension_modified": false
+      },
+      {
+        "url": "https://pbs.twimg.com/media/GPQvgR7aUAAnVk6?format=jpg&name=large",
+        "caption": "",
+        "annotated": false,
+        "extension_modified": false
+      },
+      {
+        "url": "https://pbs.twimg.com/media/GPQv4BxaYAALXxq?format=jpg&name=large",
+        "caption": "",
+        "annotated": false,
+        "extension_modified": false
+      }
+    ],
     "evaluator_id": "danielsgriffin"
+  },{
+    "id": "luke-16:3-kjv-danielsgriffin",
+    "date": "2024-05-26",
+    "datetime": "2024-05-26T17:27:05.000Z",
+    "query": "luke 16:3 kjv",
+    "url": "https://x.com/danielsgriffin/status/1795726413909369198",
+    "content": "This is pretty poor performance (a tokenization issue or named entity resolution?), I'm sure @brave can do better.\\nHere are a some others:\\n@bing @CynayEngine @Google @yepsearch",
+    "systems": [
+      "brave",
+      "bing",
+      "stract",
+      "google",
+      "yep"
+    ],
+    "images": [
+      {
+        "url": "https://pbs.twimg.com/media/GOuy-hPaQAAtRrT?format=jpg&name=large",
+        "caption": "",
+        "annotated": false,
+        "extension_modified": false
+      },
+      {
+        "url": "https://pbs.twimg.com/media/GOuzH4QbEAA7m1K?format=jpg&name=large",
+        "caption": "",
+        "annotated": false,
+        "extension_modified": false
+      },
+      {
+        "url": "https://pbs.twimg.com/media/GOuzVnebwAAP751?format=jpg&name=large",
+        "caption": "",
+        "annotated": false,
+        "extension_modified": false
+      },
+      {
+        "url": "https://pbs.twimg.com/media/GOuziK-a4AEkYyH?format=jpg&name=large",
+        "caption": "",
+        "annotated": true,
+        "extension_modified": false
+      }
+    ],
+    "evaluator_id": "danielsgriffin",
+    "evaluation_target": ["query understanding"],
+    "following": [
+      "luke-16:3-kjv-re_modulate"
+    ]
   }
 ]
 
