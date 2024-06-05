@@ -86,12 +86,6 @@
     "wikipedia_link": "https://en.wikipedia.org/wiki/Gemini_(chatbot)"
   },
   {
-    "name": "Devv",
-    "id": "devv",
-    "search_link": "https://devv.ai/",
-    "twitter_link": "https://twitter.com/devv_ai"
-  },
-  {
     "name": "Lepton Search",
     "id": "lepton-search",
     "search_link": "https://search.lepton.run/"
