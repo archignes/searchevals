@@ -3273,6 +3273,37 @@
     "images": [],
     "evaluator_id": "danielsgriffin",
     "evaluation_target": ["social profile links"]
+  },{
+    "id": "improve-skin-naturally-lilyraynyc",
+    "date": "2024-06-05",
+    "datetime": "2024-06-05T15:38:37.000Z",
+    "query": "improve skin naturally",
+    "url": "https://x.com/lilyraynyc/status/1798378903599517891",
+    "content": "One exception: this non-AI search feature continues to be just terrible, like laughably bad.\\n \\nQuery: “improve skin naturally”\\n\\nWhere to begin?\\n\\n- some use verbs, some don’t \\n- missing images\\n- inconsistent images, silly/low quality images, and images that don’t match the topic at all (a skincare product bottle for “eat more fruits and vegetables”) \\n- the links just take you to a new search result for that topic, like “tomatoes.”\\n- sunflower seed\\n- skin health 101\\n- ‘S m o k i n g\\n\\n(Feels a bit like the same things Google’s algos devalue when assessing content quality)\\n\\nSo glad this pushes down all the thoughtful, well-researched articles citing actual medical sources",
+    "systems": [
+      "google"
+    ],
+    "images": [
+      {
+        "url": "https://pbs.twimg.com/media/GPUgDwsaIAARMMN?format=jpg&name=900x900",
+        "caption": "",
+        "annotated": false,
+        "extension_modified": false
+      },
+      {
+        "url": "https://pbs.twimg.com/media/GPUgDwtbUAA4kXN?format=jpg&name=medium",
+        "caption": "",
+        "annotated": false,
+        "extension_modified": false
+      },
+      {
+        "url": "https://pbs.twimg.com/media/GPUgDwsagAAIMCh?format=jpg&name=900x900",
+        "caption": "",
+        "annotated": false,
+        "extension_modified": false
+      }
+    ],
+    "evaluator_id": "lilyraynyc"
   }
 ]
 
