@@ -1,6 +1,6 @@
 [
     {
-        "id": "thyroid-nodule-treatments-richardsocher",
+        "id": "thyroid-nodule-treatments-RichardSocher",
         "date": "2024-01-10",
         "query": "Thyroid nodule treatments",
         "url": "https://twitter.com/RichardSocher/status/1745197797358686261",
@@ -13,7 +13,7 @@
 {"url": "https://pbs.twimg.com/media/GDgvRp3aEAAC3w2?format=jpg&name=4096x4096"}]
     },
     { 
-        "id": "hulu-free-trial-aravsrinivas", 
+        "id": "hulu-free-trial-AravSrinivas", 
         "date": "2023-11-27",
         "query": "hulu free trial", 
         "url": "https://twitter.com/AravSrinivas/status/1729192313635901913", 
@@ -341,7 +341,7 @@
   "evaluator_id": "google"
 },
 {
-  "id": "find-top-restaurants-in-bangalore-with-live-music-aravsrinivas",
+  "id": "find-top-restaurants-in-bangalore-with-live-music-AravSrinivas",
   "date": "2024-02-19",
   "query": "find top restaurants in bangalore with live music",
   "url": "https://twitter.com/AravSrinivas/status/1759605851143454996",
@@ -359,7 +359,7 @@
   "evaluator_id": "AravSrinivas"
 },
 {
-  "id": "do-latin-americans-live-in-america-lucianabenotti",
+  "id": "do-latin-americans-live-in-america-LucianaBenotti",
   "date": "2021-01-26",
   "query": "Do Latin Americans live in America?",
   "tags": ["implied negative evaluation"],
@@ -383,7 +383,7 @@
   "evaluator_id": "LucianaBenotti"
 },
 {
-  "id": "what-are-the-new-features-in-python-3-12-aravsrinivas",
+  "id": "what-are-the-new-features-in-python-3-12-AravSrinivas",
   "date": "2024-03-04",
   "query": "what are the new features in python 3.12",
   "url": "https://twitter.com/AravSrinivas/status/1764711432929894782",
@@ -401,7 +401,7 @@
   "evaluator_id": "AravSrinivas"
 },
 {
-  "id": "find-the-list-of-startups-in-llm-security-richardsocher",
+  "id": "find-the-list-of-startups-in-llm-security-RichardSocher",
   "date": "2024-03-06",
   "query": "Find the list of startups in LLM Security",
   "url": "https://twitter.com/RichardSocher/status/1765504886576500917",
@@ -456,7 +456,7 @@
   "systems": [
     "perplexity-ai"
   ],
-  "following": ["find-the-list-of-startups-in-llm-security-richardsocher"],
+  "following": ["find-the-list-of-startups-in-llm-security-RichardSocher"],
   "content": "\"Be honest\"\\n\\npplx (free mode):",
   "evaluator_id": "ternome"
 },
@@ -466,7 +466,7 @@
   "query": "find the list of startups in LLM security",
   "url": "https://twitter.com/mlejva/status/1765752994329407741",
   "following": [
-    "find-the-list-of-startups-in-llm-security-richardsocher"
+    "find-the-list-of-startups-in-llm-security-RichardSocher"
   ],
   "systems": [
     "perplexity-ai"
@@ -687,7 +687,7 @@
   "also_published_at": "https://www.linkedin.com/posts/adamselipsky_always-a-thrill-to-see-customer-results-like-activity-7175940226731634688-bSWY/"
 },
 {
-  "id": "sbf-sentencing-explained-richardsocher",
+  "id": "sbf-sentencing-explained-RichardSocher",
   "date": "2024-03-28",
   "query": "SBF sentencing explained",
   "url": "https://twitter.com/RichardSocher/status/1773465458827792566",
@@ -704,7 +704,7 @@
 
 },
 {
-  "id": "what-do-we-know-about-uaps-colinhayhurst",
+  "id": "what-do-we-know-about-uaps-ColinHayhurst",
   "date": "2024-03-19",
   "query": "What do we know about UAPs?",
   "url": "https://community.mojeek.com/t/testing-mojeek-summary/982/15",
@@ -974,7 +974,7 @@
     "evaluator_id": "mayank_jee"
   },
   {
-    "id": "how-to-get-rid-of-cockroaches-archignes",
+    "id": "how-to-get-rid-of-cockroaches-ARCHIGNES",
     "date": "2024-05-09",
     "query": "how to get rid of cockroaches",
     "url": "https://twitter.com/ARCHIGNES/status/1788704299620413945",
@@ -1031,7 +1031,7 @@
     ]
   },
   {
-    "id": "gmail-brendanoconnel",
+    "id": "gmail-BrendanOConnel",
     "date": "2023-07-26",
     "query": "gmail",
     "url": "https://twitter.com/BrendanOConnel/status/1684195235650232322",
@@ -1068,7 +1068,7 @@
     ]
   },
   {
-    "id": "hard-boiled-eggs-cover-and-tirn-off-heat-dariusatmar",
+    "id": "hard-boiled-eggs-cover-and-tirn-off-heat-DariusAtmar",
     "date": "2024-05-09",
     "query": "hard boiled eggs cover and tirn off heat",
     "connected": ["why-should-you-cover-eggs-when-boiling-danielsgriffin"],
@@ -1090,7 +1090,7 @@
     "date": "2024-05-10",
     "query": "why should you cover eggs when boiling",
     "url": "https://twitter.com/danielsgriffin/status/1788996909576908981",
-    "following": ["hard-boiled-eggs-cover-and-tirn-off-heat-dariusatmar"],
+    "following": ["hard-boiled-eggs-cover-and-tirn-off-heat-DariusAtmar"],
     "systems": [
       "google-sge"
     ],
@@ -1154,7 +1154,7 @@
     ]
   },
   {
-    "id": "factory-lore-folklore-sannuvola",
+    "id": "factory-lore-folklore-SanNuvola",
     "date": "2024-05-09",
     "query": "factory lore folklore",
     "evaluation_target": ["query understanding"],
@@ -1172,7 +1172,7 @@
     ]
   },
   {
-    "id": "check-mouse-dpi-max-oats",
+    "id": "check-mouse-dpi-max_oats",
     "date": "2022-05-04",
     "query": "check mouse dpi",
     "url": "https://twitter.com/max_oats/status/1521801590432497664",
@@ -1200,7 +1200,7 @@
     ]
   },
   {
-    "id": "food-names-end-with-um-thetruthfulseo",
+    "id": "food-names-end-with-um-TheTruthfulSEO",
     "date": "2024-05-10",
     "query": "food names end with um",
     "evaluation_target": ["generated response", "lack of critical evaluation or contextualization of source material"],
@@ -1209,7 +1209,7 @@
       "google-sge"
     ],
     "content": "SGE is yum",
-    "connected": ["food-names-end-with-um-publishbrain", "fruit-names-that-end-with-ana-nickcesarz"],
+    "connected": ["food-names-end-with-um-PublishBrain", "fruit-names-that-end-with-ana-nickcesarz"],
     "evaluator_id": "TheTruthfulSEO",
     "images": [
       {
@@ -1218,7 +1218,7 @@
     ]
   },
   {
-    "id": "food-names-end-with-um-publishbrain",
+    "id": "food-names-end-with-um-PublishBrain",
     "date": "2024-05-12",
     "query": "food names end with um",
     "following": [
@@ -1286,7 +1286,7 @@
     ],
     "content": "Google vs @Perplexity. Nice illustration of how over-optimizing KPIs ends up ruining internet products.",
     "evaluator_id": "nabeelqu",
-    "connected": ["list-some-good-winter-recipes-thosiawa", "list-some-good-winter-recipes-1nf0rmed"],
+    "connected": ["list-some-good-winter-recipes-thosiawa", "list-some-good-winter-recipes-_1nF0rmed_"],
     "images": [
       {
         "url": "https://pbs.twimg.com/media/GDZmH7XbYAAaLdM?format=jpg&name=large"
@@ -1318,7 +1318,7 @@
     ]
   },
   {
-    "id": "list-some-good-winter-recipes-1nf0rmed",
+    "id": "list-some-good-winter-recipes-_1nF0rmed_",
     "date": "2024-01-10",
     "query": "list some good winter recipes",
     "url": "https://twitter.com/_1nF0rmed_/status/1744960047963377855",
@@ -1335,7 +1335,7 @@
     "evaluator_id": "_1nF0rmed_"
   },
   {
-    "id": "what-is-apple-going-to-do-about-the-apple-watch-ban-ravishah",
+    "id": "what-is-apple-going-to-do-about-the-apple-watch-ban-_ravishah",
     "date": "2023-12-26",
     "query": "what is apple going to do about the apple watch ban",
     "url": "https://twitter.com/_ravishah/status/1739759587757105480",
@@ -1355,7 +1355,7 @@
     ]
   },
   {
-    "id": "seo-timing-davidgquaid",
+    "id": "seo-timing-DavidGQuaid",
     "date": "2024-04-28",
     "query": "seo timing",
     "url": "https://twitter.com/DavidGQuaid/status/1784429691249504732",
@@ -1437,7 +1437,7 @@
     "evaluator_id": "AravSrinivas"
   },
   {
-    "id": "$tsla-during-trump-presidency-AravSrinivas",
+    "id": "tsla-during-trump-presidency-AravSrinivas",
     "date": "2024-05-21",
     "query": "$tsla during trump presidency",
     "url": "https://x.com/AravSrinivas/status/1792964343874892202",
@@ -2511,7 +2511,7 @@
     "evaluator_id": "arun31415"
   },
   {
-    "id": "luke-16:3-kjv-re_modulate",
+    "id": "luke-16-3-kjv-re_modulate",
     "date": "2024-05-26",
     "datetime": "2024-05-26T17:27:05.000Z",
     "query": "luke 16:3 kjv",
@@ -2530,7 +2530,7 @@
       }
     ],
     "evaluator_id": "re_modulate",
-    "connected": ["luke-16:3-kjv-danielsgriffin"]
+    "connected": ["luke-16-3-kjv-danielsgriffin"]
   },
   {
     "id": "switching-to-a-professional-seller-account-amazon-JaroszewskiK",
@@ -3157,7 +3157,7 @@
       "sundar-pichai-danielsgriffin"
     ]
   },{
-    "id": "site-https-www-perplexity-ai-page-*-danielsgriffin",
+    "id": "site-https-www-perplexity-ai-page-danielsgriffin",
     "date": "2024-06-04",
     "datetime": "2024-06-04T22:22:32.000Z",
     "query": "site:https://www.perplexity.ai/page/*",
@@ -3189,7 +3189,7 @@
     ],
     "evaluator_id": "danielsgriffin"
   },{
-    "id": "luke-16:3-kjv-danielsgriffin",
+    "id": "luke-16-3-kjv-danielsgriffin",
     "date": "2024-05-26",
     "datetime": "2024-05-26T17:27:05.000Z",
     "query": "luke 16:3 kjv",
@@ -3231,7 +3231,7 @@
     "evaluator_id": "danielsgriffin",
     "evaluation_target": ["query understanding"],
     "following": [
-      "luke-16:3-kjv-re_modulate"
+      "luke-16-3-kjv-re_modulate"
     ]
   },{
     "id": "anat-ashkenazi-danielsgriffin",

@@ -1,3 +1,10 @@
+/**
+ * This script automates the process of capturing and processing screenshots for various web pages.
+ * It uses Puppeteer to navigate to each page, captures screenshots, and optionally crops and resizes them.
+ * Additionally, it can remove specified elements from the page before taking a screenshot and overlays a logo onto the final image.
+ * The script is designed to handle both individual card pages and the homepage, with special processing rules for each.
+ * It checks existing screenshots to avoid redundant captures and uses a local server for page rendering.
+ */
 const fs1 = require('fs');
 const path1 = require('path');
 const puppeteer = require('puppeteer');
@@ -28,7 +35,10 @@ function getScreenshotOutputPath(url, baseUrl) {
         return `${publicScreenshotDir}home.png`;
     }
     const url_trimmed = url.replace(baseUrl, "");
-    const outputPath = `${screenshotDir}${url_trimmed.replace(/[^a-zA-Z0-9\-]/g, "-")}.png`;
+    // Construct the output path for the screenshot by replacing any characters
+    // that are not alphanumeric or hyphens or underscores with a hyphen. This ensures the file
+    // name is valid and does not contain any special characters.
+    const outputPath = `${screenshotDir}${url_trimmed.replace(/[^a-zA-Z0-9\-_]/g, "-")}.png`;
     return outputPath;
 }
 
@@ -128,19 +138,23 @@ const addLogoToImage = async (original_image, searchevals_logo) => {
     console.log(`  - added logo: ${publicOutputPath}`);
 };
 
-const existingOgScreenshots = fs1.readdirSync(publicScreenshotDir).map(file => file.replace('.png', '').replace(/_/g, '-'));
+// Read the list of existing screenshots from the public directory and remove the file extension
+const existingOgScreenshots = fs1.readdirSync(publicScreenshotDir).map(file => file.replace('.png', ''));
+
+// Load evaluation data from a JSON file
 const evalsData = require('../src/data/evals.json');
+
+// Create a list of existing pages based on the evaluation data
 const existingPages = evalsData.map(evalItem => `${baseUrl}card/${evalItem.id}`);
 
+// Filter out pages that already have screenshots
 const filteredPagesForScreenshots = existingPages.filter(page => {
-    const pageId = page.split('/').pop();
-    return !existingOgScreenshots.includes(`card-${pageId}`);
+    const pageId = page.split('/').pop(); // Extract the page ID from the URL
+    return !existingOgScreenshots.includes(`card-${pageId}`); // Check if the screenshot already exists
 });
-
 console.log(`Pages to capture: ${filteredPagesForScreenshots.length + 1}`);
 
 captureScreenshots(filteredPagesForScreenshots, baseUrl, port);
 
 console.log(' - Capturing homepage...');
 captureScreenshots([baseUrl], baseUrl, port);
-

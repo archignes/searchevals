@@ -43,9 +43,14 @@ const Row = ({ sortedData, index, style, setSize, windowWidth }: {
   );
 };
 
-
 const Feed: React.FC = () => {
   const { data } = useContext(DataContext);
+  
+  // Debug: Check if data is being fetched correctly
+  useEffect(() => {
+    console.log('Data from context:', data);
+  }, [data]);
+
   const sortedData = useMemo(() =>
     [...data].sort((a, b) => {
       const dateComparison = b.date.localeCompare(a.date);
@@ -60,14 +65,18 @@ const Feed: React.FC = () => {
     }),
     [data]
   );
-   
+
+  // Debug: Check if sortedData is being computed correctly
+  useEffect(() => {
+    console.log('Sorted data:', sortedData);
+  }, [sortedData]);
+
   const [isClient, setIsClient] = useState(false);
   
   useEffect(() => {
     setIsClient(true);
   }, []);
 
-  
   const listRef = useRef<VariableSizeList>(null);
   const sizeMap = useRef<{ [key: number]: number }>({});
   const setSize = useCallback((index: number, size: number) => {
@@ -81,7 +90,6 @@ const Feed: React.FC = () => {
     return null;
   }
 
-  
   return (
     <div className="w-full max-w-[900px] mx-auto">
       <div id="feed" className="flex mt-5 flex-col items-center">
@@ -105,7 +113,7 @@ const Feed: React.FC = () => {
             </div>
           )}
         </VariableSizeList>
-    </div>
+      </div>
     </div>
   );
 };

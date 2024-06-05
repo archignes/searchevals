@@ -66,7 +66,7 @@ export const DataProvider: React.FC<DataProviderProps> = ({ children }) => {
     const [results, setResults] = useState<EvalItem[]>([]);
 
 
-    const EvalItemLabel: React.FC<{evalItemId: string, currentEvaluation: string, currentEvaluator: boolean}> = ({evalItemId, currentEvaluation, currentEvaluator}) => {
+    const EvalItemLabel: React.FC<{ evalItemId: string, currentEvaluation: string, currentEvaluator: boolean }> = ({ evalItemId, currentEvaluation, currentEvaluator }) => {
         const connectedItem = data ? data.find(evalItem => evalItem.id === evalItemId) : null;
         const evaluator = evaluators ? evaluators.find(evaluator => evaluator.id === connectedItem?.evaluator_id) : null;
         const isCurrentEvaluation = currentEvaluation === evalItemId;
@@ -101,7 +101,7 @@ export const DataProvider: React.FC<DataProviderProps> = ({ children }) => {
 
         data.forEach(evalItem => {
             index.add(evalItem.id, get_evalString(evalItem));
-            
+
         });
         setData(data);
     }, [data]);
@@ -122,8 +122,8 @@ export const DataProvider: React.FC<DataProviderProps> = ({ children }) => {
 
 
     useEffect(() => {
-        const invalidSystems = data.flatMap(evalItem => 
-            evalItem.systems.filter(systemId => 
+        const invalidSystems = data.flatMap(evalItem =>
+            evalItem.systems.filter(systemId =>
                 !systems.some(system => system.id === systemId)
             ).map(invalidId => ({ evalItemId: evalItem.id, invalidSystemId: invalidId }))
         );
