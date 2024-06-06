@@ -10,7 +10,8 @@ import { EvalItem } from '@/src/types/evalItem';
 import { EvaluationTarget } from './eval-card-elements';
 import { conflictType } from '@/src/types/';
 import SearchBracket from './SearchBracket'
-import { InfoCircledIcon, DrawingPinIcon, ExclamationTriangleIcon, StackIcon } from "@radix-ui/react-icons"
+import { InfoCircledIcon, DrawingPinIcon, ExclamationTriangleIcon } from "@radix-ui/react-icons"
+import { CheckQueryConsistency, CheckTemporalDifference } from './EvalComparisonChecks';
 import Link from 'next/link'
 import {
   Card,
@@ -20,7 +21,12 @@ import {
   CardHeader,
   CardTitle,
 } from './ui/card';
-
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipProvider,
+  TooltipTrigger,
+} from "./ui/tooltip"
 import { ReplicationRerouteCheck } from './eval-card-elements/ReplicationRerouteCheck'
 
 export interface MiniEvalCardProps {
@@ -122,6 +128,52 @@ export const MiniEvalCard: React.FC<MiniEvalCardProps> = ({
           <span className="border border-red-500 bg-red-100 font-semibold p-2 w-fit ml-4 text-xs text-center"><ExclamationTriangleIcon className="h-4 w-4 text-red-400 inline mr-1" />This image is likely fabricated.</span>
         )}
         <ReplicationRerouteCheck evalItem={evalItem} />
+        <CardContent className='p-1 py-0'>
+          {!currentEvaluator && evalEvaluatorDetails && (
+            <figcaption className="mt-1 mb-2">
+              <div className="flex items-center divide-x rtl:divide-x-reverse divide-gray-300 dark:divide-gray-700">
+                <cite id="person-name" className={`pe-3 ml-3 ${textSizeClass} text-gray-900 dark:text-white`}>{evalEvaluatorDetails.name}</cite>
+                <cite className={`ps-3 ${textSizeClass} text-gray-500 dark:text-gray-400`}>
+                  <span id="person-info-link" className="inline-flex"><a href={evalEvaluatorDetails.URL} target="_blank" rel="noopener noreferrer"><InfoCircledIcon /></a></span>
+                  <span id="person-role" className="ml-1">{evalEvaluatorDetails.role}</span>
+                  {conflicts && conflicts.length > 0 && (
+                    <><br></br>
+                      <TooltipProvider>
+                        <Tooltip>
+                          <TooltipTrigger><span className="inline-flex"><DrawingPinIcon /></span></TooltipTrigger>
+                          <TooltipContent>
+                            <p>This evaluator has a potential conflict-of-interest due to their relationship with the entities pinned to the right.</p>
+                          </TooltipContent>
+                        </Tooltip>
+                      </TooltipProvider>
+                      {conflicts.map((conflict, index) => (
+                        <React.Fragment key={index}>
+                          <TooltipProvider>
+                            <Tooltip>
+                              <TooltipTrigger><a className="underline ml-1" href={conflict.searchLink.replace('%s', encodeURIComponent(conflict.query).replace(/%20/g, '+'))} target="_blank" rel="noopener noreferrer">
+                                {conflict.name}
+                              </a>
+                                {index < conflicts.length - 1 ? ', ' : ''}</TooltipTrigger>
+                              <TooltipContent >
+                                {conflict.queryTooltip}
+                              </TooltipContent>
+                            </Tooltip>
+                          </TooltipProvider>
+                        </React.Fragment>
+                      ))}
+                    </>)}
+                </cite>
+              </div>
+            </figcaption>
+          )}
+        </CardContent>
+        {checks && currentEvaluation &&
+          (<CardFooter className="flex flex-col space-y-1 p-1 pt-0 w-full">
+            <CheckTemporalDifference evalItemId={evalItemId} currentEvaluation={currentEvaluation} />
+            <CheckQueryConsistency evalItemId={evalItemId} currentEvaluation={currentEvaluation} />
+          </CardFooter>
+          )
+        }
       </div>
       {evalPlacement === "feed" && images && images.length > 0 && (
         <div

@@ -2,7 +2,7 @@ import { GitHubLogoIcon, TwitterLogoIcon, LinkedInLogoIcon } from '@radix-ui/rea
 import { Button } from "./ui/button";
 import { Input } from "./ui/input";
 
-const lastUpdated = "2024-06-06T05:44:30.679Z";
+const lastUpdated = "2024-06-06T06:00:44.233Z";
 
 const Footer: React.FC = () => {
   return (
