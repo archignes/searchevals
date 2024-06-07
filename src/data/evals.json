@@ -275,6 +275,7 @@
 {
   "id": "wayback-machine-kevinroose",
   "date": "2024-02-01",
+  "datetime": "2024-02-01T05:00:44-05:00",
   "query": "Wayback Machine",
   "url": "https://www.nytimes.com/2024/02/01/technology/perplexity-search-ai-google.html",
   "systems": [
@@ -1096,7 +1097,7 @@
     ],
     "evaluator_id": "danielsgriffin",
     "replication_attempt": {
-      "id": "hard-boiled-eggs-cover-and-tirn-off-heat-DariusAtmar",
+      "replication_of_id": "hard-boiled-eggs-cover-and-tirn-off-heat-DariusAtmar",
       "replication_status": "partial"
     },
     "eval_parts": [
@@ -2124,7 +2125,11 @@
       }
     ],
     "evaluator_id": "sambowne",
-    "evaluation_target": ["generated response"]
+    "evaluation_target": ["generated response"],
+    "replication_attempt": {
+      "replication_of_id": "can-i-use-gasoline-to-cook-spaghetti-joeuchill",
+      "replication_status": "replicated"
+    }
   },
   {
     "id": "give-me-a-spaghetti-recipe-using-gasoline-blennon_",
@@ -2379,7 +2384,10 @@
       "brave", "google"
     ],
     "content": "Here is @Brave's answer.",
-    "rerouted": "success",
+    "rerouting_attempt": {
+      "rerouting_from_id": "how-many-muslim-presidents-has-the-us-had-MelMitchell1",
+      "rerouting_status": "success"
+    },
     "evaluation_target": ["generated response"],
     "following": ["how-many-muslim-presidents-has-the-us-had-MelMitchell1"],
     "images": [
@@ -2642,8 +2650,7 @@
     "url": "https://x.com/brave/status/1795892316755939748",
     "content": "We know you've seen some bad info from Google Search floating around so we wanted to set the record straight with our own search results.",
     "systems": [
-      "brave",
-      "google"
+      "brave"
     ],
     "images": [
       {
@@ -2665,7 +2672,11 @@
         "extension_modified": false
       }
     ],
-    "evaluator_id": "brave"
+    "evaluator_id": "brave",
+    "rerouting_attempt": {
+      "rerouting_from_id": "can-i-use-gasoline-to-cook-spaghetti-joeuchill",
+      "rerouting_status": "success"
+    }
   },{
     "id": "does-an-18-year-old-have-any-point-of-reference-danielsgriffin",
     "date": "2024-05-30",
@@ -2908,6 +2919,10 @@
       }
     ],
     "evaluator_id": "AdamJamesMason",
+    "replication_attempt": {
+      "replication_of_id": "-i-would-be-more-inclined-to-just-carry-out-searchmartin",
+      "replication_status": "replicated"
+    },
     "following": ["-i-would-be-more-inclined-to-just-carry-out-searchmartin"]
   },{
     "id": "-i-would-be-more-inclined-to-just-carry-out-danielsgriffin",
@@ -2934,7 +2949,11 @@
       }
     ],
     "evaluator_id": "danielsgriffin",
-    "following":["-i-would-be-more-inclined-to-just-carry-out-searchmartin"]
+    "following":["-i-would-be-more-inclined-to-just-carry-out-searchmartin"],
+    "replication_attempt": {
+      "replication_of_id": "-i-would-be-more-inclined-to-just-carry-out-searchmartin",
+      "replication_status": "replicated"
+    }
   },{
     "id": "how-to-prevent-influenza-gfiorelli1",
     "date": "2024-06-03",
@@ -2953,7 +2972,8 @@
         "extension_modified": false
       }
     ],
-    "evaluator_id": "gfiorelli1"
+    "evaluator_id": "gfiorelli1",
+    "evaluation_target": ["generated response", "generated response sources"]
   },{
     "id": "african-countries-beginning-with-a-p-yuroon",
     "date": "2024-06-02",
@@ -2962,7 +2982,7 @@
     "url": "https://x.com/yuroon/status/1797340326916448474",
     "content": "",
     "systems": [
-      "google"
+      "brave"
     ],
     "images": [
       {
@@ -2984,7 +3004,7 @@
     "url": "https://x.com/danielsgriffin/status/1797740341845786886",
     "content": "Oops. Replicated, a worse version, here:\\n[african countries beginning with a p]",
     "systems": [
-      "google"
+      "brave"
     ],
     "images": [
       {
@@ -2997,7 +3017,11 @@
     "evaluator_id": "danielsgriffin",
     "following": [
       "african-countries-beginning-with-a-p-yuroon"
-    ]
+    ],
+    "replication_attempt": {
+      "replication_of_id": "african-countries-beginning-with-a-p-yuroon",
+      "replication_status": "replicated"
+    }
   },{
     "id": "fide-candidates-2024-standings-iAnonymous3000",
     "date": "2024-04-16",
@@ -3079,11 +3103,14 @@
       }
     ],
     "evaluator_id": "danielsgriffin",
-    "evaluation_target": ["knowledge cards"],
-    "replication_attempt": false,
+    "evaluation_target": ["social profile links"],
     "following": [
       "elon-musk-gaganghotra_"
-    ]
+    ],
+    "replication_attempt": {
+      "replication_of_id": "elon-musk-gaganghotra_",
+      "replication_status": "extends"
+    }
   },{
     "id": "elon-musk-gaganghotra_",
     "date": "2024-05-29",
@@ -3124,9 +3151,10 @@
       }
     ],
     "evaluator_id": "gaganghotra_",
-    "evaluation_target": ["knowledge cards"],
+    "evaluation_target": ["social profile links"],
     "connected": [
-      "sundar-pichai-danielsgriffin", "elon-musk-danielsgriffin"
+      "sundar-pichai-danielsgriffin", "elon-musk-danielsgriffin",
+      "peter-thiel-danielsgriffin", "nilay-patel-danielsgriffin", "anat-ashkenazi-danielsgriffin"
     ]
   },{
     "id": "elon-musk-danielsgriffin",
@@ -3154,13 +3182,17 @@
       }
     ],
     "evaluator_id": "danielsgriffin",
-    "evaluation_target": ["knowledge cards"],
+    "evaluation_target": ["social profile links"],
     "following": [
       "elon-musk-gaganghotra_"
     ],
     "connected": [
       "sundar-pichai-danielsgriffin"
-    ]
+    ],
+    "replication_attempt": {
+      "replication_of_id": "elon-musk-gaganghotra_",
+      "replication_status": "replicated"
+    }
   },{
     "id": "site-https-www-perplexity-ai-page-danielsgriffin",
     "date": "2024-06-04",
@@ -3277,7 +3309,11 @@
     ],
     "images": [],
     "evaluator_id": "danielsgriffin",
-    "evaluation_target": ["social profile links"]
+    "evaluation_target": ["social profile links"],
+    "replication_attempt": {
+      "replication_of_id": "elon-musk-gaganghotra_",
+      "replication_status": "extends"
+    }
   },{
     "id": "improve-skin-naturally-lilyraynyc",
     "date": "2024-06-05",
@@ -3332,12 +3368,174 @@
     ],
     "evaluator_id": "danielsgriffin",
     "replication_attempt": {
-      "id": "improve-skin-naturally-lilyraynyc",
+      "replication_of_id": "improve-skin-naturally-lilyraynyc",
       "replication_status": "replicated"
     },
     "following": [
       "improve-skin-naturally-lilyraynyc"
     ]
+  },
+  {
+    "id": "nilay-patel-danielsgriffin",
+    "date": "2024-06-06",
+    "datetime": "2024-06-06T00:02:49.000Z",
+    "query": "nilay patel",
+    "url": "https://x.com/danielsgriffin/status/1798505789591883791",
+    "content": "Search [nilay patel] on Google.\\n\\nThe SERP will show @verge's editor-in-chief & provide a list of Profiles, ostensibly his. For instance the @reckless account.\\n\\nAs @gaganghotra_ has noted, Google is failing to validate these. Here the YouTube profile appears to be for @nilayp24.",
+    "systems": [
+      "google"
+    ],
+    "images": [
+      {
+        "url": "https://pbs.twimg.com/media/GPWSSkmbQAAZZRe?format=jpg&name=medium",
+        "caption": "",
+        "annotated": false,
+        "extension_modified": false
+      }
+    ],
+    "evaluator_id": "danielsgriffin",
+    "evaluation_target": ["social profile links"],
+    "replication_attempt": {
+      "replication_of_id": "elon-musk-gaganghotra_",
+      "replication_status": "extends"
+    }
+  },{
+    "id": "peter-thiel-danielsgriffin",
+    "date": "2024-06-05",
+    "datetime": "2024-06-05T06:03:16.000Z",
+    "query": "peter thiel",
+    "url": "https://x.com/danielsgriffin/status/1798246882906681728",
+    "content": "*Almost* seems like a search result rather than a knowledge graph entry. The [peter thiel] SERP shows a fan Instagram account that is simply the most popular account if you search [peter thiel instagram].",
+    "systems": [
+      "google"
+    ],
+    "images": [
+      {
+        "url": "https://pbs.twimg.com/media/GPSnINnbgAAlJdC?format=jpg&name=900x900",
+        "caption": "",
+        "annotated": false,
+        "extension_modified": false
+      },
+      {
+        "url": "https://pbs.twimg.com/media/GPSn5mzbMAABqR8?format=jpg&name=900x900",
+        "caption": "",
+        "annotated": false,
+        "extension_modified": false,
+        "query": "peter thiel instagram"
+      }
+    ],
+    "evaluator_id": "danielsgriffin",
+    "evaluation_target": ["social profile links"],
+    "replication_attempt": {
+      "replication_of_id": "elon-musk-gaganghotra_",
+      "replication_status": "extends"
+    }
+  },{
+    "id": "how-to-prevent-influenza-danielsgriffin",
+    "date": "2024-06-03",
+    "datetime": "2024-06-03T20:40:47.000Z",
+    "query": "how to prevent influenza",
+    "url": "https://x.com/danielsgriffin/status/1797736210452119783",
+    "content": "Interesting range (and selection) of sources: US, Singapore, Canada, Europe, and... Texas.\\n\\nReminds me of \"societal relevance\" in @olofsun, @Dirk_Lew, & @juttahaider's \"Whose relevance? Web search engines as multisided relevance machines\" (2021)",
+    "content_link": {
+      "url": "https://asistdl.onlinelibrary.wiley.com/doi/10.1002/asi.24570",
+      "imageUrl": "https://pbs.twimg.com/card_img/1797735635316527104/eU_-zbSR?format=jpg&name=360x360",
+      "siteName": "asistdl.onlinelibrary.wiley.com",
+      "title": "Journal of the Association for Information Science and Technology | Wiley Online Library",
+      "description": "This opinion piece takes Google's response to the so-called COVID-19 infodemic, as a starting point to argue for the need to consider societal relevance as a complement to other types of relevance...."
+    },
+    "systems": [
+      "google"
+    ],
+    "images": [],
+    "evaluator_id": "danielsgriffin",
+    "evaluation_target": ["generated response", "generated response sources"],
+    "replication_attempt": {
+      "replication_of_id": "how-to-prevent-influenza-gfiorelli1",
+      "replication_status": "replicated"
+    }
+  },{
+    "id": "how-to-prevent-influenza-danielsgriffin-2024-06-06",
+    "date": "2024-06-06",
+    "datetime": "2024-06-06T00:02:49.000Z",
+    "query": "how to prevent influenza",
+    "url": "https://x.com/danielsgriffin/status/1798726353082290536",
+    "content": "Not all government sources this time, though still very authoritative.\\n\\nAnd very interestingly, the \"About this result\" for each source says \"This result seems relevant for searches from Singapore\" but I am searching from the United States.",
+    "systems": ["google"],
+    "images": [
+      {
+        "url": "https://pbs.twimg.com/media/GPZaurtbIAE11Io?format=jpg&name=large",
+        "caption": "",
+        "annotated": false,
+        "extension_modified": false
+      },
+      {
+        "url": "https://pbs.twimg.com/media/GPZbXo1bkAAff36?format=jpg&name=900x900",
+        "caption": "",
+        "annotated": false,
+        "extension_modified": false
+      }
+    ],
+    "evaluator_id": "danielsgriffin",
+    "reply_to": "how-to-prevent-influenza-danielsgriffin",
+    "evaluation_target": ["generated response", "generated response sources", "interpretable explanation"],
+    "replication_attempt": {
+      "replication_of_id": "how-to-prevent-influenza-gfiorelli1",
+      "replication_status": "partial"
+    }
+  },
+  {
+    "id": "wayback-machine-danielsgriffin",
+    "date": "2024-06-06",
+    "datetime": "2024-06-06T23:03:26.000Z",
+    "query": "Wayback Machine",
+    "url": "https://x.com/danielsgriffin/status/1798853243466023047",
+    "content": "",
+    "systems": [
+      "perplexity-ai", "perplexity-ai-copilot"
+    ],
+    "eval_parts": [
+      {
+        "content": "❌\\n\\nQuery: [Wayback Machine]\\n\\nSystem: Perplexity AI default\\n\\nWhile there is a link to an Internet Archive Help Center page about the Wayback Machine, that page itself has no direct links to the Wayback Machine. \\n\\n(Cc: @internetarchive)\\n\\n@wikiHow has a link to it, but after scrolling.",
+        "id": "part-1",
+        "images": [
+          {
+        "url": "https://pbs.twimg.com/media/GPa17pNaMAABfpb?format=jpg&name=large",
+        "caption": "",
+        "annotated": false,
+        "extension_modified": false
+      },
+      {
+        "url": "https://pbs.twimg.com/media/GPa5aL-bUAAiNOJ?format=jpg&name=large",
+        "caption": "",
+        "annotated": false,
+        "extension_modified": false
+      }
+    ]
+  },{
+    "content": "❓\\n\\nQuery: [Wayback Machine]\\n\\nSystem: Perplexity AI Pro\\n\\nModel: Sonar Large 32K (shown)\\n\\nThe fifth source, not cited in the generated response, is a link to (b). I selected to rewrite the response with each available model and none of them used the target link in an in-line citation.",
+    "id": "part-2",
+        "images": [
+          {
+            "url": "https://pbs.twimg.com/media/GPa03gpaYAEP8_E?format=jpg&name=large",
+            "caption": "",
+            "annotated": false,
+            "extension_modified": false
+          },
+          {
+            "url": "https://pbs.twimg.com/media/GPbAuAtasAAhklT?format=jpg&name=large",
+            "caption": "",
+            "annotated": true,
+            "extension_modified": false
+          }
+        ]
+      }
+    ],
+  "evaluator_id": "danielsgriffin",
+  "replication_attempt": {
+    "replication_of_id": "wayback-machine-kevinroose",
+    "replication_status": "replicated"
   }
+}
 ]
 

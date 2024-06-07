@@ -7,8 +7,10 @@ import {
 } from './ui/card';
 import ImageDisplay from './ImageDisplay';
 import { EvaluatedSystems } from './eval-card-elements/EvaluatedSystems';
-
+import { ContentLinkCard } from './eval-card-elements/ContentLinkCard';
+import { ContentLinkCardProps } from '@/src/types';
 import { evalCardItem, EvalItem } from '@/src/types';
+
 
 type EvalExtractCardProps = {
     evalItem: EvalItem;
@@ -37,7 +39,6 @@ const EvalExtractCard: React.FC<EvalExtractCardProps> = ({ evalItem, evalCardIte
         return <p>Item not found</p>;
     }
 
-
     return (
         <>
             <Card className="rounded-none mb-2">
@@ -49,15 +50,17 @@ const EvalExtractCard: React.FC<EvalExtractCardProps> = ({ evalItem, evalCardIte
                         </div>
                     )}
                     <figure className="max-w-screen-md">
-                        {skipBlockQuote && (<br></br>)}
-                        {!skipBlockQuote && (
+                        {skipBlockQuote ? (<br></br>) : (
                         <blockquote className="my-2">
                             <p className="text-l text-gray-900 dark:text-white before:text-2xl before:text-gray-400 before:content-['“']" dangerouslySetInnerHTML={{ __html: contentWithNewlines.join('<br>') }}></p>
                         </blockquote>
                         )}
+                        {evalCardItem.content_link && (
+                            <ContentLinkCard {...(evalCardItem.content_link as ContentLinkCardProps)} />
+                        )}
                     </figure>
                     {evalCardItem?.media === "video" && (
-                        <div className="border shadow-sm  m-2 text-center p-2.5 w-1/2 mx-auto min-h-[200px] flex flex-col justify-center items-center">
+                        <div className="border shadow-sm m-2 text-center p-2.5 w-1/2 mx-auto min-h-[200px] flex flex-col justify-center items-center">
                             <p>Video content in evals is currently not supported, click <a className="text-blue-500 underline" href={evalCardItem.url}>here</a> to see the video in context.</p>
                         </div>
                         )
@@ -71,5 +74,3 @@ const EvalExtractCard: React.FC<EvalExtractCardProps> = ({ evalItem, evalCardIte
 }
 
 export default EvalExtractCard; // Export the component at the end
-
-

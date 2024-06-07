@@ -43,7 +43,7 @@ import { conflictType } from "@/src/types";
 import FeedbackLink from './Feedback';
 import MiniEvalCard from './MiniEvalCard';
 
-interface EvalCardProps {
+export interface EvalCardProps {
   evalItemId: string;
 }
 
@@ -196,14 +196,10 @@ const EvalCard: React.FC<EvalCardProps> = ({ evalItemId }) => {
           <CardDescription>
             <a href={evalItem.url} target="_blank" rel="noopener noreferrer" className="w-7/8 truncate block arrLinkFlat">{evalItem.url}</a>
               <span className="text-sm"><span className="font-bold">date: </span>{evalItem.date}</span><br></br>
-              {evalItem.methodology && (<>
-                <span className="text-sm">methodology: <a className="underline arrLinkFlat" href={evalItem.methodology.url}>{evalItem.methodology.in_text}</a></span><br></br>
               {evalItem.methodology && (
                 <>
-                  <span className="text-sm">methodology: <a className="underline arrLinkFlat" href={evalItem.methodology.url}>{evalItem.methodology.in_text}</a></span><br></br>
+                  <span className="text-sm"><span className="font-bold">methodology: </span><a className="underline arrLinkFlat" href={evalItem.methodology.url}>{evalItem.methodology.in_text}</a></span><br></br>
                 </>
-              )}
-              </>
               )}
               <EvaluatedSystems evalItemID={evalItemId} systemIDs={evalItem.systems} />
               <AlsoPublished evalItem={evalItem} />

@@ -14,15 +14,15 @@ const image = `${url}/screenshots/home_default.png`;
 
 
 
-export const getStaticProps: GetStaticProps = async () => {
-  return {
-    props: {
-      evals,
-      evaluators,
-      systems
-    },
-  };
-};
+// export const getStaticProps: GetStaticProps = async () => {
+//   return {
+//     props: {
+//       evals,
+//       evaluators,
+//       systems
+//     },
+//   };
+// };
 
 
 const HomePage = () => {

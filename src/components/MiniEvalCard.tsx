@@ -127,7 +127,7 @@ export const MiniEvalCard: React.FC<MiniEvalCardProps> = ({
         {evalItem.likely_fabricated && (
           <span className="border border-red-500 bg-red-100 font-semibold p-2 w-fit ml-4 text-xs text-center"><ExclamationTriangleIcon className="h-4 w-4 text-red-400 inline mr-1" />This image is likely fabricated.</span>
         )}
-        <ReplicationRerouteCheck evalItem={evalItem} />
+        <ReplicationRerouteCheck evalItem={evalItem} className="ml-4" />
         <CardContent className='p-1 py-0'>
           {!currentEvaluator && evalEvaluatorDetails && (
             <figcaption className="mt-1 mb-2">
@@ -169,8 +169,8 @@ export const MiniEvalCard: React.FC<MiniEvalCardProps> = ({
         </CardContent>
         {checks && currentEvaluation &&
           (<CardFooter className="flex flex-col space-y-1 p-1 pt-0 w-full">
-            <CheckTemporalDifference evalItemId={evalItemId} currentEvaluation={currentEvaluation} />
-            <CheckQueryConsistency evalItemId={evalItemId} currentEvaluation={currentEvaluation} />
+            {/* <CheckTemporalDifference evalItemId={evalItemId} currentEvaluation={currentEvaluation} /> */}
+            {/* <CheckQueryConsistency evalItemId={evalItemId} currentEvaluation={currentEvaluation} /> */}
           </CardFooter>
           )
         }

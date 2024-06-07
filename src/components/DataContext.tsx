@@ -1,8 +1,6 @@
-// DataContext.tsx
 "use client"
-import React, { createContext, useState, useEffect } from 'react';
+import React, { createContext, useState, useEffect, ReactNode, useMemo } from 'react';
 import FlexSearch from 'flexsearch';
-import { ReactNode } from 'react';
 import evals from "src/data/evals.json";
 import systems from "src/data/systems.json";
 import evaluators from "src/data/evaluators.json";
@@ -37,8 +35,10 @@ interface DataContextType {
     evaluators: evalEvaluator[];
     evalItemLabel: React.FC<{ evalItemId: string; currentEvaluation: string; currentEvaluator: boolean }>;
     miniEvalCard: React.FC<MiniEvalCardProps>;
+    replicatedStatusLookupMap: { [key: string]: { replication_id: string; replication_status: string }[] };
+    evalsToSystemsLookupMap: { [key: string]: string[] };
+    minimalEvalLookupMap: { [key: string]: { evalQuery: string; evalSystems: string[]; evaluatorName: string } };
 }
-
 
 const defaultContextValue: DataContextType = {
     data: [],
@@ -47,10 +47,12 @@ const defaultContextValue: DataContextType = {
     setQuery: () => { }, // Dummy function, will be replaced in provider
     systems: [],
     evaluators: [],
-    evalItemLabel: (props: { evalItemId: string; currentEvaluation: string; currentEvaluator: boolean }) => <div></div>,
-    miniEvalCard: (MiniEvalCardProps) => <div></div>
+    evalItemLabel: () => <div></div>,
+    miniEvalCard: () => <div></div>,
+    replicatedStatusLookupMap: {},
+    evalsToSystemsLookupMap: {},
+    minimalEvalLookupMap: {}
 }
-
 
 type DataProviderProps = {
     children: ReactNode;
@@ -60,15 +62,54 @@ const DataContext = createContext<DataContextType>(defaultContextValue);
 
 const index = new FlexSearch.Index({ tokenize: 'forward' });
 
+const createLookupMap = (data: EvalItem[]): { [key: string]: { replication_id: string; replication_status: string }[] } => {
+    const map: { [key: string]: { replication_id: string; replication_status: string }[] } = {};
+    data.forEach(evalItem => {
+        if (evalItem.replication_attempt) {
+            const { replication_of_id, replication_status } = evalItem.replication_attempt;
+            if (!map[replication_of_id]) {
+                map[replication_of_id] = [];
+            }
+            map[replication_of_id].push({ replication_id: evalItem.id, replication_status });
+        }
+    });
+    return map;
+};
+
+const createEvalsToSystemsLookupMap = (data: EvalItem[]): { [key: string]: string[] } => {
+    const map: { [key: string]: string[] } = {};
+    data.forEach(evalItem => {
+        map[evalItem.id] = evalItem.systems;
+    });
+    return map;
+};
+
+const createMinimalEvalLookupMap = (data: EvalItem[]): { [key: string]: { evalQuery: string; evalSystems: string[]; evaluatorName: string } } => {
+    const map: { [key: string]: { evalQuery: string; evalSystems: string[]; evaluatorName: string } } = {};
+    data.forEach(evalItem => {
+        const evaluator = evaluators.find(evaluator => evaluator.id === evalItem.evaluator_id);
+        map[evalItem.id] = {
+            evalQuery: evalItem.query,
+            evalSystems: evalItem.systems.map(systemId => 
+                systems.find(system => system.id === systemId)?.name || 'Unknown'),
+            evaluatorName: evaluator ? evaluator.name : 'Unknown'
+        };
+    });
+    return map;
+};
+
 export const DataProvider: React.FC<DataProviderProps> = ({ children }) => {
     const [data, setData] = useState<EvalItem[]>(evals as EvalItem[]);
     const [query, setQuery] = useState('');
     const [results, setResults] = useState<EvalItem[]>([]);
 
+    const replicatedStatusLookupMap = useMemo(() => createLookupMap(data), [data]);
+    const evalsToSystemsLookupMap = useMemo(() => createEvalsToSystemsLookupMap(data), [data]);
+    const minimalEvalLookupMap = useMemo(() => createMinimalEvalLookupMap(data), [data]);
 
     const EvalItemLabel: React.FC<{ evalItemId: string, currentEvaluation: string, currentEvaluator: boolean }> = ({ evalItemId, currentEvaluation, currentEvaluator }) => {
-        const connectedItem = data ? data.find(evalItem => evalItem.id === evalItemId) : null;
-        const evaluator = evaluators ? evaluators.find(evaluator => evaluator.id === connectedItem?.evaluator_id) : null;
+        const connectedItem = data.find(evalItem => evalItem.id === evalItemId) || null;
+        const evaluator = evaluators.find(evaluator => evaluator.id === connectedItem?.evaluator_id) || null;
         const isCurrentEvaluation = currentEvaluation === evalItemId;
         return (
             <span>
@@ -80,30 +121,25 @@ export const DataProvider: React.FC<DataProviderProps> = ({ children }) => {
         );
     };
 
-
     useEffect(() => {
         // Initialize your data and add it to the index
         function get_evalString(evalItem: EvalItem) {
             let evalString = evalItem.query + " " + evalItem.content + " ";
             if (evalItem.eval_parts) {
-                evalString = evalString + " " + evalItem.eval_parts.forEach(part => {
-                    return (part.content);
-                });
+                evalString += evalItem.eval_parts.map(part => part.content).join(' ');
             }
             if (evalItem.evaluator_id) {
                 const evaluatorDetails = evaluators.find(evaluator => evaluator.id === evalItem.evaluator_id);
                 if (evaluatorDetails) {
-                    evalString = evalString + " " + evaluatorDetails.name + " " + evaluatorDetails.role;
+                    evalString += " " + evaluatorDetails.name + " " + evaluatorDetails.role;
                 }
             }
-            return evalString
+            return evalString;
         }
 
         data.forEach(evalItem => {
             index.add(evalItem.id, get_evalString(evalItem));
-
         });
-        setData(data);
     }, [data]);
 
     useEffect(() => {
@@ -116,10 +152,7 @@ export const DataProvider: React.FC<DataProviderProps> = ({ children }) => {
         }
     }, [query, data]);
 
-
-    // Assuming systems is an array of objects where each object has a 'name' property
-    const sortedSystems = systems.sort((a, b) => a.name.localeCompare(b.name));
-
+    const sortedSystems = useMemo(() => systems.sort((a, b) => a.name.localeCompare(b.name)), [systems]);
 
     useEffect(() => {
         const invalidSystems = data.flatMap(evalItem =>
@@ -131,14 +164,11 @@ export const DataProvider: React.FC<DataProviderProps> = ({ children }) => {
         if (invalidSystems.length > 0) {
             throw new Error(`Validation failed: Some systems in the data do not match the available systems. Invalid systems found in evalItems: ${invalidSystems.map(is => `EvalItem ID: ${is.evalItemId}, Invalid System ID: ${is.invalidSystemId}`).join(', ')}`);
         }
-
-        setData(data); // No changes needed if validation passes
     }, [data]);
 
-
     return (
-        <DataContext.Provider value={{ data, results, query, setQuery, systems: sortedSystems, evaluators: evaluators, miniEvalCard: MiniEvalCard, evalItemLabel: EvalItemLabel }}>
-            {children} {/* Now TypeScript knows about children */}
+        <DataContext.Provider value={{ data, results, query, setQuery, systems: sortedSystems, evaluators, miniEvalCard: MiniEvalCard, evalItemLabel: EvalItemLabel, replicatedStatusLookupMap, evalsToSystemsLookupMap, minimalEvalLookupMap }}>
+            {children}
         </DataContext.Provider>
     );
 };

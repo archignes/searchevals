@@ -12,27 +12,24 @@ import OpenGraphCardMetaData from '@/src/components/OpenGraphCardMetaData';
 import { EvalItem } from '@/src/types/evalItem';
 import { claimReviewJsonLD } from '@/src/components/eval-card-elements/ClaimReview';
 // Import your JSON data at the top of your file
-import evals from "src/data/evals.json";
-import evaluators from "src/data/evaluators.json";
-import systems from "src/data/systems.json";
-
 
 export const getStaticProps: GetStaticProps = async (context) => {
-  // Ensure `params` is not undefined
   const id = context.params?.id;
-  const evalItem = evals.find(item => item.id === id);
+  if (!id) {
+    return { notFound: true };
+  }
 
-  // Handle the case where no item is found
+  const evals = await import('@/src/data/evals.json');
+  const evalItem = evals.default.find((item: any) => item.id === id);
+
   if (!evalItem) {
     return { notFound: true };
   }
 
+  // Only return the necessary data, not the entire module
   return {
     props: {
-      evalItem,
-      evals,
-      evaluators,
-      systems
+      evalItem
     },
   };
 };
@@ -40,7 +37,8 @@ export const getStaticProps: GetStaticProps = async (context) => {
 
 export const getStaticPaths: GetStaticPaths = async () => {
   // Generate paths based on evals' IDs
-  const paths = evals.map(evalItem => ({
+  const evals = await import('@/src/data/evals.json');
+  const paths = evals.default.map((evalItem: any) => ({
     params: { id: evalItem.id.toString() },
   }));
 

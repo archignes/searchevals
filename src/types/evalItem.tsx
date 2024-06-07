@@ -1,5 +1,13 @@
 import { ClaimReview } from "./claimReview";
 
+export interface ContentLinkCardProps {
+  url: string;
+  imageUrl: string;
+  siteName: string;
+  title: string;
+  description: string;
+}
+
 export interface evalPart {
   id: string;
   url?: string;
@@ -7,6 +15,7 @@ export interface evalPart {
   content: string;
   query?: string;
   images?: imageItem[]
+  content_link?: ContentLinkCardProps;
 }
 
 
@@ -16,6 +25,8 @@ export interface imageItem {
   annotated?: boolean;
   extension_modified?: boolean;
 }
+
+
 
 
 export interface methodologyCitation {
@@ -62,6 +73,7 @@ export interface documentItem {
 export interface EvalItem {
   id: string;
   date: string;
+  datetime: string;
   validation_image?: string;
   query: string;
   likely_fabricated?: boolean;
@@ -81,6 +93,7 @@ export interface EvalItem {
   systems: string[];
   eval_parts?: evalPart[];
   content?: string; // Make content optional
+  content_link?: ContentLinkCardProps;
   images?: imageItem[];
   evaluator_id: string;
   media?: string;
@@ -89,14 +102,12 @@ export interface EvalItem {
   resources?: documentItem[];
   referenced_at?: documentItem[];
   replication_attempt?: {
-    id: string;
-    date: string;
-    replication_status: "replicated" | "failed" | "partial" | "patched"
+    replication_of_id: string;
+    replication_status: "replicated" | "failed" | "partial" | "patched" | "extends"
   }
-  rerouted?: {
-    id: string;
-    date: string;
-    reroute_status: "success" | "failure" | "partial"
+  rerouting_attempt?: {
+    rerouting_from_id: string; 
+    rerouting_status: "success" | "failure" | "partial"
   }
 }
 

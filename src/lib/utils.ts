@@ -1,5 +1,6 @@
 import { clsx, type ClassValue } from "clsx"
 import { twMerge } from "tailwind-merge"
+import { EvalItem } from "../types"
 
 export function cn(...inputs: ClassValue[]) {
     return twMerge(clsx(inputs))
@@ -13,8 +14,13 @@ const extractTimestampTwitter = (statusId: string) => {
 
 
 
-export const isTimestampFriendly = (url: string): boolean => {
-    return ['twitter.com', 'x.com', 'infosec.exchange', 'mastodon.social'].some(domain => url.includes(domain));
+export const isTimestampFriendly = (evalItem: EvalItem): boolean => {
+    if (evalItem.datetime) {
+        return true;
+    } else {
+        return ['twitter.com', 'x.com', 'infosec.exchange', 'mastodon.social']
+            .some(domain => evalItem.url.includes(domain));
+    }
 };
 
 
@@ -45,7 +51,6 @@ export const extractTimestamp = (url: string): Date => {
     const segments = url.split('/');
     const statusId = segments[segments.length - 1];
     if (url.includes('twitter.com') || url.includes('x.com')) {
-        console.log('url', url);
         return extractTimestampTwitter(statusId);
     } else if (url.includes('mastodon.social') || url.includes('infosec.exchange')) {
         return extractTimestampMastodon(statusId);

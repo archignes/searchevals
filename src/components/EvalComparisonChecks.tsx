@@ -1,29 +1,31 @@
 import { useContext } from "react";
-import { ExclamationTriangleIcon, InfoCircledIcon } from "@radix-ui/react-icons";
+import { CounterClockwiseClockIcon, ExclamationTriangleIcon, InfoCircledIcon } from "@radix-ui/react-icons";
 import DataContext from "./DataContext";
 import DiffMatchPatch from 'diff-match-patch';
 import { extractTimestamp, isTimestampFriendly } from '../lib/utils';
 
 
-export const CheckTemporalDifference: React.FC<{ evalItemId: string; currentEvaluation: string }> = ({ evalItemId, currentEvaluation }) => {
+export const CheckTemporalDifference: React.FC<{ evalItemId: string; currentEvaluation: string; className?: string }> = ({ evalItemId, currentEvaluation, className }) => {
   const { data, systems } = useContext(DataContext);
+  
   const currentEvalItem = data ? data.find(evalItem => evalItem.id === currentEvaluation) : null;
   const followingEvalItem = data ? data.find(evalItem => evalItem.id === evalItemId) : null;
-
+  
   if (!currentEvalItem || !followingEvalItem) return null;
-
-  if (isTimestampFriendly(currentEvalItem.url) && isTimestampFriendly(followingEvalItem.url)) {
+  
+  if (isTimestampFriendly(currentEvalItem) && isTimestampFriendly(followingEvalItem)) {
     
-    const currentTimestamp = extractTimestamp(currentEvalItem.url);
-    const followingTimestamp = extractTimestamp(followingEvalItem.url);
+    const currentTimestamp = new Date(currentEvalItem.datetime || extractTimestamp(currentEvalItem.url));
+    const followingTimestamp = new Date(followingEvalItem.datetime || extractTimestamp(followingEvalItem.url));
     const timeDifference = currentTimestamp.getTime() - followingTimestamp.getTime();
-
+    
     const minutes = Math.floor(timeDifference / (1000 * 60));
     const hours = Math.floor(minutes / 60);
     const days = Math.floor(hours / 24);
     const weeks = Math.floor(days / 7);
     const months = Math.floor(days / 30);
     const years = Math.floor(days / 365);
+    
 
     let humanFriendlyDifference = '';
     if (years > 0) {
@@ -62,10 +64,10 @@ export const CheckTemporalDifference: React.FC<{ evalItemId: string; currentEval
     const timeDifferenceQuery = `${systemSearchLink}what+is+the+time+difference+between+${followingHumanFriendlyTimestamp}+and+${currentHumanFriendlyTimestamp}`;
 
     return (
-      <div className="flex justify-center w-full text-xs items-center text-info">
-        <InfoCircledIcon className="text-grey-500" />
-        <a href={timeDifferenceQuery} className="ml-1 text-grey-500" title={exactDifference}>
-          Temporal difference: {humanFriendlyDifference}
+      <div className="flex justify-start ml-5 w-full text-[10px] items-center text-info">
+        <CounterClockwiseClockIcon className={`text-grey-500 ${className}`} />
+        <a href={timeDifferenceQuery} className={`ml-1 text-grey-500 ${className}`} title={exactDifference}>
+          {humanFriendlyDifference} later
         </a>
       </div>
     );
@@ -80,7 +82,7 @@ export const CheckQueryConsistency: React.FC<{ evalItemId: string; currentEvalua
 
   if (!currentEvalItem || !followingEvalItem) return null;
 
-  if (currentEvalItem.replication_attempt !== undefined && !currentEvalItem.replication_attempt) {
+  if (currentEvalItem.replication_attempt?.replication_status === 'extends') {
     return null;
   }
 
