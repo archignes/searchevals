@@ -55,7 +55,7 @@ const Feed: React.FC = () => {
       const dateComparison = b.date.localeCompare(a.date);
       if (dateComparison !== 0) return dateComparison;
       // If both URLs are timestamp-friendly links, get the timestamp and compare
-      if (isTimestampFriendly(a.url) && isTimestampFriendly(b.url)) {
+      if (isTimestampFriendly(a) && isTimestampFriendly(b)) {
         const aTimestamp = extractTimestamp(a.url);
         const bTimestamp = extractTimestamp(b.url);
         return bTimestamp.getTime() - aTimestamp.getTime();
