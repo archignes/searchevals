@@ -2,6 +2,7 @@ import { useContext } from "react";
 import { EvalItem } from "../../types"
 import { StarIcon, StackIcon, MinusCircledIcon, CheckCircledIcon, CrossCircledIcon, PlusCircledIcon } from "@radix-ui/react-icons"
 import DataContext from '../DataContext';
+import { IconTelescope } from '@tabler/icons-react';
 import { EvalCardProps } from '../EvalCard';
 import { MiniEvalCard } from '../MiniEvalCard';
 import { CheckTemporalDifference, CheckQueryConsistency } from '../EvalComparisonChecks';
@@ -13,7 +14,7 @@ import {
 } from '../ui/dropdown-menu'
 import { Button } from '../ui/button'
 import { text } from "stream/consumers";
-import { ReroutingAttemptNotice } from "./ReroutingAttemptNotice";
+import { ReroutingAttemptNotice, DropDownRerouteAttempts } from "./ReroutingAttemptNotice";
 
 const ReplicationEvaluationTargetCheck = ({ evalItem, className }: { evalItem: EvalItem, className?: string }) => {
   const { data } = useContext(DataContext); 
@@ -75,23 +76,34 @@ const DropDownReplicationAttempts: React.FC<EvalCardProps & { className?: string
   const subjectOfReplicationAttempts = replicatedStatusLookupMap[evalItemId];
   if (!subjectOfReplicationAttempts) return null;
 
+  console.log('Replicated status lookup map:', replicatedStatusLookupMap[evalItemId]);
 
   const subjectOfReplicationAttemptsBackgroundColor = replicatedStatusLookupMap[evalItemId]?.every(attempt =>
     attempt.replication_status === 'extended' ||
     attempt.replication_status === 'replicated' ||
-    attempt.replication_status === 'partial') ? 'bg-green-100' : 'bg-yellow-100';
+    attempt.replication_status === 'partial' ||
+    attempt.replication_status === 'explored') ? 'bg-green-100' : 'bg-yellow-100';
   const subjectOfReplicationAttemptsBorderColor = replicatedStatusLookupMap[evalItemId]?.every(attempt =>
     attempt.replication_status === 'extended' ||
     attempt.replication_status === 'replicated' ||
-    attempt.replication_status === 'partial') ? 'border-green-500' : 'border-yellow-500';
+    attempt.replication_status === 'partial' ||
+    attempt.replication_status === 'explored') ? 'border-green-500' : 'border-yellow-500';
   const subjectOfReplicationAttemptsTextColor = replicatedStatusLookupMap[evalItemId]?.every(attempt =>
     attempt.replication_status === 'extended' ||
     attempt.replication_status === 'replicated' ||
-    attempt.replication_status === 'partial') ? 'text-green-600' : 'text-yellow-600';
+    attempt.replication_status === 'partial' ||
+    attempt.replication_status === 'explored') ? 'text-green-600' : 'text-yellow-600';
   const subjectOfReplicationAttemptsIcon = replicatedStatusLookupMap[evalItemId]?.every(attempt =>
     attempt.replication_status === 'extended' ||
     attempt.replication_status === 'replicated' ||
-    attempt.replication_status === 'partial') ? <StarIcon className={`mr-1 ${subjectOfReplicationAttemptsTextColor}`} /> : <MinusCircledIcon className={`mr-1 ${subjectOfReplicationAttemptsTextColor}`} />;
+    attempt.replication_status === 'partial') ? (
+      <StarIcon className={`mr-1 ${subjectOfReplicationAttemptsTextColor}`} />
+    ) : replicatedStatusLookupMap[evalItemId]?.every(attempt =>
+      attempt.replication_status === 'explored') ? (
+      <IconTelescope stroke={1.5} className={`mr-1 h-4 w-4 ${subjectOfReplicationAttemptsTextColor}`} />
+    ) : (
+      <MinusCircledIcon className={`mr-1 ${subjectOfReplicationAttemptsTextColor}`} />
+    );
   const allReplicated = subjectOfReplicationAttempts?.every(attempt => 
     attempt.replication_status === 'replicated');
   const allExtended = subjectOfReplicationAttempts?.every(attempt => 
@@ -99,9 +111,21 @@ const DropDownReplicationAttempts: React.FC<EvalCardProps & { className?: string
   const allPartial = subjectOfReplicationAttempts?.every(attempt => 
     attempt.replication_status === 'partial');
   const replicationAndMixedStatus = subjectOfReplicationAttempts?.some(attempt => 
-    attempt.replication_status === 'replicated') && (subjectOfReplicationAttempts?.some(attempt => 
-    attempt.replication_status === 'extended') || subjectOfReplicationAttempts?.some(attempt => 
-    attempt.replication_status === 'partial'));
+    attempt.replication_status === 'replicated') && 
+    (subjectOfReplicationAttempts.some(attempt => 
+      attempt.replication_status === 'extended') || 
+    subjectOfReplicationAttempts.some(attempt => 
+      attempt.replication_status === 'partial'));
+
+  console.log('Subject of replication attempts:', subjectOfReplicationAttempts);
+  console.log('All replicated:', allReplicated);
+  console.log('All extended:', allExtended);
+  console.log('All partial:', allPartial);
+  console.log('Replication and mixed status:', replicationAndMixedStatus);
+
+
+  const allExplored = subjectOfReplicationAttempts?.every(attempt => 
+    attempt.replication_status === 'explored');
 
   let subjectOfReplicationAttemptsText = 'Replication in progress...';
   if (allReplicated) {
@@ -112,6 +136,10 @@ const DropDownReplicationAttempts: React.FC<EvalCardProps & { className?: string
     subjectOfReplicationAttemptsText = subjectOfReplicationAttempts.length === 1 
       ? 'Extended' 
       : `Extended ${subjectOfReplicationAttempts.length} times`;
+  } else if (allExplored) {
+    subjectOfReplicationAttemptsText = subjectOfReplicationAttempts.length === 1 
+      ? 'Explored' 
+      : `Explored ${subjectOfReplicationAttempts.length} times`;
   } else if (allPartial) {
     subjectOfReplicationAttemptsText = subjectOfReplicationAttempts.length === 1 
       ? 'Partially Replicated' 
@@ -223,24 +251,30 @@ export const ReplicationRerouteCheck = ({ evalItem, className }: { evalItem: Eva
     ? 'bg-green-100' 
     : evalItem.replication_attempt?.replication_status === 'partial'
     ? 'bg-yellow-100'
-    : evalItem.replication_attempt?.replication_status === 'extends'
+    : evalItem.replication_attempt?.replication_status === 'extended'
     ? 'bg-blue-100'
+    : evalItem.replication_attempt?.replication_status === 'explored'
+    ? 'bg-green-100'
     : 'bg-orange-100';
   
   const borderColor = evalItem.replication_attempt?.replication_status === 'replicated' 
     ? 'border-green-500' 
     : evalItem.replication_attempt?.replication_status === 'partial'
     ? 'border-yellow-500'
-    : evalItem.replication_attempt?.replication_status === 'extends'
+    : evalItem.replication_attempt?.replication_status === 'extended'
     ? 'border-blue-500'
+    : evalItem.replication_attempt?.replication_status === 'explored'
+    ? 'border-green-500'
     : 'border-orange-500';
   
   const textColor = evalItem.replication_attempt?.replication_status === 'replicated' 
     ? 'text-green-600' 
     : evalItem.replication_attempt?.replication_status === 'partial'
     ? 'text-yellow-600'
-    : evalItem.replication_attempt?.replication_status === 'extends'
+    : evalItem.replication_attempt?.replication_status === 'extended'
     ? 'text-blue-600'
+    : evalItem.replication_attempt?.replication_status === 'explored'
+    ? 'text-green-600'
     : 'text-orange-600';
   
   const replicationStatus = evalItem.replication_attempt?.replication_status === 'replicated' 
@@ -259,10 +293,18 @@ export const ReplicationRerouteCheck = ({ evalItem, className }: { evalItem: Eva
           </a>
         </>
       )
-    : evalItem.replication_attempt?.replication_status === 'extends'
+    : evalItem.replication_attempt?.replication_status === 'extended'
     ? (
         <>
           Extends <a href={`/card/${evalItem.replication_attempt.replication_of_id}`} className="underline">
+                          {getTargetEvalEvaluatorAndQuery('replication', minimalEvalLookupMap, evalItem)}
+          </a> eval
+        </>
+      )
+    : evalItem.replication_attempt?.replication_status === 'explored'
+    ? (
+        <>
+          Explores <a href={`/card/${evalItem.replication_attempt.replication_of_id}`} className="underline">
                           {getTargetEvalEvaluatorAndQuery('replication', minimalEvalLookupMap, evalItem)}
           </a> eval
         </>
@@ -273,8 +315,10 @@ export const ReplicationRerouteCheck = ({ evalItem, className }: { evalItem: Eva
     ? <CheckCircledIcon className={`mr-1 ${textColor} flex-shrink-0`} /> 
     : evalItem.replication_attempt?.replication_status === 'partial'
     ? <MinusCircledIcon className={`mr-1 ${textColor} flex-shrink-0`} />
-    : evalItem.replication_attempt?.replication_status === 'extends'
+    : evalItem.replication_attempt?.replication_status === 'extended'
     ? <PlusCircledIcon className={`mr-1 ${textColor} flex-shrink-0`} />
+    : evalItem.replication_attempt?.replication_status === 'explored'
+    ? <IconTelescope stroke={1.5} className={`mr-1 h-4 w-4 ${textColor} flex-shrink-0`} />
     : <CrossCircledIcon className={`mr-1 ${textColor} flex-shrink-0`} />;    
     
   
@@ -283,7 +327,7 @@ export const ReplicationRerouteCheck = ({ evalItem, className }: { evalItem: Eva
       <DropDownReplicationAttempts evalItemId={evalItem.id} className={className} />
     {evalItem.replication_attempt && (
       <div 
-        className={`border ${borderColor} ${backgroundColor} flex flex-col items-start font-semibold p-2 w-fit text-xs ${className}`}
+        className={`border ${borderColor} ${backgroundColor} hover:${backgroundColor} flex flex-col items-start font-semibold p-2 w-fit text-xs ${className}`}
         aria-label={`Replicating status: ${replicationStatus}`}
       >
         <div className="flex items-start">
@@ -296,6 +340,7 @@ export const ReplicationRerouteCheck = ({ evalItem, className }: { evalItem: Eva
         {/* <CheckQueryConsistency evalItemId={evalItem.replication_attempt.replication_of_id} currentEvaluation={evalItem.id} /> */}
       </div>
     )}
+      <DropDownRerouteAttempts evalItemId={evalItem.id} className={className} />
       <ReroutingAttemptNotice evalItem={evalItem} className={className} />
     </>
   );

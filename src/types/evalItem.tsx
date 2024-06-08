@@ -1,11 +1,14 @@
 import { ClaimReview } from "./claimReview";
 
 export interface ContentLinkCardProps {
+  type: "tweet" | "article";
   url: string;
-  imageUrl: string;
-  siteName: string;
-  title: string;
-  description: string;
+  imageUrl?: string;
+  siteName?: string;
+  title?: string;
+  description?: string;
+  content?: string;
+  content_link?: ContentLinkCardProps;
 }
 
 export interface evalPart {
@@ -45,7 +48,7 @@ export type evalTarget =
   | "top results" 
   | "relevant search results"
   | "generated response v. list of results"
-  | "fresh retreival"
+  | "freshness"
   | "hallucination"
   | "logic error"
   | "'From sources across the web'"
@@ -54,7 +57,9 @@ export type evalTarget =
   | "prompt injection"
   | "inconsistent alignment"
   | "SERP"
+  | "refusal to answer"
   | "sponsored search results"
+  | "original source attribution"
   | "unclear focus"
   | "social profile links"
   | "knowledge cards"
@@ -103,11 +108,11 @@ export interface EvalItem {
   referenced_at?: documentItem[];
   replication_attempt?: {
     replication_of_id: string;
-    replication_status: "replicated" | "failed" | "partial" | "patched" | "extends"
+    replication_status: "replicated" | "failed" | "partial" | "patched" | "extended" | "explored"
   }
   rerouting_attempt?: {
     rerouting_from_id: string; 
-    rerouting_status: "success" | "failure" | "partial"
+    rerouting_status: "success" | "failure" | "partial" | "extended critique"
   }
 }
 

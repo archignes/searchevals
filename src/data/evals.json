@@ -922,7 +922,7 @@
     "id": "what-did-the-most-popular-post-in-hacker-news-say-today-jiayq",
     "date": "2024-05-03",
     "query": "What did the most popular post in hacker news say today?",
-    "evaluation_target": ["generated response", "fresh retreival"],
+    "evaluation_target": ["generated response", "freshness"],
     "url": "https://twitter.com/jiayq/status/1786208795720593789",
     "systems": [
       "chatgpt-4", "microsoft-copilot", "google-gemini", "perplexity-ai", "lepton-search"
@@ -2896,6 +2896,7 @@
       }
     ],
     "evaluator_id": "searchmartin",
+    "evaluation_target": ["original source attribution"],
     "connected": [
       "if-i-were-going-to-look-for-seo-vulnerabilities-i-AdamJamesMason",
       "-i-would-be-more-inclined-to-just-carry-out-danielsgriffin"
@@ -2923,7 +2924,8 @@
       "replication_of_id": "-i-would-be-more-inclined-to-just-carry-out-searchmartin",
       "replication_status": "replicated"
     },
-    "following": ["-i-would-be-more-inclined-to-just-carry-out-searchmartin"]
+    "following": ["-i-would-be-more-inclined-to-just-carry-out-searchmartin"],
+    "evaluation_target": ["original source attribution"]
   },{
     "id": "-i-would-be-more-inclined-to-just-carry-out-danielsgriffin",
     "date": "2024-06-03",
@@ -2953,7 +2955,8 @@
     "replication_attempt": {
       "replication_of_id": "-i-would-be-more-inclined-to-just-carry-out-searchmartin",
       "replication_status": "replicated"
-    }
+    },
+    "evaluation_target": ["original source attribution"]
   },{
     "id": "how-to-prevent-influenza-gfiorelli1",
     "date": "2024-06-03",
@@ -3109,7 +3112,7 @@
     ],
     "replication_attempt": {
       "replication_of_id": "elon-musk-gaganghotra_",
-      "replication_status": "extends"
+      "replication_status": "extended"
     }
   },{
     "id": "elon-musk-gaganghotra_",
@@ -3312,7 +3315,7 @@
     "evaluation_target": ["social profile links"],
     "replication_attempt": {
       "replication_of_id": "elon-musk-gaganghotra_",
-      "replication_status": "extends"
+      "replication_status": "extended"
     }
   },{
     "id": "improve-skin-naturally-lilyraynyc",
@@ -3397,7 +3400,7 @@
     "evaluation_target": ["social profile links"],
     "replication_attempt": {
       "replication_of_id": "elon-musk-gaganghotra_",
-      "replication_status": "extends"
+      "replication_status": "extended"
     }
   },{
     "id": "peter-thiel-danielsgriffin",
@@ -3428,7 +3431,7 @@
     "evaluation_target": ["social profile links"],
     "replication_attempt": {
       "replication_of_id": "elon-musk-gaganghotra_",
-      "replication_status": "extends"
+      "replication_status": "extended"
     }
   },{
     "id": "how-to-prevent-influenza-danielsgriffin",
@@ -3438,6 +3441,7 @@
     "url": "https://x.com/danielsgriffin/status/1797736210452119783",
     "content": "Interesting range (and selection) of sources: US, Singapore, Canada, Europe, and... Texas.\\n\\nReminds me of \"societal relevance\" in @olofsun, @Dirk_Lew, & @juttahaider's \"Whose relevance? Web search engines as multisided relevance machines\" (2021)",
     "content_link": {
+      "type": "article",
       "url": "https://asistdl.onlinelibrary.wiley.com/doi/10.1002/asi.24570",
       "imageUrl": "https://pbs.twimg.com/card_img/1797735635316527104/eU_-zbSR?format=jpg&name=360x360",
       "siteName": "asistdl.onlinelibrary.wiley.com",
@@ -3536,6 +3540,160 @@
     "replication_of_id": "wayback-machine-kevinroose",
     "replication_status": "replicated"
   }
+},{
+  "id": "what-happened-today-in-generative-ai-create-a-short-summary-_philschmid",
+  "date": "2024-06-06",
+  "datetime": "2024-06-06T19:20:43.000Z",
+  "query": "What happened today in Generative AI. Create a short summary with links to the most liked and reached tweets",
+  "url": "https://x.com/_philschmid/status/1798797183115796560",
+  "content": "",
+  "eval_parts": [
+    {
+      "content": "How do you handle questions with a relative time reference like today in RAG? It looks like it hasn't been solved yet? \\n\\nStructured outputs with a \"filters\" field you can parse?@HamelHusain @jxnlco maybe? \\n\\n@perplexity_ai is just a reference here. Others get it wrong, too.",
+      "id": "part-1",
+      "images": [
+        {
+          "url": "https://pbs.twimg.com/media/GPab5jAXkAEoM2y?format=png&name=900x900"
+        }
+      ]
+    },
+    {
+      "content": "FYI, the Italy ban was November 2023.",
+      "id": "part-2",
+      "images": []
+    }
+  ],
+  "systems": [
+    "perplexity-ai"
+  ],
+  "images": [],
+  "evaluator_id": "_philschmid",
+  "evaluation_target": ["freshness", "query understanding"]
+},{
+  "id": "google-ranking-system-reportedly-leaked-iPullRank",
+  "date": "2024-06-05",
+  "datetime": "2024-06-05T22:36:33.000Z",
+  "query": "Google ranking system reportedly leaked",
+  "url": "https://x.com/ipullrank/status/1798484077773033940",
+  "content": "Using stuff from my post, but no link to me. \\n\\nDo better @perplexity_ai.",
+  "content_link": {
+    "type": "tweet",
+    "url": "https://x.com/localseoguide/status/1798161005648007377",
+    "content": "Something odd about an AI search engine creating a page about the Google leak in order to be found in Google",
+    "content_link": {
+      "type": "article",
+      "url": "https://www.perplexity.ai/search/discover-Google-ranking-system-nWxiHGFeQ4m0ZEdEmkvU2w",
+      "imageUrl": "https://pbs.twimg.com/card_img/1795647135897329664/_acYZlPl?format=jpg&name=medium",
+      "siteName": "Perplexity AI",
+      "title": "Google ranking system reportedly leaked"
+    }
+  },
+  "systems": [
+    "perplexity-ai-copilot"
+  ],
+  "images": [],
+  "evaluator_id": "iPullRank",
+  "evaluation_target": ["original source attribution"]
+},
+{
+  "id": "google-ranking-system-reportedly-leaked-JHTScherck",
+  "date": "2024-06-05",
+  "datetime": "2024-06-05T22:36:33.000Z",
+  "query": "Google ranking system reportedly leaked",
+  "url": "https://x.com/JHTScherck/status/1798485122305740996",
+  "content": "My guess is it's because you don't rank on page 1 of Bing for that term:",
+  "systems": [
+    "bing"
+  ],
+  "images": [],
+  "content_link": {
+    "type": "article",
+    "url": "https://www.bing.com/search?q=Google+ranking+system+reportedly+leaked&form=QBLH&sp=-1&lq=0&pq=&sc=0-0&qs=n&sk=&cvid=471A7AC0BE5F4D54A1E1FADFFD7E3757&ghsh=0&ghacc=0&ghpl=",
+    "imageUrl": "https://pbs.twimg.com/card_img/1796524057279795200/yWWd1CMg?format=jpg&name=medium",
+    "siteName": "bing.com",
+    "title": "Google ranking system reportedly leaked - Bing"
+  },
+  "evaluator_id": "JHTScherck",
+  "evaluation_target": ["original source attribution"],
+  "replication_attempt": {
+    "replication_of_id": "google-ranking-system-reportedly-leaked-iPullRank",
+    "replication_status": "explored"
+  }
+},
+{
+  "id": "who-won-the-2020-us-presidential-election-RichardSocher",
+  "date": "2024-06-06",
+  "datetime": "2024-06-06T19:44:45.000Z",
+  "query": "who won the 2020 US presidential election?",
+  "url": "https://x.com/RichardSocher/status/1799188693301006538",
+  "content": "",
+  "systems": [
+    "youchat-smart-mode",
+    "microsoft-copilot"
+  ],
+  "images": [
+    {
+      "url": "https://pbs.twimg.com/media/GPf2xsbbEAUe3Le?format=jpg&name=large",
+      "caption": "",
+      "annotated": false,
+      "extension_modified": false
+    },
+    {
+      "url": "https://pbs.twimg.com/media/GPf2xsYbEAQgZ9Q?format=jpg&name=900x900",
+      "caption": "",
+      "query": "Who won the 2020 US presidential election?",
+      "annotated": false,
+      "extension_modified": false
+    }
+  ],
+  "evaluator_id": "RichardSocher",
+  "evaluation_target": ["refusal to answer"],
+  "rerouting_attempt": {
+    "rerouting_from_id": "who-won-the-2020-us-presidential-election-jeremyphoward",
+    "rerouting_status": "success"
+  }
+},{
+  "id": "who-won-the-2020-us-presidential-election-danielsgriffin",
+  "date": "2024-06-07",
+  "datetime": "2024-06-07T21:16:26.000Z",
+  "query": "who won the 2020 US presidential election?",
+  "url": "https://x.com/danielsgriffin/status/1799198981719003416",
+  "content": "And this one",
+  "systems": ["google-gemini"],
+  "images": [
+    {
+      "url": "https://pbs.twimg.com/media/GPgJyAVakAAi0hx?format=jpg&name=medium",
+      "caption": "",
+      "annotated": false,
+      "extension_modified": false
+    }
+  ],
+  "evaluator_id": "danielsgriffin",
+  "evaluation_target": ["refusal to answer"],
+  "rerouting_attempt": {
+    "rerouting_from_id": "who-won-the-2020-us-presidential-election-RichardSocher",
+    "rerouting_status": "extended critique"
+  }
+},{
+  "id": "who-won-the-2020-us-presidential-election-jeremyphoward",
+  "date": "2024-06-07",
+  "datetime": "2024-06-07T02:24:05.000Z",
+  "query": "Who won the 2020 US presidential election?",
+  "url": "https://x.com/jeremyphoward/status/1798903729548329068",
+  "content": "Someone on HN claimed @MSFTCopilot refuses to say who won the 2020 US election.\\n\\nI didn't believe them.\\n\\nI was wrong. Wow.",
+  "systems": [
+    "microsoft-copilot"
+  ],
+  "images": [
+    {
+      "url": "https://pbs.twimg.com/media/GPb8tqxaIAAnRO6?format=jpg&name=medium",
+      "caption": "",
+      "annotated": false,
+      "extension_modified": false
+    }
+  ],
+  "evaluator_id": "jeremyphoward",
+  "evaluation_target": ["refusal to answer"]
 }
 ]
 

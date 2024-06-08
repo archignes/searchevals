@@ -58,3 +58,98 @@ export const extractTimestamp = (url: string): Date => {
         throw new Error('Invalid URL');
     }
 };
+
+
+
+
+export function getHumanFriendlyDifference(
+  earliestTimestamp: Date, 
+  latestTimestamp: Date
+): string {
+  const diffInMilliseconds = Math.abs(
+    latestTimestamp.getTime() - earliestTimestamp.getTime()
+  );
+  const diffInMinutes = Math.floor(diffInMilliseconds / (1000 * 60));
+  const diffInHours = Math.floor(diffInMinutes / 60);
+  const diffInDays = Math.floor(diffInHours / 24);
+  const years = calculateYearDifference(earliestTimestamp, latestTimestamp);
+  const months = calculateMonthDifference(earliestTimestamp, latestTimestamp);
+  const weeks = calculateWeeksDifference(earliestTimestamp, latestTimestamp);
+  const remainingDays = diffInDays % 7;
+  const remainingHours = diffInHours % 24;
+  const remainingMinutes = diffInMinutes % 60;
+  
+
+  const result = [];
+
+  if (years > 0) {
+    result.push(`${pluralize(years, 'year')}`);
+  }
+
+  if (months > 0) {
+    result.push(`${pluralize(months, 'month')}`);
+  }
+  if (weeks > 0) {
+    result.push(`${pluralize(weeks, 'week')}`);
+  }
+  if (remainingDays > 0) {
+    result.push(`${pluralize(remainingDays, 'day')}`);
+  }
+
+  if (remainingHours > 0) {
+    result.push(`${pluralize(remainingHours, 'hour')}`);
+  }
+
+  if (remainingMinutes > 0) {
+    result.push(`${pluralize(remainingMinutes, 'minute')}`);
+  }
+
+  return result.join(' and ');
+}
+
+export function calculateYearDifference(
+  earlierDate: Date, 
+  laterDate: Date
+): number {
+  const earlierYear = earlierDate.getFullYear();
+  const laterYear = laterDate.getFullYear();
+  return laterYear - earlierYear;
+}
+export function calculateMonthDifference(
+  earlierDate: Date, 
+  laterDate: Date
+): number {
+  const earlierMonth = earlierDate.getMonth();
+  const laterMonth = laterDate.getMonth();
+  const earlierYear = earlierDate.getFullYear();
+  const laterYear = laterDate.getFullYear();
+
+  const monthsDiff = (laterYear - earlierYear) * 12 + (laterMonth - earlierMonth);
+
+  const earlierDay = earlierDate.getDate();
+  const laterDay = laterDate.getDate();
+
+  // Only adjust the month difference if the day of the later date is before the day of the earlier date
+  if (laterDay < earlierDay) {
+    return monthsDiff - 1;
+  }
+
+  return monthsDiff;
+}
+
+export const calculateWeeksDifference = (earliestTimestamp: Date, latestTimestamp: Date): number => {
+  const totalMonths = calculateMonthDifference(earliestTimestamp, latestTimestamp);
+  const totalYears = calculateYearDifference(earliestTimestamp, latestTimestamp);
+  const daysInYears = totalYears * 365;
+  const daysInMonths = (totalMonths % 12) * 30; // Approximation assuming each month has 30 days
+  const diffInMilliseconds = latestTimestamp.getTime() - earliestTimestamp.getTime();
+  const totalDays = Math.floor(diffInMilliseconds / (1000 * 60 * 60 * 24));
+  const remainingDays = totalDays - (daysInYears + daysInMonths);
+  const weeks = Math.floor(remainingDays / 7);
+  return weeks;
+}
+
+
+function pluralize(count: number, noun: string): string {
+  return count === 1 ? `1 ${noun}` : `${count} ${noun}s`;
+}

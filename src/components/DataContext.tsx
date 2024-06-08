@@ -36,6 +36,7 @@ interface DataContextType {
     evalItemLabel: React.FC<{ evalItemId: string; currentEvaluation: string; currentEvaluator: boolean }>;
     miniEvalCard: React.FC<MiniEvalCardProps>;
     replicatedStatusLookupMap: { [key: string]: { replication_id: string; replication_status: string }[] };
+    reroutedStatusLookupMap: { [key: string]: { rerouted_id: string; rerouted_status: string }[] };
     evalsToSystemsLookupMap: { [key: string]: string[] };
     minimalEvalLookupMap: { [key: string]: { evalQuery: string; evalSystems: string[]; evaluatorName: string } };
 }
@@ -50,8 +51,10 @@ const defaultContextValue: DataContextType = {
     evalItemLabel: () => <div></div>,
     miniEvalCard: () => <div></div>,
     replicatedStatusLookupMap: {},
+    reroutedStatusLookupMap: {},
     evalsToSystemsLookupMap: {},
-    minimalEvalLookupMap: {}
+    minimalEvalLookupMap: {},
+    
 }
 
 type DataProviderProps = {
@@ -84,6 +87,25 @@ const createEvalsToSystemsLookupMap = (data: EvalItem[]): { [key: string]: strin
     return map;
 };
 
+const createRerouteStatusLookupMap = (
+    data: EvalItem[]
+): { [key: string]: { rerouted_id: string; rerouted_status: string }[] } => {
+    const map: { [key: string]: { rerouted_id: string; rerouted_status: string }[] } = {};
+    data.forEach(evalItem => {
+        if (evalItem.rerouting_attempt) {
+            const { rerouting_from_id, rerouting_status } = evalItem.rerouting_attempt;
+            if (!map[rerouting_from_id]) {
+                map[rerouting_from_id] = [];
+            }
+            map[rerouting_from_id].push({
+                rerouted_id: evalItem.id,
+                rerouted_status: rerouting_status
+            });
+        }
+    });
+    return map;
+};
+
 const createMinimalEvalLookupMap = (data: EvalItem[]): { [key: string]: { evalQuery: string; evalSystems: string[]; evaluatorName: string } } => {
     const map: { [key: string]: { evalQuery: string; evalSystems: string[]; evaluatorName: string } } = {};
     data.forEach(evalItem => {
@@ -106,6 +128,7 @@ export const DataProvider: React.FC<DataProviderProps> = ({ children }) => {
     const replicatedStatusLookupMap = useMemo(() => createLookupMap(data), [data]);
     const evalsToSystemsLookupMap = useMemo(() => createEvalsToSystemsLookupMap(data), [data]);
     const minimalEvalLookupMap = useMemo(() => createMinimalEvalLookupMap(data), [data]);
+    const reroutedStatusLookupMap = useMemo(() => createRerouteStatusLookupMap(data), [data]);
 
     const EvalItemLabel: React.FC<{ evalItemId: string, currentEvaluation: string, currentEvaluator: boolean }> = ({ evalItemId, currentEvaluation, currentEvaluator }) => {
         const connectedItem = data.find(evalItem => evalItem.id === evalItemId) || null;
@@ -167,7 +190,7 @@ export const DataProvider: React.FC<DataProviderProps> = ({ children }) => {
     }, [data]);
 
     return (
-        <DataContext.Provider value={{ data, results, query, setQuery, systems: sortedSystems, evaluators, miniEvalCard: MiniEvalCard, evalItemLabel: EvalItemLabel, replicatedStatusLookupMap, evalsToSystemsLookupMap, minimalEvalLookupMap }}>
+        <DataContext.Provider value={{ data, results, query, setQuery, systems: sortedSystems, evaluators, miniEvalCard: MiniEvalCard, evalItemLabel: EvalItemLabel, replicatedStatusLookupMap, reroutedStatusLookupMap, evalsToSystemsLookupMap, minimalEvalLookupMap }}>
             {children}
         </DataContext.Provider>
     );
