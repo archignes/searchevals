@@ -60,6 +60,7 @@ export type evalTarget =
   | "refusal to answer"
   | "sponsored search results"
   | "original source attribution"
+  | "right-to-rank"
   | "unclear focus"
   | "social profile links"
   | "knowledge cards"

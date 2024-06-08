@@ -64,48 +64,69 @@ export const extractTimestamp = (url: string): Date => {
 
 export function getHumanFriendlyDifference(
   earliestTimestamp: Date, 
-  latestTimestamp: Date
+  latestTimestamp: Date,
+  type?: 'exact'
 ): string {
-  const diffInMilliseconds = Math.abs(
-    latestTimestamp.getTime() - earliestTimestamp.getTime()
-  );
-  const diffInMinutes = Math.floor(diffInMilliseconds / (1000 * 60));
-  const diffInHours = Math.floor(diffInMinutes / 60);
-  const diffInDays = Math.floor(diffInHours / 24);
-  const years = calculateYearDifference(earliestTimestamp, latestTimestamp);
-  const months = calculateMonthDifference(earliestTimestamp, latestTimestamp);
-  const weeks = calculateWeeksDifference(earliestTimestamp, latestTimestamp);
-  const remainingDays = diffInDays % 7;
-  const remainingHours = diffInHours % 24;
-  const remainingMinutes = diffInMinutes % 60;
+    console.log("earliestTimestamp", earliestTimestamp);
+    const years = calculateYearDifference(earliestTimestamp, latestTimestamp);
+  const adjustedDateYears = addYears(new Date(earliestTimestamp), years);
+  console.log("adjustedDateYears", adjustedDateYears);
+  const months = calculateMonthDifference(adjustedDateYears, latestTimestamp);
+  const adjustedDateMonths = addMonths(adjustedDateYears, months);
+  const remainingDays = getRemainingDays(adjustedDateMonths, latestTimestamp);
   
+    console.log("adjustedDateMonths", adjustedDateMonths);
+    console.log("latestTimestamp", latestTimestamp);
+  // Calculate the remaining hours after subtracting the days
+  adjustedDateMonths.setDate(adjustedDateMonths.getDate() + remainingDays);
+  const remainingHours = Math.floor((latestTimestamp.getTime() - adjustedDateMonths.getTime()) / (1000 * 60 * 60));
+  // Calculate the remaining minutes after subtracting the hours
+  adjustedDateMonths.setHours(adjustedDateMonths.getHours() + remainingHours);
+  const remainingMinutes = Math.floor((latestTimestamp.getTime() - adjustedDateMonths.getTime()) / (1000 * 60));
 
   const result = [];
 
   if (years > 0) {
     result.push(`${pluralize(years, 'year')}`);
+  } else if (type === 'exact') {
+    result.push('0 years');
   }
 
   if (months > 0) {
     result.push(`${pluralize(months, 'month')}`);
-  }
-  if (weeks > 0) {
-    result.push(`${pluralize(weeks, 'week')}`);
-  }
+  } else if (type === 'exact') {
+    result.push('0 months');
+  } 
+
   if (remainingDays > 0) {
     result.push(`${pluralize(remainingDays, 'day')}`);
+  } else if (type === 'exact') {
+    result.push('0 days');
+  }
+
+  if (remainingDays > 2 && type !== 'exact') {
+    return result.join(' and ');
   }
 
   if (remainingHours > 0) {
     result.push(`${pluralize(remainingHours, 'hour')}`);
+  } else if (type === 'exact') {
+    result.push('0 hours');
   }
 
   if (remainingMinutes > 0) {
     result.push(`${pluralize(remainingMinutes, 'minute')}`);
+  } else if (type === 'exact') {
+    result.push('0 minutes');
   }
 
+  if (type === 'exact') {
+    return result.join(', ');
+  }
   return result.join(' and ');
 }
+
+
 
 export function calculateYearDifference(
   earlierDate: Date, 
@@ -113,8 +134,19 @@ export function calculateYearDifference(
 ): number {
   const earlierYear = earlierDate.getFullYear();
   const laterYear = laterDate.getFullYear();
+  const earlierMonth = earlierDate.getMonth();
+  const laterMonth = laterDate.getMonth();
+  const earlierDay = earlierDate.getDate();
+  const laterDay = laterDate.getDate();
+
+  // Adjust the year difference if the month/day of the later date hasn't reached the month/day of the earlier date
+  if (laterMonth < earlierMonth || (laterMonth === earlierMonth && laterDay < earlierDay)) {
+    return laterYear - earlierYear - 1;
+  }
+
   return laterYear - earlierYear;
 }
+
 export function calculateMonthDifference(
   earlierDate: Date, 
   laterDate: Date
@@ -123,33 +155,61 @@ export function calculateMonthDifference(
   const laterMonth = laterDate.getMonth();
   const earlierYear = earlierDate.getFullYear();
   const laterYear = laterDate.getFullYear();
-
-  const monthsDiff = (laterYear - earlierYear) * 12 + (laterMonth - earlierMonth);
-
   const earlierDay = earlierDate.getDate();
   const laterDay = laterDate.getDate();
 
-  // Only adjust the month difference if the day of the later date is before the day of the earlier date
+  let monthsDiff = (laterYear - earlierYear) * 12 + (laterMonth - earlierMonth);
+
+  // Adjust the month difference if the day of the later date is before the day of the earlier date
   if (laterDay < earlierDay) {
-    return monthsDiff - 1;
+    monthsDiff -= 1;
   }
 
   return monthsDiff;
 }
 
-export const calculateWeeksDifference = (earliestTimestamp: Date, latestTimestamp: Date): number => {
-  const totalMonths = calculateMonthDifference(earliestTimestamp, latestTimestamp);
-  const totalYears = calculateYearDifference(earliestTimestamp, latestTimestamp);
-  const daysInYears = totalYears * 365;
-  const daysInMonths = (totalMonths % 12) * 30; // Approximation assuming each month has 30 days
-  const diffInMilliseconds = latestTimestamp.getTime() - earliestTimestamp.getTime();
-  const totalDays = Math.floor(diffInMilliseconds / (1000 * 60 * 60 * 24));
-  const remainingDays = totalDays - (daysInYears + daysInMonths);
-  const weeks = Math.floor(remainingDays / 7);
-  return weeks;
-}
 
+export function getRemainingDays(earliestTimestamp: Date, latestTimestamp: Date): number {
+    const diffInMs = latestTimestamp.getTime() - earliestTimestamp.getTime();
+    const diffInDays = Math.floor(diffInMs / (1000 * 60 * 60 * 24));
+  return diffInDays;
+}
 
 function pluralize(count: number, noun: string): string {
   return count === 1 ? `1 ${noun}` : `${count} ${noun}s`;
 }
+
+// Helper functions to add years and months to a Date (safer than direct modification)
+function addYears(date: Date, years: number): Date {
+    const newDate = new Date(date);
+    newDate.setFullYear(date.getFullYear() + years);
+    return newDate;
+}
+
+export function addMonths(date: Date, months: number): Date {
+    const newDate = new Date(date);
+    const originalMonth = newDate.getMonth();
+    const originalYear = newDate.getFullYear();
+    const originalDay = newDate.getDate();
+    
+    newDate.setMonth(originalMonth + months);
+    
+    // Check if the year has changed due to adding months and adjust the day if necessary
+    if (newDate.getFullYear() !== originalYear) {
+        if (newDate.getDate() !== originalDay) {
+            newDate.setDate(0); // Set to the last day of the previous month
+        }
+    }
+    
+    console.log("newDate", newDate);
+    // Ensure the day remains consistent, adjusting for month rollover
+    if (newDate.getDate() < originalDay) {
+        newDate.setDate(0); // Set to the last day of the previous month
+    }
+    
+    return newDate;
+}
+export function getExactDifference(earliestTimestamp: Date, latestTimestamp: Date): string {
+    return getHumanFriendlyDifference(earliestTimestamp, latestTimestamp, 'exact');
+}
+

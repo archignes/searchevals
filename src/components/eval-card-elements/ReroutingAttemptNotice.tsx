@@ -63,7 +63,7 @@ export const DropDownRerouteAttempts: React.FC<EvalCardProps & { className?: str
       : `Rerouted ${subjectOfRerouteAttempts.length} times and improved performance found`;
   } else if (allExtended) {
     subjectOfRerouteAttemptsText = subjectOfRerouteAttempts.length === 1 
-      ? 'Rerouted for extended critique' 
+        ? 'Rerouted and critique extended' 
       : `Rerouted ${subjectOfRerouteAttempts.length} times for extended critique`;
   } else if (rerouteAndMixedStatus) {
     const successCount = subjectOfRerouteAttempts.filter(attempt => 
@@ -92,7 +92,7 @@ export const DropDownRerouteAttempts: React.FC<EvalCardProps & { className?: str
         >
           <>
             {subjectOfRerouteAttemptsIcon}
-            <span className={subjectOfRerouteAttemptsTextColor}>{subjectOfRerouteAttemptsText}</span>
+            <span className={`underline ${subjectOfRerouteAttemptsTextColor}`}>{subjectOfRerouteAttemptsText}</span>
           </>
         </Button>
       </DropdownMenuTrigger>
@@ -141,9 +141,9 @@ export const ReroutingAttemptNotice: React.FC<{ evalItem: EvalItem, className?: 
         ? 'text-blue-600'
         : 'text-orange-600';
     const rerouteStatus = evalItem.rerouting_attempt?.rerouting_status === 'success'
-        ? 'Reroutes: improved performance'
+        ? 'Reroutes and finds improved performance'
         : evalItem.rerouting_attempt?.rerouting_status === 'extended critique'
-        ? 'Reroutes: extended critique'
+        ? 'Reroutes and extends critique'
         : 'Reroute failure';
     const rerouteIcon = evalItem.rerouting_attempt?.rerouting_status === 'success'
         ? <CheckCircledIcon className={`mr-1 ${rerouteTextColor} flex-shrink-0`} />
@@ -182,7 +182,7 @@ export const ReroutingAttemptNotice: React.FC<{ evalItem: EvalItem, className?: 
                 <span className={rerouteTextColor}>{rerouteStatus}</span>
             </div>
             <div className="flex flex-col items-center ml-10 text-[10px]">
-                <span className={`${rerouteTextColor} mr-1`}><a href={`/eval/${reroutingFromId}`} className={`underline`}>{getTargetEvalEvaluatorAndQuery("rerouting", minimalEvalLookupMap, evalItem)}</a> on</span>
+                <span className={`${rerouteTextColor} mr-1`}><a href={`/card/${reroutingFromId}`} className={`underline`}>{getTargetEvalEvaluatorAndQuery("rerouting", minimalEvalLookupMap, evalItem)}</a> on</span>
                 <div className="flex flex-row items-center ml-10 text-[10px]">
                     <div className={`border ${rerouteBorderColor} rounded ${rerouteTextColor} p-1`}>
                         {reroutedFromSystems.filter((system): system is System => system !== undefined)

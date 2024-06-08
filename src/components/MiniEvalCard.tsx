@@ -169,8 +169,8 @@ export const MiniEvalCard: React.FC<MiniEvalCardProps> = ({
         </CardContent>
         {checks && currentEvaluation &&
           (<CardFooter className="flex flex-col space-y-1 p-1 pt-0 w-full">
-            {/* <CheckTemporalDifference evalItemId={evalItemId} currentEvaluation={currentEvaluation} /> */}
-            {/* <CheckQueryConsistency evalItemId={evalItemId} currentEvaluation={currentEvaluation} /> */}
+            <CheckTemporalDifference evalItemId={evalItemId} currentEvaluation={currentEvaluation} />
+            <CheckQueryConsistency evalItemId={evalItemId} currentEvaluation={currentEvaluation} />
           </CardFooter>
           )
         }

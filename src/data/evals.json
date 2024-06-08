@@ -3593,12 +3593,12 @@
   ],
   "images": [],
   "evaluator_id": "iPullRank",
-  "evaluation_target": ["original source attribution"]
+  "evaluation_target": ["original source attribution", "right-to-rank"]
 },
 {
   "id": "google-ranking-system-reportedly-leaked-JHTScherck",
   "date": "2024-06-05",
-  "datetime": "2024-06-05T22:36:33.000Z",
+  "datetime": "2024-06-05T22:40:42.000Z",
   "query": "Google ranking system reportedly leaked",
   "url": "https://x.com/JHTScherck/status/1798485122305740996",
   "content": "My guess is it's because you don't rank on page 1 of Bing for that term:",
@@ -3614,7 +3614,7 @@
     "title": "Google ranking system reportedly leaked - Bing"
   },
   "evaluator_id": "JHTScherck",
-  "evaluation_target": ["original source attribution"],
+  "evaluation_target": ["original source attribution", "right-to-rank"],
   "replication_attempt": {
     "replication_of_id": "google-ranking-system-reportedly-leaked-iPullRank",
     "replication_status": "explored"
@@ -3626,7 +3626,7 @@
   "datetime": "2024-06-06T19:44:45.000Z",
   "query": "who won the 2020 US presidential election?",
   "url": "https://x.com/RichardSocher/status/1799188693301006538",
-  "content": "",
+  "content": "It continues to blow my mind how much better we are than Microsoft's copilot.\\n\\nOne will tell you who won the 2020 US presidential election, one will not.",
   "systems": [
     "youchat-smart-mode",
     "microsoft-copilot"

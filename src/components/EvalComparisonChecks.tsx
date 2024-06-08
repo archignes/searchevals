@@ -4,7 +4,7 @@ import DataContext from "./DataContext";
 import DiffMatchPatch from 'diff-match-patch';
 import { extractTimestamp, isTimestampFriendly } from '../lib/utils';
 
-import { getHumanFriendlyDifference } from "../lib/utils";
+import { getHumanFriendlyDifference, getExactDifference } from "../lib/utils";
 
 export const CheckTemporalDifference: React.FC<{ evalItemId: string; currentEvaluation: string; className?: string }> = ({ evalItemId, currentEvaluation, className }) => {
   const { data, systems } = useContext(DataContext);
@@ -20,9 +20,9 @@ export const CheckTemporalDifference: React.FC<{ evalItemId: string; currentEval
     const followingTimestamp = new Date(followingEvalItem.datetime || extractTimestamp(followingEvalItem.url));
     const timeDifference = currentTimestamp.getTime() - followingTimestamp.getTime();
     
-    const humanFriendlyDifference = getHumanFriendlyDifference(currentTimestamp, followingTimestamp);
+    const humanFriendlyDifference = getHumanFriendlyDifference(followingTimestamp, currentTimestamp);
 
-    const exactDifference = `${Math.floor(timeDifference / (1000 * 60 * 60 * 24 * 365))} year${Math.floor(timeDifference / (1000 * 60 * 60 * 24 * 365)) !== 1 ? 's' : ''}, ${Math.floor((timeDifference / (1000 * 60 * 60 * 24 * 30)) % 12)} month${Math.floor((timeDifference / (1000 * 60 * 60 * 24 * 30)) % 12) !== 1 ? 's' : ''}, ${Math.floor((timeDifference / (1000 * 60 * 60 * 24 * 7)) % 4)} week${Math.floor((timeDifference / (1000 * 60 * 60 * 24 * 7)) % 4) !== 1 ? 's' : ''}, ${Math.floor((timeDifference / (1000 * 60 * 60 * 24)) % 7)} day${Math.floor((timeDifference / (1000 * 60 * 60 * 24)) % 7) !== 1 ? 's' : ''}, ${Math.floor((timeDifference / (1000 * 60 * 60)) % 24)} hour${Math.floor((timeDifference / (1000 * 60 * 60)) % 24) !== 1 ? 's' : ''}, ${Math.floor((timeDifference / (1000 * 60)) % 60)} minute${Math.floor((timeDifference / (1000 * 60)) % 60) !== 1 ? 's' : ''}`;
+    const exactDifference = getExactDifference(followingTimestamp, currentTimestamp);
 
     const combinedSystems = currentEvalItem.systems.map((system: any) => system.name).concat(followingEvalItem.systems.map((system: any) => system.name));
     const randomSystem = combinedSystems[Math.floor(Math.random() * combinedSystems.length)];

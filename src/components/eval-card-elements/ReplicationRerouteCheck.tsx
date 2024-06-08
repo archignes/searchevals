@@ -336,7 +336,7 @@ export const ReplicationRerouteCheck = ({ evalItem, className }: { evalItem: Eva
           <span className={textColor}>{replicationStatus}</span>
         </div>
         <ReplicationEvaluationTargetCheck evalItem={evalItem} className={textColor} />
-        {/* <CheckTemporalDifference evalItemId={evalItem.replication_attempt.replication_of_id} currentEvaluation={evalItem.id} className={`${textColor}`} /> */}
+        <CheckTemporalDifference evalItemId={evalItem.replication_attempt.replication_of_id} currentEvaluation={evalItem.id} className={`${textColor}`} />
         {/* <CheckQueryConsistency evalItemId={evalItem.replication_attempt.replication_of_id} currentEvaluation={evalItem.id} /> */}
       </div>
     )}
