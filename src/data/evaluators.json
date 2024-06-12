@@ -731,6 +731,11 @@
   "name": "Jeremy Howard",
   "role": "Co-founder at Answer.AI and fast.ai",
   "URL": "https://x.com/jeremyphoward"
+},{
+  "id": "simonw",
+  "name": "Simon Willison",
+  "role": "Creator Datasette, co-creator Django",
+  "URL": "https://x.com/simonw"
 }
  
 ]

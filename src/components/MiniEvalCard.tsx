@@ -6,6 +6,7 @@
 
 import React, { useContext } from 'react';
 import DataContext, { System } from './DataContext';
+import SearchOnEvalInterface from './SearchOnEvalInterface';
 import { EvalItem } from '@/src/types/evalItem';
 import { EvaluationTarget } from './eval-card-elements';
 import { conflictType } from '@/src/types/';
@@ -120,7 +121,10 @@ export const MiniEvalCard: React.FC<MiniEvalCardProps> = ({
           </CardTitle>
         <CardDescription className="p-0 m-0 pl-3">
           <span className={`${textSizeClass}`}><span className="font-bold">date:</span> {evalItem!.date}</span><br></br>
-          <span className={`${textSizeClass}`}><span className="font-bold">systems:</span> {systemsEvaluated}</span>
+          <span className={`${textSizeClass}`}>
+            <span className="font-bold">systems:</span> 
+            {systemsEvaluated ? systemsEvaluated : <span className="ml-1 text-sm text-gray-500">system was not specified, explore with <SearchOnEvalInterface evalItem={evalItem} type="mini" /></span>}
+          </span>
         </CardDescription>
         <EvaluationTarget evalItemID={evalItemId} className={`pl-3 ${textSizeClass}`} />
       </CardHeader>

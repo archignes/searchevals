@@ -3724,7 +3724,22 @@
       "extension_modified": false
     }
   ],
-  "evaluator_id": "lilyraynyc"
+  "evaluator_id": "lilyraynyc",
+  "evaluation_target": ["generated response", "navigational search"]
+},
+{
+  "id": "-fileuploadservice-fileupload-error-error-5-simonw",
+  "date": "2024-06-08",
+  "datetime": "2024-06-08T14:56:46.000Z",
+  "evaluation_target": [
+    "content appears to not exist or is not made available for indexing"
+  ],
+  "query": "\"FileUploadService.FileUpload.Error error 5\"",
+  "url": "https://x.com/simonw/status/1799465843618931064",
+  "content": "Does \"FileUploadService.FileUpload.Error error 5\" mean \"You uploaded a PDF with no extractable text, so our file upload pipeline rejected it\"?\\n\\nMaybe! Only search result I found was an unresolved forum thread https://community.openai.com/t/file-upload-not-working-in-gpt-4/769928/2…\\n\\nCC @TheRealAdamG",
+  "systems": [],
+  "images": [],
+  "evaluator_id": "simonw"
 }
 ]
 

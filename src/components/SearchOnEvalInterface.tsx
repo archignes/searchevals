@@ -25,6 +25,7 @@ import {
 } from "./ui/form"
 
 import {
+  Card,
   CardDescription,
   CardContent,
   CardHeader,
@@ -43,6 +44,7 @@ import {
 // Define a type for your component's props
 type SearchOnEvalInterfaceProps = {
   evalItem: EvalItem;
+  type?: string
 };
 
 function openLink(url: URL) {
@@ -51,7 +53,7 @@ function openLink(url: URL) {
   console.log(newWindow)
 }
 
-const SearchOnEvalInterface: React.FC<SearchOnEvalInterfaceProps> = ({ evalItem }) => {
+const SearchOnEvalInterface: React.FC<SearchOnEvalInterfaceProps> = ({ evalItem, type }) => {
   const { systems } = useContext(DataContext);
 
   const encodedQuery = encodeURIComponent(evalItem.query).replace(/%20/g, '+');
@@ -111,14 +113,29 @@ const SearchOnEvalInterface: React.FC<SearchOnEvalInterfaceProps> = ({ evalItem 
   return (
       <Popover>
         <PopoverTrigger asChild={true}>
-        <Button id="search-on-eval-button" className="btn btn-outline-secondary w-21 h-7 rounded-bl-none rounded-br-none" aria-label="Search on the eval"><span className="mr-2">SearchOnEval</span>
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-search" viewBox="0 0 16 16">
-              <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />
-            </svg>
-          </Button>
+        <Button
+          id="search-on-eval-button"
+          className={`btn btn-outline-secondary w-21 ${
+            type === "mini" ? "rounded-full ml-1 h-6 text-xs" : "rounded-bl-none rounded-br-none h-7"
+          }`}
+          aria-label="Search on the eval"
+        >
+          <span className="mr-2">SearchOnEval</span>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="16"
+            height="16"
+            fill="currentColor"
+            className="bi bi-search"
+            viewBox="0 0 16 16"
+          >
+            <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />
+          </svg>
+        </Button>
         </PopoverTrigger>
-        <PopoverContent className="mr-2 float-center w-[350px] md:w-[900px] md:mr-5 rounded-md">
-            <CardHeader>
+        <PopoverContent className="mr-2 float-center w-[350px] md:w-[900px] max-h-[500px] md:mr-5 rounded-md">
+        <ScrollArea className="mt-1 h-[250px] md:h-[400px] w-[300px] md:w-full rounded-md">
+          <CardHeader>
               <CardTitle>SearchOnEval</CardTitle>
             <CardDescription>Here you can search on the original eval query.<br></br>
                   <span className="font-bold">(a)</span> Click the individual search system
@@ -146,7 +163,7 @@ const SearchOnEvalInterface: React.FC<SearchOnEvalInterfaceProps> = ({ evalItem 
             <CardContent>
             <CardTitle className="font-normal">Search Systems</CardTitle>
             <hr></hr>
-            <ScrollArea className="mt-1 h-[250px] md:h-[400px] w-[300px] md:w-full rounded-md">
+            
           <div className="flex justify-between space-x-4">
             <div className="space-y-1">
               <Form {...form}>
@@ -156,7 +173,7 @@ const SearchOnEvalInterface: React.FC<SearchOnEvalInterfaceProps> = ({ evalItem 
                     name="systems"
                     render={() => (
                       <FormItem>
-                        <FormItem className="flex flex-row items-start justify-end space-x-3 space-y-0">
+                        <FormItem className="flex flex-row mt-2 items-center justify-end space-x-1 space-y-0">
                           <FormControl>
                             <Checkbox
                               checked={selectAll}
@@ -178,7 +195,7 @@ const SearchOnEvalInterface: React.FC<SearchOnEvalInterfaceProps> = ({ evalItem 
                               name={`systems`} // Updated to ensure unique name for each system
                               render={({ field }) => (
                                 <FormItem
-                                  className="flex flex-row items-start space-x-3 space-y-0"
+                                  className="flex flex-row items-center space-x-1 space-y-0"
                                 >
                                   <FormControl>
                                     <Checkbox
@@ -241,8 +258,9 @@ const SearchOnEvalInterface: React.FC<SearchOnEvalInterfaceProps> = ({ evalItem 
               </Form>
             </div>
           </div>
-          </ScrollArea>
+          
           </CardContent>
+        </ScrollArea>
         </PopoverContent>
       </Popover>
   );

@@ -65,6 +65,7 @@ export type evalTarget =
   | "social profile links"
   | "knowledge cards"
   | "dates"
+  | "navigational search"
   | "lack of critical evaluation or contextualization of source material";
 
 export interface documentItem {

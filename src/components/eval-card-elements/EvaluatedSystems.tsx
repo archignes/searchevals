@@ -1,5 +1,7 @@
 import React, { useContext } from "react";
 import DataContext from "../DataContext";
+import SearchOnEvalInterface from '../SearchOnEvalInterface';
+
 
 export const EvaluatedSystems: React.FC<{ evalItemID: string, systemIDs: string[], query?: string, className?: string, skipHeading?: boolean }> = ({ evalItemID, systemIDs, query, className, skipHeading }) => {
     const { data, systems } = useContext(DataContext);
@@ -23,7 +25,9 @@ export const EvaluatedSystems: React.FC<{ evalItemID: string, systemIDs: string[
             )
         });
     } else {
-        systemsEvaluatedSearchLinks = "";
+        if (evalItem) {
+            systemsEvaluatedSearchLinks = <span className="ml-1 text-sm text-gray-5000">system was not specified, explore with <SearchOnEvalInterface evalItem={evalItem} type="mini" /></span>;
+        }
     }
     const textSizeClass = className ?? "text-sm";
     return (
