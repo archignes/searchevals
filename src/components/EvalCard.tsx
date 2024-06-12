@@ -11,6 +11,7 @@ import { ClaimReview,
   Resources,
   ReplyTo,
   ContentWarning,
+  EvalTitle,
   AlsoPublished,
   ReferencedAt } from './eval-card-elements';
 import SearchOnEvalInterface from './SearchOnEvalInterface';
@@ -168,7 +169,18 @@ const EvalCard: React.FC<EvalCardProps> = ({ evalItemId }) => {
   }
 
 
-  let cardTitle = <div><SearchBracket><span className="text-xl">{evalItem.query}</span></SearchBracket></div>
+  let cardTitle = (
+    <div>
+      
+        <span className="text-xl">
+          {evalItem.query 
+          ? <SearchBracket>{evalItem.query}</SearchBracket>
+          : evalItem.snippet 
+            ? `"${evalItem.snippet}"` 
+            : `"${evalItem.content}"`}
+        </span>
+    </div>
+  );
 
   return (
     <>
@@ -184,9 +196,12 @@ const EvalCard: React.FC<EvalCardProps> = ({ evalItemId }) => {
             {marqueeOrigin ? (
               <a href={`/card/${evalItem.id}`}>{cardTitle}</a>
             ) : (
-              cardTitle
+              <EvalTitle evalItem={evalItem} type="full" />
             )}
             </CardTitle>
+            {!evalItem.query && 
+              <span className="text-sm text-gray-500">This eval is queryless.</span>
+            }
             <MultipleQueryCheck evalItem={evalItem} />
             {evalItem.query_interpolated && (
               <span className="border border-orange-4000 p-2 w-fit mx-auto text-xs text-center"><ExclamationTriangleIcon className="h-4 w-4 text-orange-400 inline mr-1" />The query was not provided in the source and has been interpolated from context.</span>

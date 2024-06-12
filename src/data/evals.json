@@ -3858,6 +3858,18 @@
   ],
   "evaluator_id": "kristileilani",
   "evaluation_target": ["generated response"]
+},
+{
+  "id": "meta-ai-sarahpereztc",
+  "date": "2024-04-29",
+  "query": "",
+  "url": "https://twitter.com/SarahPerezTC/status/1785034979891642736",
+  "systems": [
+    "meta-ai"
+  ],
+  "content": "I just want a f***ing search box not Meta AI!!",
+  "evaluator_id": "SarahPerezTC",
+  "evaluation_target": ["existence of generated response"]
 }
 ]
 

@@ -68,6 +68,7 @@ export type evalTarget =
   | "knowledge cards"
   | "dates"
   | "navigational search"
+  | "existence of generated response"
   | "lack of critical evaluation or contextualization of source material";
 
 export interface documentItem {
@@ -93,6 +94,7 @@ export interface EvalItem {
   query_interpolated?: boolean;
   following?: string[];
   key_phrases?: string[];
+  snippet?: string;
   content_warning?: string;
   evaluation_target?: Array<evalTag>;
   search_type?: Array<searchType>;

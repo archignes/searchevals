@@ -8,7 +8,7 @@ import React, { useContext } from 'react';
 import DataContext, { System } from './DataContext';
 import SearchOnEvalInterface from './SearchOnEvalInterface';
 import { EvalItem } from '@/src/types/evalItem';
-import { EvaluationTarget } from './eval-card-elements';
+import { EvaluationTarget, EvalTitle } from './eval-card-elements';
 import { conflictType } from '@/src/types/';
 import SearchBracket from './SearchBracket'
 import { InfoCircledIcon, DrawingPinIcon, ExclamationTriangleIcon } from "@radix-ui/react-icons"
@@ -110,14 +110,7 @@ export const MiniEvalCard: React.FC<MiniEvalCardProps> = ({
       <CardHeader className="p-1 space-y-0">
           <CardTitle className={`${textSizeClass}`}>
             {isCurrentEvaluation ? "current: " : ""}
-            
-            <a href={`/card/${evalItemId}`}>
-            <div className={`arrLink w-fit ${trimQueryHeight ? 'two-lines-height-limit' : ''}`}>
-              <SearchBracket className={textSizeClass}>
-                <span className={`${textSizeClass} font-normal`}>{evalItem.query}</span>
-              </SearchBracket>
-              </div>
-            </a>
+            <EvalTitle evalItem={evalItem} type="mini" trimQueryHeight={trimQueryHeight} textSizeClass={textSizeClass} />
           </CardTitle>
         <CardDescription className="p-0 m-0 pl-3">
           <span className={`${textSizeClass}`}><span className="font-bold">date:</span> {evalItem!.date}</span><br></br>
