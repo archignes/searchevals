@@ -3694,6 +3694,37 @@
   ],
   "evaluator_id": "jeremyphoward",
   "evaluation_target": ["refusal to answer"]
+},{
+  "id": "techradar-nintendo-oled-lilyraynyc",
+  "date": "2023-11-24",
+  "datetime": "2023-11-24T19:09:08.000Z",
+  "query": "techradar nintendo oled",
+  "url": "https://x.com/lilyraynyc/status/1728128633762639899",
+  "content": "Ok, I find this SGE result to be pretty unethical. \\n\\nThe query starts with a brand name (clearly navigational) and instead of taking me to that site's page for that keyword (AKA... navigational search), it shows a bunch of information & links to products from other sites.",
+  "systems": [
+    "google"
+  ],
+  "images": [
+    {
+      "url": "https://pbs.twimg.com/media/F_uLJVGWkAAKBqh?format=jpg&name=large",
+      "caption": "",
+      "annotated": false,
+      "extension_modified": false
+    },
+    {
+      "url": "https://pbs.twimg.com/media/F_uLa8eX0AE6dsO?format=jpg&name=900x900",
+      "caption": "",
+      "annotated": false,
+      "extension_modified": false
+    },
+    {
+      "url": "https://pbs.twimg.com/media/F_uLd0hXYAAbMbX?format=jpg&name=large",
+      "caption": "",
+      "annotated": false,
+      "extension_modified": false
+    }
+  ],
+  "evaluator_id": "lilyraynyc"
 }
 ]
 
