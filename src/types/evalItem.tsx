@@ -59,6 +59,7 @@ export type evalTarget =
   | "SERP"
   | "refusal to answer"
   | "sponsored search results"
+  | "suggested searches"
   | "original source attribution"
   | "right-to-rank"
   | "unclear focus"

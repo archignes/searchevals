@@ -3740,6 +3740,89 @@
   "systems": [],
   "images": [],
   "evaluator_id": "simonw"
+},{
+  "id": "difference-between-red-team-and-penetration-testing-DanielMiessler",
+  "date": "2022-02-08",
+  "datetime": "2022-02-08T16:41:31.000Z",
+  "query": "difference between red team and penetration testing",
+  "url": "https://x.com/DanielMiessler/status/1491089824769789953",
+  "evaluation_target": ["sponsored search results", "SERP", "suggested searches"],
+  "content": "Google's search engine is jumping the shark.\\n\\n1. Half the page is ads.\\n2. There's one result on the page.\\n3. Then recommendations for more questions.\\n\\nIt's almost like their mission is to sell ads rather than organize information.\\n\\nWhat's better? Startpage? Kagi? Something else?",
+  "systems": [
+    "google"
+  ],
+  "images": [
+    {
+      "url": "https://pbs.twimg.com/media/FLFqDR0VEAISdke?format=jpg&name=large",
+      "caption": "",
+      "annotated": false,
+      "extension_modified": false
+    }
+  ],
+  "evaluator_id": "DanielMiessler"
+},{
+  "id": "dog-friendly-hikes-near-glacier-national-park-DylSell",
+  "date": "2023-07-22",
+  "datetime": "2023-07-22T15:27:33.000Z",
+  "query": "dog friendly hikes near glacier national park",
+  "url": "https://x.com/DylSell/status/1682774390025625600",
+  "content": "Google's \"SGE\" -- Bard in Search, is the most useful Gen AI product I've used yet. Summarizes 10 pages of SERP in one result.\\n\\nIs the Ads cash cow window finally closing this time?",
+  "systems": [
+    "google"
+  ],
+  "images": [
+    {
+      "url": "https://pbs.twimg.com/media/F1pqVygaIAA3nL1?format=jpg&name=large",
+      "caption": "",
+      "annotated": false,
+      "extension_modified": false
+    }
+  ],
+  "evaluator_id": "DylSell",
+  "query_interpolated": true,
+  "evaluation_target": ["generated response"]
+},{
+  "id": "books-about-scurvy-barbarousellen",
+  "date": "2023-05-05",
+  "datetime": "2023-05-05T09:25:31.000Z",
+  "query": "books about scurvy",
+  "url": "https://x.com/barbarousellen/status/1654417026084130818",
+  "content": "absolutely amazing the extent to which google sponsored results have nothing at all to do with what you searched for",
+  "systems": [
+    "google"
+  ],
+  "images": [
+    {
+      "url": "https://pbs.twimg.com/media/FvWrUhjaYAA_Xtu?format=jpg&name=900x900",
+      "caption": "",
+      "annotated": false,
+      "extension_modified": false
+    }
+  ],
+  "evaluator_id": "barbarousellen",
+  "evaluation_target": [
+    "sponsored search results"
+  ]
+},{
+  "id": "healthcare-marketplace-besables",
+  "date": "2022-06-07",
+  "datetime": "2022-06-07T14:03:42.000Z",
+  "query": "healthcare marketplace",
+  "url": "https://x.com/besables/status/1534179697499701249",
+  "content": "The top search result when you Google something like \"healthcare marketplace\" or \"Obamacare insurance\" is the federal marketplace (http://HealthCare.gov). \\n\\nBut there are ads placed above that result for websites that sell consumer leads to insurance brokers",
+  "systems": [
+    "google"
+  ],
+  "images": [
+    {
+      "url": "https://pbs.twimg.com/media/FUp_t_7WUAcHDN2?format=jpg&name=900x900",
+      "caption": "",
+      "annotated": false,
+      "extension_modified": false
+    }
+  ],
+  "evaluator_id": "besables",
+  "evaluation_target": ["sponsored search results"]
 }
 ]
 

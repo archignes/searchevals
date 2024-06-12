@@ -736,6 +736,27 @@
   "name": "Simon Willison",
   "role": "Creator Datasette, co-creator Django",
   "URL": "https://x.com/simonw"
+},
+{
+  "id": "DanielMiessler",
+  "name": "Daniel Miessler",
+  "role": "cyber security expert",
+  "URL": "https://x.com/DanielMiessler"
+},{
+  "id": "DylSell",
+  "name": "Dylan Sellberg",
+  "role": "AI at HubSpot",
+  "URL": "https://x.com/DylSell"
+},{
+  "id": "barbarousellen",
+  "name": "Ellen",
+  "role": "unknown",
+  "URL": "https://x.com/barbarousellen"
+},{
+  "id": "besables",
+  "name": "Bram Sable-Smith",
+  "role": "journalist",
+  "URL": "https://x.com/besables"
 }
  
 ]
