@@ -6,6 +6,7 @@ import {ReplicationRerouteCheck} from './eval-card-elements/ReplicationRerouteCh
 import DataContext from './DataContext';
 import { ClaimReview, 
   EvaluationTarget,
+  MultipleQueryCheck,
   KeyPhrases,
   Resources,
   ReplyTo,
@@ -186,8 +187,9 @@ const EvalCard: React.FC<EvalCardProps> = ({ evalItemId }) => {
               cardTitle
             )}
             </CardTitle>
+            <MultipleQueryCheck evalItem={evalItem} />
             {evalItem.query_interpolated && (
-              <span className="border border-orange-400 p-2 w-fit mx-auto text-xs text-center"><ExclamationTriangleIcon className="h-4 w-4 text-orange-400 inline mr-1" />The query was not provided in the source and has been interpolated from context.</span>
+              <span className="border border-orange-4000 p-2 w-fit mx-auto text-xs text-center"><ExclamationTriangleIcon className="h-4 w-4 text-orange-400 inline mr-1" />The query was not provided in the source and has been interpolated from context.</span>
             )}
             {evalItem.likely_fabricated && (
               <span className="border border-red-500 bg-red-100 font-semibold p-2 w-fit mx-auto text-xs text-center"><ExclamationTriangleIcon className="h-4 w-4 text-red-400 inline mr-1" />This image is likely fabricated.</span>

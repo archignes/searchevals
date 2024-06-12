@@ -3823,6 +3823,41 @@
   ],
   "evaluator_id": "besables",
   "evaluation_target": ["sponsored search results"]
+},{
+  "id": "ruger-store-promo-code-kristileilani",
+  "date": "2024-05-08",
+  "datetime": "2024-05-08T18:42:38.000Z",
+  "query": "ruger store promo code",
+  "url": "https://x.com/kristileilani/status/1788278353465844111",
+  "content": "Google Search results for firearm manufacturer promo codes are interesting. \\n\\nWhen AI Answers appears, it tells you how to find codes instead of pulling codes directly off the coupon sites like it usually does...",
+  "systems": [
+    "google"
+  ],
+  "images": [
+    {
+      "url": "https://pbs.twimg.com/media/GNE9VmAaEAAhye8?format=jpg&name=medium",
+      "caption": "",
+      "annotated": false,
+      "extension_modified": false,
+      "query": "ruger store promo code"
+    },
+    {
+      "url": "https://pbs.twimg.com/media/GNE9YLfbAAA1nhg?format=jpg&name=medium",
+      "caption": "",
+      "annotated": false,
+      "extension_modified": false,
+      "query": "sig sauer promo code"
+    },
+    {
+      "url": "https://pbs.twimg.com/media/GNE9aUnaIAIc-SN?format=jpg&name=900x900",
+      "caption": "",
+      "annotated": false,
+      "extension_modified": false,
+      "query": "glock store promo code"
+    }
+  ],
+  "evaluator_id": "kristileilani",
+  "evaluation_target": ["generated response"]
 }
 ]
 

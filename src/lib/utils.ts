@@ -213,3 +213,24 @@ export function getExactDifference(earliestTimestamp: Date, latestTimestamp: Dat
     return getHumanFriendlyDifference(earliestTimestamp, latestTimestamp, 'exact');
 }
 
+export const getQueries = (evalItem: EvalItem): Set<string> => {
+    const queries = new Set<string>();
+
+    evalItem.query && queries.add(evalItem.query);
+
+    // Check for queries in eval_parts
+    evalItem.eval_parts?.forEach(part => {
+        if (part.query) {
+            queries.add(part.query);
+        }
+    });
+
+    // Check for queries in images
+    evalItem.images?.forEach(image => {
+        if (image.query) {
+            queries.add(image.query);
+        }
+    });
+
+    return queries;
+};

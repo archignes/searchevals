@@ -27,6 +27,7 @@ export interface imageItem {
   caption?: string;
   annotated?: boolean;
   extension_modified?: boolean;
+  query?: string;
 }
 
 
