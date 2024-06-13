@@ -59,9 +59,9 @@ const EvalExtractCard: React.FC<EvalExtractCardProps> = ({ evalItem, evalCardIte
                             <ContentLinkCard {...(evalCardItem.content_link as ContentLinkCardProps)} />
                         )}
                     </figure>
-                    {evalCardItem?.media === "video" && (
+                    {(evalCardItem?.media === "video" || evalCardItem?.media === "gif") && (
                         <div className="border shadow-sm m-2 text-center p-2.5 w-1/2 mx-auto min-h-[200px] flex flex-col justify-center items-center">
-                            <p>Video content in evals is currently not supported, click <a className="text-blue-500 underline" href={evalCardItem.url}>here</a> to see the video in context.</p>
+                            <p>{evalCardItem.media === "video" ? "Video" : "GIF"} content in evals is currently not supported, click <a className="text-blue-500 underline" href={evalCardItem.url}>here</a> to see the {evalCardItem.media === "video" ? "video" : "GIF"} in context.</p>
                         </div>
                         )
                     }

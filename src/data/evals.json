@@ -3870,6 +3870,20 @@
   "content": "I just want a f***ing search box not Meta AI!!",
   "evaluator_id": "SarahPerezTC",
   "evaluation_target": ["existence of generated response"]
+},{
+  "id": "flag-gif-rustybrick",
+  "date": "2024-05-01",
+  "datetime": "2024-05-01T11:41:00.000Z",
+  "query": "flag gif",
+  "url": "https://x.com/rustybrick/status/1785635528823717907",
+  "content": "Google Search shows Nazi flags when searching for [flag gif] and then clicking on the waiving search refinement - it has been an issue for over a week now https://seroundtable.com/google-search-flag-gif-leads-to-nazi-flags-37304.html…",
+  "systems": [
+    "google"
+  ],
+  "images": [],
+  "evaluator_id": "rustybrick",
+  "media": "gif",
+  "evaluation_target": ["search refinement", "offensive/upsetting"]
 }
 ]
 

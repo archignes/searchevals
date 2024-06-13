@@ -69,6 +69,8 @@ export type evalTarget =
   | "dates"
   | "navigational search"
   | "existence of generated response"
+  | "search refinement"
+  | "offensive/upsetting"
   | "lack of critical evaluation or contextualization of source material";
 
 export interface documentItem {
@@ -107,7 +109,7 @@ export interface EvalItem {
   content_link?: ContentLinkCardProps;
   images?: imageItem[];
   evaluator_id: string;
-  media?: string;
+  media?: "video" | "gif";
   also_published_at?: string;
   claimReview?: ClaimReview;
   resources?: documentItem[];
